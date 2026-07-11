@@ -80,11 +80,13 @@ def run():
             else:
                 cache[isin] = {"fetched": today, "error": "parse"}
             done += 1
-            time.sleep(0.7)
+            time.sleep(0.5)
         except Exception as e:
             cache[isin] = {"fetched": today, "error": str(e)[:60]}
             done += 1
-            time.sleep(1.0)
+            time.sleep(0.8)
+        if done % 10 == 0:
+            json.dump(cache, open(path, "w"))
     json.dump(cache, open(path, "w"))
     ok = sum(1 for v in cache.values() if v.get("float_shares"))
     print(f"freefloat: fetched {done}, cache {len(cache)} ({ok} with float)")
