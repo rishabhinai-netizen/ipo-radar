@@ -62,6 +62,16 @@ def run():
         else:
             r["first_thrust_day"] = None
             r["thrust_recent"] = False
+        # most recent UPWARD cross of the listing-day high (fresh pivot cross)
+        above = df["close"] > d1["high"]
+        cross_up = above & ~above.shift(1, fill_value=False)
+        cross_idx = df.index[cross_up & (df.index > 0)]
+        if len(cross_idx):
+            li = int(cross_idx[-1])
+            r["last_pivot_cross_date"] = df.loc[li, "date"].date().isoformat()
+            r["days_since_pivot_cross"] = int((len(df) - 1) - li)
+        else:
+            r["days_since_pivot_cross"] = None
         r["dd_from_life_high_pct"] = round((df["close"].iloc[-1] / df["high"].max() - 1) * 100, 2)
         r["max_dd_pct"] = round(((df["close"] / df["close"].cummax()) - 1).min() * 100, 2)
         base = df.iloc[1:31]

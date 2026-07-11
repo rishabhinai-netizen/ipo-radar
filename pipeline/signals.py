@@ -264,6 +264,8 @@ def compute_signals() -> pd.DataFrame:
             "surv_exit_rule": sv.get("exit_rule") or "",
             "at_ath": bool(r["dd_from_life_high_pct"] >= -2 and days > 10),
             "first_thrust_date": r.get("first_thrust_date"),
+            "last_pivot_cross_date": r.get("last_pivot_cross_date"),
+            "days_since_pivot_cross": r.get("days_since_pivot_cross"),
             "last_thrust_date": r.get("last_thrust_date"),
             "thrust_count": r.get("thrust_count"),
             "thrust_recent": bool(r.get("thrust_recent")),

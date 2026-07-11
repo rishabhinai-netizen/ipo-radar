@@ -86,7 +86,11 @@ def load(_v=None):
     svp = os.path.join(DATA, "surveillance.json")
     if os.path.exists(svp):
         stats["bandlock_study"] = json.load(open(svp)).get("bandlock_study", {})
-    return sig, ana, stats, ladder, sc, win
+    tl = (pd.read_csv(os.path.join(DATA, "trade_log.csv"))
+          if os.path.exists(os.path.join(DATA, "trade_log.csv")) else pd.DataFrame())
+    ts = (json.load(open(os.path.join(DATA, "trade_stats.json")))
+          if os.path.exists(os.path.join(DATA, "trade_stats.json")) else {})
+    return sig, ana, stats, ladder, sc, win, tl, ts
 
 
 @st.cache_data(ttl=900, max_entries=8)
@@ -98,7 +102,7 @@ def load_series(isin):
     return p.sort_values("date")
 
 
-sig, ana, stats, ladder, scorecard, winners = load(_data_version())
+sig, ana, stats, ladder, scorecard, winners, tlog, tstats = load(_data_version())
 last_date = stats.get("as_of", "")
 
 st.markdown(f"""
@@ -121,7 +125,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-T = st.tabs(["📌 Today", "🎯 Opportunities", "🧾 Stock Dossier",
+T = st.tabs(["📌 Today", "🎯 Opportunities", "📜 Trade Log", "🧾 Stock Dossier",
              "🏆 Winners Lab", "🏦 Lead Managers", "📊 Study & Method"])
 
 LINKCOLS = {
@@ -214,23 +218,22 @@ with T[0]:
             "ff_vol_pct": st.column_config.NumberColumn("Vol/Float %", format="%.2f%%", help=H["ff"]),
             **LINKCOLS})
 
-    st.markdown("##### ⚡ Above their listing-day high (pivot crossed & holding)")
-    st.caption("Every stock currently trading ABOVE its listing-day high — the structural bull list. Sort by breakout day or recency; early crossers (≤25 sessions) carried the historical edge.")
-    apiv = sig[sig["dist_to_pivot_pct"] < 0].copy()
-    apiv["above_pivot_pct"] = -apiv["dist_to_pivot_pct"]
-    apiv = apiv.sort_values("breakout_day")
-    st.dataframe(apiv[["reco", "score", "company", "board", "listing_date", "breakout_day",
-                       "days_listed", "cmp", "above_pivot_pct", "cmp_vs_issue_pct",
+    st.markdown("##### ⚡ Fresh pivot crosses — closed above their listing-day high in the last 5 sessions")
+    st.caption("Only stocks that crossed the listing-day high FROM BELOW this week — the exact event the strategy trades. Crossed-on shows the session it happened.")
+    apiv = sig[sig["days_since_pivot_cross"].fillna(99) <= 5].copy()
+    apiv = apiv.sort_values("last_pivot_cross_date", ascending=False)
+    st.dataframe(apiv[["reco", "score", "company", "board", "listing_date", "last_pivot_cross_date",
+                       "days_listed", "cmp", "pivot", "cmp_vs_issue_pct",
                        "last_thrust_date", "adv_cr", "surv_official", "screener_url", "tradingview_url"]],
                  use_container_width=True, hide_index=True, height=300, column_config={
             "reco": st.column_config.TextColumn("Reco", help=H["reco"]),
             "score": st.column_config.NumberColumn("Score", help=H["score"]),
             "company": "Company", "board": "Board", "listing_date": "Listed",
-            "breakout_day": st.column_config.NumberColumn("Crossed on day", help=H["bo_day"]),
+            "last_pivot_cross_date": st.column_config.TextColumn("Crossed on",
+                help="The session this stock closed back above its listing-day high, having been below it the session before."),
             "days_listed": "Sessions",
             "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
-            "above_pivot_pct": st.column_config.NumberColumn("Above pivot %", format="%.1f%%",
-                help="How far CMP is ABOVE the listing-day high."),
+            "pivot": st.column_config.NumberColumn("Pivot ₹", format="%.2f", help=H["pivot"]),
             "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%", help=H["vs_issue"]),
             "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
             "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
@@ -355,8 +358,63 @@ with T[1]:
             **LINKCOLS})
     st.download_button("⬇ Download filtered CSV", merged.to_csv(index=False), "ipo_radar_export.csv")
 
-# ============================================================ DOSSIER
+# ============================================================ TRADE LOG
 with T[2]:
+    if len(tlog) == 0:
+        st.info("Trade log builds on the next data refresh.")
+    else:
+        closed = tlog[tlog["exit_reason"] != "OPEN"]
+        st.markdown(f"""<div class="insight"><b>Full transparency — every trade the strategy would have taken
+        since {stats.get('universe_start','2023-07-01')}, replayed with the exact live rules</b> (entry at next open
+        after a valid pivot cross, −8% stop, +15% then 12% trail, 60-session time stop, costs included, max 3
+        trades/stock). <b>{tstats.get('n_trades','—')} trades</b> ({tstats.get('n_open','—')} still open) ·
+        win rate <b>{tstats.get('win_rate','—')}%</b> · average <b>{tstats.get('avg_pnl','—')}%</b> per trade ·
+        profit factor <b>{tstats.get('profit_factor','—')}</b> · avg win +{tstats.get('avg_win','—')}% vs avg loss
+        {tstats.get('avg_loss','—')}% · avg hold {tstats.get('avg_hold','—')} sessions.
+        The character is honest trend-following: <b>most trades lose small, the tails pay</b> —
+        best {tstats.get('best',{}).get('company','—')} +{tstats.get('best',{}).get('pnl',0):.0f}%,
+        worst {tstats.get('worst',{}).get('company','—')} {tstats.get('worst',{}).get('pnl',0):.0f}%.</div>""",
+        unsafe_allow_html=True)
+
+        c1, c2 = st.columns([2, 1])
+        with c1:
+            st.markdown("##### Equity curve (cumulative sum of per-trade P&L %, chronological)")
+            eq = closed.sort_values("exit_date").copy()
+            eq["cum_pnl_pct"] = eq["pnl_pct"].cumsum()
+            st.line_chart(eq.set_index("exit_date")["cum_pnl_pct"], height=260)
+        with c2:
+            st.markdown("##### By entry year")
+            st.dataframe(pd.DataFrame(tstats.get("by_year", {})).T.rename(
+                columns={"n": "Trades", "win": "Win %", "avg": "Avg P&L %"}), use_container_width=True)
+            st.caption("Positive every single year — including the soft 2025 cohort. That's the stability test.")
+
+        st.markdown("##### 🔎 Audit any stock — its full trade history")
+        pick_t = st.selectbox("Stock", sorted(tlog["company"].unique()), index=None,
+                              placeholder="Type… e.g. Aditya Infotech, Knack, Ather")
+        show_log = tlog[tlog["company"] == pick_t] if pick_t else tlog.sort_values("entry_date", ascending=False)
+        st.dataframe(show_log[["company", "board", "symbol", "trade_no", "signal_date", "entry_date",
+                               "entry", "stop", "target1", "exit_date", "exit_price", "exit_reason",
+                               "hold_sessions", "pnl_pct", "peak_gain_pct"]],
+                     use_container_width=True, hide_index=True, height=420, column_config={
+                "company": "Company", "board": "Board", "symbol": "Symbol",
+                "trade_no": st.column_config.NumberColumn("Trade #", help="1st, 2nd or 3rd entry in this stock (re-entry = fresh pivot cross after an exit)"),
+                "signal_date": st.column_config.TextColumn("Signal", help="Session that closed above the pivot"),
+                "entry_date": st.column_config.TextColumn("Entry", help="Fill at NEXT session's open — no look-ahead"),
+                "entry": st.column_config.NumberColumn("Entry ₹", format="%.2f"),
+                "stop": st.column_config.NumberColumn("Stop ₹", format="%.2f", help="Entry −8%"),
+                "target1": st.column_config.NumberColumn("Target-1 ₹", format="%.2f", help="Entry +15% — arms the trail"),
+                "exit_date": "Exit date",
+                "exit_price": st.column_config.NumberColumn("Exit ₹", format="%.2f"),
+                "exit_reason": st.column_config.TextColumn("Exit reason", help="stop / trail / time / OPEN (still running)"),
+                "hold_sessions": "Held",
+                "pnl_pct": st.column_config.NumberColumn("P&L %", format="%.2f%%", help="Net of costs (1% mainboard / 1.5% SME round trip). OPEN trades are mark-to-market."),
+                "peak_gain_pct": st.column_config.NumberColumn("Peak gain %", format="%.1f%%", help="Best unrealized gain during the trade"),
+            })
+        st.download_button("⬇ Download full trade log CSV", tlog.to_csv(index=False), "ipo_radar_trade_log.csv")
+        st.caption("Backtest caveats: bhavcopy opens (SME fills can differ 1–2%), no partial-fill modelling, max 3 trades/stock. This is the same engine that was walk-forward validated — optimized on 2023–24 listings only, then applied untouched.")
+
+# ============================================================ DOSSIER
+with T[3]:
     pick = st.selectbox("Select or type a stock — the full picture in one place",
                         sig["company"].tolist(), index=None,
                         placeholder="Start typing… e.g. Ather, Knack, Aditya Infotech")
@@ -452,7 +510,7 @@ with T[2]:
             st.caption("Fundamentals (results, news, shareholding changes) → Screener link above.")
 
 # ============================================================ WINNERS LAB
-with T[3]:
+with T[4]:
     L = stats.get("winner_lessons", {})
     fm = lambda k, suf="": (f"{L[k]:.0f}{suf}" if isinstance(L.get(k), (int, float)) else "–")
     st.markdown(f"""<div class="insight"><b>What the top-{L.get('n_winners','?')} winners teach (recomputed daily):</b><br>
@@ -483,7 +541,7 @@ with T[3]:
             "pattern": st.column_config.TextColumn("Pattern", width="large")})
 
 # ============================================================ LEAD MANAGERS
-with T[4]:
+with T[5]:
     st.markdown("""<div class="insight"><b>How to use:</b> LMs are ranked on what happens
     <b>after</b> listing (not the pop): median return over issue today, % of issues still above issue,
     pivot-reclaim rate, drawdown control. Pick any LM below to see every stock it brought to market.</div>""",
@@ -525,7 +583,7 @@ with T[4]:
                                                     format="%.0f", help=H["lm_score"])})
 
 # ============================================================ STUDY & METHOD
-with T[5]:
+with T[6]:
     st.markdown("""<div class="insight"><b>The one-paragraph strategy:</b> buy the first daily close above
     the listing-day high within 25 sessions of listing, in names whose base held above −10%; stop at the
     base low (max −8%); partial at +15%, trail the rest; out by 60 sessions or before the 90-day anchor

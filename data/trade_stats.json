@@ -1,0 +1,43 @@
+{
+ "n_trades": 970,
+ "n_closed": 948,
+ "n_open": 22,
+ "win_rate": 38.4,
+ "avg_pnl": 5.54,
+ "median_pnl": -9.55,
+ "profit_factor": 1.86,
+ "avg_win": 31.2,
+ "avg_loss": -10.4,
+ "best": {
+  "company": "Owais Metal & Mineral Processing Ltd.",
+  "pnl": 375.68
+ },
+ "worst": {
+  "company": "Sahaj Solar Ltd.",
+  "pnl": -38.55
+ },
+ "avg_hold": 17.0,
+ "sum_pnl_pct": 5252.0,
+ "by_year": {
+  "2023": {
+   "n": 131,
+   "win": 48,
+   "avg": 14.1
+  },
+  "2024": {
+   "n": 364,
+   "win": 39,
+   "avg": 7.1
+  },
+  "2025": {
+   "n": 344,
+   "win": 34,
+   "avg": 0.7
+  },
+  "2026": {
+   "n": 109,
+   "win": 38,
+   "avg": 5.3
+  }
+ }
+}

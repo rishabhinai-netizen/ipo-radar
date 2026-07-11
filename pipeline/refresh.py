@@ -310,6 +310,11 @@ def main():
         surveillance.run()       # official ASM/ESM/GSM flags + risk rules + band-lock study
     except Exception as e:
         print("surveillance skipped:", e)
+    try:
+        import tradelog
+        tradelog.run()           # transparent trade-by-trade replay of the strategy
+    except Exception as e:
+        print("tradelog skipped:", e)
     import signals
     s = signals.compute_signals()
     print(s["reco"].value_counts().to_string())
