@@ -64,6 +64,9 @@ H = {
     "d1gain": "Listing-day close vs issue (%).",
     "a90": "Anchor 90-day lock-in expiry — the worse supply window (−2.4% median drift into it).",
     "mcap": "Market cap (₹ cr, Screener).", "prom": "Promoter holding % (Screener).",
+    "thrust_count": "Number of volume-thrust DAYS since listing (each = a session with volume ≥5× its trailing 20-day average). 8 means it has printed eight such institutional-size volume days.",
+    "surv": "Exchange surveillance status. OFFICIAL = currently on NSE ASM/ESM/GSM list (price band capped at 2–5%, 100% margin, T2T settlement → liquidity dries; our 3-year study: −5.8% median in the 60 sessions after a stock gets band-locked, only 41% positive). RISK = our rule-based prediction that it may qualify soon (e.g. mainboard mcap <₹500cr rallying hard → ESM; ±90% in 3 months on SME → LT-ASM; +25% in 5 sessions → ST-ASM).",
+    "ath": "Closing within 2% of its lifetime high — an all-time-high breakout zone. No overhead supply above this price.",
 }
 
 
@@ -81,6 +84,9 @@ def load(_v=None):
     ladder = pd.read_csv(os.path.join(DATA, "rule_ladder.csv"))
     sc = pd.read_csv(os.path.join(DATA, "lm_scorecard.csv"))
     win = pd.read_csv(os.path.join(DATA, "winners.csv"))
+    svp = os.path.join(DATA, "surveillance.json")
+    if os.path.exists(svp):
+        stats["bandlock_study"] = json.load(open(svp)).get("bandlock_study", {})
     return sig, ana, panel, stats, ladder, sc, win
 
 
@@ -165,11 +171,16 @@ with T[0]:
                              "expiry": r[k], "cmp_vs_issue_pct": r["cmp_vs_issue_pct"]})
     fresh, setup = sig[sig["reco"] == "FRESH BUY"], sig[sig["reco"] == "BUY-SETUP"]
     exits = sig[(sig["reco"] == "EXIT") & (sig["dist_to_pivot_pct"].abs() <= 8)]
+    ath = sig[(sig["at_ath"] == True) & (sig["adv_cr"].fillna(0) >= 1)]  # noqa: E712
+    surv_now = sig[sig["surv_official"] != ""]
+    surv_risk = sig[(sig["surv_official"] == "") & ((sig["surv_band"] != "") | (sig["surv_risk"] != ""))]
     st.markdown(f"""<div class="insight"><b>Today's radar:</b>
     {len(fresh)} fresh buy{'s' if len(fresh)!=1 else ''} · {len(setup)} setups stalking the pivot ·
-    🔥 {len(thr)} volume thrusts in the last 5 sessions (the winners' footprint) ·
+    🔥 {len(thr)} volume thrusts in the last 5 sessions · 🚀 {len(ath)} at all-time highs ·
     ⏳ {len(upcoming)} anchor lock-ins expiring within 10 days ·
-    🚪 {len(exits)} names that just lost their pivot.</div>""", unsafe_allow_html=True)
+    🚪 {len(exits)} just lost their pivot ·
+    🚧 {len(surv_now)} under official surveillance (ASM/ESM/GSM), {len(surv_risk)} at risk of entering.</div>""",
+    unsafe_allow_html=True)
 
     if len(fresh) == 0 and len(setup) == 0:
         st.info("No fresh entries today — the edge is in the waiting. Check 🔥 thrusts below for early footprints.")
@@ -187,7 +198,7 @@ with T[0]:
             "score": st.column_config.NumberColumn("Score", help=H["score"]),
             "company": "Company", "board": "Board",
             "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
-            "thrust_count": st.column_config.NumberColumn("# thrusts", help=H["thrust"]),
+            "thrust_count": st.column_config.NumberColumn("# thrusts", help=H["thrust_count"]),
             "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
             "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%", help=H["vs_issue"]),
             "dist_to_pivot_pct": st.column_config.NumberColumn("To pivot %", format="%.1f%%", help=H["dist"]),
@@ -195,10 +206,50 @@ with T[0]:
             "ff_vol_pct": st.column_config.NumberColumn("Vol/Float %", format="%.2f%%", help=H["ff"]),
             **LINKCOLS})
 
+    st.markdown("##### 🚀 At all-time highs (within 2% of lifetime high)")
+    st.caption("No overhead supply — every holder is in profit. The healthiest tape a stock can show. Filtered to ADV ≥ ₹1cr.")
+    st.dataframe(ath.sort_values("score", ascending=False)[
+        ["reco", "score", "company", "board", "cmp", "cmp_vs_issue_pct", "days_listed",
+         "last_thrust_date", "adv_cr", "ff_vol_pct", "surv_official", "screener_url", "tradingview_url"]],
+        use_container_width=True, hide_index=True, height=300, column_config={
+            "reco": st.column_config.TextColumn("Reco", help=H["reco"]),
+            "score": st.column_config.NumberColumn("Score", help=H["score"]),
+            "company": "Company", "board": "Board",
+            "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
+            "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%", help=H["vs_issue"]),
+            "days_listed": "Sessions",
+            "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
+            "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
+            "ff_vol_pct": st.column_config.NumberColumn("Vol/Float %", format="%.2f%%", help=H["ff"]),
+            "surv_official": st.column_config.TextColumn("Surveillance", help=H["surv"]),
+            **LINKCOLS})
+
+    st.markdown("##### 🚧 Surveillance cage — official flags & at-risk names")
+    sv_study = stats.get("bandlock_study", {})
+    st.caption(f"ASM/ESM/GSM = price band capped (2–5%), 100% margin, trade-to-trade → liquidity dries. "
+               f"Our 3-year study of {sv_study.get('n_episodes','—')} band-lock episodes: median "
+               f"{sv_study.get('fwd60_median','—')}% over the next 60 sessions, only {sv_study.get('fwd60_win','—')}% positive, "
+               f"volume {sv_study.get('vol_change_median_pct','—')}% — do not buy into the cage; if holding, the first band-limit day is the tell.")
+    svt = pd.concat([surv_now, surv_risk]).copy()
+    svt["status"] = np.where(svt["surv_official"] != "", "🔴 " + svt["surv_official"],
+                             np.where(svt["surv_band"] != "", "🟠 band-locked " + svt["surv_band"], "🟡 at risk"))
+    st.dataframe(svt[["status", "reco", "company", "board", "cmp_vs_issue_pct", "mcap_cr",
+                      "surv_risk", "screener_url"]],
+                 use_container_width=True, hide_index=True, height=300, column_config={
+            "status": st.column_config.TextColumn("Status", help=H["surv"]),
+            "reco": "Reco", "company": "Company", "board": "Board",
+            "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%"),
+            "mcap_cr": st.column_config.NumberColumn("MCap ₹cr", format="%.0f", help=H["mcap"]),
+            "surv_risk": st.column_config.TextColumn("Why at risk", width="large", help=H["surv"]),
+            "screener_url": st.column_config.LinkColumn("Fundamentals", display_text="Screener ↗")})
+
     c1, c2 = st.columns(2)
     with c1:
         st.markdown("##### ⏳ Anchor lock-ins expiring ≤10 days")
-        st.caption("Median drift −2.4% into the 90-day expiry. No fresh entries into these windows.")
+        st.caption("What it means: anchor investors (institutions allotted shares before the IPO) become free to sell — "
+                   "50% of their shares unlock at 30 days, the rest at 90 days. It is a known-date supply event: "
+                   "median drift −2.4% into the 90-day expiry, only 38% positive after. No fresh entries into these windows; "
+                   "a breakout THROUGH an expiry on volume is extra-credible (supply absorbed).")
         if upcoming:
             st.dataframe(pd.DataFrame(upcoming), use_container_width=True, hide_index=True)
         else:
@@ -237,7 +288,7 @@ with T[1]:
                 "cmp_vs_issue_pct", "dist_to_pivot_pct", "base_low_pct", "qib_x", "adv_cr",
                 "ff_vol_pct", "mcap_cr", "last_thrust_date", "life_high_vs_issue_pct",
                 "max_dd_pct", "entry", "stop", "target", "rr", "lead_manager", "anchor_90d",
-                "screener_url", "tradingview_url"]],
+                "surv_official", "screener_url", "tradingview_url"]],
         use_container_width=True, hide_index=True, height=620, column_config={
             "reco": st.column_config.TextColumn("Reco", help=H["reco"]),
             "score": st.column_config.ProgressColumn("Score", min_value=0, max_value=100,
@@ -260,6 +311,7 @@ with T[1]:
             "rr": st.column_config.NumberColumn("R:R", format="%.1f", help=H["rr"]),
             "lead_manager": "Lead Manager",
             "anchor_90d": st.column_config.TextColumn("90d lock-in", help=H["a90"]),
+            "surv_official": st.column_config.TextColumn("Surveillance", help=H["surv"]),
             **LINKCOLS})
     st.download_button("⬇ Download filtered CSV", merged.to_csv(index=False), "ipo_radar_export.csv")
 
@@ -291,6 +343,12 @@ with T[2]:
         c6.metric("Vol/Float", f"{s['ff_vol_pct']:.2f}%" if pd.notna(s["ff_vol_pct"]) else "—",
                   f"promoter {s['promoter_pct']:.0f}%" if pd.notna(s["promoter_pct"]) else "", help=H["ff"])
 
+        if s["surv_official"]:
+            st.error(f"🚧 UNDER OFFICIAL SURVEILLANCE: {s['surv_official']} — daily price band capped, 100% margin, T2T settlement. Historically band-locked names lost 5.8% median over the next 60 sessions with volume down 20%. Not a fresh-entry candidate.")
+        elif s["surv_band"]:
+            st.warning(f"🚧 Price pinned to a {s['surv_band']} daily band over recent sessions — surveillance-cage behaviour.")
+        elif s["surv_risk"]:
+            st.warning(f"⚠ Surveillance risk: {s['surv_risk']}")
         p = panel[panel["isin"] == s["isin"]].sort_values("date")
         p = p[p["date"] >= pd.Timestamp(s["listing_date"])]
         best_exch = p.groupby("exch")["turnover"].median().idxmax()
@@ -474,5 +532,11 @@ Target-1 = +15% (historical median band), then trail · time-stop 60 sessions ·
 **Data:** NSE/BSE official bhavcopies (both format generations, units continuity-checked) ·
 Chittorgarh (issue, subscription, anchor lock-ins, lead managers) · Screener (market cap, promoter
 holding → free float). Everything refreshes every trading day via GitHub Actions.
+### Surveillance frameworks (the small-cap landmines)
+**ESM** — mainboard companies with **mcap < ₹500cr**: Stage 1 = 5% band + 100% margin; Stage 2 = **2% band** + T2T. Reviewed ~3-monthly.
+**ASM** — Long-Term (high-low variation, concentration, mcap-change criteria; SME: ±90% close-to-close in 3 months with PE conditions) and Short-Term (+25% in 5 sessions, 40%+ in 15 days, 1-month high-low >75%). Higher stages → 100% margin, T2T.
+**GSM** — price vs fundamentals mismatch (PE, book value, net worth); stages up to trade-once-a-week with surrender of buy premium.
+This platform shows the **official NSE flag daily**, plus **predicted risk** before inclusion, plus a **band-lock detector** (repeated ~2%/5% limit days). Empirically across our 3-year panel: after a stock gets band-locked, median −2.7% (20 sessions) and −5.8% (60 sessions), 41% win, volume −20%. Criteria summarised from exchange FAQs; exchanges revise them periodically — treat predictions as indicative, official flags as fact.
+
 *Research tool — not investment advice.*
 """)

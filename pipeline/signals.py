@@ -90,6 +90,8 @@ def compute_signals() -> pd.DataFrame:
                  if os.path.exists(sc_path) else pd.DataFrame())
     ff_path = os.path.join(DATA, "freefloat.json")
     ff = json.load(open(ff_path)) if os.path.exists(ff_path) else {}
+    sv_path = os.path.join(DATA, "surveillance.json")
+    surv = (json.load(open(sv_path)).get("flags", {}) if os.path.exists(sv_path) else {})
     last_date = pd.Timestamp(panel["date"].max())
     ref, Z, feats, mu, sd = _analog_table(df)
 
@@ -144,9 +146,14 @@ def compute_signals() -> pd.DataFrame:
                3 if (lm_sc is not None and lm_sc["lm_score"] >= 40) else 1
         s_mom = 5 if (not math.isnan(issue) and cmp_ > issue and above_ema20) else \
                 3 if ((not math.isnan(issue) and cmp_ > issue) or above_ema20) else 0
-        score = s_struct + s_base + s_liq + s_inst + s_lock + s_lm + s_mom
+        sv = surv.get(str(r["isin"])) or {}
+        sv_official, sv_band, sv_risks = sv.get("official"), sv.get("band_locked"), sv.get("risks") or []
+        s_surv = -15 if sv_official else (-8 if sv_band else 0)
+        score = max(0, s_struct + s_base + s_liq + s_inst + s_lock + s_lm + s_mom + s_surv)
 
         # ---------------- reco ----------------
+        if (sv_official or sv_band) and fresh:
+            fresh = False  # never issue a fresh entry into a surveillance cage
         if fresh and score >= 65:
             reco = "FRESH BUY"
         elif in_setup_zone and score >= 60:
@@ -199,6 +206,12 @@ def compute_signals() -> pd.DataFrame:
             R.append(f"🔥 Volume thrust (≥5× avg) within the last 5 sessions ({r.get('last_thrust_date')}) — the institutional footprint that preceded most historical winners")
         if expiry_soon:
             R.append(f"⚠ Anchor {expiry_soon[0]} lock-in expires {expiry_soon[1]} ({expiry_soon[2]}d) — historical median drift −2.4% into expiry; no fresh entries")
+        if sv_official:
+            R.append(f"🚧 UNDER SURVEILLANCE: {sv_official} — price band capped, 100% margin, liquidity dries (historical band-lock episodes: −5.8% median over next 60 sessions, 41% win)")
+        elif sv_band:
+            R.append(f"🚧 Trading pinned to a {sv_band} daily band — behaves like a surveillance cage even if not yet listed; volume typically dries −20%")
+        for x in sv_risks[:2]:
+            R.append(f"⚠ {x}")
         if lm_sc is not None:
             R.append(f"Lead manager {lm_name}: {lm_sc['pct_above_issue_today']:.0f}% of {int(lm_sc['issues'])} issues above issue today, LM score {lm_sc['lm_score']:.0f}/100")
         if days <= 40 and not math.isnan(pop):  # day-1 context only while it's still relevant
@@ -244,6 +257,9 @@ def compute_signals() -> pd.DataFrame:
             "anchor_30d": r.get("anchor_lockin_30d"), "anchor_90d": r.get("anchor_lockin_90d"),
             "screener_url": scr, "tradingview_url": tv,
             "ff_vol_pct": ff_vol_pct, "mcap_cr": mcap_cr, "promoter_pct": promoter_pct,
+            "surv_official": sv_official or "", "surv_band": sv_band or "",
+            "surv_risk": " | ".join(sv_risks),
+            "at_ath": bool(r["dd_from_life_high_pct"] >= -2 and days > 10),
             "first_thrust_date": r.get("first_thrust_date"),
             "last_thrust_date": r.get("last_thrust_date"),
             "thrust_count": r.get("thrust_count"),

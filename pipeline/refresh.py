@@ -305,6 +305,11 @@ def main():
         freefloat.run()          # uses previous signals.csv for priority
     except Exception as e:
         print("freefloat skipped:", e)
+    try:
+        import surveillance
+        surveillance.run()       # official ASM/ESM/GSM flags + risk rules + band-lock study
+    except Exception as e:
+        print("surveillance skipped:", e)
     import signals
     s = signals.compute_signals()
     print(s["reco"].value_counts().to_string())

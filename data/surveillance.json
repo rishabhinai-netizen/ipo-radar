@@ -1,0 +1,1376 @@
+{
+ "as_of": "2026-07-11",
+ "flags": {
+  "INE0ITO01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0O1S01012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PS501019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0LWY01029": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0BTR01012": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0P7201019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0LYO01018": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [
+    "1-month high-low variation 75% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0OSJ01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +114% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE09FA01019": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0ON201012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +138% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0OJZ01019": {
+   "official": null,
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE024001021": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0O3O01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0AE001013": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE0QBU01012": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE04T901017": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "ST-ASM trigger risk: +32% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE0PRF01011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0P6701019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 88% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0Q7P01013": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0OMO01025": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PSK01027": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE00C401011": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0NDX01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PW501021": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE0OLS01010": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0M7501019": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0OPS01011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0Q1S01010": {
+   "official": null,
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE0INJ01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PA601017": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 91% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE597Z01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0P4T01013": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE07U701015": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE00ER01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0QW501012": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PDJ01013": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0Q2Z01013": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0QSK01017": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0QD201012": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "ST-ASM trigger risk: +28% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE0QHG01026": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PZA01015": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PCY01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0RCG01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0O7401018": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0RDH01021": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0QEI01011": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "SME LT-ASM risk: +95% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE02H701025": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0JFJ01011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0J1F01024": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0RQZ01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0QJL01014": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE05DH01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE586O01011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0R8M01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE777F01014": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0R6C01012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SGC01015": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0Q6H01012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0RDE01010": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "ST-ASM trigger risk: +27% in 5 sessions (criterion: \u226525%)",
+    "1-month high-low variation 119% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0R9I01021": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0S2E01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0RJM01010": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE430U01019": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0SOY01013": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0MSS01019": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [
+    "1-month high-low variation 146% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0DEZ01013": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 76% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0K6601012": {
+   "official": "ASM Long-Term Stage II",
+   "band_locked": "5%",
+   "risks": [
+    "ST-ASM trigger risk: +26% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE0RJH01010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PC901019": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0Q9W01015": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "ST-ASM trigger risk: +45% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE0OAF01028": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SMA01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0QOQ01013": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0STN01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0R3T01013": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0QRV01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0S6S01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0S7E01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE916Y01027": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0OUW01013": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PQK01013": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0S9101013": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0PE401018": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE01IH01015": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0BHK01012": {
+   "official": null,
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE0PMR01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SUN01013": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0M3I01029": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0U9101019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0RPM01017": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0V9N01017": {
+   "official": "ESM Stage II",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +107% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0QXL01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0U1T01012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SYV01018": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE06IJ01010": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "SME LT-ASM risk: +108% in 3 months (criterion: \u2265\u00b190%, indicative)",
+    "1-month high-low variation 76% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0LXG01040": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0OXY01013": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +91% in 3 months (criterion: \u2265\u00b190%, indicative)",
+    "1-month high-low variation 75% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0YAL01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 129% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0S3H01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0U2N01013": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0U0201016": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0U2501017": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": [
+    "ST-ASM trigger risk: +32% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE0SK201011": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0SMY01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE06HJ01020": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0RXB01022": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE08NZ01012": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE01YQ01013": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0S1D01010": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE0Y4801011": {
+   "official": "ESM Stage II",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +114% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0SQH01013": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "SME LT-ASM risk: +168% in 3 months (criterion: \u2265\u00b190%, indicative)",
+    "1-month high-low variation 99% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0OO201011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0JQS01019": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SHE01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0QYI01019": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": [
+    "SME LT-ASM risk: +164% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0RBQ01018": {
+   "official": "ESM Stage II",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0VZS01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SFW01015": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SMR01011": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": [
+    "SME LT-ASM risk: +144% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0YHV01011": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +110% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0R0201012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +91% in 3 months (criterion: \u2265\u00b190%, indicative)",
+    "1-month high-low variation 89% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0T4V01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +108% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0TVT01024": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0P5R01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE00GK01023": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +110% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0TD101011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0M4D01010": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 103% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0LRY01011": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0XRN01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0NB801022": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0R9101015": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0XUS01012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE10A501018": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0TD301017": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "ST-ASM trigger risk: +31% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE17WC01013": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0NA501011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 214% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE12E301017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0DM401012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0V0Q01019": {
+   "official": "ESM Stage II",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0Z7N01017": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": [
+    "SME LT-ASM risk: +141% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE1AII01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0TTG01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0AOG01018": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0YSH01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0T8T01010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +94% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0X3M01010": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "SME LT-ASM risk: +146% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0TG901011": {
+   "official": null,
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE104101014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1ARD01016": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1DV401010": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0XCV01014": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE17GV01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE124101010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE11HF01010": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0V3U01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0ZDY01011": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0SGZ01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0XM301010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE11J101017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0TLP01015": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE14GK01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PTF01017": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 122% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE18JU01028": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE15WN01014": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 81% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE06WU01026": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE819V01029": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0WL201014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0ZRC01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 93% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE1H7V01011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1M3T01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE00RL01028": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0VG001016": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0MHO01029": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE632Q01018": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE17VO01028": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0PKD01011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0YDV01010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0UQ601012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE12P601017": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE1OIC01018": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0ZN101029": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +109% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE084K01015": {
+   "official": "ESM Stage II",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1DM601016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +118% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0XWS01018": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "ST-ASM trigger risk: +25% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE1DRH01011": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [
+    "ST-ASM trigger risk: +27% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE0Y5H01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0SJA01013": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0Z4F01028": {
+   "official": "ASM Long-Term Stage II",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0CQA01020": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "ST-ASM trigger risk: +28% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE0VBS01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE15XJ01010": {
+   "official": null,
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE0MLS01022": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1CCX01012": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE1IIQ01028": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 77% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE1FF001016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0U4H01011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0TQE01026": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0WL901019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0R8Q01018": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [
+    "1-month high-low variation 79% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE1BZC01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9323cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
+  "INE1B3501014": {
+   "official": null,
+   "band_locked": "2%",
+   "risks": []
+  },
+  "INE0YJV01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1K8Y01018": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE10CM01027": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 93% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0PLX01017": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "1-month high-low variation 106% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE13YH01017": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +99% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE1FL101016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE12UR01024": {
+   "official": "ASM Long-Term Stage II",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1E4401010": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "ST-ASM trigger risk: +38% in 5 sessions (criterion: \u226525%)"
+   ]
+  },
+  "INE1CW901027": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0XJ501010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE21UM01018": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE14UN01029": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE947N01017": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1V4601019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1A6Q01010": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE987S01020": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0TD401015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0CTB01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1CRP01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1KEC01023": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": [
+    "SME LT-ASM risk: +126% in 3 months (criterion: \u2265\u00b190%, indicative)",
+    "1-month high-low variation 106% (ST-ASM secondary criterion \u226575%)"
+   ]
+  },
+  "INE0YJA01011": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE2HJL01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1CEJ01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0F8901022": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1KU201016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0WKY01013": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +160% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0S1B01014": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +99% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0TZX01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE12UN01015": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1MTV01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0JVH01012": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0XUD01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1TY801010": {
+   "official": "ESM Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0P8B01020": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1YNB01019": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0UH301010": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0U0J01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1OOJ01011": {
+   "official": "ESM Stage II",
+   "band_locked": "2%",
+   "risks": [
+    "SME LT-ASM risk: +98% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE1U6D01014": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +106% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE05TO01019": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE24H301028": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +103% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ]
+  },
+  "INE0V2V01015": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0T1501010": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE2OL601013": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE0JUI01012": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": []
+  },
+  "INE1V1R01014": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0TKX01011": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE0V9I01017": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  },
+  "INE1O7201010": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": []
+  }
+ },
+ "bandlock_study": {
+  "n_episodes": 2436,
+  "n_stocks": 491,
+  "fwd20_median": -2.7,
+  "fwd20_win": 43,
+  "fwd60_median": -5.8,
+  "fwd60_win": 41,
+  "vol_change_median_pct": -19.9
+ }
+}
