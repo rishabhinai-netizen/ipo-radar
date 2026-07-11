@@ -6,7 +6,7 @@
 - NSE + BSE bhavcopies for every missing trading date since UNIVERSE_START,
   handling BOTH generations of file formats:
     NSE new (UDIFF, ≥ 2024-07-08): BhavCopy_NSE_CM_0_0_0_YYYYMMDD_F_0000.csv.zip
-    NSE old (< 2024-07-08):        cmDDMONYYYYbhav.csv.zip  (TOTTRDVAL already ₹)
+    NSE old (< 2024-07-08):        cmDDMONYYYYbhav.csv.zip  (TOTTRDVAL in ₹ lakh)
     BSE new:                        BhavCopy_BSE_CM_0_0_0_YYYYMMDD_F_0000.CSV
     BSE old fallback:               EQ_ISINCODE_DDMMYY.zip   (NET_TURNOV in ₹)
   All turnover normalised to ₹ (rupees). Volume in shares.
@@ -177,7 +177,7 @@ def _parse_nse_old(raw, date):
         "exch": "NSE", "date": date.isoformat(), "isin": df["ISIN"], "symbol": df["SYMBOL"],
         "series": df["SERIES"], "open": df["OPEN"], "high": df["HIGH"], "low": df["LOW"],
         "close": df["CLOSE"], "volume": df["TOTTRDQTY"],
-        "turnover": df["TOTTRDVAL"],  # already in ₹ (verified by continuity QC)
+        "turnover": df["TOTTRDVAL"] * 1e5,  # ₹ lakh → ₹
         "trades": df["TOTALTRADES"]})
 
 
@@ -240,17 +240,9 @@ def fetch_day(date):
 def refresh_bhavcopy(master):
     path = os.path.join(DATA, "prices_panel.parquet")
     isins = {m["isin"] for m in master if m.get("isin")}
-    full_rebuild = os.environ.get("FULL_REBUILD") == "1"
-    if os.path.exists(path) and not full_rebuild:
+    if os.path.exists(path):
         panel = pd.read_parquet(path)
         have = set(pd.to_datetime(panel["date"]).dt.date.unique())
-        # coverage guard: if any isin's last bar lags the panel's last date by
-        # >10 sessions while the stock is in the universe, force a full rebuild
-        last = panel.groupby("isin")["date"].max()
-        lagging = (pd.Timestamp(panel["date"].max()) - last).dt.days > 20
-        if lagging.mean() > 0.15:
-            print(f"⚠ coverage guard: {int(lagging.sum())} isins stale — forcing full rebuild")
-            panel = pd.DataFrame(columns=PANEL_COLS); have = set()
     else:
         panel = pd.DataFrame(columns=PANEL_COLS)
         have = set()
@@ -301,9 +293,14 @@ def main():
     analytics.run()
     import study
     study.run()
+    try:
+        import freefloat
+        freefloat.run()          # uses previous signals.csv for priority
+    except Exception as e:
+        print("freefloat skipped:", e)
     import signals
     s = signals.compute_signals()
-    print(s["state"].value_counts().to_string())
+    print(s["reco"].value_counts().to_string())
 
 
 if __name__ == "__main__":

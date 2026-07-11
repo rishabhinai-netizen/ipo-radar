@@ -75,8 +75,13 @@ H = {
     "tv": "Open the live chart on TradingView.",
 }
 
-@st.cache_data(ttl=1800)
-def load():
+def _data_version():
+    return max(os.path.getmtime(os.path.join(DATA, f))
+               for f in os.listdir(DATA) if f.endswith((".csv", ".json", ".parquet")))
+
+
+@st.cache_data(ttl=900)
+def load(_v=None):
     sig = pd.read_csv(os.path.join(DATA, "signals.csv"))
     ana = pd.read_csv(os.path.join(DATA, "ipo_analytics.csv"))
     panel = pd.read_parquet(os.path.join(DATA, "prices_panel.parquet"))
@@ -88,24 +93,25 @@ def load():
            if os.path.exists(os.path.join(DATA, "winners.csv")) else pd.DataFrame())
     return sig, ana, panel, stats, ladder, sc, win
 
-sig, ana, panel, stats, ladder, scorecard, winners = load()
+sig, ana, panel, stats, ladder, scorecard, winners = load(_data_version())
 last_date = pd.Timestamp(panel["date"].max()).date()
 
 st.markdown(f"""
 <div class="hero"><h1>🎯 IPO Radar</h1>
 <p>Every NSE + BSE IPO (mainboard + SME) listed since <b>{stats.get('universe_start','2023-07-01')}</b> ·
-{stats.get('n_ipos', len(sig))} tracked ({stats.get('n_mainboard','?')} mainboard, {stats.get('n_sme','?')} SME) ·
+{len(sig)} tracked ({int((sig['board']=='Mainboard').sum())} mainboard, {int((sig['board']=='SME').sum())} SME) ·
 prices to <b>{last_date}</b> · auto-refreshes every trading day · strategy: <b>Pivot Reclaim</b></p></div>
 """, unsafe_allow_html=True)
 
-n = sig["state"].value_counts()
+n = sig["reco"].value_counts()
 st.markdown(f"""
 <div class="metricrow">
-<div class="m"><b style="color:#16a34a">{n.get('TRIGGER',0)}</b><span>TRIGGER — enter now</span></div>
-<div class="m"><b style="color:#f59e0b">{n.get('SETUP',0)}</b><span>SETUP — basing near pivot</span></div>
-<div class="m"><b style="color:#0ea5e9">{n.get('RIDE',0)}</b><span>RIDE — above pivot</span></div>
-<div class="m"><b style="color:#dc2626">{n.get('AVOID',0)}</b><span>AVOID — failed / broken</span></div>
-<div class="m"><b style="color:#6b7280">{n.get('NEUTRAL',0)}</b><span>NEUTRAL — waiting</span></div>
+<div class="m"><b style="color:#16a34a">{n.get('FRESH BUY',0)}</b><span>FRESH BUY — enter now</span></div>
+<div class="m"><b style="color:#f59e0b">{n.get('BUY-SETUP',0)}</b><span>BUY-SETUP — near pivot</span></div>
+<div class="m"><b style="color:#0ea5e9">{n.get('RIDE',0)}</b><span>RIDE — trend intact</span></div>
+<div class="m"><b style="color:#8b5cf6">{n.get('EXIT',0)}</b><span>EXIT — lost pivot & 20-EMA</span></div>
+<div class="m"><b style="color:#dc2626">{n.get('AVOID',0)}</b><span>AVOID — no edge</span></div>
+<div class="m"><b style="color:#6b7280">{n.get('WATCH',0)}</b><span>WATCH — waiting</span></div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -115,15 +121,18 @@ T = st.tabs(["🚨 Signals", "⭐ Watchlist", "🧾 Stock Dossier", "🔍 Explor
 # ---------------------------------------------------------------- 1 signals
 with T[0]:
     q = st.text_input("🔎 Search any stock", key="s1", placeholder="Type a company or symbol…")
-    act = sig[sig["state"].isin(["TRIGGER", "SETUP", "RIDE"])].copy()
-    if q:
-        act = act[act["company"].str.contains(q, case=False, na=False) |
-                  act["symbol"].astype(str).str.contains(q, case=False, na=False)]
-    show = act[["state", "company", "board", "symbol", "listing_date", "cmp", "pivot",
+    if q:  # search runs across ALL states so any stock is findable
+        act = sig[sig["company"].str.contains(q, case=False, na=False) |
+                  sig["symbol"].astype(str).str.contains(q, case=False, na=False)].copy()
+    else:
+        act = sig[sig["reco"].isin(["FRESH BUY", "BUY-SETUP", "RIDE"])].copy()
+    show = act[["reco", "score", "company", "board", "symbol", "listing_date", "cmp", "pivot",
                 "dist_to_pivot_pct", "qib_x", "adv_cr", "days_listed", "entry", "stop",
                 "stop_basis", "target", "rr", "screener_url", "tradingview_url"]]
     st.dataframe(show, use_container_width=True, hide_index=True, height=540, column_config={
-        "state": st.column_config.TextColumn("Signal", help=H["state"], width="small"),
+        "reco": st.column_config.TextColumn("Reco", help=H["state"], width="small"),
+        "score": st.column_config.ProgressColumn("Score", min_value=0, max_value=100, format="%d",
+            help="0-100 composite: structure 35, base 20, liquidity 15, institutions 15, lock-in 5, LM 5, momentum 5. Weights set by the walk-forward backtest."),
         "company": st.column_config.TextColumn("Company", width="medium"),
         "board": st.column_config.TextColumn("Board", help="Mainboard or SME platform"),
         "symbol": "Symbol",
@@ -146,8 +155,8 @@ with T[0]:
 
 # ---------------------------------------------------------------- 2 watchlist
 with T[1]:
-    focus = sig[sig["state"].isin(["TRIGGER", "SETUP"])]
-    ride = sig[sig["state"] == "RIDE"].nlargest(6, "score")
+    focus = sig[sig["reco"].isin(["FRESH BUY", "BUY-SETUP"])]
+    ride = sig[sig["reco"] == "RIDE"].nlargest(6, "score")
     if focus.empty and ride.empty:
         st.info("No actionable names right now — refreshes daily after market close.")
     for _, r in pd.concat([focus, ride]).iterrows():
@@ -165,12 +174,17 @@ with T[1]:
             links += f'<a class="lnk f" href="{r["screener_url"]}" target="_blank">📊 Fundamentals — Screener</a>'
         if isinstance(r["tradingview_url"], str) and r["tradingview_url"]:
             links += f'<a class="lnk t" href="{r["tradingview_url"]}" target="_blank">📈 Chart — TradingView</a>'
+        analog_html = ""
+        if isinstance(r.get("analogs"), str) and r["analogs"]:
+            items = "".join(f"<li>{x.strip()}</li>" for x in r["analogs"].split("|"))
+            analog_html = f'<div style="margin-top:8px;font-size:.82rem"><b>🧬 Closest historical analogs</b> <span style="color:#6b7280">(pattern recognition, not prophecy)</span><ul>{items}</ul></div>'
         st.markdown(f"""
         <div class="card">
-          <span class="badge b-{r['state']}">{r['state']}</span>
+          <span class="badge b-{r['state']}">{r['reco']}</span>
+          <span style="margin-left:8px;font-weight:700;color:#334155">Score {int(r['score'])}/100</span>
           <h3>{r['company']} <span style="font-weight:400;color:#6b7280">({r['symbol']} · {r['board']})</span></h3>
           <div class="sub">Listed {r['listing_date']} · {int(r['days_listed'])} sessions · CMP ₹{r['cmp']:,.2f} · pivot ₹{r['pivot']:,.2f}</div>
-          <ul>{reasons}</ul>{plan}{links}
+          <ul>{reasons}</ul>{plan}{analog_html}{links}
         </div>""", unsafe_allow_html=True)
 
 # ---------------------------------------------------------------- 3 dossier
@@ -186,7 +200,8 @@ with T[2]:
             links += f'<a class="lnk f" href="{s["screener_url"]}" target="_blank">📊 Fundamentals — Screener</a>'
         if isinstance(s["tradingview_url"], str) and s["tradingview_url"]:
             links += f'<a class="lnk t" href="{s["tradingview_url"]}" target="_blank">📈 Chart — TradingView</a>'
-        st.markdown(f"""<div class="card"><span class="badge b-{s['state']}">{s['state']}</span>
+        st.markdown(f"""<div class="card"><span class="badge b-{s['state']}">{s['reco']}</span>
+          <span style="margin-left:8px;font-weight:700;color:#334155">Score {int(s['score'])}/100</span>
           <h3>{pick} <span style="font-weight:400;color:#6b7280">({s['symbol']} · {s['board']} · {s['exchange']})</span></h3>
           <div class="sub">Listed {s['listing_date']} · lead manager: {s['lead_manager'] or '—'}</div>{links}</div>""",
           unsafe_allow_html=True)
@@ -248,6 +263,10 @@ with T[2]:
             st.markdown("\n".join(f"- ⛔ {b}" for b in bear) or "- (no red flags in our data)")
             if pd.notna(s["entry"]):
                 st.markdown(f"**If entering:** buy a daily close above ₹{s['entry']:,.2f}, stop ₹{s['stop']:,.2f} ({s['stop_basis']}), target-1 ₹{s['target']:,.2f} then trail. Risk 1–2% of capital.")
+            if isinstance(s.get("analogs"), str) and s["analogs"]:
+                st.markdown("**🧬 Closest historical analogs:**")
+                for x in s["analogs"].split("|"):
+                    st.markdown(f"- {x.strip()}")
             st.caption("Fundamental triggers (results, news, shareholding) → use the Screener link above; this platform covers price, volume, flow and structure.")
 
 # ---------------------------------------------------------------- 4 explorer
@@ -349,7 +368,32 @@ with T[5]:
             "median_adv_cr": st.column_config.NumberColumn("Med. ADV ₹cr", format="%.2f", help=H["adv"]),
             "lm_score": st.column_config.ProgressColumn("LM Score", min_value=0, max_value=100, format="%.0f", help=H["lm_score"]),
         })
-    st.caption("Volume-vs-free-float and fundamental news triggers need shareholding data — on the roadmap via Screener integration; use the per-stock Screener links meanwhile.")
+    st.divider()
+    st.markdown("##### 🔎 Drill into a lead manager — every issue it brought to market")
+    if len(scorecard):
+        lm_pick = st.selectbox("Lead manager", scorecard["lead_manager"].tolist(), index=None,
+                               placeholder="Select or type a lead manager…")
+        if lm_pick:
+            issues = sig[sig["lead_manager"] == lm_pick].merge(
+                ana[["company", "life_high_vs_issue_pct", "max_dd_pct", "d1_close_vs_issue_pct"]],
+                on="company", how="left")
+            st.dataframe(
+                issues[["reco", "score", "company", "board", "listing_date", "cmp",
+                        "cmp_vs_issue_pct", "d1_close_vs_issue_pct", "life_high_vs_issue_pct",
+                        "max_dd_pct", "qib_x", "adv_cr", "screener_url", "tradingview_url"]],
+                use_container_width=True, hide_index=True, column_config={
+                    "reco": "Reco", "score": "Score", "company": "Company", "board": "Board",
+                    "listing_date": "Listed",
+                    "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
+                    "cmp_vs_issue_pct": st.column_config.NumberColumn("Now vs issue %", format="%.1f%%", help=H["vs_issue"]),
+                    "d1_close_vs_issue_pct": st.column_config.NumberColumn("D1 gain %", format="%.1f%%", help=H["d1gain"]),
+                    "life_high_vs_issue_pct": st.column_config.NumberColumn("Peak vs issue %", format="%.1f%%", help=H["peak"]),
+                    "max_dd_pct": st.column_config.NumberColumn("Max DD %", format="%.1f%%", help=H["maxdd"]),
+                    "qib_x": st.column_config.NumberColumn("QIB x", format="%.1f", help=H["qib"]),
+                    "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
+                    "screener_url": st.column_config.LinkColumn("Fundamentals", display_text="Screener ↗"),
+                    "tradingview_url": st.column_config.LinkColumn("Chart", display_text="TV ↗"),
+                })
 
 # ---------------------------------------------------------------- 7 study
 with T[6]:
