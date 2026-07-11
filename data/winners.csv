@@ -1,39 +1,39 @@
 company,board,symbol,isin,listing_date,issue_price,cmp,now_vs_issue_pct,peak_vs_issue_pct,days_to_peak,max_dd_pct,qib_x,sub_x,d1_gain_pct,breakout_day,base30_low_pct,first_vol_spike_day,ret60_after_vol_spike_pct,green_weeks_pct,pattern
-Anondita Medicare Ltd.,SME,ANONDITA,INE0VTV01012,2025-09-01,145.0,1160.6,700.41,807.59,164,-36.39,153.03,210.36,99.48,1,5.0,79.0,8.3,57,Pivot Reclaim (textbook) · volume-thrust
-Cryogenic OGS Ltd.,SME,CRYOGENIC,INE0TL001013,2025-07-10,47.0,283.1,502.34,559.57,243,-30.51,209.59,486.12,99.49,1,4.99,38.0,28.1,54,Pivot Reclaim (textbook) · volume-thrust
-Aditya Infotech Ltd.,Mainboard,CPPLUS,INE819V01029,2025-08-05,675.0,3662.4,442.58,461.04,219,-20.37,140.5,58.82,60.39,2,-5.23,63.0,1.4,56,Pivot Reclaim (textbook) · steady compounder · volume-thrust
-Zelio E-Mobility Ltd.,SME,ZELIO,INE1B3501014,2025-10-08,136.0,605.1,344.93,351.32,180,-60.4,1.61,1.37,19.56,1,4.98,65.0,17.4,59,Pivot Reclaim (textbook) · volume-thrust
-Exato Technologies Ltd.,SME,EXATO,INE1E4401010,2025-12-05,140.0,515.45,268.18,269.93,143,-31.65,327.08,656.94,99.5,1,4.99,44.0,13.1,52,Pivot Reclaim (textbook) · volume-thrust
-Apsis Aerocom Ltd.,SME,APSISAERO,INE1OOJ01011,2026-03-18,110.0,364.0,230.91,231.14,72,-17.09,99.96,91.24,46.05,1,-3.11,59.0,,69,Pivot Reclaim (textbook) · steady compounder · volume-thrust
-SK Minerals & Additives Ltd.,SME,SKM,INE13YH01017,2025-10-17,127.0,411.6,224.09,229.92,143,-42.48,1.01,2.76,19.88,1,-17.93,63.0,100.4,61,"Early breakout, deep base · volume-thrust"
-L.T.Elevator Ltd.,SME,LTELEVATOR,INE0TJ801010,2025-09-19,78.0,250.05,220.58,252.56,186,-36.34,95.1,128.39,83.21,1,-12.3,35.0,15.7,55,Pivot Reclaim (textbook) · volume-thrust
-Aptus Pharma Ltd.,SME,APPL,INE15XJ01010,2025-09-30,70.0,224.0,220.0,538.29,131,-60.34,1.24,16.28,21.2,4,-4.64,56.0,126.3,62,Pivot Reclaim (textbook) · volume-thrust
-Rubicon Research Ltd.,Mainboard,RUBICON,INE506V01022,2025-10-16,485.0,1431.4,195.13,202.82,167,-17.1,137.09,60.38,29.53,11,-9.15,74.0,22.9,63,Pivot Reclaim (textbook) · steady compounder · volume-thrust
-INDO SMC Ltd.,SME,INDOSMC,INE0WKY01013,2026-01-21,149.0,421.75,183.05,196.64,110,-23.25,94.94,77.38,3.89,9,-13.44,43.0,141.6,62,Pivot Reclaim (textbook) · steady compounder · volume-thrust
-TechD Cybersecurity Ltd.,SME,TECHD,INE0Y5H01014,2025-09-22,193.0,546.2,183.01,337.1,29,-55.14,284.17,498.91,99.48,1,5.0,63.0,-22.4,37,Pivot Reclaim (textbook) · volume-thrust
-EPW India Ltd.,SME,EPWINDIA,INE1KEC01023,2025-12-30,97.0,264.65,172.84,190.72,106,-16.91,1.17,1.21,20.15,1,-15.92,67.0,,56,"Early breakout, deep base · steady compounder · volume-thrust"
-Shree Refrigerations Ltd.,SME,SHREEREF,INE0FMZ01045,2025-08-01,125.0,338.85,171.08,224.96,221,-42.45,167.32,134.24,40.32,7,-12.77,70.0,-10.2,57,Pivot Reclaim (textbook) · volume-thrust
-GNG Electronics Ltd.,Mainboard,EBGNG,INE18JU01028,2025-07-30,237.0,633.85,167.45,190.93,225,-37.93,266.21,107.66,40.67,17,-10.02,129.0,33.9,51,Pivot Reclaim (textbook) · volume-thrust
-HRS Aluglaze Ltd.,SME,HRS,INE1E1V01017,2025-12-18,96.0,246.0,156.25,204.79,66,-28.82,19.48,35.49,37.81,1,3.97,123.0,,66,Pivot Reclaim (textbook) · steady compounder · volume-thrust
-Sawaliya Foods Products Ltd.,SME,SAWALIYA,INE10VS01016,2025-08-14,120.0,301.6,151.33,192.5,141,-20.33,15.83,9.6,99.5,1,-8.08,59.0,34.5,38,Pivot Reclaim (textbook) · volume-thrust
-ANB Metal Cast Ltd.,SME,AMCL,INE0VG001016,2025-08-18,156.0,388.5,149.04,255.13,174,-31.96,1.04,1.7,10.38,1,-6.1,28.0,43.1,57,Pivot Reclaim (textbook) · volume-thrust
-Infinity Infoway Ltd.,SME,INFINITY,INE16XA01017,2025-10-08,155.0,380.35,145.39,212.16,10,-31.11,157.14,201.16,99.48,1,-4.92,58.0,-9.7,51,Pivot Reclaim (textbook) · volume-thrust
-Parth Electricals & Engineering Ltd.,SME,PARTH,INE1H7V01011,2025-08-11,170.0,412.35,142.56,184.71,193,-30.78,17.65,17.08,7.47,1,4.98,,,64,Pivot Reclaim (textbook)
-Nanta Tech Ltd.,SME,NANTA,INE0YJA01011,2025-12-31,220.0,533.5,142.5,196.09,114,-24.73,12.98,5.08,11.68,1,1.75,58.0,106.8,52,Pivot Reclaim (textbook) · volume-thrust
-Omnitech Engineering Ltd.,Mainboard,OMNI,INE0UH301010,2026-03-05,227.0,523.25,130.51,159.96,77,-13.97,3.0,1.18,-9.72,9,-14.0,55.0,,72,Pivot Reclaim (textbook) · steady compounder · volume-thrust
-Atlanta Electricals Ltd.,Mainboard,ATLANTAELE,INE0Z4F01028,2025-09-29,754.0,1695.4,124.85,185.49,165,-32.74,194.77,50.62,9.2,2,-5.01,75.0,64.5,55,Pivot Reclaim (textbook) · volume-thrust
-Encompass Design India Ltd.,SME,ENCOMPAS,INE433T01015,2025-12-12,107.0,238.0,122.43,183.08,78,-26.73,1.25,1.86,80.51,6,-13.36,63.0,-2.7,53,Pivot Reclaim (textbook) · volume-thrust
-KSH International Ltd.,Mainboard,KSHINTL,INE987S01020,2025-12-23,384.0,849.35,121.18,136.69,115,-14.61,1.12,0.98,-7.55,7,-6.93,51.0,108.8,75,Pivot Reclaim (textbook) · steady compounder · volume-thrust
-Shreeji Shipping Global Ltd.,Mainboard,SHREEJISPG,INE1B6101010,2025-08-26,252.0,551.75,118.95,119.72,213,-22.43,110.41,40.85,1.23,52,-12.98,44.0,17.2,60,Late-bloomer breakout · steady compounder · volume-thrust
-Airfloa Rail Technology Ltd.,SME,AIRFLOA,INE0XBS01012,2025-09-18,140.0,304.05,117.18,208.54,21,-41.16,214.65,210.19,99.5,1,4.99,,,43,Pivot Reclaim (textbook)
-Avana Electrosystems Ltd.,SME,AVANA,INE1KU201016,2026-01-20,59.0,127.5,116.1,169.49,81,-24.84,54.97,92.76,36.1,51,-20.36,52.0,,58,Late-bloomer breakout · steady compounder · volume-thrust
-Taurian MPS Ltd.,SME,TAURIAN,INE0XWS01018,2025-09-16,171.0,368.85,115.7,148.54,13,-52.05,15.89,8.48,28.95,1,4.99,42.0,-28.8,57,Pivot Reclaim (textbook) · volume-thrust
-Vivid Electromech Ltd.,SME,VIVIDEL,INE24H301028,2026-04-07,555.0,1183.2,113.19,157.48,54,-17.02,1.95,1.06,1.45,2,-0.72,,,69,Pivot Reclaim (textbook) · steady compounder
-Flysbs Aviation Ltd.,SME,FLYSBS,INE0VCK01011,2025-08-08,225.0,466.8,107.47,251.11,11,-48.89,,222.62,99.49,1,4.99,106.0,0.2,40,Pivot Reclaim (textbook) · volume-thrust
-Vijaypd Ceutical Ltd.,SME,VIJAYPD,INE0WL901019,2025-10-07,35.0,70.65,101.86,227.14,125,-35.93,,1.37,2.57,1,-1.11,69.0,78.6,38,Pivot Reclaim (textbook) · volume-thrust
-Grover Jewells Ltd.,SME,GJL,INE1TY801010,2026-02-11,88.0,166.75,89.49,214.15,25,-59.52,11.32,13.73,14.55,1,4.07,65.0,,48,Pivot Reclaim (textbook) · volume-thrust
-Jay Ambe Supermarkets Ltd.,SME,CITYSQUARE,INE1DRH01011,2025-09-17,78.0,146.45,87.76,184.87,72,-53.08,16.79,45.15,6.35,1,-4.99,46.0,8.2,38,Pivot Reclaim (textbook) · volume-thrust
-Speciality Medicines Ltd.,SME,SPML,INE0R0M01014,2026-03-30,124.0,183.5,47.98,207.42,19,-50.42,96.24,1.35,1.53,4,-3.81,39.0,,43,Pivot Reclaim (textbook) · volume-thrust
-Exim Routes Ltd.,SME,EXIMROUTES,INE19I001020,2025-12-19,88.0,110.0,25.0,220.34,14,-62.8,19.11,10.83,31.25,1,-4.98,38.0,-32.2,34,Pivot Reclaim (textbook) · volume-thrust
-Adcounty Media India Ltd.,SME,ADCOUNTY,INE0W1601012,2025-07-04,85.0,97.15,14.29,231.76,55,-64.68,137.33,190.36,60.59,1,-17.22,25.0,36.8,34,"Early breakout, deep base · volume-thrust"
-Sodhani Capital Ltd.,SME,SODHACAP,INE0QU501030,2025-10-07,51.0,54.51,6.88,192.1,11,-64.82,,4.74,64.71,1,3.57,105.0,,36,Pivot Reclaim (textbook) · volume-thrust
+Oriana Power Ltd.,SME,ORIANA,INE0OUT01019,2023-08-11,118.0,2186.5,1752.97,2428.81,204,-64.5,72.16,122.08,168.73,7.0,-14.25,237,0.3,53,Pivot Reclaim (textbook) · volume-thrust
+Trident Techlabs Ltd.,SME,TECHLABS,INE0QD201012,2023-12-29,35.0,543.55,1453.0,4671.43,252,-69.76,,537.61,194.43,1.0,-4.9,80,148.7,57,Pivot Reclaim (textbook) · volume-thrust
+AMIC Forging Ltd.,SME,544037,INE0P9J01013,2023-12-06,126.0,1606.8,1175.24,1336.07,177,-46.16,91.43,200.7,99.48,1.0,4.99,99,95.8,54,Pivot Reclaim (textbook) · volume-thrust
+Australian Premium Solar (India) Ltd.,SME,APS,INE0P0001010,2024-01-18,54.0,565.45,947.13,1140.56,111,-44.48,107.02,320.88,172.22,1.0,5.0,62,76.8,51,Pivot Reclaim (textbook) · volume-thrust
+TAC Infosec Ltd.,SME,TAC,INE0SOY01013,2024-04-05,106.0,1051.05,891.56,1500.94,199,-45.69,141.29,291.81,187.26,8.0,-14.25,185,-7.0,49,Pivot Reclaim (textbook) · volume-thrust
+Alpex Solar Ltd.,SME,ALPEXSOLAR,INE0R4701017,2024-02-15,115.0,1131.5,883.91,911.3,336,-52.55,141.48,223.56,200.39,1.0,-31.97,164,-20.4,61,"Early breakout, deep base · volume-thrust"
+Karnika Industries Ltd.,SME,KARNIKA,INE0MGA01012,2023-10-12,76.0,653.7,760.13,840.66,387,-48.01,,3.04,8.68,16.0,-9.2,81,118.4,51,Pivot Reclaim (textbook) · volume-thrust
+Afcom Holdings Ltd.,SME,AFCOM,INE0OXY01013,2024-08-09,108.0,880.05,714.86,1074.95,112,-49.35,186.23,214.12,99.49,1.0,0.05,12,36.5,53,Pivot Reclaim (textbook) · volume-thrust
+Anondita Medicare Ltd.,SME,ANONDITA,INE0VTV01012,2025-09-01,145.0,1160.6,700.41,807.59,164,-36.39,153.03,210.36,99.48,1.0,5.0,79,8.3,62,Pivot Reclaim (textbook) · volume-thrust
+Vinyas Innovative Technologies Ltd.,SME,VINYAS,INE0OLS01010,2023-10-06,165.0,1295.35,685.06,774.24,178,-55.99,42.74,30.44,110.0,1.0,1.75,45,3.9,47,Pivot Reclaim (textbook) · volume-thrust
+Sodhani Academy of Fintech Enablers Ltd.,SME,SAFE,INE0Q3401017,2024-09-23,40.0,282.0,605.0,634.62,158,-11.58,,437.63,39.12,1.0,2.08,60,45.4,62,Pivot Reclaim (textbook) · steady compounder · volume-thrust
+Owais Metal & Mineral Processing Ltd.,SME,OWAIS,INE0R8M01017,2024-03-04,87.0,574.5,560.34,1703.45,73,-69.94,92.06,158.8,201.72,1.0,-11.87,72,-10.7,51,Pivot Reclaim (textbook) · volume-thrust
+Kay Cee Energy & Infra Ltd.,SME,KCEIL,INE0RCG01017,2024-01-05,54.0,343.8,536.67,686.11,122,-59.92,127.71,738.96,343.33,13.0,-14.24,119,-28.6,51,Pivot Reclaim (textbook) · volume-thrust
+Cryogenic OGS Ltd.,SME,CRYOGENIC,INE0TL001013,2025-07-10,47.0,283.1,502.34,559.57,243,-30.51,209.59,486.12,99.49,1.0,4.99,38,28.1,54,Pivot Reclaim (textbook) · volume-thrust
+Bondada Engineering Ltd.,SME,BONDADA,INE0Q8P01029,2023-08-30,75.0,439.65,486.2,864.6,0,-53.72,,110.92,861.6,,-31.27,28,-5.6,42,Never above pivot (grind) · volume-thrust
+Aditya Infotech Ltd.,Mainboard,CPPLUS,INE819V01029,2025-08-05,675.0,3662.4,442.58,461.04,219,-20.37,140.5,58.82,60.39,2.0,-5.23,63,1.4,56,Pivot Reclaim (textbook) · steady compounder · volume-thrust
+Sunita Tools Ltd.,SME,544001,INE0Q1S01010,2023-10-11,145.0,780.0,437.93,633.66,355,-53.15,,12.79,1.55,13.0,-20.88,57,12.0,51,"Early breakout, deep base · volume-thrust"
+Indian Renewable Energy Development Agency Ltd.,Mainboard,IREDA,INE202E01016,2023-11-29,32.0,170.13,431.66,868.75,152,-52.3,104.57,27.35,87.5,1.0,0.92,86,29.7,45,Pivot Reclaim (textbook) · volume-thrust
+GSM Foils Ltd.,SME,GSMFOILS,INE0SQY01018,2024-05-31,32.0,164.0,412.5,421.41,256,-29.13,,249.89,5.0,1.0,-3.13,51,54.8,65,Pivot Reclaim (textbook) · steady compounder · volume-thrust
+Z-Tech (India) Ltd.,SME,ZTECH,INE0ISZ01012,2024-06-05,110.0,560.6,409.64,564.68,155,-31.48,123.1,258.22,-4.55,1.0,5.0,11,70.0,57,Pivot Reclaim (textbook) · volume-thrust
+SAR Televenture Ltd.,SME,SARTELE,INE0PUC01020,2023-11-08,55.0,268.05,387.36,652.18,203,-50.42,77.0,200.13,100.45,10.0,-18.1,128,-11.3,48,"Early breakout, deep base · volume-thrust"
+Kody Technolab Ltd.,SME,KODYTECH,INE0Q7P01013,2023-09-27,160.0,778.1,386.31,2509.38,189,-83.33,,46.52,11.56,1.0,0.06,53,147.3,50,Pivot Reclaim (textbook) · volume-thrust
+HOAC Foods India Ltd.,SME,HOACFOODS,INE0S6S01017,2024-05-24,48.0,232.85,385.1,385.1,239,-46.95,,1962.94,190.94,10.0,-10.2,107,-11.8,43,Pivot Reclaim (textbook) · volume-thrust
+GP Eco Solutions India Ltd.,SME,GPECO,INE0S7E01015,2024-06-24,94.0,442.15,370.37,400.0,15,-49.41,236.64,591.09,318.88,1.0,-28.89,88,-18.9,49,"Early breakout, deep base · volume-thrust"
+Fabtech Technologies Cleanrooms Ltd.,SME,FABCLEAN,INE0HSD01011,2025-01-10,85.0,386.2,354.35,358.65,112,-19.0,224.5,476.37,99.49,1.0,4.99,9,20.2,64,Pivot Reclaim (textbook) · steady compounder · volume-thrust
+Zelio E-Mobility Ltd.,SME,ZELIO,INE1B3501014,2025-10-08,136.0,605.1,344.93,351.32,180,-60.4,1.61,1.37,19.56,1.0,4.98,65,17.4,59,Pivot Reclaim (textbook) · volume-thrust
+Essen Speciality Films Ltd.,SME,ESFL,INE0ITO01014,2023-07-06,107.0,470.4,339.63,607.71,347,-48.34,45.26,49.64,37.38,15.0,-14.29,78,29.3,43,Pivot Reclaim (textbook) · volume-thrust
+Basilic Fly Studio Ltd.,SME,BASILIC,INE0OCC01013,2023-09-11,97.0,414.95,327.78,577.94,241,-63.29,116.34,246.97,193.35,1.0,-11.4,47,32.3,43,Pivot Reclaim (textbook) · volume-thrust
+Veefin Solutions Ltd.,SME,543931,INE0Q0M01015,2023-07-05,82.0,342.05,317.13,819.39,290,-63.41,,2.44,10.02,1.0,-5.64,140,-3.2,48,Pivot Reclaim (textbook) · volume-thrust
+Aimtron Electronics Ltd.,SME,AIMTRON,INE0RUV01018,2024-06-06,161.0,671.25,316.93,353.39,21,-45.19,69.93,69.43,57.17,1.0,5.0,107,2.3,54,Pivot Reclaim (textbook) · volume-thrust
+Meson Valves India Ltd.,SME,543982,INE0OYE01013,2023-09-21,102.0,386.15,278.58,1272.55,192,-77.61,,173.16,99.46,1.0,-3.47,249,-24.1,49,Pivot Reclaim (textbook) · volume-thrust
+Srivari Spices & Foods Ltd.,SME,SSFL,INE0ON201012,2023-08-18,42.0,154.75,268.45,895.12,156,-66.48,79.1,320.1,153.69,1.0,-3.33,58,87.5,54,Pivot Reclaim (textbook) · volume-thrust
+Sungarner Energies Ltd.,SME,SEL,INE0O3O01017,2023-08-31,83.0,273.3,229.28,995.42,229,-68.69,,149.77,216.08,1.0,-31.39,43,64.5,46,"Early breakout, deep base · volume-thrust"
+Winsol Engineers Ltd.,SME,WINSOL,INE0S3D01016,2024-05-14,75.0,217.55,190.07,689.33,23,-68.81,207.23,472.41,411.0,1.0,-20.42,127,-20.4,42,"Early breakout, deep base · volume-thrust"
+Vishnusurya Projects & Infra Ltd.,SME,VISHNUINFR,INE0PQ001012,2023-10-10,68.0,165.35,143.16,584.49,60,-64.08,,40.24,12.72,1.0,4.96,101,-18.1,44,Pivot Reclaim (textbook) · volume-thrust
+Refractory Shapes Ltd.,SME,REFRACTORY,INE0TNX01015,2024-05-14,31.0,66.9,115.81,812.9,39,-80.83,90.59,177.76,154.03,1.0,4.95,149,-33.4,37,Pivot Reclaim (textbook) · volume-thrust
+Drone Destination Ltd.,SME,DRONE,INE0P7201019,2023-07-21,65.0,107.55,65.46,610.77,234,-76.5,50.46,131.71,57.08,6.0,-6.95,70,15.1,48,Pivot Reclaim (textbook) · volume-thrust
+Teerth Gopicon Ltd.,SME,TGL,INE0K6601012,2024-04-16,111.0,126.3,13.78,597.3,99,-82.95,,70.18,18.24,1.0,4.99,163,-48.9,43,Pivot Reclaim (textbook) · volume-thrust
