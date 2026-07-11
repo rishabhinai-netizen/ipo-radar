@@ -2,8 +2,12 @@ name: Daily IPO Radar refresh
 
 on:
   schedule:
-    - cron: "15 14 * * 1-5"   # 7:45 pm IST, Mon-Fri (after bhavcopy publication)
+    - cron: "15 14 * * 1-5"   # 7:45 pm IST, Mon-Fri
   workflow_dispatch:
+    inputs:
+      full_rebuild:
+        description: "Rebuild the entire price panel from scratch"
+        default: "0"
 
 permissions:
   contents: write
@@ -11,7 +15,7 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,6 +23,8 @@ jobs:
           python-version: "3.11"
       - run: pip install pandas pyarrow numpy
       - name: Refresh data
+        env:
+          FULL_REBUILD: ${{ github.event.inputs.full_rebuild || '0' }}
         run: python pipeline/refresh.py
       - name: Commit updated data
         run: |
