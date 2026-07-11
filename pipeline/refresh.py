@@ -6,7 +6,7 @@
 - NSE + BSE bhavcopies for every missing trading date since UNIVERSE_START,
   handling BOTH generations of file formats:
     NSE new (UDIFF, ≥ 2024-07-08): BhavCopy_NSE_CM_0_0_0_YYYYMMDD_F_0000.csv.zip
-    NSE old (< 2024-07-08):        cmDDMONYYYYbhav.csv.zip  (TOTTRDVAL in ₹ lakh)
+    NSE old (< 2024-07-08):        cmDDMONYYYYbhav.csv.zip  (TOTTRDVAL already ₹)
     BSE new:                        BhavCopy_BSE_CM_0_0_0_YYYYMMDD_F_0000.CSV
     BSE old fallback:               EQ_ISINCODE_DDMMYY.zip   (NET_TURNOV in ₹)
   All turnover normalised to ₹ (rupees). Volume in shares.
@@ -177,7 +177,7 @@ def _parse_nse_old(raw, date):
         "exch": "NSE", "date": date.isoformat(), "isin": df["ISIN"], "symbol": df["SYMBOL"],
         "series": df["SERIES"], "open": df["OPEN"], "high": df["HIGH"], "low": df["LOW"],
         "close": df["CLOSE"], "volume": df["TOTTRDQTY"],
-        "turnover": df["TOTTRDVAL"] * 1e5,  # ₹ lakh → ₹
+        "turnover": df["TOTTRDVAL"],  # already in ₹ (verified by continuity QC)
         "trades": df["TOTALTRADES"]})
 
 
