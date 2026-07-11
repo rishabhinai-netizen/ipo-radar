@@ -53,7 +53,7 @@ H = {
     "bo_day": "Session when price first closed above the pivot. ≤25 valid; later reclaims historically failed.",
     "entry": "= the pivot. Buy the first daily close above it.",
     "stop": "Higher of base low (setup falsification level) or entry −8% (O'Neil cap) — whichever risks less.",
-    "target": "Entry +15% → take partial, trail the rest (winners run ~9 months median).",
+    "target": "Entry +15% — NOT a booking level: reaching it ARMS the 25% trailing stop. The exit re-study showed booking partials capped the tails; the full position trails wide instead.",
     "rr": "(Target − Entry) / (Entry − Stop).",
     "vs_issue": "CMP vs IPO issue price (%).",
     "peak": "Lifetime high vs issue (%).",
@@ -141,9 +141,9 @@ def card(r):
         plan = f"""<div class="plan">
           <div><span>Entry (pivot)</span><b>₹{r['entry']:,.2f}</b></div>
           <div><span>Stop — {r['stop_basis']}</span><b>₹{r['stop']:,.2f}</b></div>
-          <div><span>Target-1 (+15%, then trail)</span><b>₹{r['target']:,.2f}</b></div>
+          <div><span>Trail arms at (+15%)</span><b>₹{r['target']:,.2f}</b></div>
           <div><span>Risk:Reward</span><b>{r['rr'] if pd.notna(r['rr']) else '—'}</b></div>
-          <div><span>Time stop</span><b>60 sessions</b></div></div>"""
+          <div><span>Trail / time stop</span><b>25% off peak · 120 sessions</b></div></div>"""
     analog_html = ""
     if isinstance(r.get("analogs"), str) and r["analogs"]:
         items = "".join(f"<li>{x.strip()}</li>" for x in r["analogs"].split("|"))
@@ -502,7 +502,7 @@ with T[3]:
             st.markdown("**Why you might not:**")
             st.markdown("\n".join(f"- ⛔ {b}" for b in bear) or "- (no red flags in our data)")
             if pd.notna(s["entry"]):
-                st.markdown(f"**If entering:** close above ₹{s['entry']:,.2f} → stop ₹{s['stop']:,.2f} ({s['stop_basis']}) → partial at ₹{s['target']:,.2f}, trail the rest. Risk 1–2% of capital.")
+                st.markdown(f"**If entering:** close above ₹{s['entry']:,.2f} → stop ₹{s['stop']:,.2f} ({s['stop_basis']}) → at ₹{s['target']:,.2f} (+15%) the 25%-off-peak trail arms; time stop 120 sessions. Risk 1–2% of capital.")
             if isinstance(s.get("analogs"), str) and s["analogs"]:
                 st.markdown("**🧬 Closest historical analogs:**")
                 for x in s["analogs"].split("|"):

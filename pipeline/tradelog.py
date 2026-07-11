@@ -11,8 +11,10 @@ Rules (identical to the validated walk-forward engine):
   RE-ENTRY — after an exit, a fresh upward cross of the pivot re-arms the
            system (max 3 trades per stock, within the first 250 sessions).
   STOP   — entry −8% (close basis).
-  TRAIL  — after +15% unrealized, exit when close falls 12% off the peak.
-  TIME   — 60 sessions.
+  TRAIL  — after +15% unrealized, exit when close falls 25% off the peak
+           (exit-grid re-study: the wide trail nearly doubled test-set expectancy
+           and captured 57% more of the mega-winners than the old 12% trail).
+  TIME   — 120 sessions (winners' median run is ~9 months).
   COSTS  — 1.0% round trip mainboard, 1.5% SME.
 Open trades (still running today) are marked OPEN with mark-to-market P&L.
 """
@@ -66,7 +68,7 @@ def run():
             stop_px, target_px = entry * 0.92, entry * 1.15
             peak, armed = entry, False
             exit_i, exit_px, reason = None, None, None
-            for j in range(ei, min(ei + 60, len(p))):
+            for j in range(ei, min(ei + 120, len(p))):
                 c = p["close"].iloc[j]
                 peak = max(peak, c)
                 if c <= stop_px:
@@ -74,15 +76,15 @@ def run():
                     break
                 if peak >= target_px:
                     armed = True
-                if armed and c <= peak * 0.88:
-                    exit_i, exit_px, reason = j, c, "trail (12% off peak after +15%)"
+                if armed and c <= peak * 0.75:
+                    exit_i, exit_px, reason = j, c, "trail (25% off peak after +15%)"
                     break
             if exit_i is None:
-                j = min(ei + 60, len(p)) - 1
-                if j >= len(p) - 1 and len(p) - ei < 60:
+                j = min(ei + 120, len(p)) - 1
+                if j >= len(p) - 1 and len(p) - ei < 120:
                     exit_i, exit_px, reason = j, p["close"].iloc[j], "OPEN"
                 else:
-                    exit_i, exit_px, reason = j, p["close"].iloc[j], "time (60 sessions)"
+                    exit_i, exit_px, reason = j, p["close"].iloc[j], "time (120 sessions)"
             pnl = (exit_px / entry - 1) * 100 - (0 if reason == "OPEN" else cost)
             trades.append({
                 "company": m["company"], "board": m["board"], "symbol": m["symbol"],

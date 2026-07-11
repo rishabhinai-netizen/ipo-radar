@@ -234,7 +234,7 @@ def compute_signals() -> pd.DataFrame:
                     else (hard, f"hard {config.HARD_STOP_PCT}% cap (base low further)")
             else:
                 stop, basis = hard, f"hard {config.HARD_STOP_PCT}% cap (base forming)"
-            target = entry * (1 + config.TARGET1_PCT / 100)
+            target = entry * (1 + config.TRAIL_ARM_PCT / 100)  # +15% arms the 25% trail
             rr = round((target - entry) / (entry - stop), 1) if entry > stop else None
             entry, stop, target = round(entry, 2), round(stop, 2), round(target, 2)
 

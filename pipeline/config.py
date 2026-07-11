@@ -11,5 +11,6 @@ ADV_MIN_SME = 2.0     # ₹cr, SME
 POP_MIN, POP_MAX = 0, 50   # listing-day open premium band
 BREAKOUT_WINDOW = 25  # sessions within which pivot must be reclaimed
 HARD_STOP_PCT = -8    # O'Neil hard stop from entry
-TARGET1_PCT = 15      # first target / trail activation
-TIME_STOP = 60        # sessions
+TRAIL_ARM_PCT = 15    # unrealized gain that ARMS the trailing stop
+TRAIL_PCT = 25        # trail width off peak (exit-grid optimum: wide trail = tail capture)
+TIME_STOP = 120       # sessions (winners take ~9 months; 60 was amputating tails)
