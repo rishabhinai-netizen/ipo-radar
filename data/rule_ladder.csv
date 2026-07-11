@@ -1,9 +1,9 @@
-rule,n,r20_med,r20_win%,r60_med,r60_win%,r60_mean,r60_p90
-ALL breakouts,255,3.4,55,2.3,54,7.1,41.9
-≤25d,219,4.2,55,3.2,55,8.0,41.2
-≤25d + shallow base(>-15%),164,8.8,66,7.2,62,13.5,52.5
-+ QIB≥15x,75,9.9,65,8.8,62,11.2,41.3
-+ turnover≥2cr,43,7.1,62,4.4,58,6.0,27.0
-composite mainboard only,34,2.8,55,0.4,50,0.5,22.3
-composite SME only,41,13.9,74,14.3,75,21.9,86.2
-≤25d+shallow+pop5-50,68,8.8,70,7.8,61,11.9,39.4
+rule,n,r20_med,r20_win,r60_med,r60_win,r60_mean,r60_p90
+ALL pivot breakouts,255,3.4,55,2.3,54,7.1,41.9
+breakout ≤25 sessions,219,4.2,55,3.2,55,8.0,41.2
++ base low > -15%,164,8.8,66,7.2,62,13.5,52.5
++ QIB ≥ 15x,75,9.9,65,8.8,62,11.2,41.3
+composite — SME only,41,13.9,74,14.3,75,21.9,86.2
+composite — mainboard only,34,2.9,55,0.4,50,0.5,22.3
+composite — 2025 listings,59,5.6,59,5.4,59,9.0,34.8
+composite — 2026 listings,16,12.4,92,37.1,100,37.0,70.2
