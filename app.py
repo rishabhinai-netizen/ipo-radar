@@ -1,4 +1,4 @@
-"""IPO Radar v2 — recent-IPO alpha platform. Streamlit dashboard."""
+"""IPO Radar v4 — insight-first recent-IPO alpha platform."""
 import json
 import os
 
@@ -13,8 +13,8 @@ st.markdown("""
 <style>
 .block-container {padding-top: 1.1rem; max-width: 1450px;}
 .hero {background: linear-gradient(120deg,#0f2027,#203a43,#2c5364); border-radius: 14px;
-  padding: 20px 28px; color: white; margin-bottom: 12px;}
-.hero h1 {margin: 0; font-size: 1.8rem;} .hero p {margin: 4px 0 0; opacity: .85; font-size: .92rem;}
+  padding: 18px 26px; color: white; margin-bottom: 10px;}
+.hero h1 {margin: 0; font-size: 1.7rem;} .hero p {margin: 4px 0 0; opacity: .85; font-size: .9rem;}
 .badge {display:inline-block; padding:3px 12px; border-radius:12px; font-weight:700; font-size:.78rem;}
 .b-TRIGGER {background:#16a34a; color:white;} .b-SETUP {background:#f59e0b; color:#1a1a1a;}
 .b-RIDE {background:#0ea5e9; color:white;} .b-AVOID {background:#dc2626; color:white;}
@@ -30,50 +30,42 @@ st.markdown("""
   font-size:.8rem; font-weight:600; text-decoration:none; border:1px solid #d1d5db;}
 .lnk.f {background:#eef6ff; color:#1d4ed8;} .lnk.t {background:#f0fdf4; color:#15803d;}
 .metricrow {display:flex; gap:12px; flex-wrap:wrap; margin-bottom:4px;}
-.metricrow .m {flex:1; min-width:140px; background:#f8fafc; border:1px solid #e2e8f0;
+.metricrow .m {flex:1; min-width:130px; background:#f8fafc; border:1px solid #e2e8f0;
   border-radius:12px; padding:10px 14px; text-align:center;}
-.m b {font-size:1.4rem; display:block;} .m span {font-size:.75rem; color:#64748b;}
+.m b {font-size:1.35rem; display:block;} .m span {font-size:.74rem; color:#64748b;}
+.insight {background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:12px 18px;
+  margin:10px 0; font-size:.9rem; line-height:1.55;}
+.insight b {color:#92400e;}
 [data-testid="stDataFrame"] {border:1px solid #e5e7eb; border-radius:12px;}
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------------------------------------------------------- tooltips
 H = {
-    "state": "Signal state. TRIGGER: fresh close above the listing-day high (pivot) within 25 sessions — the study's entry. SETUP: quality gates passed, basing within 15% of pivot. RIDE: above pivot, trend on. AVOID: failed pivot >25 sessions / broken base. NEUTRAL: waiting.",
-    "pivot": "The listing-day HIGH. The study's dividing line: names that closed above it within 25 sessions massively outperformed; names that never did sit deeply negative.",
+    "reco": "The ACTION: FRESH BUY = pivot just reclaimed, enterable now. BUY-SETUP = basing within 10% of pivot, watch for the close above it. RIDE = already above pivot, manage only. EXIT = lost pivot and 20-EMA. WATCH = too early / middling. AVOID = failed pivot >25 sessions or broken base.",
+    "score": "CONVICTION (0–100): structure 35, base 20, liquidity 15, institutions 15, lock-in 5, LM 5, momentum 5. Compare scores WITHIN a reco, not across recos — a RIDE can outscore a FRESH BUY because it has had more time to prove itself.",
+    "pivot": "The listing-day HIGH — the study's dividing line. First close above it within 25 sessions is the entry with edge.",
     "cmp": "Latest close from official NSE/BSE bhavcopy (primary = higher-turnover exchange).",
-    "dist": "How far CMP is below the pivot (+) or above it (−). The trigger is a daily CLOSE above the pivot.",
-    "qib": "Qualified Institutional Buyer subscription multiple. ≥15x is the quality bar — high-QIB names had the biggest lifetime gains.",
-    "sub": "Total subscription across all investor categories.",
-    "adv": "Average daily turnover, last 20 sessions (₹ crore). Liquidity gate: ≥₹5cr mainboard / ≥₹2cr SME. Illiquid names bled −17% median.",
-    "base": "Lowest low in the first 30 sessions vs listing close. Shallow (> −15%) = accumulation; deep flush = distribution.",
-    "sessions": "Trading sessions since listing.",
-    "bo_day": "Session number on which price FIRST closed above the pivot. ≤25 = valid; later reclaims historically failed.",
-    "entry": "= the pivot (listing-day high). Buy the first daily close above it.",
-    "stop": "The HIGHER of: base low (level whose break kills the setup) or entry −8% (O'Neil hard cap). See 'stop basis'.",
-    "stop_basis": "Which rule set the stop — the base low, or the −8% hard cap when the base low is too far.",
-    "target": "Entry +15% — the historical median 60-session gain band of qualifying breakouts. Take partial, trail the rest.",
-    "rr": "(Target − Entry) / (Entry − Stop). Reward per unit of risk.",
+    "dist": "How far CMP sits below (+) or above (−) the pivot.",
+    "qib": "QIB subscription multiple. Scoring input (high-QIB names had the biggest tails); no longer a hard filter — the backtest showed the stop manages risk better than exclusion.",
+    "adv": "Average daily turnover, last 20 sessions (₹ crore).",
+    "ff": "Average daily VOLUME as % of free float (float = shares × (1 − promoter %), from Screener). >4%: crowded/manipulable. 0.8–4%: healthy churn. <0.8%: sleepy.",
+    "base": "Lowest low since listing vs listing close. > −10% (the grid-search optimum) = accumulation.",
+    "bo_day": "Session when price first closed above the pivot. ≤25 valid; later reclaims historically failed.",
+    "entry": "= the pivot. Buy the first daily close above it.",
+    "stop": "Higher of base low (setup falsification level) or entry −8% (O'Neil cap) — whichever risks less.",
+    "target": "Entry +15% → take partial, trail the rest (winners run ~9 months median).",
+    "rr": "(Target − Entry) / (Entry − Stop).",
     "vs_issue": "CMP vs IPO issue price (%).",
-    "pop": "Listing-day OPEN vs issue price. +5–50% was the sweet spot; discounts and mega-pops both underperformed.",
-    "peak": "Lifetime high vs issue price (%).",
-    "off_high": "CMP vs lifetime high — current drawdown from peak.",
+    "peak": "Lifetime high vs issue (%).",
     "maxdd": "Worst close-to-close drawdown since listing.",
-    "lm": "Lead manager (book-running). See the Lead Managers tab for its full post-listing scorecard.",
-    "a30": "Anchor investors' 30-day lock-in expiry (50% of anchor shares become sellable). Mild supply headwind.",
-    "a90": "Anchor investors' 90-day lock-in expiry (remaining 50%). The worse of the two windows: −2.4% median drift into it.",
-    "d1gain": "Listing-day close vs issue price (%).",
-    "days_peak": "Sessions from listing to the lifetime high — winners' median is ~3 months, not 3 days.",
-    "green_wk": "% of weeks closing higher — consistency of the advance (compounder fingerprint).",
-    "spike": "First session (after day 5) with volume ≥5× the trailing 20-day average — the institutional footprint.",
-    "spike_ret": "Return in the 60 sessions AFTER that first volume spike — did the footprint pay?",
-    "pattern": "Data-derived classification of how the winner made its move.",
-    "lm_score": "Composite 0–100: 35% median now-vs-issue + 25% share above issue + 20% pivot-reclaim rate + 20% drawdown control. Judges what happens AFTER listing, not the listing pop.",
-    "above_issue": "% of this LM's issues trading ABOVE issue price today — the cleanest 'did investors actually make money' test.",
-    "reclaim": "% of this LM's issues that closed above their listing-day high within 25 sessions.",
-    "screener": "Open the company's fundamentals on Screener.in.",
-    "tv": "Open the live chart on TradingView.",
+    "thrust": "Volume-thrust day: volume ≥5× the trailing 20-day average — the institutional footprint. 100% of the big winners printed at least one.",
+    "thrust_last": "Most recent volume-thrust date. A thrust in the last 5 sessions is flagged 🔥 on the Today tab.",
+    "lm_score": "0–100 on POST-listing outcomes: median now-vs-issue 35%, share above issue 25%, pivot-reclaim rate 20%, drawdown control 20%.",
+    "d1gain": "Listing-day close vs issue (%).",
+    "a90": "Anchor 90-day lock-in expiry — the worse supply window (−2.4% median drift into it).",
+    "mcap": "Market cap (₹ cr, Screener).", "prom": "Promoter holding % (Screener).",
 }
+
 
 def _data_version():
     return max(os.path.getmtime(os.path.join(DATA, f))
@@ -87,111 +79,195 @@ def load(_v=None):
     panel = pd.read_parquet(os.path.join(DATA, "prices_panel.parquet"))
     stats = json.load(open(os.path.join(DATA, "study_stats.json")))
     ladder = pd.read_csv(os.path.join(DATA, "rule_ladder.csv"))
-    sc = (pd.read_csv(os.path.join(DATA, "lm_scorecard.csv"))
-          if os.path.exists(os.path.join(DATA, "lm_scorecard.csv")) else pd.DataFrame())
-    win = (pd.read_csv(os.path.join(DATA, "winners.csv"))
-           if os.path.exists(os.path.join(DATA, "winners.csv")) else pd.DataFrame())
+    sc = pd.read_csv(os.path.join(DATA, "lm_scorecard.csv"))
+    win = pd.read_csv(os.path.join(DATA, "winners.csv"))
     return sig, ana, panel, stats, ladder, sc, win
+
 
 sig, ana, panel, stats, ladder, scorecard, winners = load(_data_version())
 last_date = pd.Timestamp(panel["date"].max()).date()
 
 st.markdown(f"""
 <div class="hero"><h1>🎯 IPO Radar</h1>
-<p>Every NSE + BSE IPO (mainboard + SME) listed since <b>{stats.get('universe_start','2023-07-01')}</b> ·
+<p>Every NSE + BSE IPO (mainboard + SME) since <b>{stats.get('universe_start','2023-07-01')}</b> ·
 {len(sig)} tracked ({int((sig['board']=='Mainboard').sum())} mainboard, {int((sig['board']=='SME').sum())} SME) ·
-prices to <b>{last_date}</b> · auto-refreshes every trading day · strategy: <b>Pivot Reclaim</b></p></div>
+prices to <b>{last_date}</b> · self-updating daily · strategy: <b>Pivot Reclaim</b>
+(walk-forward validated: PF 1.95 out-of-sample)</p></div>
 """, unsafe_allow_html=True)
 
 n = sig["reco"].value_counts()
 st.markdown(f"""
 <div class="metricrow">
-<div class="m"><b style="color:#16a34a">{n.get('FRESH BUY',0)}</b><span>FRESH BUY — enter now</span></div>
-<div class="m"><b style="color:#f59e0b">{n.get('BUY-SETUP',0)}</b><span>BUY-SETUP — near pivot</span></div>
-<div class="m"><b style="color:#0ea5e9">{n.get('RIDE',0)}</b><span>RIDE — trend intact</span></div>
-<div class="m"><b style="color:#8b5cf6">{n.get('EXIT',0)}</b><span>EXIT — lost pivot & 20-EMA</span></div>
-<div class="m"><b style="color:#dc2626">{n.get('AVOID',0)}</b><span>AVOID — no edge</span></div>
-<div class="m"><b style="color:#6b7280">{n.get('WATCH',0)}</b><span>WATCH — waiting</span></div>
+<div class="m"><b style="color:#16a34a">{n.get('FRESH BUY',0)}</b><span>FRESH BUY</span></div>
+<div class="m"><b style="color:#f59e0b">{n.get('BUY-SETUP',0)}</b><span>BUY-SETUP</span></div>
+<div class="m"><b style="color:#0ea5e9">{n.get('RIDE',0)}</b><span>RIDE</span></div>
+<div class="m"><b style="color:#8b5cf6">{n.get('EXIT',0)}</b><span>EXIT</span></div>
+<div class="m"><b style="color:#dc2626">{n.get('AVOID',0)}</b><span>AVOID</span></div>
+<div class="m"><b style="color:#6b7280">{n.get('WATCH',0)}</b><span>WATCH</span></div>
 </div>
 """, unsafe_allow_html=True)
 
-T = st.tabs(["🚨 Signals", "⭐ Watchlist", "🧾 Stock Dossier", "🔍 Explorer",
-             "🏆 Winners Lab", "🏦 Lead Managers", "📊 Study", "📖 Method"])
+T = st.tabs(["📌 Today", "🎯 Opportunities", "🧾 Stock Dossier",
+             "🏆 Winners Lab", "🏦 Lead Managers", "📊 Study & Method"])
 
-# ---------------------------------------------------------------- 1 signals
+LINKCOLS = {
+    "screener_url": st.column_config.LinkColumn("Fundamentals", display_text="Screener ↗"),
+    "tradingview_url": st.column_config.LinkColumn("Chart", display_text="TV ↗"),
+}
+
+
+def card(r):
+    reasons = "".join(f"<li>{x.strip()}</li>" for x in str(r["reasons"]).split("•") if x.strip())
+    plan = ""
+    if pd.notna(r["entry"]):
+        plan = f"""<div class="plan">
+          <div><span>Entry (pivot)</span><b>₹{r['entry']:,.2f}</b></div>
+          <div><span>Stop — {r['stop_basis']}</span><b>₹{r['stop']:,.2f}</b></div>
+          <div><span>Target-1 (+15%, then trail)</span><b>₹{r['target']:,.2f}</b></div>
+          <div><span>Risk:Reward</span><b>{r['rr'] if pd.notna(r['rr']) else '—'}</b></div>
+          <div><span>Time stop</span><b>60 sessions</b></div></div>"""
+    analog_html = ""
+    if isinstance(r.get("analogs"), str) and r["analogs"]:
+        items = "".join(f"<li>{x.strip()}</li>" for x in r["analogs"].split("|"))
+        analog_html = (f'<div style="margin-top:8px;font-size:.82rem"><b>🧬 Closest historical analogs</b> '
+                       f'<span style="color:#6b7280">(pattern recognition, not prophecy)</span><ul>{items}</ul></div>')
+    links = ""
+    if isinstance(r["screener_url"], str) and r["screener_url"]:
+        links += f'<a class="lnk f" href="{r["screener_url"]}" target="_blank">📊 Fundamentals — Screener</a>'
+    if isinstance(r["tradingview_url"], str) and r["tradingview_url"]:
+        links += f'<a class="lnk t" href="{r["tradingview_url"]}" target="_blank">📈 Chart — TradingView</a>'
+    st.markdown(f"""
+    <div class="card">
+      <span class="badge b-{r['state']}">{r['reco']}</span>
+      <span style="margin-left:8px;font-weight:700;color:#334155">Score {int(r['score'])}/100</span>
+      <h3>{r['company']} <span style="font-weight:400;color:#6b7280">({r['symbol']} · {r['board']})</span></h3>
+      <div class="sub">Listed {r['listing_date']} · {int(r['days_listed'])} sessions · CMP ₹{r['cmp']:,.2f} · pivot ₹{r['pivot']:,.2f}</div>
+      <ul>{reasons}</ul>{plan}{analog_html}{links}
+    </div>""", unsafe_allow_html=True)
+
+
+# ============================================================ TODAY
 with T[0]:
-    q = st.text_input("🔎 Search any stock", key="s1", placeholder="Type a company or symbol…")
-    if q:  # search runs across ALL states so any stock is findable
-        act = sig[sig["company"].str.contains(q, case=False, na=False) |
-                  sig["symbol"].astype(str).str.contains(q, case=False, na=False)].copy()
-    else:
-        act = sig[sig["reco"].isin(["FRESH BUY", "BUY-SETUP", "RIDE"])].copy()
-    show = act[["reco", "score", "company", "board", "symbol", "listing_date", "cmp", "pivot",
-                "dist_to_pivot_pct", "qib_x", "adv_cr", "days_listed", "entry", "stop",
-                "stop_basis", "target", "rr", "screener_url", "tradingview_url"]]
-    st.dataframe(show, use_container_width=True, hide_index=True, height=540, column_config={
-        "reco": st.column_config.TextColumn("Reco", help=H["state"], width="small"),
-        "score": st.column_config.ProgressColumn("Score", min_value=0, max_value=100, format="%d",
-            help="0-100 composite: structure 35, base 20, liquidity 15, institutions 15, lock-in 5, LM 5, momentum 5. Weights set by the walk-forward backtest."),
-        "company": st.column_config.TextColumn("Company", width="medium"),
-        "board": st.column_config.TextColumn("Board", help="Mainboard or SME platform"),
-        "symbol": "Symbol",
-        "listing_date": st.column_config.TextColumn("Listed", help="Listing date on exchange"),
-        "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f", help=H["cmp"]),
-        "pivot": st.column_config.NumberColumn("Pivot ₹", format="%.2f", help=H["pivot"]),
-        "dist_to_pivot_pct": st.column_config.NumberColumn("To pivot %", format="%.1f%%", help=H["dist"]),
-        "qib_x": st.column_config.NumberColumn("QIB x", format="%.1f", help=H["qib"]),
-        "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.1f", help=H["adv"]),
-        "days_listed": st.column_config.NumberColumn("Sessions", help=H["sessions"]),
-        "entry": st.column_config.NumberColumn("Entry", format="%.2f", help=H["entry"]),
-        "stop": st.column_config.NumberColumn("Stop", format="%.2f", help=H["stop"]),
-        "stop_basis": st.column_config.TextColumn("Stop basis", help=H["stop_basis"]),
-        "target": st.column_config.NumberColumn("Target-1", format="%.2f", help=H["target"]),
-        "rr": st.column_config.NumberColumn("R:R", format="%.1f", help=H["rr"]),
-        "screener_url": st.column_config.LinkColumn("Fundamentals", display_text="Screener ↗", help=H["screener"]),
-        "tradingview_url": st.column_config.LinkColumn("Chart", display_text="TradingView ↗", help=H["tv"]),
-    })
-    st.caption("Hover any column header's ⓘ for its meaning. Entry/Stop/Target math is documented in the Method tab — nothing is arbitrary.")
+    st.markdown(f"""<div class="insight">
+    <b>How to read this platform:</b> <b>RECO is the action</b> (what to do), <b>SCORE is conviction</b>
+    (quality of the situation, 0–100). Compare scores <i>within</i> a reco — a RIDE often outscores a
+    FRESH BUY simply because it has already proven itself; that does not make it a better fresh entry.
+    Buy candidates live in FRESH BUY (act) and BUY-SETUP (stalk). Everything self-updates each trading day.
+    </div>""", unsafe_allow_html=True)
 
-# ---------------------------------------------------------------- 2 watchlist
+    thr = sig[sig["thrust_recent"] == True]  # noqa: E712
+    upcoming = []
+    for k, label in (("anchor_30d", "30-day"), ("anchor_90d", "90-day")):
+        s2 = sig[pd.to_datetime(sig[k], errors="coerce").between(
+            pd.Timestamp(last_date), pd.Timestamp(last_date) + pd.Timedelta(days=10))]
+        for _, r in s2.iterrows():
+            upcoming.append({"company": r["company"], "reco": r["reco"], "window": label,
+                             "expiry": r[k], "cmp_vs_issue_pct": r["cmp_vs_issue_pct"]})
+    fresh, setup = sig[sig["reco"] == "FRESH BUY"], sig[sig["reco"] == "BUY-SETUP"]
+    exits = sig[(sig["reco"] == "EXIT") & (sig["dist_to_pivot_pct"].abs() <= 8)]
+    st.markdown(f"""<div class="insight"><b>Today's radar:</b>
+    {len(fresh)} fresh buy{'s' if len(fresh)!=1 else ''} · {len(setup)} setups stalking the pivot ·
+    🔥 {len(thr)} volume thrusts in the last 5 sessions (the winners' footprint) ·
+    ⏳ {len(upcoming)} anchor lock-ins expiring within 10 days ·
+    🚪 {len(exits)} names that just lost their pivot.</div>""", unsafe_allow_html=True)
+
+    if len(fresh) == 0 and len(setup) == 0:
+        st.info("No fresh entries today — the edge is in the waiting. Check 🔥 thrusts below for early footprints.")
+    for _, r in pd.concat([fresh, setup]).iterrows():
+        card(r)
+
+    st.markdown("##### 🔥 Recent volume thrusts (last 5 sessions) — institutional footprints")
+    st.caption("100% of historical big winners printed a ≥5× volume day. A thrust is not a buy signal by itself — it earns a place on your watchlist. Sort any column.")
+    tt = thr.sort_values("last_thrust_date", ascending=False)
+    st.dataframe(tt[["reco", "score", "company", "board", "last_thrust_date", "thrust_count",
+                     "cmp", "cmp_vs_issue_pct", "dist_to_pivot_pct", "adv_cr", "ff_vol_pct",
+                     "screener_url", "tradingview_url"]],
+                 use_container_width=True, hide_index=True, height=320, column_config={
+            "reco": st.column_config.TextColumn("Reco", help=H["reco"]),
+            "score": st.column_config.NumberColumn("Score", help=H["score"]),
+            "company": "Company", "board": "Board",
+            "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
+            "thrust_count": st.column_config.NumberColumn("# thrusts", help=H["thrust"]),
+            "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
+            "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%", help=H["vs_issue"]),
+            "dist_to_pivot_pct": st.column_config.NumberColumn("To pivot %", format="%.1f%%", help=H["dist"]),
+            "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
+            "ff_vol_pct": st.column_config.NumberColumn("Vol/Float %", format="%.2f%%", help=H["ff"]),
+            **LINKCOLS})
+
+    c1, c2 = st.columns(2)
+    with c1:
+        st.markdown("##### ⏳ Anchor lock-ins expiring ≤10 days")
+        st.caption("Median drift −2.4% into the 90-day expiry. No fresh entries into these windows.")
+        if upcoming:
+            st.dataframe(pd.DataFrame(upcoming), use_container_width=True, hide_index=True)
+        else:
+            st.write("None in the next 10 days.")
+    with c2:
+        st.markdown("##### 🚪 Just lost the pivot (EXIT flags near the level)")
+        st.caption("Names that had broken out but now closed below pivot AND 20-EMA — the exit rule.")
+        if len(exits):
+            st.dataframe(exits[["company", "board", "cmp", "pivot", "cmp_vs_issue_pct", "score"]],
+                         use_container_width=True, hide_index=True)
+        else:
+            st.write("None flagged today.")
+
+# ============================================================ OPPORTUNITIES
 with T[1]:
-    focus = sig[sig["reco"].isin(["FRESH BUY", "BUY-SETUP"])]
-    ride = sig[sig["reco"] == "RIDE"].nlargest(6, "score")
-    if focus.empty and ride.empty:
-        st.info("No actionable names right now — refreshes daily after market close.")
-    for _, r in pd.concat([focus, ride]).iterrows():
-        reasons = "".join(f"<li>{x.strip()}</li>" for x in str(r["reasons"]).split("•") if x.strip())
-        plan = ""
-        if pd.notna(r["entry"]):
-            plan = f"""<div class="plan">
-              <div><span>Entry (pivot)</span><b>₹{r['entry']:,.2f}</b></div>
-              <div><span>Stop — {r['stop_basis']}</span><b>₹{r['stop']:,.2f}</b></div>
-              <div><span>Target-1 (+15%, then trail)</span><b>₹{r['target']:,.2f}</b></div>
-              <div><span>Risk:Reward</span><b>{r['rr'] if pd.notna(r['rr']) else '—'}</b></div>
-              <div><span>Time stop</span><b>60 sessions</b></div></div>"""
-        links = ""
-        if isinstance(r["screener_url"], str) and r["screener_url"]:
-            links += f'<a class="lnk f" href="{r["screener_url"]}" target="_blank">📊 Fundamentals — Screener</a>'
-        if isinstance(r["tradingview_url"], str) and r["tradingview_url"]:
-            links += f'<a class="lnk t" href="{r["tradingview_url"]}" target="_blank">📈 Chart — TradingView</a>'
-        analog_html = ""
-        if isinstance(r.get("analogs"), str) and r["analogs"]:
-            items = "".join(f"<li>{x.strip()}</li>" for x in r["analogs"].split("|"))
-            analog_html = f'<div style="margin-top:8px;font-size:.82rem"><b>🧬 Closest historical analogs</b> <span style="color:#6b7280">(pattern recognition, not prophecy)</span><ul>{items}</ul></div>'
-        st.markdown(f"""
-        <div class="card">
-          <span class="badge b-{r['state']}">{r['reco']}</span>
-          <span style="margin-left:8px;font-weight:700;color:#334155">Score {int(r['score'])}/100</span>
-          <h3>{r['company']} <span style="font-weight:400;color:#6b7280">({r['symbol']} · {r['board']})</span></h3>
-          <div class="sub">Listed {r['listing_date']} · {int(r['days_listed'])} sessions · CMP ₹{r['cmp']:,.2f} · pivot ₹{r['pivot']:,.2f}</div>
-          <ul>{reasons}</ul>{plan}{analog_html}{links}
-        </div>""", unsafe_allow_html=True)
+    c1, c2, c3, c4, c5, c6 = st.columns([2, 1.8, 1.2, 1.2, 1.2, 1.2])
+    q = c1.text_input("🔎 Search any stock", placeholder="Company / symbol…")
+    f_reco = c2.multiselect("Reco", ["FRESH BUY", "BUY-SETUP", "RIDE", "WATCH", "EXIT", "AVOID"],
+                            default=["FRESH BUY", "BUY-SETUP", "RIDE", "WATCH", "EXIT", "AVOID"],
+                            help=H["reco"])
+    f_board = c3.multiselect("Board", ["Mainboard", "SME"], default=["Mainboard", "SME"])
+    f_score = c4.slider("Min score", 0, 100, 0, help=H["score"])
+    f_adv = c5.slider("Min ADV ₹cr", 0.0, 25.0, 0.0, 0.5, help=H["adv"])
+    f_year = c6.multiselect("Listed", sorted(sig["listing_date"].str[:4].unique()),
+                            default=sorted(sig["listing_date"].str[:4].unique()))
+    e = sig[sig["reco"].isin(f_reco) & sig["board"].isin(f_board) & (sig["score"] >= f_score) &
+            (sig["adv_cr"].fillna(0) >= f_adv) & sig["listing_date"].str[:4].isin(f_year)]
+    if q:
+        e = sig[sig["company"].str.contains(q, case=False, na=False) |
+                sig["symbol"].astype(str).str.contains(q, case=False, na=False)]
+    st.caption(f"{len(e)} stocks. Every tracked IPO is here — filter by reco to see EXIT / AVOID / WATCH cohorts. Hover ⓘ on any column.")
+    merged = e.merge(ana[["company", "life_high_vs_issue_pct", "max_dd_pct", "open_pop_pct",
+                          "d1_close_vs_issue_pct"]], on="company", how="left")
+    st.dataframe(
+        merged[["reco", "score", "company", "board", "symbol", "listing_date", "cmp",
+                "cmp_vs_issue_pct", "dist_to_pivot_pct", "base_low_pct", "qib_x", "adv_cr",
+                "ff_vol_pct", "mcap_cr", "last_thrust_date", "life_high_vs_issue_pct",
+                "max_dd_pct", "entry", "stop", "target", "rr", "lead_manager", "anchor_90d",
+                "screener_url", "tradingview_url"]],
+        use_container_width=True, hide_index=True, height=620, column_config={
+            "reco": st.column_config.TextColumn("Reco", help=H["reco"]),
+            "score": st.column_config.ProgressColumn("Score", min_value=0, max_value=100,
+                                                     format="%d", help=H["score"]),
+            "company": "Company", "board": "Board", "symbol": "Symbol", "listing_date": "Listed",
+            "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f", help=H["cmp"]),
+            "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%", help=H["vs_issue"]),
+            "dist_to_pivot_pct": st.column_config.NumberColumn("To pivot %", format="%.1f%%", help=H["dist"]),
+            "base_low_pct": st.column_config.NumberColumn("Base low %", format="%.1f%%", help=H["base"]),
+            "qib_x": st.column_config.NumberColumn("QIB x", format="%.1f", help=H["qib"]),
+            "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
+            "ff_vol_pct": st.column_config.NumberColumn("Vol/Float %", format="%.2f%%", help=H["ff"]),
+            "mcap_cr": st.column_config.NumberColumn("MCap ₹cr", format="%.0f", help=H["mcap"]),
+            "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
+            "life_high_vs_issue_pct": st.column_config.NumberColumn("Peak vs issue %", format="%.1f%%", help=H["peak"]),
+            "max_dd_pct": st.column_config.NumberColumn("Max DD %", format="%.1f%%", help=H["maxdd"]),
+            "entry": st.column_config.NumberColumn("Entry", format="%.2f", help=H["entry"]),
+            "stop": st.column_config.NumberColumn("Stop", format="%.2f", help=H["stop"]),
+            "target": st.column_config.NumberColumn("Target-1", format="%.2f", help=H["target"]),
+            "rr": st.column_config.NumberColumn("R:R", format="%.1f", help=H["rr"]),
+            "lead_manager": "Lead Manager",
+            "anchor_90d": st.column_config.TextColumn("90d lock-in", help=H["a90"]),
+            **LINKCOLS})
+    st.download_button("⬇ Download filtered CSV", merged.to_csv(index=False), "ipo_radar_export.csv")
 
-# ---------------------------------------------------------------- 3 dossier
+# ============================================================ DOSSIER
 with T[2]:
-    pick = st.selectbox("Select or type a stock — everything you need in one place",
+    pick = st.selectbox("Select or type a stock — the full picture in one place",
                         sig["company"].tolist(), index=None,
-                        placeholder="Start typing… e.g. Knack, Meesho, Aditya Infotech")
+                        placeholder="Start typing… e.g. Ather, Knack, Aditya Infotech")
     if pick:
         s = sig[sig["company"] == pick].iloc[0]
         a = ana[ana["company"] == pick].iloc[0]
@@ -206,32 +282,34 @@ with T[2]:
           <div class="sub">Listed {s['listing_date']} · lead manager: {s['lead_manager'] or '—'}</div>{links}</div>""",
           unsafe_allow_html=True)
 
-        c1, c2, c3, c4, c5 = st.columns(5)
+        c1, c2, c3, c4, c5, c6 = st.columns(6)
         c1.metric("CMP", f"₹{s['cmp']:,.2f}", f"{a['cmp_vs_issue_pct']:+.1f}% vs issue")
         c2.metric("Pivot (D1 high)", f"₹{s['pivot']:,.2f}", f"{-s['dist_to_pivot_pct']:+.1f}% vs CMP", help=H["pivot"])
         c3.metric("Lifetime high", f"₹{a['life_high']:,.2f}", f"{a['dd_from_life_high_pct']:+.1f}% off high")
         c4.metric("Max drawdown", f"{a['max_dd_pct']:.1f}%", help=H["maxdd"])
         c5.metric("ADV (20d)", f"₹{a['avg_turnover_cr_20d']:.1f}cr", help=H["adv"])
+        c6.metric("Vol/Float", f"{s['ff_vol_pct']:.2f}%" if pd.notna(s["ff_vol_pct"]) else "—",
+                  f"promoter {s['promoter_pct']:.0f}%" if pd.notna(s["promoter_pct"]) else "", help=H["ff"])
 
-        # price chart with pivot & issue lines
         p = panel[panel["isin"] == s["isin"]].sort_values("date")
         p = p[p["date"] >= pd.Timestamp(s["listing_date"])]
         best_exch = p.groupby("exch")["turnover"].median().idxmax()
         p = p[p["exch"] == best_exch].set_index("date")
-        chart = pd.DataFrame({"Close": p["close"],
-                              "EMA20": p["close"].ewm(span=20).mean(),
-                              "Pivot (D1 high)": s["pivot"],
-                              "Issue price": a["issue_price"]})
+        chart = pd.DataFrame({"Close": p["close"], "EMA20": p["close"].ewm(span=20).mean(),
+                              "Pivot (D1 high)": s["pivot"], "Issue price": a["issue_price"]})
         st.line_chart(chart, height=320)
         st.bar_chart(p["volume"], height=110)
+        if pd.notna(a.get("first_thrust_date")) and isinstance(a.get("first_thrust_date"), str):
+            st.caption(f"🔥 Volume thrusts (≥5× avg): {int(a['thrust_count'])} total · first {a['first_thrust_date']} · last {a['last_thrust_date']}"
+                       + (f" · +{a['ret60_after_thrust_pct']:.0f}% in the 60 sessions after the first thrust" if pd.notna(a.get("ret60_after_thrust_pct")) else ""))
 
         cL, cR = st.columns(2)
         with cL:
             st.markdown("##### 📋 Pre-listing dossier")
             pre = pd.DataFrame({
                 "Metric": ["Issue price", "Issue size", "Total subscription", "QIB", "NII", "Retail",
-                           "Anchor allocation", "Anchor 30d lock-in ends", "Anchor 90d lock-in ends",
-                           "Listing-day open pop", "Listing-day close"],
+                           "Anchor allocation", "Anchor 30d lock-in", "Anchor 90d lock-in",
+                           "Open pop", "Listing-day close", "Market cap (Screener)", "Promoter holding"],
                 "Value": [f"₹{a['issue_price']:,.0f}", f"₹{a['issue_amount_cr']:,.0f} cr",
                           f"{a['subscription_total_x']:.1f}x" if pd.notna(a['subscription_total_x']) else "—",
                           f"{a['qib_x']:.1f}x" if pd.notna(a['qib_x']) else "—",
@@ -241,172 +319,126 @@ with T[2]:
                           a['anchor_lockin_30d'] if isinstance(a['anchor_lockin_30d'], str) else "—",
                           a['anchor_lockin_90d'] if isinstance(a['anchor_lockin_90d'], str) else "—",
                           f"{a['open_pop_pct']:+.1f}%" if pd.notna(a['open_pop_pct']) else "—",
-                          f"{a['d1_close_vs_issue_pct']:+.1f}% vs issue"]})
+                          f"{a['d1_close_vs_issue_pct']:+.1f}% vs issue",
+                          f"₹{s['mcap_cr']:,.0f} cr" if pd.notna(s['mcap_cr']) else "—",
+                          f"{s['promoter_pct']:.1f}%" if pd.notna(s['promoter_pct']) else "—"]})
             st.dataframe(pre, hide_index=True, use_container_width=True)
         with cR:
             st.markdown("##### ⚖️ The verdict")
             bull, bear = [], []
             for x in str(s["reasons"]).split("•"):
                 x = x.strip()
-                if not x:
+                if not x or x.startswith("Score"):
                     continue
                 neg = any(w in x.lower() for w in ["weak", "deep", "illiquid", "avoid", "discount",
-                                                   "mega-pop", "lost the pivot", "still below", "⚠", "bled"])
+                                                   "mega-pop", "lost", "never reclaimed", "⚠",
+                                                   "broken", "crowded", "thin institutional"])
                 (bear if neg else bull).append(x)
             if pd.notna(a["dd_from_life_high_pct"]) and a["dd_from_life_high_pct"] < -30:
                 bear.append(f"Sitting {a['dd_from_life_high_pct']:.0f}% below its lifetime high — broken trend until proven otherwise")
-            if pd.notna(a["days_to_high"]) and a["cmp_vs_issue_pct"] > 50:
-                bull.append(f"Already a proven winner: +{a['cmp_vs_issue_pct']:.0f}% over issue with peak on session {int(a['days_to_high'])}")
+            if a["cmp_vs_issue_pct"] > 50:
+                bull.append(f"Proven winner: +{a['cmp_vs_issue_pct']:.0f}% over issue, peak on session {int(a['days_to_high'])}")
             st.markdown("**Why you might buy:**")
             st.markdown("\n".join(f"- ✅ {b}" for b in bull) or "- (nothing constructive right now)")
             st.markdown("**Why you might not:**")
             st.markdown("\n".join(f"- ⛔ {b}" for b in bear) or "- (no red flags in our data)")
             if pd.notna(s["entry"]):
-                st.markdown(f"**If entering:** buy a daily close above ₹{s['entry']:,.2f}, stop ₹{s['stop']:,.2f} ({s['stop_basis']}), target-1 ₹{s['target']:,.2f} then trail. Risk 1–2% of capital.")
+                st.markdown(f"**If entering:** close above ₹{s['entry']:,.2f} → stop ₹{s['stop']:,.2f} ({s['stop_basis']}) → partial at ₹{s['target']:,.2f}, trail the rest. Risk 1–2% of capital.")
             if isinstance(s.get("analogs"), str) and s["analogs"]:
                 st.markdown("**🧬 Closest historical analogs:**")
                 for x in s["analogs"].split("|"):
                     st.markdown(f"- {x.strip()}")
-            st.caption("Fundamental triggers (results, news, shareholding) → use the Screener link above; this platform covers price, volume, flow and structure.")
+            st.caption("Fundamentals (results, news, shareholding changes) → Screener link above.")
 
-# ---------------------------------------------------------------- 4 explorer
+# ============================================================ WINNERS LAB
 with T[3]:
-    c1, c2, c3, c4, c5 = st.columns([2, 1.5, 1.5, 1.5, 1.5])
-    q2 = c1.text_input("🔎 Search", key="s2", placeholder="Company / symbol…")
-    f_board = c2.multiselect("Board", ["Mainboard", "SME"], default=["Mainboard", "SME"])
-    f_state = c3.multiselect("Signal", sorted(sig["state"].unique()), default=sorted(sig["state"].unique()))
-    f_liq = c4.slider("Min ADV ₹cr", 0.0, 25.0, 0.0, 0.5, help=H["adv"])
-    f_year = c5.multiselect("Listing year", sorted(sig["listing_date"].str[:4].unique()),
-                            default=sorted(sig["listing_date"].str[:4].unique()))
-    e = sig[sig["board"].isin(f_board) & sig["state"].isin(f_state) &
-            (sig["adv_cr"].fillna(0) >= f_liq) & sig["listing_date"].str[:4].isin(f_year)]
-    if q2:
-        e = e[e["company"].str.contains(q2, case=False, na=False) |
-              e["symbol"].astype(str).str.contains(q2, case=False, na=False)]
-    merged = e.merge(ana[["company", "life_high_vs_issue_pct", "max_dd_pct",
-                          "dd_from_life_high_pct", "open_pop_pct", "d1_close_vs_issue_pct"]],
-                     on="company", how="left")
-    st.dataframe(
-        merged[["state", "company", "board", "symbol", "listing_date", "cmp", "cmp_vs_issue_pct",
-                "open_pop_pct", "d1_close_vs_issue_pct", "life_high_vs_issue_pct",
-                "dd_from_life_high_pct", "max_dd_pct", "qib_x", "sub_x", "adv_cr",
-                "lead_manager", "anchor_90d", "screener_url", "tradingview_url"]],
-        use_container_width=True, hide_index=True, height=600, column_config={
-            "state": st.column_config.TextColumn("Signal", help=H["state"]),
+    L = stats.get("winner_lessons", {})
+    fm = lambda k, suf="": (f"{L[k]:.0f}{suf}" if isinstance(L.get(k), (int, float)) else "–")
+    st.markdown(f"""<div class="insight"><b>What the top-{L.get('n_winners','?')} winners teach (recomputed daily):</b><br>
+    1️⃣ <b>{fm('pct_reclaimed_pivot_within25','%')}</b> reclaimed their listing-day high within 25 sessions → <i>the pivot IS the tell — trade it, don't wait for comfort.</i><br>
+    2️⃣ <b>{fm('pct_with_volume_thrust','%')}</b> printed a ≥5× volume-thrust day (median <b>{fm('median_ret60_after_spike','%')}</b> in the next 60 sessions) → <i>thrust dates are in the table below and on the Today tab — that's your early-warning scanner.</i><br>
+    3️⃣ Median <b>{fm('median_days_to_peak')}</b> sessions to peak → <i>winners run ~9 months; take partial at +15% and trail the rest instead of capping.</i><br>
+    4️⃣ Median max drawdown <b>{fm('median_max_dd','%')}</b> → <i>even the best names had violent shakeouts — defined stops, not hope.</i></div>""",
+    unsafe_allow_html=True)
+    st.dataframe(winners.drop(columns=["isin"], errors="ignore"), use_container_width=True,
+                 hide_index=True, height=520, column_config={
             "company": "Company", "board": "Board", "symbol": "Symbol", "listing_date": "Listed",
-            "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f", help=H["cmp"]),
-            "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%", help=H["vs_issue"]),
-            "open_pop_pct": st.column_config.NumberColumn("Open pop %", format="%.1f%%", help=H["pop"]),
-            "d1_close_vs_issue_pct": st.column_config.NumberColumn("D1 gain %", format="%.1f%%", help=H["d1gain"]),
-            "life_high_vs_issue_pct": st.column_config.NumberColumn("Peak vs issue %", format="%.1f%%", help=H["peak"]),
-            "dd_from_life_high_pct": st.column_config.NumberColumn("Off high %", format="%.1f%%", help=H["off_high"]),
+            "issue_price": st.column_config.NumberColumn("Issue ₹", format="%.0f"),
+            "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
+            "now_vs_issue_pct": st.column_config.NumberColumn("Now vs issue %", format="%.0f%%"),
+            "peak_vs_issue_pct": st.column_config.NumberColumn("Peak vs issue %", format="%.0f%%"),
+            "days_to_peak": st.column_config.NumberColumn("Days→peak"),
             "max_dd_pct": st.column_config.NumberColumn("Max DD %", format="%.1f%%", help=H["maxdd"]),
             "qib_x": st.column_config.NumberColumn("QIB x", format="%.1f", help=H["qib"]),
-            "sub_x": st.column_config.NumberColumn("Sub x", format="%.1f", help=H["sub"]),
-            "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
-            "lead_manager": st.column_config.TextColumn("Lead Manager", help=H["lm"]),
-            "anchor_90d": st.column_config.TextColumn("90d lock-in", help=H["a90"]),
-            "screener_url": st.column_config.LinkColumn("Fundamentals", display_text="Screener ↗", help=H["screener"]),
-            "tradingview_url": st.column_config.LinkColumn("Chart", display_text="TV ↗", help=H["tv"]),
-        })
-    st.download_button("⬇ Download filtered CSV", merged.to_csv(index=False), "ipo_radar_export.csv")
+            "sub_x": st.column_config.NumberColumn("Sub x", format="%.1f"),
+            "d1_gain_pct": st.column_config.NumberColumn("D1 gain %", format="%.1f%%", help=H["d1gain"]),
+            "breakout_day": st.column_config.NumberColumn("Pivot day", help=H["bo_day"]),
+            "base30_low_pct": st.column_config.NumberColumn("Base low %", format="%.1f%%", help=H["base"]),
+            "first_vol_spike_day": st.column_config.NumberColumn("Thrust day #", help=H["thrust"]),
+            "first_thrust_date": st.column_config.TextColumn("First thrust", help=H["thrust"]),
+            "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
+            "ret60_after_vol_spike_pct": st.column_config.NumberColumn("+60d after thrust %", format="%.1f%%"),
+            "green_weeks_pct": st.column_config.NumberColumn("Green weeks %"),
+            "pattern": st.column_config.TextColumn("Pattern", width="large")})
 
-# ---------------------------------------------------------------- 5 winners lab
+# ============================================================ LEAD MANAGERS
 with T[4]:
-    L = stats.get("winner_lessons", {})
-    if L:
-        fm = lambda k, suf="": (f"{L[k]:.0f}{suf}" if isinstance(L.get(k), (int, float)) and L.get(k) is not None else "–")
-        st.markdown(f"""
-        <div class="metricrow">
-        <div class="m"><b>{fm('pct_reclaimed_pivot_within25','%')}</b><span>of big winners reclaimed the pivot ≤25 sessions</span></div>
-        <div class="m"><b>{fm('median_days_to_peak')}</b><span>median sessions to their peak</span></div>
-        <div class="m"><b>{fm('pct_with_volume_thrust','%')}</b><span>showed a ≥5× volume thrust day</span></div>
-        <div class="m"><b>{fm('median_ret60_after_spike','%')}</b><span>median 60-session return AFTER that thrust</span></div>
-        <div class="m"><b>{fm('median_green_weeks','%')}</b><span>median green weeks (consistency)</span></div>
-        </div>""", unsafe_allow_html=True)
-    st.caption("Lessons are recomputed daily from the top-30 performers (by current AND peak return). The pattern column classifies HOW each winner made its move — most are pivot-reclaims with a volume thrust, not lottery tickets.")
-    if len(winners):
-        st.dataframe(winners.drop(columns=["isin"]), use_container_width=True, hide_index=True, height=560,
-            column_config={
-                "company": "Company", "board": "Board", "symbol": "Symbol", "listing_date": "Listed",
-                "issue_price": st.column_config.NumberColumn("Issue ₹", format="%.0f"),
+    st.markdown("""<div class="insight"><b>How to use:</b> LMs are ranked on what happens
+    <b>after</b> listing (not the pop): median return over issue today, % of issues still above issue,
+    pivot-reclaim rate, drawdown control. Pick any LM below to see every stock it brought to market.</div>""",
+    unsafe_allow_html=True)
+    st.markdown("##### 🔎 Pick a lead manager — every issue it managed")
+    lm_pick = st.selectbox("Lead manager", scorecard["lead_manager"].tolist(), index=None,
+                           placeholder="Select or type… e.g. Kotak Mahindra Capital")
+    if lm_pick:
+        issues = sig[sig["lead_manager"] == lm_pick].merge(
+            ana[["company", "life_high_vs_issue_pct", "max_dd_pct", "d1_close_vs_issue_pct"]],
+            on="company", how="left")
+        st.dataframe(issues[["reco", "score", "company", "board", "listing_date", "cmp",
+                             "cmp_vs_issue_pct", "d1_close_vs_issue_pct", "life_high_vs_issue_pct",
+                             "max_dd_pct", "qib_x", "adv_cr", "screener_url", "tradingview_url"]],
+                     use_container_width=True, hide_index=True, column_config={
+                "reco": "Reco", "score": "Score", "company": "Company", "board": "Board",
+                "listing_date": "Listed",
                 "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
-                "now_vs_issue_pct": st.column_config.NumberColumn("Now vs issue %", format="%.0f%%", help=H["vs_issue"]),
-                "peak_vs_issue_pct": st.column_config.NumberColumn("Peak vs issue %", format="%.0f%%", help=H["peak"]),
-                "days_to_peak": st.column_config.NumberColumn("Days→peak", help=H["days_peak"]),
-                "max_dd_pct": st.column_config.NumberColumn("Max DD %", format="%.1f%%", help=H["maxdd"]),
-                "qib_x": st.column_config.NumberColumn("QIB x", format="%.1f", help=H["qib"]),
-                "sub_x": st.column_config.NumberColumn("Sub x", format="%.1f", help=H["sub"]),
-                "d1_gain_pct": st.column_config.NumberColumn("D1 gain %", format="%.1f%%", help=H["d1gain"]),
-                "breakout_day": st.column_config.NumberColumn("Pivot reclaim day", help=H["bo_day"]),
-                "base30_low_pct": st.column_config.NumberColumn("Base low %", format="%.1f%%", help=H["base"]),
-                "first_vol_spike_day": st.column_config.NumberColumn("Vol-thrust day", help=H["spike"]),
-                "ret60_after_vol_spike_pct": st.column_config.NumberColumn("+60d after thrust %", format="%.1f%%", help=H["spike_ret"]),
-                "green_weeks_pct": st.column_config.NumberColumn("Green weeks %", help=H["green_wk"]),
-                "pattern": st.column_config.TextColumn("Pattern", help=H["pattern"], width="large"),
-            })
+                "cmp_vs_issue_pct": st.column_config.NumberColumn("Now vs issue %", format="%.1f%%"),
+                "d1_close_vs_issue_pct": st.column_config.NumberColumn("D1 gain %", format="%.1f%%"),
+                "life_high_vs_issue_pct": st.column_config.NumberColumn("Peak vs issue %", format="%.1f%%"),
+                "max_dd_pct": st.column_config.NumberColumn("Max DD %", format="%.1f%%"),
+                "qib_x": st.column_config.NumberColumn("QIB x", format="%.1f"),
+                "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f"),
+                **LINKCOLS})
+    st.markdown("##### 🏦 Full scorecard (min 3 issues)")
+    st.dataframe(scorecard, use_container_width=True, hide_index=True, height=480, column_config={
+        "lead_manager": "Lead Manager", "issues": "Issues", "mainboard": "MB", "sme": "SME",
+        "median_listing_gain_pct": st.column_config.NumberColumn("Med. D1 %", format="%.1f%%", help=H["d1gain"]),
+        "median_now_vs_issue_pct": st.column_config.NumberColumn("Med. now vs issue %", format="%.1f%%"),
+        "pct_above_issue_today": st.column_config.NumberColumn("% above issue", format="%.0f%%"),
+        "median_max_dd_pct": st.column_config.NumberColumn("Med. max DD %", format="%.1f%%"),
+        "median_peak_vs_issue_pct": st.column_config.NumberColumn("Med. peak %", format="%.1f%%"),
+        "pivot_reclaim_rate_pct": st.column_config.NumberColumn("Pivot reclaim %", format="%.0f%%"),
+        "median_r60_after_breakout_pct": st.column_config.NumberColumn("Med. +60d post-BO %", format="%.1f%%"),
+        "median_qib_x": st.column_config.NumberColumn("Med. QIB x", format="%.1f"),
+        "median_adv_cr": st.column_config.NumberColumn("Med. ADV ₹cr", format="%.2f"),
+        "lm_score": st.column_config.ProgressColumn("LM Score", min_value=0, max_value=100,
+                                                    format="%.0f", help=H["lm_score"])})
 
-# ---------------------------------------------------------------- 6 lead managers
+# ============================================================ STUDY & METHOD
 with T[5]:
-    st.caption("Lead managers judged on what happens AFTER listing — not the listing-day pop. Hover column headers for definitions. Minimum 3 issues in the window.")
-    if len(scorecard):
-        st.dataframe(scorecard, use_container_width=True, hide_index=True, height=600, column_config={
-            "lead_manager": "Lead Manager",
-            "issues": st.column_config.NumberColumn("Issues", help="IPOs managed in the tracked window"),
-            "mainboard": "Mainboard", "sme": "SME",
-            "median_listing_gain_pct": st.column_config.NumberColumn("Med. D1 gain %", format="%.1f%%", help=H["d1gain"]),
-            "median_now_vs_issue_pct": st.column_config.NumberColumn("Med. now vs issue %", format="%.1f%%",
-                help="Median of its issues' CURRENT return over issue price — the as-of-today report card."),
-            "pct_above_issue_today": st.column_config.NumberColumn("% above issue", format="%.0f%%", help=H["above_issue"]),
-            "median_max_dd_pct": st.column_config.NumberColumn("Med. max DD %", format="%.1f%%",
-                help="Median worst drawdown across its issues — pain investors endured."),
-            "median_peak_vs_issue_pct": st.column_config.NumberColumn("Med. peak %", format="%.1f%%", help=H["peak"]),
-            "pivot_reclaim_rate_pct": st.column_config.NumberColumn("Pivot reclaim %", format="%.0f%%", help=H["reclaim"]),
-            "median_r60_after_breakout_pct": st.column_config.NumberColumn("Med. +60d post-BO %", format="%.1f%%",
-                help="Median 60-session return after its issues' pivot breakouts."),
-            "median_qib_x": st.column_config.NumberColumn("Med. QIB x", format="%.1f", help=H["qib"]),
-            "median_adv_cr": st.column_config.NumberColumn("Med. ADV ₹cr", format="%.2f", help=H["adv"]),
-            "lm_score": st.column_config.ProgressColumn("LM Score", min_value=0, max_value=100, format="%.0f", help=H["lm_score"]),
-        })
-    st.divider()
-    st.markdown("##### 🔎 Drill into a lead manager — every issue it brought to market")
-    if len(scorecard):
-        lm_pick = st.selectbox("Lead manager", scorecard["lead_manager"].tolist(), index=None,
-                               placeholder="Select or type a lead manager…")
-        if lm_pick:
-            issues = sig[sig["lead_manager"] == lm_pick].merge(
-                ana[["company", "life_high_vs_issue_pct", "max_dd_pct", "d1_close_vs_issue_pct"]],
-                on="company", how="left")
-            st.dataframe(
-                issues[["reco", "score", "company", "board", "listing_date", "cmp",
-                        "cmp_vs_issue_pct", "d1_close_vs_issue_pct", "life_high_vs_issue_pct",
-                        "max_dd_pct", "qib_x", "adv_cr", "screener_url", "tradingview_url"]],
-                use_container_width=True, hide_index=True, column_config={
-                    "reco": "Reco", "score": "Score", "company": "Company", "board": "Board",
-                    "listing_date": "Listed",
-                    "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
-                    "cmp_vs_issue_pct": st.column_config.NumberColumn("Now vs issue %", format="%.1f%%", help=H["vs_issue"]),
-                    "d1_close_vs_issue_pct": st.column_config.NumberColumn("D1 gain %", format="%.1f%%", help=H["d1gain"]),
-                    "life_high_vs_issue_pct": st.column_config.NumberColumn("Peak vs issue %", format="%.1f%%", help=H["peak"]),
-                    "max_dd_pct": st.column_config.NumberColumn("Max DD %", format="%.1f%%", help=H["maxdd"]),
-                    "qib_x": st.column_config.NumberColumn("QIB x", format="%.1f", help=H["qib"]),
-                    "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
-                    "screener_url": st.column_config.LinkColumn("Fundamentals", display_text="Screener ↗"),
-                    "tradingview_url": st.column_config.LinkColumn("Chart", display_text="TV ↗"),
-                })
-
-# ---------------------------------------------------------------- 7 study
-with T[6]:
-    st.subheader("The rule ladder — where the edge comes from")
-    st.caption("Each row adds one filter. Watch n shrink and expectancy rise. Year-cohort rows test whether the rule survives across regimes.")
-    st.dataframe(ladder, hide_index=True, use_container_width=True, column_config={
-        "rule": "Filter (cumulative)", "n": st.column_config.NumberColumn("n", help="Qualifying breakouts"),
-        "r20_med": st.column_config.NumberColumn("+20d median %", help="Median return 20 sessions after the breakout close"),
-        "r20_win": st.column_config.NumberColumn("+20d win %", help="% positive after 20 sessions"),
-        "r60_med": st.column_config.NumberColumn("+60d median %", help="Median return 60 sessions after the breakout close"),
-        "r60_win": st.column_config.NumberColumn("+60d win %", help="% positive after 60 sessions"),
-        "r60_mean": st.column_config.NumberColumn("+60d mean %", help="Average (includes the big tails)"),
-        "r60_p90": st.column_config.NumberColumn("+60d p90 %", help="90th percentile — the tail you're fishing for")})
+    st.markdown("""<div class="insight"><b>The one-paragraph strategy:</b> buy the first daily close above
+    the listing-day high within 25 sessions of listing, in names whose base held above −10%; stop at the
+    base low (max −8%); partial at +15%, trail the rest; out by 60 sessions or before the 90-day anchor
+    lock-in. Validated walk-forward: optimized on 2023–24 listings, tested untouched on 2025–26 →
+    <b>PF 1.95, +5.4% mean/trade net of costs, ~45% win rate</b> — small losses, big tails.
+    Volume-thrust and 20-day-high entries were tested head-to-head and lost.</div>""",
+    unsafe_allow_html=True)
+    st.subheader("Rule ladder & cohort stability")
+    st.dataframe(ladder, hide_index=True, use_container_width=True)
+    st.subheader("Backtest grid (walk-forward: tr = 2023–24 listings, te = 2025–26)")
+    bt = pd.read_csv(os.path.join(DATA, "backtest_grid.csv")) if os.path.exists(
+        os.path.join(DATA, "backtest_grid.csv")) else pd.DataFrame()
+    if len(bt):
+        st.dataframe(bt, hide_index=True, use_container_width=True, height=300)
     c1, c2 = st.columns(2)
     with c1:
         if "qib_quartiles" in stats:
@@ -416,8 +448,8 @@ with T[6]:
                 "life_high_vs_issue_pct": "Peak vs issue %"}), use_container_width=True)
         if "lockin30" in stats:
             st.subheader("Anchor lock-in event study")
-            st.dataframe(pd.DataFrame({
-                "30-day": stats["lockin30"], "90-day": stats["lockin90"]}).T, use_container_width=True)
+            st.dataframe(pd.DataFrame({"30-day": stats["lockin30"],
+                                       "90-day": stats["lockin90"]}).T, use_container_width=True)
     with c2:
         st.subheader("Open-pop buckets (median)")
         st.dataframe(pd.DataFrame(stats["open_pop"]).rename(columns={
@@ -425,33 +457,22 @@ with T[6]:
             "life_high_vs_issue_pct": "Peak vs issue %"}), use_container_width=True)
         st.subheader("Monthly regime — median listing gain")
         st.bar_chart(pd.Series(stats["monthly_d1"]).rename("median D1 gain %"))
-    st.info(f"IPOs that never reclaimed their listing-day high: **{stats['never_broke']['n']}** — now at "
-            f"**{stats['never_broke']['cmp_vs_d1close_median']}%** median vs listing close.")
-
-# ---------------------------------------------------------------- 8 method
-with T[7]:
     st.markdown(f"""
-### The Pivot Reclaim playbook — and why every number is what it is
+### Score vs Reco — the exact rules
+**RECO is a state machine** (the action): FRESH BUY (pivot reclaimed ≤3 sessions ago, score ≥65) ·
+BUY-SETUP (within 10% below pivot, ≤40 sessions, score ≥60) · RIDE (above pivot, trend intact) ·
+EXIT (lost pivot AND 20-EMA after having broken out) · AVOID (never reclaimed pivot in 25 sessions,
+or base broke −25%, or score <35) · WATCH (everything else).
 
-**Universe** — every mainboard + SME IPO on NSE/BSE listed since {stats.get('universe_start','2023-07-01')}, auto-refreshed every trading day (new IPOs are picked up automatically; prices, subscription, anchor dates, lead managers all update daily — nothing on this site goes stale).
+**SCORE is conviction** within the state: structure 35 + base 20 + liquidity 15 + institutions 15 +
+lock-in 5 + LM 5 + momentum 5. Weights follow what the backtest rewarded. Compare within a reco.
 
-**Quality gates** (need 3 of 4) — each threshold came out of the data, not intuition:
-- **QIB ≥ 15x** — institutional demand is the only subscription number that predicted post-listing performance
-- **Base low > −15%** vs listing close in the first 30 sessions — shallow base = accumulation
-- **ADV ≥ ₹5cr** (mainboard) / **₹2cr** (SME) — below this, exits destroy the theoretical edge
-- **Open pop 0–50%** — discounts kept falling; mega-pops had already spent the move
+**Trade plan math:** Entry = pivot · Stop = max(base low, −8%) — the shown basis tells you which bound ·
+Target-1 = +15% (historical median band), then trail · time-stop 60 sessions · position size =
+(capital × 1–2%) / (entry − stop), capped at 5% of daily volume for SME.
 
-**Entry = the pivot (listing-day high).** Why: it's the price every listing-day buyer paid at the top. A close back above it means all of them are in profit and supply is absorbed — the same logic as O'Neil's base pivot, applied to the only base a new listing has (Minervini's "primary base"). Late reclaims (>25 sessions) failed historically, so the window is hard.
-
-**Stop = max(base low, entry −8%).** The base low is the setup's falsification point (if it breaks, the accumulation thesis is wrong). The −8% cap is O'Neil's max-loss rule for when the base low is too far to be a sane risk. The stop shown always tells you which rule bound.
-
-**Target-1 = entry +15%, then trail.** Qualifying breakouts' median 60-session gain sat around +9–15%; winners kept running for ~3 months (median days-to-peak ≈ 60). So: take partial at +15%, trail the rest (10-day low or 20-EMA), hard time-stop at 60 sessions, and be trimmed before the 90-day anchor lock-in (−2.4% median drift into it).
-
-**R:R** = (target − entry) / (entry − stop). Skip trades below ~1.5.
-
-**Position size** — risk 1–2% of capital per trade: shares = (capital × risk%) / (entry − stop). SME: cap the position at ~5% of the stock's average daily volume.
-
-**Honesty box** — expectancy comes from this dataset's own history (now spanning multiple listing-year cohorts — see the Study tab's cohort rows for stability). No slippage/impact modelled; SME spreads can run 1–2%. Fundamentals (earnings, news, shareholding) are NOT in the model — use the per-stock Screener links. This is research, not investment advice.
-
-**Data** — NSE/BSE official bhavcopies (both format generations, turnover normalised), Chittorgarh cloud reports (issue, subscription, anchor lock-ins), per-IPO lead-manager scrape. Cross-verified at build: CMP 100% agreement, listing close 99.5%.
+**Data:** NSE/BSE official bhavcopies (both format generations, units continuity-checked) ·
+Chittorgarh (issue, subscription, anchor lock-ins, lead managers) · Screener (market cap, promoter
+holding → free float). Everything refreshes every trading day via GitHub Actions.
+*Research tool — not investment advice.*
 """)

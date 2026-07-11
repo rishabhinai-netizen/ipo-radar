@@ -45,6 +45,23 @@ def run():
             r["life_high_vs_issue_pct"] = round((df["high"].max() / issue - 1) * 100, 2)
             r["life_low_vs_issue_pct"] = round((df["low"].min() / issue - 1) * 100, 2)
         r["cmp_vs_d1close_pct"] = round((df["close"].iloc[-1] / d1["close"] - 1) * 100, 2)
+        ema20 = df["close"].ewm(span=20).mean().iloc[-1]
+        r["above_ema20"] = bool(df["close"].iloc[-1] >= ema20)
+        r["avg_volume_20d"] = float(df["volume"].tail(20).mean())
+        v20 = df["volume"].rolling(20, min_periods=5).mean().shift(1)
+        spikes = df.index[(df["volume"] >= 5 * v20) & (df.index > 5)]
+        r["thrust_count"] = int(len(spikes))
+        if len(spikes):
+            fi = int(spikes[0])
+            r["first_thrust_day"] = fi
+            r["first_thrust_date"] = df.loc[fi, "date"].date().isoformat()
+            r["last_thrust_date"] = df.loc[int(spikes[-1]), "date"].date().isoformat()
+            r["thrust_recent"] = bool((len(df) - 1) - int(spikes[-1]) <= 5)
+            if fi + 60 < len(df):
+                r["ret60_after_thrust_pct"] = round((df.loc[fi + 60, "close"] / df.loc[fi, "close"] - 1) * 100, 1)
+        else:
+            r["first_thrust_day"] = None
+            r["thrust_recent"] = False
         r["dd_from_life_high_pct"] = round((df["close"].iloc[-1] / df["high"].max() - 1) * 100, 2)
         r["max_dd_pct"] = round(((df["close"] / df["close"].cummax()) - 1).min() * 100, 2)
         base = df.iloc[1:31]

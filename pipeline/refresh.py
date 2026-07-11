@@ -240,9 +240,16 @@ def fetch_day(date):
 def refresh_bhavcopy(master):
     path = os.path.join(DATA, "prices_panel.parquet")
     isins = {m["isin"] for m in master if m.get("isin")}
-    if os.path.exists(path):
+    full_rebuild = os.environ.get("FULL_REBUILD") == "1"
+    if os.path.exists(path) and not full_rebuild:
         panel = pd.read_parquet(path)
         have = set(pd.to_datetime(panel["date"]).dt.date.unique())
+        # coverage guard: if many isins lag the panel's last date, force full rebuild
+        last = panel.groupby("isin")["date"].max()
+        lagging = (pd.Timestamp(panel["date"].max()) - last).dt.days > 20
+        if lagging.mean() > 0.15:
+            print(f"⚠ coverage guard: {int(lagging.sum())} isins stale — forcing full rebuild")
+            panel = pd.DataFrame(columns=PANEL_COLS); have = set()
     else:
         panel = pd.DataFrame(columns=PANEL_COLS)
         have = set()

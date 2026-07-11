@@ -185,15 +185,18 @@ def compute_signals() -> pd.DataFrame:
                 R.append(f"Broken base ({base_low:.1f}%) — distribution, not accumulation")
         if not math.isnan(qib):
             R.append(f"QIB {qib:.0f}x — {'heavy institutional sponsorship (biggest historical tails came from this group)' if qib >= 50 else 'decent institutional interest' if qib >= 15 else 'thin institutional book (score-penalised, not disqualifying: stops manage the risk)'}")
+        fl = ff.get(str(r["isin"])) or {}
+        ff_vol_pct = mcap_cr = promoter_pct = None
+        if fl.get("float_shares") and not math.isnan(r.get("avg_volume_20d", float("nan"))):
+            ff_vol_pct = round(r["avg_volume_20d"] / fl["float_shares"] * 100, 2)
+            mcap_cr, promoter_pct = fl.get("mcap_cr"), fl.get("promoter_pct")
         if not math.isnan(adv):
-            fl = ff.get(str(r["isin"]))
-            if fl and fl.get("float_shares"):
-                p = panel[(panel["isin"] == r["isin"])]
-                vol20 = p.sort_values("date")["volume"].tail(20).mean()
-                ratio = vol20 / fl["float_shares"] * 100
-                R.append(f"₹{adv:.1f}cr/day turnover ≈ {ratio:.1f}% of free float changing hands daily{' — crowded/manipulable, careful' if ratio > 4 else ' — healthy churn' if ratio > 0.8 else ' — sleepy float'}")
+            if ff_vol_pct is not None:
+                R.append(f"₹{adv:.1f}cr/day turnover ≈ {ff_vol_pct:.1f}% of free float changing hands daily{' — crowded/manipulable, careful' if ff_vol_pct > 4 else ' — healthy churn' if ff_vol_pct > 0.8 else ' — sleepy float'}")
             elif adv < (config.ADV_MIN_SME if board_sme else config.ADV_MIN_MAIN):
                 R.append(f"Illiquid — ₹{adv:.2f}cr/day; exits are the real risk")
+        if bool(r.get("thrust_recent")):
+            R.append(f"🔥 Volume thrust (≥5× avg) within the last 5 sessions ({r.get('last_thrust_date')}) — the institutional footprint that preceded most historical winners")
         if expiry_soon:
             R.append(f"⚠ Anchor {expiry_soon[0]} lock-in expires {expiry_soon[1]} ({expiry_soon[2]}d) — historical median drift −2.4% into expiry; no fresh entries")
         if lm_sc is not None:
@@ -240,6 +243,11 @@ def compute_signals() -> pd.DataFrame:
             "lead_manager": lm_name or "",
             "anchor_30d": r.get("anchor_lockin_30d"), "anchor_90d": r.get("anchor_lockin_90d"),
             "screener_url": scr, "tradingview_url": tv,
+            "ff_vol_pct": ff_vol_pct, "mcap_cr": mcap_cr, "promoter_pct": promoter_pct,
+            "first_thrust_date": r.get("first_thrust_date"),
+            "last_thrust_date": r.get("last_thrust_date"),
+            "thrust_count": r.get("thrust_count"),
+            "thrust_recent": bool(r.get("thrust_recent")),
             "analogs": analogs,
             "reasons": " • ".join(R[:7]),
         })

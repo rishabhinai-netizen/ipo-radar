@@ -111,6 +111,8 @@ def winners_lab(df, panel):
         vol20 = p["volume"].rolling(20, min_periods=5).mean().shift(1)
         spikes = p.index[(p["volume"] >= 5 * vol20) & (p.index > 5)]
         first_spike = int(spikes[0]) if len(spikes) else None
+        first_spike_date = p["date"].iloc[first_spike].date().isoformat() if first_spike is not None else None
+        last_spike_date = p["date"].iloc[int(spikes[-1])].date().isoformat() if len(spikes) else None
         spike_ret60 = None
         if first_spike is not None and first_spike + 60 < len(p):
             spike_ret60 = round(float(p["close"].iloc[first_spike + 60] /
@@ -145,6 +147,8 @@ def winners_lab(df, panel):
             "breakout_day": None if pd.isna(bo_day) else int(bo_day),
             "base30_low_pct": m.get("base30_low_vs_d1close_pct"),
             "first_vol_spike_day": first_spike,
+            "first_thrust_date": first_spike_date,
+            "last_thrust_date": last_spike_date,
             "ret60_after_vol_spike_pct": spike_ret60,
             "green_weeks_pct": green_weeks,
             "pattern": pattern,
