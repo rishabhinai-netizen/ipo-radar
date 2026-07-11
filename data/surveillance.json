@@ -75,7 +75,9 @@
   "INE0AE001013": {
    "official": "ESM Stage II",
    "band_locked": "2%",
-   "risks": []
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9330cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0QBU01012": {
    "official": null,
@@ -131,6 +133,13 @@
    "band_locked": "2%",
    "risks": []
   },
+  "INE0JWS01017": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9337cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
   "INE0OLS01010": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
@@ -154,7 +163,9 @@
   "INE0INJ01017": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": []
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9196cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0PA601017": {
    "official": null,
@@ -250,7 +261,9 @@
   "INE02H701025": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": []
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9218cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0JFJ01011": {
    "official": "ESM Stage I",
@@ -421,7 +434,9 @@
   "INE916Y01027": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": []
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9429cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0OUW01013": {
    "official": "ESM Stage I",
@@ -457,6 +472,13 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": []
+  },
+  "INE0S2V01010": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9386cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0SUN01013": {
    "official": "ESM Stage I",
@@ -575,6 +597,20 @@
    "band_locked": "2%",
    "risks": []
   },
+  "INE0S2G01011": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9235cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
+  "INE0RWQ01014": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9414cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
   "INE01YQ01013": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
@@ -636,6 +672,13 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": []
+  },
+  "INE0OPA01019": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9386cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0SMR01011": {
    "official": "ESM Stage II",
@@ -855,6 +898,13 @@
    "band_locked": null,
    "risks": []
   },
+  "INE05J901018": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9455cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
   "INE0XM301010": {
    "official": "ESM Stage I",
    "band_locked": null,
@@ -929,7 +979,9 @@
   "INE00RL01028": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": []
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9327cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0VG001016": {
    "official": "ASM Short-Term Stage I",
@@ -1002,6 +1054,13 @@
     "ST-ASM trigger risk: +25% in 5 sessions (criterion: \u226525%)"
    ]
   },
+  "INE0VOV01021": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9332cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
   "INE1DRH01011": {
    "official": null,
    "band_locked": "5%",
@@ -1017,7 +1076,9 @@
   "INE0SJA01013": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": []
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9230cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE0Z4F01028": {
    "official": "ASM Long-Term Stage II",
@@ -1061,7 +1122,9 @@
   "INE1FF001016": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": []
+   "risks": [
+    "ESM risk: mcap \u20b9375cr (<500cr pool) and +79% in 3 months"
+   ]
   },
   "INE0U4H01011": {
    "official": "ESM Stage I",
@@ -1281,6 +1344,13 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": []
+  },
+  "INE19GK01015": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9158cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
   },
   "INE1YNB01019": {
    "official": "ESM Stage I",
