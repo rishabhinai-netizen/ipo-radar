@@ -75,11 +75,10 @@ def _data_version():
                for f in os.listdir(DATA) if f.endswith((".csv", ".json", ".parquet")))
 
 
-@st.cache_data(ttl=900)
+@st.cache_data(ttl=900, max_entries=2)
 def load(_v=None):
     sig = pd.read_csv(os.path.join(DATA, "signals.csv"))
     ana = pd.read_csv(os.path.join(DATA, "ipo_analytics.csv"))
-    panel = pd.read_parquet(os.path.join(DATA, "prices_panel.parquet"))
     stats = json.load(open(os.path.join(DATA, "study_stats.json")))
     ladder = pd.read_csv(os.path.join(DATA, "rule_ladder.csv"))
     sc = pd.read_csv(os.path.join(DATA, "lm_scorecard.csv"))
@@ -87,11 +86,20 @@ def load(_v=None):
     svp = os.path.join(DATA, "surveillance.json")
     if os.path.exists(svp):
         stats["bandlock_study"] = json.load(open(svp)).get("bandlock_study", {})
-    return sig, ana, panel, stats, ladder, sc, win
+    return sig, ana, stats, ladder, sc, win
 
 
-sig, ana, panel, stats, ladder, scorecard, winners = load(_data_version())
-last_date = pd.Timestamp(panel["date"].max()).date()
+@st.cache_data(ttl=900, max_entries=8)
+def load_series(isin):
+    """Lazy per-stock price series (predicate pushdown — keeps memory tiny)."""
+    p = pd.read_parquet(os.path.join(DATA, "prices_panel.parquet"),
+                        columns=["exch", "date", "isin", "close", "volume", "turnover"],
+                        filters=[("isin", "==", isin)])
+    return p.sort_values("date")
+
+
+sig, ana, stats, ladder, scorecard, winners = load(_data_version())
+last_date = stats.get("as_of", "")
 
 st.markdown(f"""
 <div class="hero"><h1>🎯 IPO Radar</h1>
@@ -206,6 +214,29 @@ with T[0]:
             "ff_vol_pct": st.column_config.NumberColumn("Vol/Float %", format="%.2f%%", help=H["ff"]),
             **LINKCOLS})
 
+    st.markdown("##### ⚡ Above their listing-day high (pivot crossed & holding)")
+    st.caption("Every stock currently trading ABOVE its listing-day high — the structural bull list. Sort by breakout day or recency; early crossers (≤25 sessions) carried the historical edge.")
+    apiv = sig[sig["dist_to_pivot_pct"] < 0].copy()
+    apiv["above_pivot_pct"] = -apiv["dist_to_pivot_pct"]
+    apiv = apiv.sort_values("breakout_day")
+    st.dataframe(apiv[["reco", "score", "company", "board", "listing_date", "breakout_day",
+                       "days_listed", "cmp", "above_pivot_pct", "cmp_vs_issue_pct",
+                       "last_thrust_date", "adv_cr", "surv_official", "screener_url", "tradingview_url"]],
+                 use_container_width=True, hide_index=True, height=300, column_config={
+            "reco": st.column_config.TextColumn("Reco", help=H["reco"]),
+            "score": st.column_config.NumberColumn("Score", help=H["score"]),
+            "company": "Company", "board": "Board", "listing_date": "Listed",
+            "breakout_day": st.column_config.NumberColumn("Crossed on day", help=H["bo_day"]),
+            "days_listed": "Sessions",
+            "cmp": st.column_config.NumberColumn("CMP ₹", format="%.2f"),
+            "above_pivot_pct": st.column_config.NumberColumn("Above pivot %", format="%.1f%%",
+                help="How far CMP is ABOVE the listing-day high."),
+            "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%", help=H["vs_issue"]),
+            "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
+            "adv_cr": st.column_config.NumberColumn("ADV ₹cr", format="%.2f", help=H["adv"]),
+            "surv_official": st.column_config.TextColumn("Surveillance", help=H["surv"]),
+            **LINKCOLS})
+
     st.markdown("##### 🚀 At all-time highs (within 2% of lifetime high)")
     st.caption("No overhead supply — every holder is in profit. The healthiest tape a stock can show. Filtered to ADV ≥ ₹1cr.")
     st.dataframe(ath.sort_values("score", ascending=False)[
@@ -233,14 +264,23 @@ with T[0]:
     svt = pd.concat([surv_now, surv_risk]).copy()
     svt["status"] = np.where(svt["surv_official"] != "", "🔴 " + svt["surv_official"],
                              np.where(svt["surv_band"] != "", "🟠 band-locked " + svt["surv_band"], "🟡 at risk"))
-    st.dataframe(svt[["status", "reco", "company", "board", "cmp_vs_issue_pct", "mcap_cr",
-                      "surv_risk", "screener_url"]],
-                 use_container_width=True, hide_index=True, height=300, column_config={
+    st.dataframe(svt[["status", "reco", "company", "board", "surv_implication", "surv_since",
+                      "surv_exit_eta", "surv_exit_check", "surv_risk", "cmp_vs_issue_pct",
+                      "mcap_cr", "screener_url"]],
+                 use_container_width=True, hide_index=True, height=340, column_config={
             "status": st.column_config.TextColumn("Status", help=H["surv"]),
             "reco": "Reco", "company": "Company", "board": "Board",
+            "surv_implication": st.column_config.TextColumn("What it means (stage-specific)", width="large",
+                help="Exact restrictions of this stage: settlement mode, margin, daily band. From exchange FAQs (indicative — exchanges revise periodically)."),
+            "surv_since": st.column_config.TextColumn("Restricted since",
+                help="When restrictions began. Estimated from the first band-limit trading day where the exchange inclusion date isn't published via API; tracked exactly from first observation going forward."),
+            "surv_exit_eta": st.column_config.TextColumn("Earliest exit",
+                help="Restriction start + the framework's minimum stay (ESM-II→I ~1 month, ESM/LT-ASM full exit ~90 days, ST-ASM 5–15 sessions). Actual exit needs the review to pass — see Exit check."),
+            "surv_exit_check": st.column_config.TextColumn("Exit check (is it cooling?)", width="large",
+                help="Live test of the exit criteria: mcap vs the ₹500cr ESM pool, 3-month move cooled below trigger, 5-session move. Green across these = good odds at the next review."),
+            "surv_risk": st.column_config.TextColumn("Why at risk", width="medium", help=H["surv"]),
             "cmp_vs_issue_pct": st.column_config.NumberColumn("vs Issue %", format="%.1f%%"),
             "mcap_cr": st.column_config.NumberColumn("MCap ₹cr", format="%.0f", help=H["mcap"]),
-            "surv_risk": st.column_config.TextColumn("Why at risk", width="large", help=H["surv"]),
             "screener_url": st.column_config.LinkColumn("Fundamentals", display_text="Screener ↗")})
 
     c1, c2 = st.columns(2)
@@ -344,12 +384,15 @@ with T[2]:
                   f"promoter {s['promoter_pct']:.0f}%" if pd.notna(s["promoter_pct"]) else "", help=H["ff"])
 
         if s["surv_official"]:
-            st.error(f"🚧 UNDER OFFICIAL SURVEILLANCE: {s['surv_official']} — daily price band capped, 100% margin, T2T settlement. Historically band-locked names lost 5.8% median over the next 60 sessions with volume down 20%. Not a fresh-entry candidate.")
+            st.error(f"🚧 UNDER OFFICIAL SURVEILLANCE: **{s['surv_official']}** — {s['surv_implication']}  \n"
+                     f"**Restricted since:** {s['surv_since'] or 'tracking from today'} · **Earliest exit:** {s['surv_exit_eta'] or '—'} ({s['surv_exit_rule'] or 'review-dependent'})  \n"
+                     f"**Exit check:** {s['surv_exit_check'] or '—'}  \n"
+                     f"Band-locked names historically lost 5.8% median over the next 60 sessions with volume −20%. Not a fresh-entry candidate.")
         elif s["surv_band"]:
             st.warning(f"🚧 Price pinned to a {s['surv_band']} daily band over recent sessions — surveillance-cage behaviour.")
         elif s["surv_risk"]:
             st.warning(f"⚠ Surveillance risk: {s['surv_risk']}")
-        p = panel[panel["isin"] == s["isin"]].sort_values("date")
+        p = load_series(s["isin"])
         p = p[p["date"] >= pd.Timestamp(s["listing_date"])]
         best_exch = p.groupby("exch")["turnover"].median().idxmax()
         p = p[p["exch"] == best_exch].set_index("date")
