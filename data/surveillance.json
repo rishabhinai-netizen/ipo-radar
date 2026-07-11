@@ -10,7 +10,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -17% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b9290cr still < \u20b9500cr pool boundary; 3-month move now -17% (cooled); 5-session move -1%"
   },
   "INE0O1S01012": {
    "official": "ESM Stage I",
@@ -21,7 +21,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +29% (cooled); 5-session move +6%"
+   "exit_check": "mcap \u20b9240cr still < \u20b9500cr pool boundary; 3-month move now +29% (cooled); 5-session move +6%"
   },
   "INE0PS501019": {
    "official": "ESM Stage I",
@@ -43,7 +43,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-08-31",
-   "exit_check": "3-month move now -21% (cooled); 5-session move -4%"
+   "exit_check": "mcap \u20b925cr still < \u20b9500cr pool boundary; 3-month move now -21% (cooled); 5-session move -4%"
   },
   "INE0BTR01012": {
    "official": "ESM Stage I",
@@ -54,7 +54,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-14",
-   "exit_check": "3-month move now +65% (cooled); 5-session move +21%"
+   "exit_check": "mcap \u20b967cr still < \u20b9500cr pool boundary; 3-month move now +65% (cooled); 5-session move +21%"
   },
   "INE0P7201019": {
    "official": "ESM Stage I",
@@ -65,7 +65,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -20% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b998cr still < \u20b9500cr pool boundary; 3-month move now -20% (cooled); 5-session move -2%"
   },
   "INE0LYO01018": {
    "official": null,
@@ -130,14 +130,20 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +50% (cooled); 5-session move +17%"
+   "exit_check": "mcap \u20b951cr still < \u20b9500cr pool boundary; 3-month move now +50% (cooled); 5-session move +17%"
   },
   "INE0AE001013": {
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [
     "In ESM-eligible pool (mcap \u20b9330cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "since": "2026-05-25 (est. from band-lock)",
+   "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
+   "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
+   "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
+   "earliest_exit": "2026-06-24",
+   "exit_check": "mcap \u20b9330cr still < \u20b9500cr pool boundary; 3-month move now -31% (cooled); 5-session move -7%"
   },
   "INE0QBU01012": {
    "official": null,
@@ -222,7 +228,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -18% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b911cr still < \u20b9500cr pool boundary; 3-month move now -18% (cooled); 5-session move -2%"
   },
   "INE0PW501021": {
    "official": "ESM Stage II",
@@ -233,7 +239,7 @@
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
    "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
    "earliest_exit": "2026-07-15",
-   "exit_check": "3-month move now -5% (cooled); 5-session move -6%"
+   "exit_check": "mcap \u20b964cr still < \u20b9500cr pool boundary; 3-month move now -5% (cooled); 5-session move -6%"
   },
   "INE0JWS01017": {
    "official": null,
@@ -267,7 +273,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +30% (cooled); 5-session move +2%"
+   "exit_check": "mcap \u20b9282cr still < \u20b9500cr pool boundary; 3-month move now +30% (cooled); 5-session move +2%"
   },
   "INE0Q1S01010": {
    "official": null,
@@ -279,7 +285,13 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9196cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9196cr still < \u20b9500cr pool boundary; 3-month move now +23% (cooled); 5-session move -1%"
   },
   "INE0PA601017": {
    "official": null,
@@ -297,7 +309,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +30% (cooled); 5-session move +3%"
+   "exit_check": "mcap \u20b9391cr still < \u20b9500cr pool boundary; 3-month move now +30% (cooled); 5-session move +3%"
   },
   "INE0P4T01013": {
    "official": "ESM Stage I",
@@ -308,7 +320,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -2% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b951cr still < \u20b9500cr pool boundary; 3-month move now -2% (cooled); 5-session move -1%"
   },
   "INE07U701015": {
    "official": "ASM Long-Term Stage I",
@@ -330,7 +342,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +35% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b9112cr still < \u20b9500cr pool boundary; 3-month move now +35% (cooled); 5-session move -2%"
   },
   "INE0QW501012": {
    "official": "ASM Long-Term Stage I",
@@ -352,7 +364,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +40% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b986cr still < \u20b9500cr pool boundary; 3-month move now +40% (cooled); 5-session move -1%"
   },
   "INE0Q2Z01013": {
    "official": null,
@@ -419,7 +431,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -28% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b9112cr still < \u20b9500cr pool boundary; 3-month move now -28% (cooled); 5-session move -1%"
   },
   "INE0O7401018": {
    "official": "ASM Long-Term Stage I",
@@ -454,14 +466,20 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-22",
-   "exit_check": "3-month move now +95% (still hot); 5-session move +16%"
+   "exit_check": "mcap \u20b984cr still < \u20b9500cr pool boundary; 3-month move now +95% (still hot); 5-session move +16%"
   },
   "INE02H701025": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9218cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9218cr still < \u20b9500cr pool boundary; 3-month move now -21% (cooled); 5-session move -9%"
   },
   "INE0JFJ01011": {
    "official": "ESM Stage I",
@@ -472,7 +490,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +15% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b952cr still < \u20b9500cr pool boundary; 3-month move now +15% (cooled); 5-session move -1%"
   },
   "INE0J1F01024": {
    "official": "ASM Long-Term Stage I",
@@ -485,6 +503,13 @@
    "earliest_exit": "2026-10-09",
    "exit_check": "3-month move now +108% (still hot); 5-session move +3%"
   },
+  "INE0QTF01015": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9217cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
   "INE0RQZ01017": {
    "official": "ESM Stage I",
    "band_locked": null,
@@ -494,7 +519,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +1% (cooled); 5-session move +1%"
+   "exit_check": "mcap \u20b9161cr still < \u20b9500cr pool boundary; 3-month move now +1% (cooled); 5-session move +1%"
   },
   "INE0QJL01014": {
    "official": "ASM Short-Term Stage I",
@@ -527,7 +552,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +53% (cooled); 5-session move +2%"
+   "exit_check": "mcap \u20b946cr still < \u20b9500cr pool boundary; 3-month move now +53% (cooled); 5-session move +2%"
   },
   "INE0R8M01017": {
    "official": "ESM Stage I",
@@ -538,7 +563,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -15% (cooled); 5-session move -9%"
+   "exit_check": "mcap \u20b9191cr still < \u20b9500cr pool boundary; 3-month move now -15% (cooled); 5-session move -9%"
   },
   "INE777F01014": {
    "official": "ASM Long-Term Stage I",
@@ -560,7 +585,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +5% (cooled); 5-session move -5%"
+   "exit_check": "mcap \u20b9101cr still < \u20b9500cr pool boundary; 3-month move now +5% (cooled); 5-session move -5%"
   },
   "INE0SGC01015": {
    "official": "ASM Long-Term Stage I",
@@ -582,7 +607,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -8% (cooled); 5-session move -4%"
+   "exit_check": "mcap \u20b944cr still < \u20b9500cr pool boundary; 3-month move now -8% (cooled); 5-session move -4%"
   },
   "INE0RDE01010": {
    "official": "ESM Stage I",
@@ -607,7 +632,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +40% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b9124cr still < \u20b9500cr pool boundary; 3-month move now +40% (cooled); 5-session move -2%"
   },
   "INE0S2E01016": {
    "official": "ESM Stage I",
@@ -618,7 +643,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +15% (cooled); 5-session move -10%"
+   "exit_check": "mcap \u20b948cr still < \u20b9500cr pool boundary; 3-month move now +15% (cooled); 5-session move -10%"
   },
   "INE0RJM01010": {
    "official": "ASM Long-Term Stage I",
@@ -640,7 +665,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-08-31",
-   "exit_check": "3-month move now -33% (cooled); 5-session move +3%"
+   "exit_check": "mcap \u20b917cr still < \u20b9500cr pool boundary; 3-month move now -33% (cooled); 5-session move +3%"
   },
   "INE0SOY01013": {
    "official": "ASM Long-Term Stage I",
@@ -671,7 +696,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +15% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b978cr still < \u20b9500cr pool boundary; 3-month move now +15% (cooled); 5-session move -2%"
   },
   "INE0K6601012": {
    "official": "ASM Long-Term Stage II",
@@ -695,7 +720,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +12% (cooled); 5-session move +0%"
+   "exit_check": "mcap \u20b9184cr still < \u20b9500cr pool boundary; 3-month move now +12% (cooled); 5-session move +0%"
   },
   "INE0PC901019": {
    "official": null,
@@ -729,7 +754,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -24% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b967cr still < \u20b9500cr pool boundary; 3-month move now -24% (cooled); 5-session move -2%"
   },
   "INE0QOQ01013": {
    "official": null,
@@ -761,7 +786,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +14% (cooled); 5-session move -3%"
+   "exit_check": "mcap \u20b9572cr \u2265 \u20b9500cr pool boundary; 3-month move now +14% (cooled); 5-session move -3%"
   },
   "INE0S6S01017": {
    "official": "ESM Stage I",
@@ -790,7 +815,13 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9429cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9429cr still < \u20b9500cr pool boundary; 3-month move now +9% (cooled); 5-session move -3%"
   },
   "INE0OUW01013": {
    "official": "ESM Stage I",
@@ -801,7 +832,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +1% (cooled); 5-session move -3%"
+   "exit_check": "mcap \u20b9140cr still < \u20b9500cr pool boundary; 3-month move now +1% (cooled); 5-session move -3%"
   },
   "INE0PQK01013": {
    "official": "ASM Long-Term Stage I",
@@ -855,7 +886,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +42% (cooled); 5-session move +3%"
+   "exit_check": "mcap \u20b9318cr still < \u20b9500cr pool boundary; 3-month move now +42% (cooled); 5-session move +3%"
   },
   "INE0S2V01010": {
    "official": null,
@@ -873,7 +904,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -5% (cooled); 5-session move +6%"
+   "exit_check": "mcap \u20b9118cr still < \u20b9500cr pool boundary; 3-month move now -5% (cooled); 5-session move +6%"
   },
   "INE0M3I01029": {
    "official": "ESM Stage I",
@@ -884,7 +915,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-14",
-   "exit_check": "3-month move now +8% (cooled); 5-session move -5%"
+   "exit_check": "mcap \u20b957cr still < \u20b9500cr pool boundary; 3-month move now +8% (cooled); 5-session move -5%"
   },
   "INE0U9101019": {
    "official": "ESM Stage I",
@@ -906,7 +937,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-22",
-   "exit_check": "3-month move now -1% (cooled); 5-session move +2%"
+   "exit_check": "mcap \u20b917cr still < \u20b9500cr pool boundary; 3-month move now -1% (cooled); 5-session move +2%"
   },
   "INE0V9N01017": {
    "official": "ESM Stage II",
@@ -1000,6 +1031,13 @@
    "earliest_exit": "2026-10-09",
    "exit_check": "mcap \u20b97cr still < \u20b9500cr pool boundary; 3-month move now -57% (cooled); 5-session move -19%"
   },
+  "INE0PQ101010": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9221cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ]
+  },
   "INE0S3H01017": {
    "official": "ESM Stage I",
    "band_locked": null,
@@ -1020,7 +1058,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +17% (cooled); 5-session move +1%"
+   "exit_check": "mcap \u20b9620cr \u2265 \u20b9500cr pool boundary; 3-month move now +17% (cooled); 5-session move +1%"
   },
   "INE0U0201016": {
    "official": "ESM Stage I",
@@ -1109,20 +1147,6 @@
     "In ESM-eligible pool (mcap \u20b9414cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ]
   },
-  "INE0S2G01011": {
-   "official": null,
-   "band_locked": null,
-   "risks": [
-    "In ESM-eligible pool (mcap \u20b9235cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
-  },
-  "INE0RWQ01014": {
-   "official": null,
-   "band_locked": null,
-   "risks": [
-    "In ESM-eligible pool (mcap \u20b9414cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
-  },
   "INE01YQ01013": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
@@ -1156,7 +1180,7 @@
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
    "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
    "earliest_exit": "2026-08-10",
-   "exit_check": "3-month move now +114% (still hot); 5-session move -1%"
+   "exit_check": "mcap \u20b988cr still < \u20b9500cr pool boundary; 3-month move now +114% (still hot); 5-session move -1%"
   },
   "INE0SQH01013": {
    "official": "ESM Stage I",
@@ -1170,7 +1194,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-16",
-   "exit_check": "3-month move now +168% (still hot); 5-session move +16%"
+   "exit_check": "mcap \u20b966cr still < \u20b9500cr pool boundary; 3-month move now +168% (still hot); 5-session move +16%"
   },
   "INE0OO201011": {
    "official": "ESM Stage I",
@@ -1203,7 +1227,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +0% (cooled); 5-session move +21%"
+   "exit_check": "mcap \u20b920cr still < \u20b9500cr pool boundary; 3-month move now +0% (cooled); 5-session move +21%"
   },
   "INE0QYI01019": {
    "official": "ESM Stage II",
@@ -1238,7 +1262,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +22% (cooled); 5-session move -5%"
+   "exit_check": "mcap \u20b9107cr still < \u20b9500cr pool boundary; 3-month move now +22% (cooled); 5-session move -5%"
   },
   "INE0SFW01015": {
    "official": "ASM Short-Term Stage I",
@@ -1250,13 +1274,6 @@
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-07-18",
    "exit_check": "3-month move now +61% (cooled); 5-session move +22%"
-  },
-  "INE0OPA01019": {
-   "official": null,
-   "band_locked": null,
-   "risks": [
-    "In ESM-eligible pool (mcap \u20b9386cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
   },
   "INE0OPA01019": {
    "official": null,
@@ -1303,7 +1320,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +91% (still hot); 5-session move +15%"
+   "exit_check": "mcap \u20b949cr still < \u20b9500cr pool boundary; 3-month move now +91% (still hot); 5-session move +15%"
   },
   "INE0T4V01015": {
    "official": "ESM Stage I",
@@ -1356,7 +1373,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -3% (cooled); 5-session move +3%"
+   "exit_check": "mcap \u20b924cr still < \u20b9500cr pool boundary; 3-month move now -3% (cooled); 5-session move +3%"
   },
   "INE0M4D01010": {
    "official": "ASM Long-Term Stage I",
@@ -1391,7 +1408,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -2% (cooled); 5-session move +3%"
+   "exit_check": "mcap \u20b952cr still < \u20b9500cr pool boundary; 3-month move now -2% (cooled); 5-session move +3%"
   },
   "INE0NB801022": {
    "official": "ESM Stage I",
@@ -1424,7 +1441,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +54% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b9310cr still < \u20b9500cr pool boundary; 3-month move now +54% (cooled); 5-session move -2%"
   },
   "INE10A501018": {
    "official": "ESM Stage I",
@@ -1466,7 +1483,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -58% (cooled); 5-session move -3%"
+   "exit_check": "mcap \u20b9457cr still < \u20b9500cr pool boundary; 3-month move now -58% (cooled); 5-session move -3%"
   },
   "INE12E301017": {
    "official": "ESM Stage I",
@@ -1563,7 +1580,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +94% (still hot); 5-session move +1%"
+   "exit_check": "mcap \u20b9175cr still < \u20b9500cr pool boundary; 3-month move now +94% (still hot); 5-session move +1%"
   },
   "INE0X3M01010": {
    "official": "ESM Stage I",
@@ -1657,13 +1674,15 @@
   "INE0V3U01015": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": [],
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9243cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ],
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -5% (cooled); 5-session move -3%"
+   "exit_check": "mcap \u20b9243cr still < \u20b9500cr pool boundary; 3-month move now -5% (cooled); 5-session move -3%"
   },
   "INE0ZDY01011": {
    "official": null,
@@ -1679,14 +1698,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -19% (cooled); 5-session move -12%"
-  },
-  "INE05J901018": {
-   "official": null,
-   "band_locked": null,
-   "risks": [
-    "In ESM-eligible pool (mcap \u20b9455cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   "exit_check": "mcap \u20b958cr still < \u20b9500cr pool boundary; 3-month move now -19% (cooled); 5-session move -12%"
   },
   "INE05J901018": {
    "official": null,
@@ -1795,7 +1807,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +88% (still hot); 5-session move -6%"
+   "exit_check": "mcap \u20b9310cr still < \u20b9500cr pool boundary; 3-month move now +88% (still hot); 5-session move -6%"
   },
   "INE0ZRC01017": {
    "official": "ESM Stage I",
@@ -1837,7 +1849,13 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9327cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9327cr still < \u20b9500cr pool boundary; 3-month move now -9% (cooled); 5-session move -2%"
   },
   "INE0VG001016": {
    "official": "ASM Short-Term Stage I",
@@ -1859,7 +1877,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +4% (cooled); 5-session move -4%"
+   "exit_check": "mcap \u20b9833cr \u2265 \u20b9500cr pool boundary; 3-month move now +4% (cooled); 5-session move -4%"
   },
   "INE632Q01018": {
    "official": "ESM Stage I",
@@ -1870,7 +1888,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +80% (still hot); 5-session move +1%"
+   "exit_check": "mcap \u20b9158cr still < \u20b9500cr pool boundary; 3-month move now +80% (still hot); 5-session move +1%"
   },
   "INE17VO01028": {
    "official": "ESM Stage I",
@@ -1881,7 +1899,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -21% (cooled); 5-session move -7%"
+   "exit_check": "mcap \u20b946cr still < \u20b9500cr pool boundary; 3-month move now -21% (cooled); 5-session move -7%"
   },
   "INE0PKD01011": {
    "official": "ESM Stage I",
@@ -1892,7 +1910,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +18% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b9832cr \u2265 \u20b9500cr pool boundary; 3-month move now +18% (cooled); 5-session move -2%"
   },
   "INE0YDV01010": {
    "official": "ESM Stage I",
@@ -1903,7 +1921,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -3% (cooled); 5-session move +4%"
+   "exit_check": "mcap \u20b944cr still < \u20b9500cr pool boundary; 3-month move now -3% (cooled); 5-session move +4%"
   },
   "INE0UQ601012": {
    "official": "ESM Stage I",
@@ -1930,7 +1948,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +21% (cooled); 5-session move -5%"
+   "exit_check": "mcap \u20b947cr still < \u20b9500cr pool boundary; 3-month move now +21% (cooled); 5-session move -5%"
   },
   "INE0ZN101029": {
    "official": null,
@@ -2000,7 +2018,13 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9230cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9230cr still < \u20b9500cr pool boundary; 3-month move now +8% (cooled); 5-session move -2%"
   },
   "INE0Z4F01028": {
    "official": "ASM Long-Term Stage II",
@@ -2062,7 +2086,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-28",
-   "exit_check": "3-month move now +84% (still hot); 5-session move +3%"
+   "exit_check": "mcap \u20b950cr still < \u20b9500cr pool boundary; 3-month move now +84% (still hot); 5-session move +3%"
   },
   "INE1IIQ01028": {
    "official": null,
@@ -2076,7 +2100,13 @@
    "band_locked": null,
    "risks": [
     "ESM risk: mcap \u20b9375cr (<500cr pool) and +79% in 3 months"
-   ]
+   ],
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9375cr still < \u20b9500cr pool boundary; 3-month move now +79% (still hot); 5-session move -2%"
   },
   "INE0U4H01011": {
    "official": "ESM Stage I",
@@ -2087,7 +2117,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -3% (cooled); 5-session move -5%"
+   "exit_check": "mcap \u20b932cr still < \u20b9500cr pool boundary; 3-month move now -3% (cooled); 5-session move -5%"
   },
   "INE0TQE01026": {
    "official": "ESM Stage I",
@@ -2098,7 +2128,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +38% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b9614cr \u2265 \u20b9500cr pool boundary; 3-month move now +38% (cooled); 5-session move -1%"
   },
   "INE0WL901019": {
    "official": "ESM Stage I",
@@ -2145,7 +2175,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +73% (cooled); 5-session move -4%"
+   "exit_check": "mcap \u20b9140cr still < \u20b9500cr pool boundary; 3-month move now +73% (cooled); 5-session move -4%"
   },
   "INE1K8Y01018": {
    "official": "ESM Stage I",
@@ -2223,7 +2253,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +73% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b9202cr still < \u20b9500cr pool boundary; 3-month move now +73% (cooled); 5-session move -1%"
   },
   "INE0XJ501010": {
    "official": "ESM Stage I",
@@ -2234,7 +2264,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -1% (cooled); 5-session move +1%"
+   "exit_check": "mcap \u20b987cr still < \u20b9500cr pool boundary; 3-month move now -1% (cooled); 5-session move +1%"
   },
   "INE21UM01018": {
    "official": "ESM Stage I",
@@ -2278,7 +2308,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +29% (cooled); 5-session move -7%"
+   "exit_check": "mcap \u20b938cr still < \u20b9500cr pool boundary; 3-month move now +29% (cooled); 5-session move -7%"
   },
   "INE1A6Q01010": {
    "official": "ASM Long-Term Stage I",
@@ -2311,7 +2341,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +52% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b9160cr still < \u20b9500cr pool boundary; 3-month move now +52% (cooled); 5-session move -1%"
   },
   "INE0CTB01014": {
    "official": "ESM Stage I",
@@ -2322,7 +2352,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +2% (cooled); 5-session move +10%"
+   "exit_check": "mcap \u20b938cr still < \u20b9500cr pool boundary; 3-month move now +2% (cooled); 5-session move +10%"
   },
   "INE1CRP01016": {
    "official": "ESM Stage I",
@@ -2333,7 +2363,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +14% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b9128cr still < \u20b9500cr pool boundary; 3-month move now +14% (cooled); 5-session move -2%"
   },
   "INE1KEC01023": {
    "official": "ESM Stage I",
@@ -2374,7 +2404,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +32% (cooled); 5-session move -3%"
+   "exit_check": "mcap \u20b9455cr still < \u20b9500cr pool boundary; 3-month move now +32% (cooled); 5-session move -3%"
   },
   "INE0F8901022": {
    "official": "ESM Stage I",
@@ -2385,7 +2415,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +11% (cooled); 5-session move -8%"
+   "exit_check": "mcap \u20b939cr still < \u20b9500cr pool boundary; 3-month move now +11% (cooled); 5-session move -8%"
   },
   "INE1KU201016": {
    "official": "ESM Stage I",
@@ -2421,7 +2451,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -20% (cooled); 5-session move +1%"
+   "exit_check": "mcap \u20b932cr still < \u20b9500cr pool boundary; 3-month move now -20% (cooled); 5-session move +1%"
   },
   "INE12UN01015": {
    "official": "ASM Long-Term Stage I",
@@ -2499,7 +2529,7 @@
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-17",
-   "exit_check": "3-month move now +65% (cooled); 5-session move +12%"
+   "exit_check": "mcap \u20b9102cr still < \u20b9500cr pool boundary; 3-month move now +65% (cooled); 5-session move +12%"
   },
   "INE0UH301010": {
    "official": "ASM Long-Term Stage I",
