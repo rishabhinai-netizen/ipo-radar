@@ -112,6 +112,15 @@ def compute_signals() -> pd.DataFrame:
         broke = not (isinstance(bo_day, float) and math.isnan(bo_day))
         early_break = broke and bo_day <= config.BREAKOUT_WINDOW
         fresh = early_break and (days - 1) - int(bo_day) <= 3
+        # LATE BLOOMER live signal: fresh cross (≤3 sessions ago) on day 26-120 WITH a recent volume thrust
+        dspc = r.get("days_since_pivot_cross")
+        late_fresh = False
+        if not fresh and pd.notna(dspc) and dspc <= 3 and bool(r.get("thrust_recent")):
+            cross_day = (days - 1) - int(dspc)
+            if 25 < cross_day <= config.LATE_WINDOW:
+                late_fresh = True
+                fresh = True
+                early_break = True
         above_pivot = cmp_ > pivot
         dist_pivot = (pivot / cmp_ - 1) * 100
         in_setup_zone = (not broke) and days <= 40 and 0 <= dist_pivot <= 10
@@ -173,8 +182,10 @@ def compute_signals() -> pd.DataFrame:
         # ---------------- reasons ----------------
         R = []
         R.append(f"Score {score}/100 — structure {s_struct}/35, base {s_base}/20, liquidity {s_liq}/15, institutions {s_inst}/15, lock-in {s_lock}/5, LM {s_lm}/5, momentum {s_mom}/5")
-        if fresh:
-            R.append(f"Fresh close above the ₹{pivot:,.1f} pivot on session {int(bo_day)} — the walk-forward-validated entry (test set: PF 1.95, +5.2% mean/trade after costs)")
+        if late_fresh:
+            R.append(f"🌙 LATE BLOOMER entry: fresh cross of the ₹{pivot:,.1f} pivot with a volume thrust — the Ather-class signal (missed-winners study: PF 3.05 with volume confirmation)")
+        elif fresh:
+            R.append(f"Fresh close above the ₹{pivot:,.1f} pivot on session {int(bo_day)} — the walk-forward-validated entry")
         elif in_setup_zone:
             R.append(f"Basing {dist_pivot:.1f}% below the ₹{pivot:,.1f} pivot at {days} sessions — trigger is a daily close above it inside session {config.BREAKOUT_WINDOW}")
         elif early_break and above_pivot:
@@ -260,6 +271,7 @@ def compute_signals() -> pd.DataFrame:
             "surv_official": sv_official or "", "surv_band": sv_band or "",
             "surv_risk": " | ".join(sv_risks),
             "surv_since": sv.get("since") or "", "surv_exit_eta": sv.get("earliest_exit") or "",
+            "surv_source": sv.get("source") or "",
             "surv_implication": sv.get("implication") or "", "surv_exit_check": sv.get("exit_check") or "",
             "surv_exit_rule": sv.get("exit_rule") or "",
             "at_ath": bool(r["dd_from_life_high_pct"] >= -2 and days > 10),

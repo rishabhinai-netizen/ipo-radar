@@ -12,5 +12,8 @@ POP_MIN, POP_MAX = 0, 50   # listing-day open premium band
 BREAKOUT_WINDOW = 25  # sessions within which pivot must be reclaimed
 HARD_STOP_PCT = -8    # O'Neil hard stop from entry
 TRAIL_ARM_PCT = 15    # unrealized gain that ARMS the trailing stop
-TRAIL_PCT = 25        # trail width off peak (exit-grid optimum: wide trail = tail capture)
-TIME_STOP = 120       # sessions (winners take ~9 months; 60 was amputating tails)
+TRAIL_PCT = 30        # trail width off peak — widened after the CP Plus/3700 review: max tail capture
+TIME_STOP = 120       # applies ONLY to unproven trades (gain < KEEP_GAIN_PCT at day 120)
+KEEP_GAIN_PCT = 30    # a trade up ≥30% at day 120 is never time-stopped — it trails until it breaks
+LATE_WINDOW = 120     # late-bloomer entries: first pivot cross day 26..120 (the Ather class)
+LATE_VOL_X = 2.5      # ...but only with cross-day volume ≥2.5× avg (missed-winners study: PF 3.05)

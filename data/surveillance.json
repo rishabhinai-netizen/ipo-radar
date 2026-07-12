@@ -1,10 +1,11 @@
 {
- "as_of": "2026-07-11",
+ "as_of": "2026-07-12",
  "flags": {
   "INE0ITO01014": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -16,6 +17,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -27,6 +29,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -38,6 +41,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-02 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -49,6 +53,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-16 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -60,6 +65,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -72,7 +78,8 @@
    "band_locked": "5%",
    "risks": [
     "1-month high-low variation 75% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE0OSJ01014": {
    "official": "ESM Stage I",
@@ -80,6 +87,7 @@
    "risks": [
     "SME LT-ASM risk: +114% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -90,7 +98,8 @@
   "INE09FA01019": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0ON201012": {
    "official": "ESM Stage I",
@@ -98,6 +107,7 @@
    "risks": [
     "SME LT-ASM risk: +138% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -108,12 +118,14 @@
   "INE0OJZ01019": {
    "official": null,
    "band_locked": "2%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE024001021": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -125,6 +137,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -138,6 +151,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9330cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-05-25 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -148,19 +162,22 @@
   "INE0QBU01012": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE04T901017": {
    "official": null,
    "band_locked": null,
    "risks": [
     "ST-ASM trigger risk: +32% in 5 sessions (criterion: \u226525%)"
-   ]
+   ],
+   "source": null
   },
   "INE0PRF01011": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -174,6 +191,7 @@
    "risks": [
     "1-month high-low variation 88% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -185,6 +203,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -196,6 +215,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -207,6 +227,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -217,12 +238,14 @@
   "INE00C401011": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0NDX01019": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -234,6 +257,7 @@
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-06-15 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -246,12 +270,14 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9337cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE0OLS01010": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -262,12 +288,14 @@
   "INE0M7501019": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0OPS01011": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -278,7 +306,8 @@
   "INE0Q1S01010": {
    "official": null,
    "band_locked": "2%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0INJ01017": {
    "official": "ESM Stage I",
@@ -286,6 +315,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9196cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -298,12 +328,14 @@
    "band_locked": null,
    "risks": [
     "1-month high-low variation 91% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE597Z01014": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -315,6 +347,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -326,6 +359,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -337,6 +371,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -348,6 +383,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -359,6 +395,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -369,12 +406,14 @@
   "INE0Q2Z01013": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0QSK01017": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0QD201012": {
    "official": "ESM Stage I",
@@ -382,6 +421,7 @@
    "risks": [
     "ST-ASM trigger risk: +28% in 5 sessions (criterion: \u226525%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-22 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -393,6 +433,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -404,6 +445,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -415,6 +457,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -426,6 +469,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -437,6 +481,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -448,6 +493,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -461,6 +507,7 @@
    "risks": [
     "SME LT-ASM risk: +95% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-24 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -474,6 +521,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9218cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -485,6 +533,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -496,6 +545,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -508,12 +558,14 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9217cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE0RQZ01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -525,6 +577,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -536,6 +589,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -547,6 +601,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -558,6 +613,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -569,6 +625,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -580,6 +637,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -591,6 +649,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -602,6 +661,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -616,6 +676,7 @@
     "ST-ASM trigger risk: +27% in 5 sessions (criterion: \u226525%)",
     "1-month high-low variation 119% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-05-25 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -627,6 +688,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -638,6 +700,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -649,6 +712,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -660,6 +724,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-02 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -671,6 +736,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -683,7 +749,8 @@
    "band_locked": "5%",
    "risks": [
     "1-month high-low variation 146% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE0DEZ01013": {
    "official": "ESM Stage I",
@@ -691,6 +758,7 @@
    "risks": [
     "1-month high-low variation 76% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -704,6 +772,7 @@
    "risks": [
     "ST-ASM trigger risk: +26% in 5 sessions (criterion: \u226525%)"
    ],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-06-22 (est. from band-lock)",
    "implication": "Trade-to-trade + 100% margin. No intraday netting.",
    "review": "Quarterly review; stages step DOWN one at a time",
@@ -715,6 +784,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -725,19 +795,22 @@
   "INE0PC901019": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0Q9W01015": {
    "official": null,
    "band_locked": null,
    "risks": [
     "ST-ASM trigger risk: +45% in 5 sessions (criterion: \u226525%)"
-   ]
+   ],
+   "source": null
   },
   "INE0OAF01028": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -749,6 +822,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -759,12 +833,14 @@
   "INE0QOQ01013": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0STN01015": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -775,12 +851,14 @@
   "INE0R3T01013": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0QRV01016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -792,6 +870,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -803,6 +882,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -816,6 +896,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9429cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -827,6 +908,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -838,6 +920,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -848,12 +931,14 @@
   "INE0S9101013": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0PE401018": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -865,6 +950,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-06-09 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -875,12 +961,14 @@
   "INE0BHK01012": {
    "official": null,
    "band_locked": "2%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0PMR01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -893,12 +981,14 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9386cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE0SUN01013": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -910,6 +1000,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-16 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -921,6 +1012,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -932,6 +1024,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-24 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -945,6 +1038,7 @@
    "risks": [
     "SME LT-ASM risk: +107% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -956,6 +1050,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -967,6 +1062,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -978,6 +1074,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -992,6 +1089,7 @@
     "SME LT-ASM risk: +108% in 3 months (criterion: \u2265\u00b190%, indicative)",
     "1-month high-low variation 76% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-25 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1003,6 +1101,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -1016,7 +1115,8 @@
    "risks": [
     "SME LT-ASM risk: +91% in 3 months (criterion: \u2265\u00b190%, indicative)",
     "1-month high-low variation 75% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE0YAL01017": {
    "official": "ESM Stage I",
@@ -1024,6 +1124,7 @@
    "risks": [
     "1-month high-low variation 129% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1036,12 +1137,14 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9221cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE0S3H01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1053,6 +1156,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1064,6 +1168,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-03-13 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1077,6 +1182,7 @@
    "risks": [
     "ST-ASM trigger risk: +32% in 5 sessions (criterion: \u226525%)"
    ],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1087,12 +1193,14 @@
   "INE0SK201011": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0SMY01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1104,6 +1212,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1115,6 +1224,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1126,6 +1236,7 @@
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-06-19 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1138,19 +1249,22 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9235cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE0RWQ01014": {
    "official": null,
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9414cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE01YQ01013": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-06-19 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1162,6 +1276,7 @@
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-06-11 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1175,6 +1290,7 @@
    "risks": [
     "SME LT-ASM risk: +114% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1189,6 +1305,7 @@
     "SME LT-ASM risk: +168% in 3 months (criterion: \u2265\u00b190%, indicative)",
     "1-month high-low variation 99% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-18 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1200,6 +1317,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1211,6 +1329,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -1222,6 +1341,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1235,6 +1355,7 @@
    "risks": [
     "SME LT-ASM risk: +164% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-06-16 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1246,6 +1367,7 @@
    "official": "ESM Stage II",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1257,6 +1379,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1268,6 +1391,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1280,7 +1404,8 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9386cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE0SMR01011": {
    "official": "ESM Stage II",
@@ -1288,6 +1413,7 @@
    "risks": [
     "SME LT-ASM risk: +144% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-06-01 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1301,6 +1427,7 @@
    "risks": [
     "SME LT-ASM risk: +110% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -1315,6 +1442,7 @@
     "SME LT-ASM risk: +91% in 3 months (criterion: \u2265\u00b190%, indicative)",
     "1-month high-low variation 89% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1328,6 +1456,7 @@
    "risks": [
     "SME LT-ASM risk: +108% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1339,6 +1468,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1350,6 +1480,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1362,12 +1493,14 @@
    "band_locked": null,
    "risks": [
     "SME LT-ASM risk: +110% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ]
+   ],
+   "source": null
   },
   "INE0TD101011": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1381,6 +1514,7 @@
    "risks": [
     "1-month high-low variation 103% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-06-30 (est. from band-lock)",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -1392,6 +1526,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1403,6 +1538,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1414,6 +1550,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1425,6 +1562,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1436,6 +1574,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1447,6 +1586,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1459,12 +1599,14 @@
    "band_locked": null,
    "risks": [
     "ST-ASM trigger risk: +31% in 5 sessions (criterion: \u226525%)"
-   ]
+   ],
+   "source": null
   },
   "INE17WC01013": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -1478,6 +1620,7 @@
    "risks": [
     "1-month high-low variation 214% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1489,6 +1632,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1500,6 +1644,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1511,6 +1656,7 @@
    "official": "ESM Stage II",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1524,6 +1670,7 @@
    "risks": [
     "SME LT-ASM risk: +141% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-05-18 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1535,6 +1682,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1546,6 +1694,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1556,12 +1705,14 @@
   "INE0AOG01018": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0YSH01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1575,6 +1726,7 @@
    "risks": [
     "SME LT-ASM risk: +94% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1588,6 +1740,7 @@
    "risks": [
     "SME LT-ASM risk: +146% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-29 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1598,12 +1751,14 @@
   "INE0TG901011": {
    "official": null,
    "band_locked": "2%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE104101014": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1615,6 +1770,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1626,6 +1782,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -1636,12 +1793,14 @@
   "INE0XCV01014": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE17GV01016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1653,6 +1812,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1664,6 +1824,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1677,6 +1838,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9243cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1687,12 +1849,14 @@
   "INE0ZDY01011": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0SGZ01016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1705,12 +1869,14 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9455cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE0XM301010": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1722,6 +1888,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1733,6 +1900,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-04-30 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1744,6 +1912,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1756,12 +1925,14 @@
    "band_locked": null,
    "risks": [
     "1-month high-low variation 122% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE18JU01028": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1774,12 +1945,14 @@
    "band_locked": null,
    "risks": [
     "1-month high-low variation 81% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE06WU01026": {
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-24 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1791,6 +1964,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -1802,6 +1976,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1815,6 +1990,7 @@
    "risks": [
     "1-month high-low variation 93% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1826,6 +2002,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1837,6 +2014,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1850,6 +2028,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9327cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1861,6 +2040,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -1872,6 +2052,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1883,6 +2064,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1894,6 +2076,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1905,6 +2088,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1916,6 +2100,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1927,6 +2112,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1937,12 +2123,14 @@
   "INE12P601017": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE1OIC01018": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1955,12 +2143,14 @@
    "band_locked": null,
    "risks": [
     "SME LT-ASM risk: +109% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ]
+   ],
+   "source": null
   },
   "INE084K01015": {
    "official": "ESM Stage II",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-06-30 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -1974,6 +2164,7 @@
    "risks": [
     "SME LT-ASM risk: +118% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1986,26 +2177,30 @@
    "band_locked": null,
    "risks": [
     "ST-ASM trigger risk: +25% in 5 sessions (criterion: \u226525%)"
-   ]
+   ],
+   "source": null
   },
   "INE0VOV01021": {
    "official": null,
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9332cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE1DRH01011": {
    "official": null,
    "band_locked": "5%",
    "risks": [
     "ST-ASM trigger risk: +27% in 5 sessions (criterion: \u226525%)"
-   ]
+   ],
+   "source": null
   },
   "INE0Y5H01014": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2019,6 +2214,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9230cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2030,6 +2226,7 @@
    "official": "ASM Long-Term Stage II",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "Trade-to-trade + 100% margin. No intraday netting.",
    "review": "Quarterly review; stages step DOWN one at a time",
@@ -2043,6 +2240,7 @@
    "risks": [
     "ST-ASM trigger risk: +28% in 5 sessions (criterion: \u226525%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-29 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2054,6 +2252,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2064,12 +2263,14 @@
   "INE15XJ01010": {
    "official": null,
    "band_locked": "2%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0MLS01022": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -2081,6 +2282,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-30 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2093,7 +2295,8 @@
    "band_locked": null,
    "risks": [
     "1-month high-low variation 77% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE1FF001016": {
    "official": "ESM Stage I",
@@ -2101,6 +2304,7 @@
    "risks": [
     "ESM risk: mcap \u20b9375cr (<500cr pool) and +79% in 3 months"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2112,6 +2316,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2123,6 +2328,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2134,6 +2340,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2146,7 +2353,8 @@
    "band_locked": "5%",
    "risks": [
     "1-month high-low variation 79% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE1BZC01019": {
    "official": "ESM Stage I",
@@ -2154,6 +2362,7 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9323cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2164,12 +2373,14 @@
   "INE1B3501014": {
    "official": null,
    "band_locked": "2%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0YJV01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2181,6 +2392,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2193,7 +2405,8 @@
    "band_locked": null,
    "risks": [
     "1-month high-low variation 93% (ST-ASM secondary criterion \u226575%)"
-   ]
+   ],
+   "source": null
   },
   "INE0PLX01017": {
    "official": "ESM Stage I",
@@ -2201,6 +2414,7 @@
    "risks": [
     "1-month high-low variation 106% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-05 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2213,12 +2427,14 @@
    "band_locked": null,
    "risks": [
     "SME LT-ASM risk: +99% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ]
+   ],
+   "source": null
   },
   "INE1FL101016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2230,6 +2446,7 @@
    "official": "ASM Long-Term Stage II",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "Trade-to-trade + 100% margin. No intraday netting.",
    "review": "Quarterly review; stages step DOWN one at a time",
@@ -2242,12 +2459,14 @@
    "band_locked": null,
    "risks": [
     "ST-ASM trigger risk: +38% in 5 sessions (criterion: \u226525%)"
-   ]
+   ],
+   "source": null
   },
   "INE1CW901027": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2259,6 +2478,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2270,6 +2490,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2281,6 +2502,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -2292,6 +2514,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -2303,6 +2526,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2314,6 +2538,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -2325,6 +2550,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -2336,6 +2562,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2347,6 +2574,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2358,6 +2586,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2372,6 +2601,7 @@
     "SME LT-ASM risk: +126% in 3 months (criterion: \u2265\u00b190%, indicative)",
     "1-month high-low variation 106% (ST-ASM secondary criterion \u226575%)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-11 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2382,12 +2612,14 @@
   "INE0YJA01011": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE2HJL01019": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2399,6 +2631,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2410,6 +2643,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2421,6 +2655,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2433,19 +2668,22 @@
    "band_locked": null,
    "risks": [
     "SME LT-ASM risk: +160% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ]
+   ],
+   "source": null
   },
   "INE0S1B01014": {
    "official": null,
    "band_locked": null,
    "risks": [
     "SME LT-ASM risk: +99% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ]
+   ],
+   "source": null
   },
   "INE0TZX01019": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2457,6 +2695,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -2468,6 +2707,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2478,12 +2718,14 @@
   "INE0JVH01012": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0XUD01014": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2495,6 +2737,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-05-12 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2506,6 +2749,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-05-22 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2518,12 +2762,14 @@
    "band_locked": null,
    "risks": [
     "In ESM-eligible pool (mcap \u20b9158cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
-   ]
+   ],
+   "source": null
   },
   "INE1YNB01019": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-06-19 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2535,6 +2781,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Long-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -2546,6 +2793,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2559,6 +2807,7 @@
    "risks": [
     "SME LT-ASM risk: +98% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
    "since": "2026-04-24 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -2571,12 +2820,14 @@
    "band_locked": null,
    "risks": [
     "SME LT-ASM risk: +106% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ]
+   ],
+   "source": null
   },
   "INE05TO01019": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -2590,6 +2841,7 @@
    "risks": [
     "SME LT-ASM risk: +103% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2601,6 +2853,7 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 10-Jul-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -2612,6 +2865,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -2623,6 +2877,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -2634,6 +2889,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-07-11",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -2645,6 +2901,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": "5%",
    "risks": [],
+   "source": "NSE ASM Short-Term list, 10-Jul-2026",
    "since": "2026-06-24 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -2655,17 +2912,20 @@
   "INE0TKX01011": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE0V9I01017": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   },
   "INE1O7201010": {
    "official": null,
    "band_locked": "5%",
-   "risks": []
+   "risks": [],
+   "source": null
   }
  },
  "bandlock_study": {

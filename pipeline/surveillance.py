@@ -37,26 +37,31 @@ def _get_json(url):
 
 
 def fetch_official():
-    flags = {}
+    flags, raw = {}, {}
     try:
         d = _get_json("https://www.nseindia.com/api/reportASM?json=true")
         for r in (d.get("longterm", {}).get("data") or []):
             flags.setdefault(r["isin"], []).append(f"ASM Long-Term {r.get('asmSurvIndicator','')}".strip())
+            raw.setdefault(r["isin"], []).append(f"NSE ASM Long-Term list, {r.get('asmTime','')}")
         for r in (d.get("shortterm", {}).get("data") or []):
             flags.setdefault(r["isin"], []).append(f"ASM Short-Term {r.get('asmSurvIndicator','')}".strip())
+            raw.setdefault(r["isin"], []).append(f"NSE ASM Short-Term list, {r.get('asmTime','')}")
     except Exception as e:
         print("ASM fetch fail:", e)
     try:
         for r in _get_json("https://www.nseindia.com/api/reportESM?json=true"):
             flags.setdefault(r["isin"], []).append(f"ESM {r.get('esmSurvIndicator','')}".strip())
+            raw.setdefault(r["isin"], []).append(f"{r.get('survDesc','')} (NSE list {r.get('esmTime','')})")
     except Exception as e:
         print("ESM fetch fail:", e)
     try:
         for r in _get_json("https://www.nseindia.com/api/reportGSM?json=true"):
             flags.setdefault(r["isin"], []).append(f"GSM {r.get('gsmStage','')}".strip())
+            raw.setdefault(r["isin"], []).append(f"{r.get('survDesc','')} (NSE GSM list {r.get('gsmTime','')})")
     except Exception as e:
         print("GSM fetch fail:", e)
-    return {k: "; ".join(sorted(set(v))) for k, v in flags.items()}
+    return ({k: "; ".join(sorted(set(v))) for k, v in flags.items()},
+            {k: " | ".join(sorted(set(v))) for k, v in raw.items()})
 
 
 def _series(panel):
@@ -197,7 +202,7 @@ def run():
     panel = _series(pd.read_parquet(os.path.join(DATA, "prices_panel.parquet")))
     ff = json.load(open(os.path.join(DATA, "freefloat.json"))) if os.path.exists(
         os.path.join(DATA, "freefloat.json")) else {}
-    official = fetch_official()
+    official, official_raw = fetch_official()
     print(f"official surveillance flags fetched: {len(official)} listed securities (NSE)")
 
     hist_path = os.path.join(DATA, "surv_history.json")
@@ -214,7 +219,8 @@ def run():
         mcap = (ff.get(isin) or {}).get("mcap_cr")
         offi = official.get(isin)
         entry = {"official": offi, "band_locked": band_lock_state(p),
-                 "risks": risk_rules(p, m["board"], mcap)}
+                 "risks": risk_rules(p, m["board"], mcap),
+                 "source": official_raw.get(isin)}
         if offi:
             h = hist.setdefault(isin, {})
             if h.get("flag") != offi:               # new flag or stage change

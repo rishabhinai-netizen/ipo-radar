@@ -271,8 +271,8 @@ def refresh_bhavcopy(master):
         panel = pd.concat([panel, add], ignore_index=True)
         panel["date"] = pd.to_datetime(panel["date"])
         panel = panel.drop_duplicates(["exch", "date", "isin"])
-    panel = panel[panel["isin"].isin(isins)].sort_values("date")
-    panel.to_parquet(path)
+    panel = panel[panel["isin"].isin(isins)].sort_values(["isin", "date"])
+    panel.to_parquet(path, row_group_size=16384, index=False)  # per-isin row groups → true lazy reads in the app
     print(f"panel: {len(panel)} rows, {panel['isin'].nunique()} isins, "
           f"{panel['date'].min().date()} → {panel['date'].max().date()}")
     # QC: turnover continuity across format boundary (should be same magnitude)
@@ -315,6 +315,11 @@ def main():
         tradelog.run()           # transparent trade-by-trade replay of the strategy
     except Exception as e:
         print("tradelog skipped:", e)
+    try:
+        import missed
+        missed.run()             # missed-winners autopsy (keeps the honesty loop closed)
+    except Exception as e:
+        print("missed skipped:", e)
     import signals
     s = signals.compute_signals()
     print(s["reco"].value_counts().to_string())

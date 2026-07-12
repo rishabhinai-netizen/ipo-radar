@@ -1,43 +1,49 @@
 {
- "n_trades": 956,
- "n_closed": 897,
- "n_open": 59,
- "win_rate": 26.4,
- "avg_pnl": 6.45,
- "median_pnl": -9.85,
- "profit_factor": 1.83,
- "avg_win": 53.8,
- "avg_loss": -10.6,
+ "n_trades": 1011,
+ "n_closed": 929,
+ "n_open": 82,
+ "win_rate": 23.0,
+ "avg_pnl": 4.28,
+ "median_pnl": -10.01,
+ "profit_factor": 1.52,
+ "avg_win": 54.3,
+ "avg_loss": -10.7,
  "best": {
-  "company": "Owais Metal & Mineral Processing Ltd.",
-  "pnl": 395.67
+  "company": "Oriana Power Ltd.",
+  "pnl": 517.91
  },
  "worst": {
   "company": "Sahaj Solar Ltd.",
   "pnl": -38.55
  },
- "avg_hold": 33.0,
- "sum_pnl_pct": 5788.0,
+ "avg_hold": 40.0,
+ "sum_pnl_pct": 3975.0,
+ "avg_pnl_incl_open": 8.21,
+ "open_mtm_pnl_sum": 4320.0,
  "by_year": {
   "2023": {
-   "n": 128,
-   "win": 40,
-   "avg": 20.6
+   "n": 132,
+   "win": 38,
+   "avg": 26.4,
+   "open": 1
   },
   "2024": {
-   "n": 358,
-   "win": 28,
-   "avg": 8.3
+   "n": 386,
+   "win": 25,
+   "avg": 6.2,
+   "open": 3
   },
   "2025": {
-   "n": 334,
-   "win": 23,
-   "avg": 1.9
+   "n": 349,
+   "win": 22,
+   "avg": 1.9,
+   "open": 11
   },
   "2026": {
-   "n": 77,
-   "win": 9,
-   "avg": -5.8
+   "n": 144,
+   "win": 44,
+   "avg": 12.4,
+   "open": 67
   }
  }
 }

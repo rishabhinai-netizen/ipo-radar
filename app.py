@@ -86,14 +86,16 @@ def load(_v=None):
     svp = os.path.join(DATA, "surveillance.json")
     if os.path.exists(svp):
         stats["bandlock_study"] = json.load(open(svp)).get("bandlock_study", {})
+    mw = (pd.read_csv(os.path.join(DATA, "missed_winners.csv"))
+          if os.path.exists(os.path.join(DATA, "missed_winners.csv")) else pd.DataFrame())
     tl = (pd.read_csv(os.path.join(DATA, "trade_log.csv"))
           if os.path.exists(os.path.join(DATA, "trade_log.csv")) else pd.DataFrame())
     ts = (json.load(open(os.path.join(DATA, "trade_stats.json")))
           if os.path.exists(os.path.join(DATA, "trade_stats.json")) else {})
-    return sig, ana, stats, ladder, sc, win, tl, ts
+    return sig, ana, stats, ladder, sc, win, tl, ts, mw
 
 
-@st.cache_data(ttl=900, max_entries=8)
+@st.cache_data(ttl=900, max_entries=4)
 def load_series(isin):
     """Lazy per-stock price series (predicate pushdown — keeps memory tiny)."""
     p = pd.read_parquet(os.path.join(DATA, "prices_panel.parquet"),
@@ -102,7 +104,7 @@ def load_series(isin):
     return p.sort_values("date")
 
 
-sig, ana, stats, ladder, scorecard, winners, tlog, tstats = load(_data_version())
+sig, ana, stats, ladder, scorecard, winners, tlog, tstats, missedw = load(_data_version())
 last_date = stats.get("as_of", "")
 
 st.markdown(f"""
@@ -267,12 +269,18 @@ with T[0]:
     svt = pd.concat([surv_now, surv_risk]).copy()
     svt["status"] = np.where(svt["surv_official"] != "", "🔴 " + svt["surv_official"],
                              np.where(svt["surv_band"] != "", "🟠 band-locked " + svt["surv_band"], "🟡 at risk"))
-    st.dataframe(svt[["status", "reco", "company", "board", "surv_implication", "surv_since",
+    st.markdown("Official flags are read **daily from NSE's own lists** — verify any name in one click: "
+                "[NSE ASM](https://www.nseindia.com/reports-indices-asm) · [NSE ESM](https://www.nseindia.com/reports/esm) · "
+                "[NSE GSM](https://www.nseindia.com/reports-indices-gsm). Since 2024 ESM covers SME stocks too "
+                "(mcap < ₹500cr) — small SME names in ESM is correct, not an error.")
+    st.dataframe(svt[["status", "reco", "company", "board", "surv_source", "surv_implication", "surv_since",
                       "surv_exit_eta", "surv_exit_check", "surv_risk", "cmp_vs_issue_pct",
                       "mcap_cr", "screener_url"]],
                  use_container_width=True, hide_index=True, height=340, column_config={
             "status": st.column_config.TextColumn("Status", help=H["surv"]),
             "reco": "Reco", "company": "Company", "board": "Board",
+            "surv_source": st.column_config.TextColumn("NSE source (verbatim)", width="medium",
+                help="NSE's own list text and timestamp, unmodified — re-verified against the official list every day."),
             "surv_implication": st.column_config.TextColumn("What it means (stage-specific)", width="large",
                 help="Exact restrictions of this stage: settlement mode, margin, daily band. From exchange FAQs (indicative — exchanges revise periodically)."),
             "surv_since": st.column_config.TextColumn("Restricted since",
@@ -366,11 +374,14 @@ with T[2]:
         closed = tlog[tlog["exit_reason"] != "OPEN"]
         st.markdown(f"""<div class="insight"><b>Full transparency — every trade the strategy would have taken
         since {stats.get('universe_start','2023-07-01')}, replayed with the exact live rules</b> (entry at next open
-        after a valid pivot cross, −8% stop, +15% then 12% trail, 60-session time stop, costs included, max 3
-        trades/stock). <b>{tstats.get('n_trades','—')} trades</b> ({tstats.get('n_open','—')} still open) ·
-        win rate <b>{tstats.get('win_rate','—')}%</b> · average <b>{tstats.get('avg_pnl','—')}%</b> per trade ·
-        profit factor <b>{tstats.get('profit_factor','—')}</b> · avg win +{tstats.get('avg_win','—')}% vs avg loss
-        {tstats.get('avg_loss','—')}% · avg hold {tstats.get('avg_hold','—')} sessions.
+        after a valid pivot cross — early ≤ day 25, or LATE BLOOMER day 26–120 with ≥2.5× volume; −8% stop;
+        30% trail armed at +15%; time stop only for UNPROVEN trades (a position up ≥30% at day 120 is never
+        time-stopped — it trails until it breaks); costs included; max 3 trades/stock).
+        <b>{tstats.get('n_trades','—')} trades</b> ({tstats.get('n_open','—')} open and riding) ·
+        <b>average {tstats.get('avg_pnl_incl_open', tstats.get('avg_pnl','—'))}% per trade including open
+        positions at mark-to-market</b> (closed-only {tstats.get('avg_pnl','—')}%, win {tstats.get('win_rate','—')}%,
+        PF {tstats.get('profit_factor','—')}) · open positions carry <b>+{tstats.get('open_mtm_pnl_sum','—')} pts</b>
+        unrealized — the biggest winners are OPEN by design (CP Plus +226%, Ather +263%).
         The character is honest trend-following: <b>most trades lose small, the tails pay</b> —
         best {tstats.get('best',{}).get('company','—')} +{tstats.get('best',{}).get('pnl',0):.0f}%,
         worst {tstats.get('worst',{}).get('company','—')} {tstats.get('worst',{}).get('pnl',0):.0f}%.</div>""",
@@ -392,12 +403,13 @@ with T[2]:
         pick_t = st.selectbox("Stock", sorted(tlog["company"].unique()), index=None,
                               placeholder="Type… e.g. Aditya Infotech, Knack, Ather")
         show_log = tlog[tlog["company"] == pick_t] if pick_t else tlog.sort_values("entry_date", ascending=False)
-        st.dataframe(show_log[["company", "board", "symbol", "trade_no", "signal_date", "entry_date",
+        st.dataframe(show_log[["company", "board", "symbol", "trade_no", "entry_type", "signal_date", "entry_date",
                                "entry", "stop", "target1", "exit_date", "exit_price", "exit_reason",
                                "hold_sessions", "pnl_pct", "peak_gain_pct"]],
                      use_container_width=True, hide_index=True, height=420, column_config={
                 "company": "Company", "board": "Board", "symbol": "Symbol",
                 "trade_no": st.column_config.NumberColumn("Trade #", help="1st, 2nd or 3rd entry in this stock (re-entry = fresh pivot cross after an exit)"),
+                "entry_type": st.column_config.TextColumn("Entry type", help="early pivot reclaim (≤ day 25) or late bloomer (first cross day 26–120 with ≥2.5× volume — added after the missed-winners autopsy)"),
                 "signal_date": st.column_config.TextColumn("Signal", help="Session that closed above the pivot"),
                 "entry_date": st.column_config.TextColumn("Entry", help="Fill at NEXT session's open — no look-ahead"),
                 "entry": st.column_config.NumberColumn("Entry ₹", format="%.2f"),
@@ -443,6 +455,7 @@ with T[3]:
 
         if s["surv_official"]:
             st.error(f"🚧 UNDER OFFICIAL SURVEILLANCE: **{s['surv_official']}** — {s['surv_implication']}  \n"
+                     f"**NSE source (verbatim):** {s.get('surv_source','')} · verify: [ASM](https://www.nseindia.com/reports-indices-asm) / [ESM](https://www.nseindia.com/reports/esm) / [GSM](https://www.nseindia.com/reports-indices-gsm)  \n"
                      f"**Restricted since:** {s['surv_since'] or 'tracking from today'} · **Earliest exit:** {s['surv_exit_eta'] or '—'} ({s['surv_exit_rule'] or 'review-dependent'})  \n"
                      f"**Exit check:** {s['surv_exit_check'] or '—'}  \n"
                      f"Band-locked names historically lost 5.8% median over the next 60 sessions with volume −20%. Not a fresh-entry candidate.")
@@ -519,6 +532,23 @@ with T[4]:
     3️⃣ Median <b>{fm('median_days_to_peak')}</b> sessions to peak → <i>winners run ~9 months; take partial at +15% and trail the rest instead of capping.</i><br>
     4️⃣ Median max drawdown <b>{fm('median_max_dd','%')}</b> → <i>even the best names had violent shakeouts — defined stops, not hope.</i></div>""",
     unsafe_allow_html=True)
+    if len(tlog):
+        pnl_by_isin = tlog.groupby("isin")["pnl_pct"].sum()
+        n_by_isin = tlog.groupby("isin").size()
+        winners = winners.copy()
+        winners["system_caught"] = winners["isin"].map(
+            lambda i: f"✅ {n_by_isin.get(i,0)} trade(s), {pnl_by_isin.get(i,0):+.0f}%" if i in pnl_by_isin.index else "❌ missed")
+    c1, c2 = st.columns(2)
+    with c1:
+        st.markdown("""##### 🎯 What to DO with this tab
+1. **Pattern column** — nearly every winner is a pivot reclaim + volume thrust. When a FRESH BUY on the Today tab shows this fingerprint, size it with conviction.
+2. **System caught? is the honesty column** — ✅ shows what the engine actually banked per winner; ❌ names feed the autopsy on the right, which is why the LATE BLOOMER entry now exists.
+3. **Days→peak runs 6–9 months** — your job in a winner is to not sell early; the 30% trail does the waiting for you.""")
+    with c2:
+        st.markdown("##### 🔍 Missed-winners autopsy")
+        if len(missedw):
+            st.caption(f"{len(missedw)} peak-100%+ winners had no trade under the old rules — dominant reason 'first cross too late' is now covered by the LATE BLOOMER entry (vol-confirmed, PF 3.05). The rest: pure grinders that never crossed their pivot (no valid signal exists) or untradeably illiquid names.")
+            st.dataframe(missedw.head(20), use_container_width=True, hide_index=True, height=250)
     st.dataframe(winners.drop(columns=["isin"], errors="ignore"), use_container_width=True,
                  hide_index=True, height=520, column_config={
             "company": "Company", "board": "Board", "symbol": "Symbol", "listing_date": "Listed",
@@ -538,7 +568,8 @@ with T[4]:
             "last_thrust_date": st.column_config.TextColumn("Last thrust", help=H["thrust_last"]),
             "ret60_after_vol_spike_pct": st.column_config.NumberColumn("+60d after thrust %", format="%.1f%%"),
             "green_weeks_pct": st.column_config.NumberColumn("Green weeks %"),
-            "pattern": st.column_config.TextColumn("Pattern", width="large")})
+            "pattern": st.column_config.TextColumn("Pattern", width="large"),
+            "system_caught": st.column_config.TextColumn("System caught?", help="Did the trade engine take this winner, and what did it net (incl. open mark-to-market)?")})
 
 # ============================================================ LEAD MANAGERS
 with T[5]:

@@ -48,6 +48,49 @@ def sim_full(p, ei, cost, trail, act, tstop):
     return (p["close"].iloc[j] / entry - 1) * 100 - cost, j
 
 
+def sim_ride(p, ei, cost, trail, tstop):
+    """Time stop applies ONLY while un-armed. Once +15% arms the trail,
+    the trail is the sole exit — winners are never time-stopped (CP Plus fix)."""
+    entry = p["open"].iloc[ei]
+    if not np.isfinite(entry) or entry <= 0:
+        return None
+    peak, armed = entry, False
+    for j in range(ei, len(p)):
+        c = p["close"].iloc[j]
+        peak = max(peak, c)
+        if c <= entry * 0.92:
+            return (c / entry - 1) * 100 - cost, j
+        if peak >= entry * 1.15:
+            armed = True
+        if armed and c <= peak * (1 - trail / 100):
+            return (c / entry - 1) * 100 - cost, j
+        if not armed and j - ei >= tstop:
+            return (c / entry - 1) * 100 - cost, j
+    j = len(p) - 1
+    return (p["close"].iloc[j] / entry - 1) * 100 - cost, j
+
+
+def sim_hybrid(p, ei, cost, trail, g_keep):
+    """At session 120: exit UNLESS unrealized gain ≥ g_keep% (proven winners keep trailing, no time limit)."""
+    entry = p["open"].iloc[ei]
+    if not np.isfinite(entry) or entry <= 0:
+        return None
+    peak, armed = entry, False
+    for j in range(ei, len(p)):
+        c = p["close"].iloc[j]
+        peak = max(peak, c)
+        if c <= entry * 0.92:
+            return (c / entry - 1) * 100 - cost, j
+        if peak >= entry * 1.15:
+            armed = True
+        if armed and c <= peak * (1 - trail / 100):
+            return (c / entry - 1) * 100 - cost, j
+        if j - ei >= 120 and (c / entry - 1) * 100 < g_keep:
+            return (c / entry - 1) * 100 - cost, j
+    j = len(p) - 1
+    return (p["close"].iloc[j] / entry - 1) * 100 - cost, j
+
+
 def sim_runner(p, ei, cost, trail):
     """50% booked at +15%; runner half trails `trail`% off peak, no time stop."""
     entry = p["open"].iloc[ei]
@@ -109,13 +152,15 @@ def run():
     print(f"entry events: {len(events)}")
 
     rows = []
-    grids = [("full", t, a, ts) for t, a, ts in itertools.product([12, 20, 25], [15, 25], [60, 120, 250])]
-    grids += [("runner", t, None, None) for t in [20, 25, 30]]
+    grids = [("full", 25, 15, 120)]  # current model, as baseline
+    grids += [("hybrid", 25, g, None) for g in [20, 30, 50]]
+    grids += [("hybrid", 30, g, None) for g in [20, 30, 50]]
     for kind, trail, act, tstop in grids:
         res = {"train": [], "test": [], "tail": 0.0}
         for isin, ld, sme, p, ei in events:
             cost = 1.5 if sme else 1.0
             out = (sim_full(p, ei, cost, trail, act, tstop) if kind == "full"
+                   else sim_hybrid(p, ei, cost, trail, act) if kind == "hybrid"
                    else sim_runner(p, ei, cost, trail))
             if out is None:
                 continue

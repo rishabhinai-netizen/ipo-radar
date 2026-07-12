@@ -5,16 +5,19 @@ trade the system would have taken — entry, stop, target, exit, P&L — so the 
 can audit the strategy stock by stock (e.g. every Aditya Infotech trade).
 
 Rules (identical to the validated walk-forward engine):
-  ENTRY  — first daily close above the listing-day high (pivot) within 25
-           sessions of listing, base low-to-date > −25% (broken bases skipped),
-           mean turnover so far ≥ ₹1cr. Fill at NEXT session's open.
+  ENTRY  — (a) first daily close above the listing-day high (pivot) within 25
+           sessions of listing, or (b) LATE BLOOMER: first cross day 26–120
+           with cross-day volume ≥2.5× its 20-day average (added after the
+           missed-winners autopsy: 59 of 85 missed multibaggers — Ather class —
+           crossed late; with stops these entries ran PF 3.05).
+           Base low-to-date > −25%, mean turnover ≥ ₹1cr. Fill at next open.
   RE-ENTRY — after an exit, a fresh upward cross of the pivot re-arms the
            system (max 3 trades per stock, within the first 250 sessions).
   STOP   — entry −8% (close basis).
-  TRAIL  — after +15% unrealized, exit when close falls 25% off the peak
-           (exit-grid re-study: the wide trail nearly doubled test-set expectancy
-           and captured 57% more of the mega-winners than the old 12% trail).
-  TIME   — 120 sessions (winners' median run is ~9 months).
+  TRAIL  — after +15% unrealized, exit when close falls 30% off the peak.
+  TIME   — 120 sessions, but ONLY for unproven trades: if the trade is up ≥30%
+           at day 120 it is never time-stopped — proven winners trail until
+           they break (the CP Plus fix: no more selling a +229% run at +36%).
   COSTS  — 1.0% round trip mainboard, 1.5% SME.
 Open trades (still running today) are marked OPEN with mark-to-market P&L.
 """
@@ -49,11 +52,15 @@ def run():
         crosses = list(p.index[(above & ~above.shift(1, fill_value=False)) & (p.index > 0)])
         n_done = 0
         busy_until = -1
+        v20 = p["volume"].rolling(20, min_periods=5).mean().shift(1)
         for ci in crosses:
             if n_done >= MAX_TRADES or ci > 250 or ci <= busy_until:
                 continue
-            if n_done == 0 and ci > 25:      # first entry must be early (the edge)
-                continue
+            late = ci > 25 and n_done == 0
+            if n_done == 0 and ci > 25:      # late FIRST entry: only with the volume thrust
+                if ci > 120 or not (np.isfinite(v20.iloc[ci]) and
+                                    p["volume"].iloc[ci] >= 2.5 * v20.iloc[ci]):
+                    continue
             low_td = p["low"].iloc[1:ci].min() if ci > 1 else p["low"].iloc[0]
             if np.isfinite(low_td) and (low_td / d1c - 1) * 100 <= -25:
                 continue                      # broken base — system stands aside
@@ -68,7 +75,7 @@ def run():
             stop_px, target_px = entry * 0.92, entry * 1.15
             peak, armed = entry, False
             exit_i, exit_px, reason = None, None, None
-            for j in range(ei, min(ei + 120, len(p))):
+            for j in range(ei, len(p)):
                 c = p["close"].iloc[j]
                 peak = max(peak, c)
                 if c <= stop_px:
@@ -76,19 +83,20 @@ def run():
                     break
                 if peak >= target_px:
                     armed = True
-                if armed and c <= peak * 0.75:
-                    exit_i, exit_px, reason = j, c, "trail (25% off peak after +15%)"
+                if armed and c <= peak * 0.70:
+                    exit_i, exit_px, reason = j, c, "trail (30% off peak after +15%)"
+                    break
+                if j - ei >= 120 and (c / entry - 1) * 100 < 30:
+                    exit_i, exit_px, reason = j, c, "time (120 sessions, unproven)"
                     break
             if exit_i is None:
-                j = min(ei + 120, len(p)) - 1
-                if j >= len(p) - 1 and len(p) - ei < 120:
-                    exit_i, exit_px, reason = j, p["close"].iloc[j], "OPEN"
-                else:
-                    exit_i, exit_px, reason = j, p["close"].iloc[j], "time (120 sessions)"
+                j = len(p) - 1
+                exit_i, exit_px, reason = j, p["close"].iloc[j], "OPEN"
             pnl = (exit_px / entry - 1) * 100 - (0 if reason == "OPEN" else cost)
             trades.append({
                 "company": m["company"], "board": m["board"], "symbol": m["symbol"],
                 "isin": m["isin"], "trade_no": n_done + 1,
+                "entry_type": "late bloomer (vol-confirmed)" if late else "early pivot reclaim",
                 "signal_date": p["date"].iloc[ci].date().isoformat(),
                 "entry_date": p["date"].iloc[ei].date().isoformat(),
                 "entry": round(entry, 2), "stop": round(stop_px, 2),
@@ -105,6 +113,7 @@ def run():
     log = pd.DataFrame(trades).sort_values("entry_date")
     log.to_csv(os.path.join(DATA, "trade_log.csv"), index=False)
     closed = log[log["exit_reason"] != "OPEN"]
+    allt = log  # open trades carry mark-to-market P&L
     wins, losses = closed[closed["pnl_pct"] > 0], closed[closed["pnl_pct"] <= 0]
     eq = closed.sort_values("exit_date")["pnl_pct"].cumsum()
     stats = {
@@ -121,9 +130,12 @@ def run():
                   "pnl": float(closed["pnl_pct"].min())} if len(closed) else None,
         "avg_hold": round(float(closed["hold_sessions"].mean()), 0) if len(closed) else None,
         "sum_pnl_pct": round(float(closed["pnl_pct"].sum()), 0),
+        "avg_pnl_incl_open": round(float(allt["pnl_pct"].mean()), 2),
+        "open_mtm_pnl_sum": round(float(log.loc[log["exit_reason"] == "OPEN", "pnl_pct"].sum()), 0),
         "by_year": {str(y): {"n": int(len(g)), "win": round(float((g["pnl_pct"] > 0).mean() * 100)),
-                             "avg": round(float(g["pnl_pct"].mean()), 1)}
-                    for y, g in closed.groupby(closed["entry_date"].str[:4])},
+                             "avg": round(float(g["pnl_pct"].mean()), 1),
+                             "open": int((g["exit_reason"] == "OPEN").sum())}
+                    for y, g in allt.groupby(allt["entry_date"].str[:4])},
     }
     json.dump(stats, open(os.path.join(DATA, "trade_stats.json"), "w"), indent=1)
     print(f"trade log: {stats['n_trades']} trades ({stats['n_open']} open) | "
