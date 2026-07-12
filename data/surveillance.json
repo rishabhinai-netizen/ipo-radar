@@ -1349,32 +1349,6 @@
    "earliest_exit": "2026-10-09",
    "exit_check": "mcap \u20b920cr still < \u20b9500cr pool boundary; 3-month move now +0% (cooled); 5-session move +21%"
   },
-  "INE0QYI01019": {
-   "official": "ESM Stage II",
-   "band_locked": "2%",
-   "risks": [
-    "SME LT-ASM risk: +164% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
-   "since": "2026-06-16 (est. from band-lock)",
-   "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
-   "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
-   "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
-   "earliest_exit": "2026-07-16",
-   "exit_check": "mcap \u20b974cr still < \u20b9500cr pool boundary; 3-month move now +164% (still hot); 5-session move -9%"
-  },
-  "INE0RBQ01018": {
-   "official": "ESM Stage II",
-   "band_locked": null,
-   "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 10-Jul-2026)",
-   "since": "2026-07-11",
-   "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
-   "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
-   "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
-   "earliest_exit": "2026-08-10",
-   "exit_check": "mcap \u20b9743cr \u2265 \u20b9500cr pool boundary; 3-month move now +31% (cooled); 5-session move -2%"
-  },
   "INE0VZS01015": {
    "official": "ESM Stage I",
    "band_locked": null,
@@ -2929,8 +2903,8 @@
   }
  },
  "bandlock_study": {
-  "n_episodes": 2436,
-  "n_stocks": 491,
+  "n_episodes": 2401,
+  "n_stocks": 487,
   "fwd20_median": -2.7,
   "fwd20_win": 43,
   "fwd60_median": -5.8,
