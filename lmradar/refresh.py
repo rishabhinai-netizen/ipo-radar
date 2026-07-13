@@ -39,12 +39,15 @@ def topup():
 if __name__=="__main__":
     if os.path.isdir("cg_pairs"): shutil.rmtree("cg_pairs")   # force fresh master (new IPOs)
     loop("cg_master.py",12)
-    if not os.path.exists("nse_all.csv"):        # first run: build full price history
+    syms={x["nse_symbol"].upper() for x in json.load(open("cg_master.json")) if x.get("nse_symbol")}
+    if not os.path.exists("nse_all.csv"):        # first run: build price history (UNIVERSE only, <100MB)
         loop("bhav_dl.py",60); loop("bse_dl.py",60)
-        with open("nse_all.csv","w") as o:
-            for p in sorted(glob.glob("bhav_parts/*.csv")): o.write(open(p).read())
-        with open("bse_all.csv","w") as o:
-            for p in sorted(glob.glob("bse_parts/*.csv")): o.write(open(p).read())
+        with open("nse_all.csv","w",newline="") as o:
+            w=csv.writer(o)
+            for pp in sorted(glob.glob("bhav_parts/*.csv"))+sorted(glob.glob("bse_parts/*.csv")):
+                for row in csv.reader(open(pp)):
+                    if len(row)>=8 and (row[1] or "").upper() in syms: w.writerow(row)
+        open("bse_all.csv","w").close()
     else:
         topup(); open("bse_all.csv","a").close()
     run(["build_prices.py"])
