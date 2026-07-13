@@ -1,72 +1,72 @@
 {
  "universe_start": "2023-07-01",
- "n_ipos": 980,
+ "n_ipos": 984,
  "n_mainboard": 273,
- "n_sme": 707,
- "as_of": "2026-07-10",
+ "n_sme": 711,
+ "as_of": "2026-07-13",
  "never_broke": {
   "n": 228,
-  "cmp_vs_d1close_median": -56.5
+  "cmp_vs_d1close_median": -56.0
  },
  "qib_quartiles": {
   "d1_close_vs_issue_pct": {
    "Q1_low": 0.0,
-   "Q2": 6.2,
+   "Q2": 6.0,
    "Q3": 31.7,
    "Q4_high": 65.2
   },
   "cmp_vs_d1close_pct": {
-   "Q1_low": -9.8,
-   "Q2": -9.1,
-   "Q3": -12.3,
-   "Q4_high": -22.7
+   "Q1_low": -10.1,
+   "Q2": -8.2,
+   "Q3": -13.0,
+   "Q4_high": -21.0
   },
   "life_high_vs_issue_pct": {
-   "Q1_low": 37.7,
-   "Q2": 53.8,
-   "Q3": 124.0,
-   "Q4_high": 142.6
+   "Q1_low": 37.6,
+   "Q2": 53.4,
+   "Q3": 128.5,
+   "Q4_high": 140.8
   }
  },
  "lockin30": {
-  "n": 648,
-  "pre5_median": -2.9,
+  "n": 649,
+  "pre5_median": -2.94,
   "post10_median": -1.06,
-  "post10_win": 46.0
+  "post10_win": 45.9
  },
  "lockin90": {
-  "n": 631,
-  "pre5_median": -2.13,
+  "n": 634,
+  "pre5_median": -2.11,
   "post10_median": -1.61,
   "post10_win": 41.8
  },
  "open_pop": {
   "cmp_vs_d1close_pct": {
-   "disc<-5": -29.8,
-   "flat": -11.4,
+   "disc<-5": -30.8,
+   "flat": -10.6,
    "pop5-25": -11.8,
-   "pop25-50": -8.7,
-   "pop>50": -32.6
+   "pop25-50": -8.2,
+   "pop>50": -31.6
   },
   "max_dd_pct": {
    "disc<-5": -58.5,
-   "flat": -49.6,
-   "pop5-25": -52.6,
+   "flat": -49.4,
+   "pop5-25": -52.4,
    "pop25-50": -55.4,
-   "pop>50": -67.1
+   "pop>50": -67.4
   },
   "life_high_vs_issue_pct": {
    "disc<-5": -1.6,
    "flat": 35.0,
-   "pop5-25": 67.2,
+   "pop5-25": 67.0,
    "pop25-50": 122.8,
    "pop>50": 234.2
   }
  },
  "liquidity": {
   "n_liquid": 215,
-  "liquid_cmp_vs_d1close": 9.1,
-  "illiquid_cmp_vs_d1close": -23.6
+  "liquid_cmp_vs_d1close": 9.6,
+  "illiquid_cmp_vs_d1close": -23.5
  },
  "winner_threshold_pct": 195.9,
  "traits_winners": {
@@ -101,7 +101,7 @@
   "2024-07": 81.4,
   "2024-08": 31.2,
   "2024-09": 26.0,
-  "2024-10": 8.1,
+  "2024-10": 6.2,
   "2024-11": -1.1,
   "2024-12": 56.7,
   "2025-01": 23.6,
@@ -127,10 +127,10 @@
  "winner_lessons": {
   "n_winners": 43,
   "pct_reclaimed_pivot_within25": 91,
-  "median_days_to_peak": 290.0,
-  "median_qib": 123.7,
+  "median_days_to_peak": 262.0,
+  "median_qib": 115.06,
   "pct_with_volume_thrust": 98,
-  "median_ret60_after_spike": 11.9,
+  "median_ret60_after_spike": 13.2,
   "median_green_weeks": 50.0,
   "median_max_dd": -54.73
  }
