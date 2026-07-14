@@ -9,6 +9,21 @@ import streamlit as st
 DATA = os.path.join(os.path.dirname(__file__), "data")
 st.set_page_config(page_title="IPO Radar", page_icon="🎯", layout="wide")
 
+# --- Lead-Manager Radar data-freshness banner (added; safe/no-op on failure) ---
+try:
+    import urllib.request as _ur, json as _js, datetime as _dt
+    _SK = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
+    _rq = _ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_status?component=eq.lmradar_data&select=data_date,last_run_utc,ipo_count",
+                      headers={"apikey": _SK, "Authorization": "Bearer " + _SK})
+    _st = _js.load(_ur.urlopen(_rq, timeout=8))
+    if _st:
+        _d = _st[0]
+        _fresh = bool(_d.get("data_date")) and _d["data_date"] >= (_dt.date.today() - _dt.timedelta(days=3)).isoformat()
+        st.caption(("🟢 " if _fresh else "🟠 ") + f"IPO data refreshed — latest trading date {_d.get('data_date')} · {_d.get('ipo_count')} IPOs · pipeline ran {str(_d.get('last_run_utc'))[:16].replace('T',' ')} UTC · details on the **🎯 Lead-Manager Radar** page")
+except Exception:
+    pass
+
+
 st.markdown("""
 <style>
 .block-container {padding-top: 1.1rem; max-width: 1450px;}
