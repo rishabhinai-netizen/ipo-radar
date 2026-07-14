@@ -3,10 +3,10 @@
  "n_ipos": 984,
  "n_mainboard": 273,
  "n_sme": 711,
- "as_of": "2026-07-13",
+ "as_of": "2026-07-14",
  "never_broke": {
   "n": 228,
-  "cmp_vs_d1close_median": -56.0
+  "cmp_vs_d1close_median": -56.5
  },
  "qib_quartiles": {
   "d1_close_vs_issue_pct": {
@@ -16,37 +16,37 @@
    "Q4_high": 65.2
   },
   "cmp_vs_d1close_pct": {
-   "Q1_low": -10.1,
-   "Q2": -8.2,
-   "Q3": -13.0,
-   "Q4_high": -21.0
+   "Q1_low": -8.6,
+   "Q2": -8.5,
+   "Q3": -13.5,
+   "Q4_high": -21.7
   },
   "life_high_vs_issue_pct": {
    "Q1_low": 37.6,
    "Q2": 53.4,
-   "Q3": 128.5,
+   "Q3": 129.2,
    "Q4_high": 140.8
   }
  },
  "lockin30": {
-  "n": 649,
-  "pre5_median": -2.94,
-  "post10_median": -1.06,
-  "post10_win": 45.9
+  "n": 652,
+  "pre5_median": -3.03,
+  "post10_median": -1.15,
+  "post10_win": 45.7
  },
  "lockin90": {
-  "n": 634,
-  "pre5_median": -2.11,
+  "n": 637,
+  "pre5_median": -2.13,
   "post10_median": -1.61,
   "post10_win": 41.8
  },
  "open_pop": {
   "cmp_vs_d1close_pct": {
-   "disc<-5": -30.8,
-   "flat": -10.6,
+   "disc<-5": -28.6,
+   "flat": -10.4,
    "pop5-25": -11.8,
    "pop25-50": -8.2,
-   "pop>50": -31.6
+   "pop>50": -31.2
   },
   "max_dd_pct": {
    "disc<-5": -58.5,
@@ -64,23 +64,23 @@
   }
  },
  "liquidity": {
-  "n_liquid": 215,
-  "liquid_cmp_vs_d1close": 9.6,
-  "illiquid_cmp_vs_d1close": -23.5
+  "n_liquid": 210,
+  "liquid_cmp_vs_d1close": 10.1,
+  "illiquid_cmp_vs_d1close": -23.3
  },
- "winner_threshold_pct": 195.9,
+ "winner_threshold_pct": 195.8,
  "traits_winners": {
-  "n": 221,
-  "qib_median": 97.8,
-  "sub_total_median": 116.6,
+  "n": 222,
+  "qib_median": 98.3,
+  "sub_total_median": 118.1,
   "d1close_vs_issue_median": 58.5,
-  "days_to_high_median": 205.0,
-  "base30_low_median": -7.2
+  "days_to_high_median": 206.0,
+  "base30_low_median": -7.4
  },
  "traits_rest": {
   "n": 663,
-  "qib_median": 31.3,
-  "sub_total_median": 21.3,
+  "qib_median": 30.5,
+  "sub_total_median": 21.1,
   "d1close_vs_issue_median": 7.7,
   "days_to_high_median": 20.0,
   "base30_low_median": -18.5
@@ -127,7 +127,7 @@
  "winner_lessons": {
   "n_winners": 43,
   "pct_reclaimed_pivot_within25": 91,
-  "median_days_to_peak": 262.0,
+  "median_days_to_peak": 268.0,
   "median_qib": 115.06,
   "pct_with_volume_thrust": 98,
   "median_ret60_after_spike": 13.2,

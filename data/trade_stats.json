@@ -1,12 +1,12 @@
 {
- "n_trades": 1008,
- "n_closed": 923,
- "n_open": 85,
- "win_rate": 23.1,
+ "n_trades": 1010,
+ "n_closed": 924,
+ "n_open": 86,
+ "win_rate": 23.2,
  "avg_pnl": 4.34,
  "median_pnl": -10.01,
  "profit_factor": 1.53,
- "avg_win": 54.5,
+ "avg_win": 54.3,
  "avg_loss": -10.7,
  "best": {
   "company": "Oriana Power Ltd.",
@@ -17,9 +17,9 @@
   "pnl": -38.55
  },
  "avg_hold": 40.0,
- "sum_pnl_pct": 4004.0,
- "avg_pnl_incl_open": 8.32,
- "open_mtm_pnl_sum": 4381.0,
+ "sum_pnl_pct": 4010.0,
+ "avg_pnl_incl_open": 8.29,
+ "open_mtm_pnl_sum": 4359.0,
  "by_year": {
   "2023": {
    "n": 132,
@@ -30,7 +30,7 @@
   "2024": {
    "n": 382,
    "win": 25,
-   "avg": 6.2,
+   "avg": 6.3,
    "open": 3
   },
   "2025": {
@@ -40,10 +40,10 @@
    "open": 11
   },
   "2026": {
-   "n": 147,
-   "win": 45,
-   "avg": 12.6,
-   "open": 70
+   "n": 149,
+   "win": 44,
+   "avg": 12.2,
+   "open": 71
   }
  }
 }
