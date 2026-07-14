@@ -53,4 +53,20 @@ if __name__=="__main__":
     run(["build_prices.py"])
     loop("pull_anchor.py",12); loop("pull_anchor2.py",20)
     run(["advisor_backtest.py"]); run(["build_app.py"])
+
+    # heartbeat -> Supabase (powers the status bar in the app)
+    try:
+        import urllib.request as ur
+        mx=""
+        if os.path.exists("nse_all.csv"):
+            for ln in open("nse_all.csv"):
+                d=ln.split(",",1)[0]
+                if d>mx: mx=d
+        n=len(json.load(open("cg_master.json")))
+        SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
+        body=[{"component":"lmradar_data","last_run_utc":dt.datetime.utcnow().isoformat()+"Z","data_date":mx or None,"ipo_count":n,"note":"daily action"}]
+        rq=ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_status",data=json.dumps(body).encode(),
+            headers={"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Prefer":"resolution=merge-duplicates"},method="POST")
+        ur.urlopen(rq,timeout=20); print("heartbeat posted",mx,n)
+    except Exception as ex: print("heartbeat failed",ex)
     print("refresh complete", dt.date.today())
