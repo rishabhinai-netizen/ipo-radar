@@ -63,14 +63,20 @@ def pdate(s):
         except: pass
     return None
 
-# ---------- STATUS BAR ----------
-stt=supa_get("lmr_status?component=eq.lmradar_data&select=data_date,last_run_utc,ipo_count")
+# ---------- STATUS BAR (two-part: auto vs upload) ----------
+stt=supa_get("lmr_status?component=eq.lmradar_data&select=data_date,deals_date,last_run_utc,ipo_count")
+def _stale(dstr, days):
+    return not (dstr and dstr >= (dt.date.today()-dt.timedelta(days=days)).isoformat())
 if isinstance(stt,list) and stt:
-    s0=stt[0]; today=str(dt.date.today())
-    fresh = (s0.get("data_date")==today) or (s0.get("data_date") and s0["data_date"]>= (dt.date.today()-dt.timedelta(days=3)).isoformat())
-    icon="🟢" if fresh else "🟠"
-    st.success(f"{icon} **Data refreshed** — latest trading date **{s0.get('data_date')}** · {s0.get('ipo_count')} IPOs · "
-               f"pipeline last ran {str(s0.get('last_run_utc'))[:16].replace('T',' ')} UTC", icon=None)
+    s0=stt[0]
+    c1,c2=st.columns(2)
+    pfresh=not _stale(s0.get("data_date"),3)
+    c1.success(f"{'🟢' if pfresh else '🟠'} **Prices & IPOs — AUTO** · latest {s0.get('data_date')} · {s0.get('ipo_count')} IPOs · runs daily")
+    dfresh=not _stale(s0.get("deals_date"),3)
+    c2.warning(f"{'🟢' if dfresh else '🟠'} **Bulk/Block deals — UPLOAD** · current through {s0.get('deals_date') or '—'} · "
+               f"{'up to date' if dfresh else 'upload today’s file for live buy signals'}")
+    st.caption(f"Auto pipeline last ran {str(s0.get('last_run_utc'))[:16].replace('T',' ')} UTC. "
+               f"Prices/IPO-master/anchor refresh on their own; NSE blocks deal downloads from the cloud, so deals come from your uploads (▶ Upload daily deals).")
 else:
     st.warning("Status unavailable (Supabase not reachable yet).")
 
