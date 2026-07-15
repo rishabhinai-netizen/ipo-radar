@@ -36,6 +36,51 @@ def topup():
                     if (row[1] or "").upper() in syms: w.writerow(row); add+=1
             d+=dt.timedelta(days=1)
     print("price rows added",add)
+
+def merge_supa_deals():
+    import urllib.request as ur, csv
+    SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
+    try:
+        req=ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_deals?select=deal_type,deal_date,symbol,security_name,client_name,side,qty,price&limit=500000",
+                       headers={"apikey":SK,"Authorization":"Bearer "+SK})
+        rows=json.load(ur.urlopen(req,timeout=60))
+    except Exception as e:
+        print("supabase deals fetch failed:",e); return
+    for dtype,path in [("bulk","bulk_deals.csv"),("block","block_deals.csv")]:
+        seen=set()
+        if os.path.exists(path):
+            for r in csv.reader(open(path)):
+                if len(r)>=7: seen.add((r[0],r[1],r[3],r[5],r[6]))
+        new=[]
+        for d in rows:
+            if d.get("deal_type")!=dtype: continue
+            row=[d.get("deal_date") or "",(d.get("symbol") or ""),(d.get("security_name") or ""),(d.get("client_name") or ""),(d.get("side") or ""),str(d.get("qty") or ""),str(d.get("price") or ""),""]
+            k=(row[0],row[1],row[3],row[5],row[6])
+            if k in seen: continue
+            seen.add(k); new.append(row)
+        if new:
+            hdr=not os.path.exists(path)
+            with open(path,"a",newline="") as f:
+                w=csv.writer(f)
+                if hdr: w.writerow(["Date","Symbol","Security Name","Client Name","Buy/Sell","Quantity Traded","Trade Price / Wght. Avg. Price","Remarks"])
+                w.writerows(new)
+            print("merged",len(new),dtype,"deals from Supabase")
+
+def _deals_max():
+    import csv, datetime as _dt
+    mx=None
+    for path in ("bulk_deals.csv","block_deals.csv"):
+        if not os.path.exists(path): continue
+        for r in csv.reader(open(path)):
+            ss=(r[0] or "").strip().strip('"')
+            for fmt in ("%d-%b-%Y","%Y-%m-%d","%d-%B-%Y"):
+                try:
+                    dd=_dt.datetime.strptime(ss[:11],fmt).date()
+                    if not mx or dd>mx: mx=dd
+                    break
+                except: pass
+    return mx.isoformat() if mx else None
+
 if __name__=="__main__":
     if os.path.isdir("cg_pairs"): shutil.rmtree("cg_pairs")   # force fresh master (new IPOs)
     loop("cg_master.py",12)
@@ -52,6 +97,7 @@ if __name__=="__main__":
         topup(); open("bse_all.csv","a").close()
     run(["build_prices.py"])
     loop("pull_anchor.py",12); loop("pull_anchor2.py",20)
+    merge_supa_deals()
     run(["advisor_backtest.py"]); run(["build_app.py"])
 
     # heartbeat -> Supabase (powers the status bar in the app)
@@ -64,7 +110,7 @@ if __name__=="__main__":
                 if d>mx: mx=d
         n=len(json.load(open("cg_master.json")))
         SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
-        body=[{"component":"lmradar_data","last_run_utc":dt.datetime.utcnow().isoformat()+"Z","data_date":mx or None,"ipo_count":n,"note":"daily action"}]
+        body=[{"component":"lmradar_data","last_run_utc":dt.datetime.utcnow().isoformat()+"Z","data_date":mx or None,"ipo_count":n,"deals_date":_deals_max(),"note":"daily action"}]
         rq=ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_status",data=json.dumps(body).encode(),
             headers={"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Prefer":"resolution=merge-duplicates"},method="POST")
         ur.urlopen(rq,timeout=20); print("heartbeat posted",mx,n)
