@@ -85,7 +85,7 @@ e=DB["edge_selfanchor"]["SME"]; se,ne=e["self_anchored"],e["not_anchored"]; bf=(
 st.caption(f"Verdict: League & Anchor-Fund tables are reliable screens. Self-anchor edge unproven "
            f"(SME self-anchored {pctf(se['avg_since_listing'])} vs {pctf(ne['avg_since_listing'])} since listing). Research tool, not advice.")
 
-T=st.tabs(["🏆 League","📋 All IPOs","🎯 Advisor Signals","⚓ Anchor Funds","📡 Entering Now","⬆️ Upload daily deals"])
+T=st.tabs(["🏆 League","📋 All IPOs","🎯 Advisor Signals","⚓ Anchor Funds","📡 Entering Now","⬆️ Upload daily deals","📈 Performance","🔔 Alerts"])
 with T[0]:
     seg=st.radio("Segment",["SME","Mainboard","All"],horizontal=True,key="lseg")
     df=pd.DataFrame(DB["league"][seg]); df=df[df["n"]>=3] if st.checkbox("Only ≥3 IPOs",True) else df
@@ -173,5 +173,41 @@ with T[5]:
         if hits: st.dataframe(pd.DataFrame(hits).sort_values("Date",ascending=False),use_container_width=True,hide_index=True)
     else:
         st.info("No deals stored yet — upload your first bulk/block files above.")
+
+with T[6]:
+    st.subheader("Live signal ledger — forward test (app signals, score > 75)")
+    led=supa_get("lmr_signal_ledger?select=*&order=score.desc")
+    if isinstance(led,list) and led:
+        df=pd.DataFrame(led)
+        for cc in ["score","entry","target","stop","current_price","pnl_pct","peak_pct"]:
+            if cc in df: df[cc]=pd.to_numeric(df[cc],errors="coerce")
+        closed=df[df["status"]!="open"]; wins=int((closed["status"]=="target").sum()) if len(closed) else 0
+        c=st.columns(4)
+        c[0].metric("Signals tracked",len(df)); c[1].metric("Open",int((df["status"]=="open").sum()))
+        c[2].metric("Closed win-rate",f"{round(100*wins/len(closed)) if len(closed) else 0}%")
+        c[3].metric("Avg live P&L%",round(df["pnl_pct"].mean(),1) if len(df) else 0)
+        st.dataframe(df[["symbol","company","board","score","entry","target","stop","status","current_price","pnl_pct","peak_pct","days_held","lead_manager"]],hide_index=True,use_container_width=True,height=360)
+        st.caption("Each app signal (score>75) is logged the day it fires and tracked to target / −8% stop / 120-session timeout. Updates daily.")
+    else:
+        st.info("Ledger populates daily from your app's score>75 signals.")
+    st.divider(); st.subheader("Backtest (historical) — your app's trade log")
+    try:
+        ts=json.load(open(os.path.join(os.path.dirname(__file__),"..","data","trade_stats.json")))
+        c=st.columns(5)
+        c[0].metric("Trades",ts.get("n_trades")); c[1].metric("Win rate",f"{ts.get('win_rate')}%")
+        c[2].metric("Avg P&L",f"{ts.get('avg_pnl')}%"); c[3].metric("Profit factor",ts.get("profit_factor"))
+        c[4].metric("Avg win / loss",f"{ts.get('avg_win')}% / {ts.get('avg_loss')}%")
+        st.caption(f"Best {ts['best']['company']} +{ts['best']['pnl']}% · Worst {ts['worst']['company']} {ts['worst']['pnl']}% · avg hold {ts.get('avg_hold')} sessions")
+        st.dataframe(pd.DataFrame(ts.get("by_year",{})).T,use_container_width=True)
+    except Exception as ex: st.caption("Backtest stats unavailable: "+str(ex))
+with T[7]:
+    st.subheader("🔔 Alerts — freshly-listed IPOs the banker is backing (last 90 days)")
+    al=supa_get("lmr_alerts?select=*&order=created_at.desc&limit=300")
+    if isinstance(al,list) and al:
+        adf=pd.DataFrame(al)
+        cols=[c for c in ["alert_date","kind","company","lead_manager","detail","listing_date"] if c in adf]
+        st.dataframe(adf[cols],hide_index=True,use_container_width=True,height=460)
+        st.caption("kind=anchor → the banker's own fund anchored this recent IPO · kind=bulk_buy → its own lead manager bought it in a bulk deal.")
+    else: st.info("No alerts yet — generated daily as new IPOs list and deals arrive.")
 
 st.caption("Data: 985 IPOs (Jul-2023→today) · NSE+BSE bhavcopy · Chittorgarh lead-mgr & anchor allocations · deals in Supabase. Not investment advice.")
