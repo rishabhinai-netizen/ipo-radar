@@ -1,7 +1,7 @@
 {
- "n_trades": 1010,
+ "n_trades": 1012,
  "n_closed": 924,
- "n_open": 86,
+ "n_open": 88,
  "win_rate": 23.2,
  "avg_pnl": 4.34,
  "median_pnl": -10.01,
@@ -19,7 +19,7 @@
  "avg_hold": 40.0,
  "sum_pnl_pct": 4010.0,
  "avg_pnl_incl_open": 8.29,
- "open_mtm_pnl_sum": 4359.0,
+ "open_mtm_pnl_sum": 4381.0,
  "by_year": {
   "2023": {
    "n": 132,
@@ -30,20 +30,20 @@
   "2024": {
    "n": 382,
    "win": 25,
-   "avg": 6.3,
+   "avg": 6.2,
    "open": 3
   },
   "2025": {
    "n": 347,
    "win": 22,
-   "avg": 1.9,
+   "avg": 2.0,
    "open": 11
   },
   "2026": {
-   "n": 149,
-   "win": 44,
-   "avg": 12.2,
-   "open": 71
+   "n": 151,
+   "win": 43,
+   "avg": 12.0,
+   "open": 73
   }
  }
 }
