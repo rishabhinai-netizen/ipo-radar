@@ -1,6 +1,42 @@
 [
  {
-  "company": "Kusumgar Ltd. LT",
+  "company": "Laser Power & Infra Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-16",
+  "issue_price": 214.0,
+  "issue_amount_cr": 742.0,
+  "lead_manager": "IIFL Capital",
+  "isin": "INE17IR01028",
+  "nse_symbol": "LASERPOWER",
+  "bse_code": "544822"
+ },
+ {
+  "company": "Devson Catalyst Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-16",
+  "issue_price": 118.0,
+  "issue_amount_cr": 42.34,
+  "lead_manager": "JJ IPO Advisors",
+  "isin": "INE2KRP01017",
+  "nse_symbol": "",
+  "bse_code": "544823"
+ },
+ {
+  "company": "Happy Steels Ltd. LT",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-07-16",
+  "issue_price": 66.0,
+  "issue_amount_cr": 25.0,
+  "lead_manager": "Share India Capital",
+  "isin": "INE1GFG01011",
+  "nse_symbol": "HAPPY",
+  "bse_code": ""
+ },
+ {
+  "company": "Kusumgar Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-07-15",
@@ -36,16 +72,16 @@
   "bse_code": "544814"
  },
  {
-  "company": "Seemax Resources Ltd.",
+  "company": "Sampark India Logistics Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-07",
-  "issue_price": 141.0,
-  "issue_amount_cr": 19.74,
-  "lead_manager": "Wealth Mine Networks",
-  "isin": "INE1EVO01017",
+  "issue_price": 84.0,
+  "issue_amount_cr": 27.22,
+  "lead_manager": "Finshore Management",
+  "isin": "INE147701010",
   "nse_symbol": "",
-  "bse_code": "544813"
+  "bse_code": "544810"
  },
  {
   "company": "Teja Engineering Industries Ltd.",
@@ -72,16 +108,16 @@
   "bse_code": "544812"
  },
  {
-  "company": "Sampark India Logistics Ltd.",
+  "company": "Seemax Resources Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-07",
-  "issue_price": 84.0,
-  "issue_amount_cr": 27.22,
-  "lead_manager": "Finshore Management",
-  "isin": "INE147701010",
+  "issue_price": 141.0,
+  "issue_amount_cr": 19.74,
+  "lead_manager": "Wealth Mine Networks",
+  "isin": "INE1EVO01017",
   "nse_symbol": "",
-  "bse_code": "544810"
+  "bse_code": "544813"
  },
  {
   "company": "Vinit Mobile Ltd.",
@@ -252,18 +288,6 @@
   "bse_code": ""
  },
  {
-  "company": "Leapfrog Engineering Services Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-06-24",
-  "issue_price": 23.0,
-  "issue_amount_cr": 88.51,
-  "lead_manager": "Finshore Management",
-  "isin": "INE0X6O01027",
-  "nse_symbol": "",
-  "bse_code": "544797"
- },
- {
   "company": "Liotech Industries Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -276,16 +300,16 @@
   "bse_code": "544796"
  },
  {
-  "company": "Clay Craft India Ltd.",
+  "company": "Leapfrog Engineering Services Ltd.",
   "segment": "SME",
-  "listing_at": "NSE SME",
+  "listing_at": "BSE SME",
   "listing_date": "2026-06-24",
-  "issue_price": 203.0,
-  "issue_amount_cr": 110.11,
-  "lead_manager": "Hem Securities",
-  "isin": "INE1QGM01024",
-  "nse_symbol": "CLAYCRAFT",
-  "bse_code": ""
+  "issue_price": 23.0,
+  "issue_amount_cr": 88.51,
+  "lead_manager": "Finshore Management",
+  "isin": "INE0X6O01027",
+  "nse_symbol": "",
+  "bse_code": "544797"
  },
  {
   "company": "Diksha Polymers Ltd.",
@@ -298,6 +322,18 @@
   "isin": "INE1OSI01014",
   "nse_symbol": "",
   "bse_code": "544798"
+ },
+ {
+  "company": "Clay Craft India Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-06-24",
+  "issue_price": 203.0,
+  "issue_amount_cr": 110.11,
+  "lead_manager": "Hem Securities",
+  "isin": "INE1QGM01024",
+  "nse_symbol": "CLAYCRAFT",
+  "bse_code": ""
  },
  {
   "company": "Horizon Reclaim (India) Ltd.",
