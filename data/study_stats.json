@@ -1,29 +1,29 @@
 {
  "universe_start": "2023-07-01",
- "n_ipos": 985,
- "n_mainboard": 274,
- "n_sme": 711,
- "as_of": "2026-07-15",
+ "n_ipos": 988,
+ "n_mainboard": 275,
+ "n_sme": 713,
+ "as_of": "2026-07-16",
  "never_broke": {
-  "n": 228,
-  "cmp_vs_d1close_median": -56.3
+  "n": 229,
+  "cmp_vs_d1close_median": -56.6
  },
  "qib_quartiles": {
   "d1_close_vs_issue_pct": {
    "Q1_low": 0.0,
    "Q2": 5.9,
-   "Q3": 31.7,
+   "Q3": 31.3,
    "Q4_high": 65.2
   },
   "cmp_vs_d1close_pct": {
-   "Q1_low": -9.7,
-   "Q2": -7.7,
+   "Q1_low": -10.2,
+   "Q2": -8.3,
    "Q3": -15.0,
-   "Q4_high": -21.9
+   "Q4_high": -22.2
   },
   "life_high_vs_issue_pct": {
-   "Q1_low": 37.6,
-   "Q2": 53.2,
+   "Q1_low": 37.9,
+   "Q2": 52.1,
    "Q3": 129.2,
    "Q4_high": 140.8
   }
@@ -42,11 +42,11 @@
  },
  "open_pop": {
   "cmp_vs_d1close_pct": {
-   "disc<-5": -26.6,
+   "disc<-5": -26.4,
    "flat": -10.0,
-   "pop5-25": -12.2,
-   "pop25-50": -9.4,
-   "pop>50": -31.8
+   "pop5-25": -12.9,
+   "pop25-50": -9.8,
+   "pop>50": -31.0
   },
   "max_dd_pct": {
    "disc<-5": -58.5,
@@ -57,16 +57,16 @@
   },
   "life_high_vs_issue_pct": {
    "disc<-5": -1.6,
-   "flat": 35.0,
+   "flat": 34.3,
    "pop5-25": 66.8,
    "pop25-50": 122.8,
    "pop>50": 234.2
   }
  },
  "liquidity": {
-  "n_liquid": 210,
-  "liquid_cmp_vs_d1close": 13.1,
-  "illiquid_cmp_vs_d1close": -23.5
+  "n_liquid": 214,
+  "liquid_cmp_vs_d1close": 11.3,
+  "illiquid_cmp_vs_d1close": -23.8
  },
  "winner_threshold_pct": 195.8,
  "traits_winners": {
@@ -78,11 +78,11 @@
   "base30_low_median": -7.6
  },
  "traits_rest": {
-  "n": 666,
-  "qib_median": 29.8,
-  "sub_total_median": 21.2,
+  "n": 667,
+  "qib_median": 29.4,
+  "sub_total_median": 21.1,
   "d1close_vs_issue_median": 7.5,
-  "days_to_high_median": 20.5,
+  "days_to_high_median": 21.0,
   "base30_low_median": -18.5
  },
  "monthly_d1": {
@@ -122,7 +122,7 @@
   "2026-04": 3.5,
   "2026-05": 10.2,
   "2026-06": -1.7,
-  "2026-07": 8.2
+  "2026-07": 8.7
  },
  "winner_lessons": {
   "n_winners": 43,
