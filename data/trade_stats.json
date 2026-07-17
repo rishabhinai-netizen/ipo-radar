@@ -18,8 +18,8 @@
  },
  "avg_hold": 40.0,
  "sum_pnl_pct": 4010.0,
- "avg_pnl_incl_open": 8.34,
- "open_mtm_pnl_sum": 4430.0,
+ "avg_pnl_incl_open": 8.25,
+ "open_mtm_pnl_sum": 4337.0,
  "by_year": {
   "2023": {
    "n": 132,
@@ -42,7 +42,7 @@
   "2026": {
    "n": 151,
    "win": 44,
-   "avg": 12.4,
+   "avg": 12.0,
    "open": 73
   }
  }
