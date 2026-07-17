@@ -1,6 +1,6 @@
 [
  {
-  "company": "Laser Power & Infra Ltd. LT",
+  "company": "Laser Power & Infra Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-07-16",
@@ -12,7 +12,7 @@
   "bse_code": "544822"
  },
  {
-  "company": "Devson Catalyst Ltd. LT",
+  "company": "Devson Catalyst Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-16",
@@ -24,7 +24,7 @@
   "bse_code": "544823"
  },
  {
-  "company": "Happy Steels Ltd. LT",
+  "company": "Happy Steels Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-07-16",
@@ -744,18 +744,6 @@
   "bse_code": ""
  },
  {
-  "company": "Powerica Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-04-02",
-  "issue_price": 395.0,
-  "issue_amount_cr": 1100.0,
-  "lead_manager": "ICICI Securities",
-  "isin": "INE921L01032",
-  "nse_symbol": "POWERICA",
-  "bse_code": "544744"
- },
- {
   "company": "Sai Parenteral's Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -766,6 +754,18 @@
   "isin": "INE0H9F01037",
   "nse_symbol": "SAIPARENT",
   "bse_code": "544742"
+ },
+ {
+  "company": "Powerica Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-04-02",
+  "issue_price": 395.0,
+  "issue_amount_cr": 1100.0,
+  "lead_manager": "ICICI Securities",
+  "isin": "INE921L01032",
+  "nse_symbol": "POWERICA",
+  "bse_code": "544744"
  },
  {
   "company": "Amir Chand Jagdish Kumar (Exports) Ltd.",
