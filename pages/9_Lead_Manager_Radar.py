@@ -10,8 +10,10 @@ BASE = os.path.join(os.path.dirname(__file__), "..", "lmradar")
 # ---- Supabase (anon key is public by design; RLS-guarded) ----
 SUPA_URL = st.secrets.get("SUPABASE_URL", "https://aiebaqvclyzxajigvkfd.supabase.co")
 SUPA_KEY = st.secrets.get("SUPABASE_ANON_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY")
-def _hdr(extra=None):
-    h={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}","Content-Type":"application/json"}
+WRITE_KEY = st.secrets.get("SUPABASE_SERVICE_KEY", SUPA_KEY)  # service key (if set) for writes; anon otherwise
+def _hdr(extra=None, key=None):
+    k = key or SUPA_KEY
+    h={"apikey":k,"Authorization":f"Bearer {k}","Content-Type":"application/json"}
     if extra: h.update(extra)
     return h
 def supa_get(path):
@@ -19,11 +21,12 @@ def supa_get(path):
         r=urllib.request.Request(f"{SUPA_URL}/rest/v1/{path}", headers=_hdr())
         with urllib.request.urlopen(r,timeout=20) as f: return json.load(f)
     except Exception as e: return {"_err":str(e)}
-def supa_insert(table, rows, ignore=True):
+def supa_insert(table, rows, ignore=True, conflict=None):
     try:
         pref="resolution=ignore-duplicates" if ignore else "resolution=merge-duplicates"
-        r=urllib.request.Request(f"{SUPA_URL}/rest/v1/{table}", data=json.dumps(rows).encode(),
-            headers=_hdr({"Prefer":f"{pref},return=representation"}), method="POST")
+        q=f"?on_conflict={conflict}" if conflict else ""
+        r=urllib.request.Request(f"{SUPA_URL}/rest/v1/{table}{q}", data=json.dumps(rows).encode(),
+            headers=_hdr({"Prefer":f"{pref},return=representation"}, key=WRITE_KEY), method="POST")
         with urllib.request.urlopen(r,timeout=40) as f: return json.load(f)
     except urllib.error.HTTPError as e: return {"_err":f"{e.code} {e.read()[:120]}"}
     except Exception as e: return {"_err":str(e)}
@@ -146,13 +149,16 @@ with T[5]:
     if (ub or uk):
         recs=parse(ub,"bulk")+parse(uk,"block")
         st.write(f"Parsed **{len(recs):,}** rows. Saving to Supabase…")
-        # insert in chunks
-        saved=0
+        # insert in chunks (on_conflict = lmr_deals_uniq columns -> true dedupe, no 409)
+        saved, failed = 0, False
+        CONFLICT="deal_type,deal_date,symbol,client_name,side,qty,price"
         for i in range(0,len(recs),500):
-            res=supa_insert("lmr_deals",recs[i:i+500],ignore=True)
+            res=supa_insert("lmr_deals",recs[i:i+500],ignore=True,conflict=CONFLICT)
             if isinstance(res,list): saved+=len(res)
-            elif isinstance(res,dict) and res.get("_err"): st.error("Save error: "+res["_err"]); break
-        st.success(f"Stored **{saved}** new deals (duplicates skipped). Table: lmr_deals.")
+            elif isinstance(res,dict) and res.get("_err"):
+                st.error("Save error: "+res["_err"]); failed=True; break
+        if not failed:
+            st.success(f"Stored **{saved}** new deals · **{len(recs)-saved}** duplicates skipped. Table: lmr_deals.")
         load_deals_from_supa.clear()
     # cumulative signal from ALL stored deals
     alld=load_deals_from_supa()

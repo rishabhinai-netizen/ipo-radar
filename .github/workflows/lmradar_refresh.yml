@@ -14,6 +14,8 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install requests
       - run: python refresh.py
+        env:
+          SUPA_KEY: ${{ secrets.SUPA_SERVICE_KEY }}
       - name: Commit refreshed data
         run: |
           git config user.name "lmradar-bot"

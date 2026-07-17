@@ -39,7 +39,7 @@ def topup():
 
 def merge_supa_deals():
     import urllib.request as ur, csv
-    SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
+    SK=os.environ.get("SUPA_KEY") or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
     try:
         req=ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_deals?select=deal_type,deal_date,symbol,security_name,client_name,side,qty,price&limit=500000",
                        headers={"apikey":SK,"Authorization":"Bearer "+SK})
@@ -109,7 +109,7 @@ if __name__=="__main__":
                 d=ln.split(",",1)[0]
                 if d>mx: mx=d
         n=len(json.load(open("cg_master.json")))
-        SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
+        SK=os.environ.get("SUPA_KEY") or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY"
         body=[{"component":"lmradar_data","last_run_utc":dt.datetime.utcnow().isoformat()+"Z","data_date":mx or None,"ipo_count":n,"deals_date":_deals_max(),"note":"daily action"}]
         rq=ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_status",data=json.dumps(body).encode(),
             headers={"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Prefer":"resolution=merge-duplicates"},method="POST")

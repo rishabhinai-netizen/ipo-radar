@@ -4,7 +4,7 @@ Logs score>75 BUY triggers from data/signals.csv to Supabase lmr_signal_ledger, 
 each to target / -8% stop / 120-session timeout using real prices (nse_all.csv). Idempotent."""
 import os, csv, json, datetime as dt, urllib.request, urllib.parse
 SUPA="https://aiebaqvclyzxajigvkfd.supabase.co"
-SK=os.environ.get("SUPA_KEY","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY")
+SK=os.environ.get("SUPA_KEY") or ("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpZWJhcXZjbHl6eGFqaWd2a2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTg1MDQsImV4cCI6MjA5MDUzNDUwNH0.m_WLKdaKwEw82RRepHYhXp3tg-g0pwMiDKM2S7Y7XdY")
 PRICE_FILE=os.environ.get("PRICE_FILE","lmradar/nse_all.csv")
 SIGNALS=os.environ.get("SIGNALS","data/signals.csv")
 APP_DATA=os.environ.get("APP_DATA","lmradar/app_data.json")

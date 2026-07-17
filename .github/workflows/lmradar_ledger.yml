@@ -1,6 +1,6 @@
 name: Signal ledger + alerts
 on:
-  schedule: [{cron: "10 14 * * 1-5"}]
+  schedule: [{cron: "45 15 * * 1-5"}]
   workflow_dispatch: {}
 jobs:
   ledger:
@@ -10,3 +10,5 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: python signal_ledger.py
+        env:
+          SUPA_KEY: ${{ secrets.SUPA_SERVICE_KEY }}
