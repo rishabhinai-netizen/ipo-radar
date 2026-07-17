@@ -188,7 +188,7 @@ with T[5]:
         st.info("No deals stored yet — upload your first bulk/block files above.")
 
 with T[6]:
-    st.subheader("Live signal ledger — forward test (app signals, score > 75)")
+    st.subheader("Live signal ledger — forward test (every FRESH BUY, score ≥ 65)")
     led=supa_get("lmr_signal_ledger?select=*&order=score.desc")
     if isinstance(led,list) and led:
         df=pd.DataFrame(led)
@@ -199,8 +199,13 @@ with T[6]:
         c[0].metric("Signals tracked",len(df)); c[1].metric("Open",int((df["status"]=="open").sum()))
         c[2].metric("Closed win-rate",f"{round(100*wins/len(closed)) if len(closed) else 0}%")
         c[3].metric("Avg live P&L%",round(df["pnl_pct"].mean(),1) if len(df) else 0)
-        st.dataframe(df[["symbol","company","board","score","entry","target","stop","status","current_price","pnl_pct","peak_pct","days_held","lead_manager"]],hide_index=True,use_container_width=True,height=360)
-        st.caption("Each app signal (score>75) is logged the day it fires and tracked to target / −8% stop / 120-session timeout. Updates daily.")
+        cols=[c for c in ["signal_date","symbol","company","board","score","entry","target","stop","status",
+              "current_price","pnl_pct","peak_pct","days_held","exit_date","exit_reason","lead_manager"] if c in df.columns]
+        st.dataframe(df[cols].sort_values("signal_date",ascending=False),hide_index=True,use_container_width=True,height=360,
+            column_config={"signal_date":st.column_config.TextColumn("Signal date",help="EOD system: the signal fires on this session's close; entry level = the pivot."),
+                           "exit_date":st.column_config.TextColumn("Exit date",help="Session the target/stop/timeout was hit (EOD basis — no intraday timestamps in bhavcopy data)."),
+                           "exit_reason":"Exit via"})
+        st.caption("Every FRESH BUY (score ≥ 65) is logged at the close it fires (signal date) and tracked to target / −8% stop / 120-session timeout. EOD system — dates are sessions, not clock times. Updates on the nightly run.")
     else:
         st.info("Ledger populates daily from your app's score>75 signals.")
     st.divider(); st.subheader("Backtest (historical) — your app's trade log")

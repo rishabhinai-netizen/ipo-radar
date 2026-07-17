@@ -80,16 +80,19 @@ for row in sget("lmr_signal_ledger?status=eq.open&select=symbol,signal_date,entr
 try:
     ad=json.load(open(APP_DATA)); cut=(dt.date.today()-dt.timedelta(days=90)).isoformat()
     al=[]
+    _ld={ (r.get("nse_symbol") or "").upper(): r.get("listing_date") for r in ad.get("rows",[]) if r.get("nse_symbol") }
     for r in ad.get("rows",[]):
         if r.get("self_anchor") and (r.get("listing_date") or "")>=cut:
             sa=r["self_anchor"]
             al.append({"kind":"anchor","symbol":r.get("nse_symbol") or r.get("company"),"company":r.get("company"),
                 "lead_manager":r.get("lead_manager"),"listing_date":r.get("listing_date"),
+                "alert_date":r.get("listing_date"),   # dated by the event, not the run day -> no daily repeats
                 "detail":f"{sa.get('fund')} anchored {int(sa.get('shares') or 0)} sh @Rs{sa.get('issue_price')}; now {sa.get('market_gain_pct')}% vs issue"})
     for sg in ad.get("today_signals_strict",[])[:40]:
         if (sg.get("date") or "")>=cut:
             al.append({"kind":"bulk_buy","symbol":sg.get("symbol"),"company":sg.get("company"),
-                "lead_manager":sg.get("lead_manager"),"listing_date":None,
+                "lead_manager":sg.get("lead_manager"),"listing_date":_ld.get((sg.get("symbol") or "").upper()),
+                "alert_date":sg.get("date"),          # dated by the deal date -> repeats impossible
                 "detail":f"own LM {sg.get('client')} bought {sg.get('qty')} @Rs{sg.get('price')} on {sg.get('date')}"})
     if al:
         r=urllib.request.Request(f"{SUPA}/rest/v1/lmr_alerts",data=json.dumps(al).encode(),

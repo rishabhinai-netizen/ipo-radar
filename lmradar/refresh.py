@@ -25,17 +25,54 @@ def nse_rows(d):
         return out
     except Exception: return []
 def topup():
+    """(date,symbol)-aware over the last 16 days, so newly-listed symbols backfill even on
+    dates already fetched for older stocks (the old date-only check skipped them)."""
     syms={x["nse_symbol"].upper() for x in json.load(open("cg_master.json")) if x.get("nse_symbol")}
-    have={ln.split(",",1)[0] for ln in open("nse_all.csv")} if os.path.exists("nse_all.csv") else set()
+    cut=(dt.date.today()-dt.timedelta(days=16)).isoformat()
+    have=set()
+    if os.path.exists("nse_all.csv"):
+        for ln in open("nse_all.csv"):
+            pp=ln.split(",",2)
+            if len(pp)>1 and pp[0]>=cut: have.add((pp[0],pp[1].upper()))
     d=dt.date.today()-dt.timedelta(days=16); add=0
     with open("nse_all.csv","a",newline="") as f:
         w=csv.writer(f)
         while d<=dt.date.today():
-            if d.weekday()<5 and d.isoformat() not in have:
+            if d.weekday()<5:
                 for row in nse_rows(d):
-                    if (row[1] or "").upper() in syms: w.writerow(row); add+=1
+                    sym=(row[1] or "").upper()
+                    if sym in syms and (row[0],sym) not in have: w.writerow(row); add+=1
             d+=dt.timedelta(days=1)
     print("price rows added",add)
+
+def bse_topup():
+    """BSE bhavcopy for BSE-only listings (no NSE symbol) -> bse_all.csv, matched by ISIN.
+    Fixes blank prices for BSE-SME IPOs (Devson/Sampark class) on the LM Radar page."""
+    cg=json.load(open("cg_master.json"))
+    isins={x["isin"] for x in cg if x.get("isin") and not x.get("nse_symbol")}
+    if not isins: return
+    have=set()
+    if os.path.exists("bse_all.csv"):
+        for ln in open("bse_all.csv"):
+            pp=ln.split(",",4)
+            if len(pp)>3: have.add((pp[0],pp[3]))
+    d=dt.date.today()-dt.timedelta(days=30); add=0
+    with open("bse_all.csv","a",newline="") as f:
+        w=csv.writer(f)
+        while d<=dt.date.today():
+            if d.weekday()<5:
+                try:
+                    raw=fetch(f"https://www.bseindia.com/download/BhavCopy/Equity/BhavCopy_BSE_CM_0_0_0_{d:%Y%m%d}_F_0000.CSV")
+                    rows=list(csv.DictReader(raw.decode("utf-8","ignore").splitlines()))
+                    for r in rows:
+                        isin=(r.get("ISIN") or "").strip()
+                        if isin in isins and (d.isoformat(),isin) not in have:
+                            w.writerow([d.isoformat(),r.get("TckrSymb") or "",r.get("SctySrs") or "BSE",isin,
+                                        r.get("OpnPric"),r.get("HghPric"),r.get("LwPric"),r.get("ClsPric"),
+                                        r.get("TtlTradgVol"),"",r.get("FinInstrmNm") or ""]); add+=1
+                except Exception: pass
+            d+=dt.timedelta(days=1)
+    print("BSE price rows added",add)
 
 def merge_supa_deals():
     import urllib.request as ur, csv
@@ -94,7 +131,7 @@ if __name__=="__main__":
                     if len(row)>=8 and (row[1] or "").upper() in syms: w.writerow(row)
         open("bse_all.csv","w").close()
     else:
-        topup(); open("bse_all.csv","a").close()
+        topup(); open("bse_all.csv","a").close(); bse_topup()
     run(["build_prices.py"])
     loop("pull_anchor.py",12); loop("pull_anchor2.py",20)
     merge_supa_deals()

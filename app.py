@@ -105,6 +105,14 @@ def _data_version():
 @st.cache_data(ttl=900, max_entries=2)
 def load(_v=None):
     sig = pd.read_csv(os.path.join(DATA, "signals.csv"))
+    # CSV round-trip turns "" into NaN -> "" comparisons silently break (ghost rows in the
+    # surveillance table, None cells). Normalise every string column back to "".
+    for c in ["surv_official", "surv_band", "surv_risk", "surv_since", "surv_exit_eta",
+              "surv_source", "surv_implication", "surv_exit_check", "surv_exit_rule",
+              "lead_manager", "analogs", "reasons", "stop_basis", "last_thrust_date",
+              "first_thrust_date", "last_pivot_cross_date", "anchor_30d", "anchor_90d"]:
+        if c in sig.columns:
+            sig[c] = sig[c].fillna("")
     ana = pd.read_csv(os.path.join(DATA, "ipo_analytics.csv"))
     stats = json.load(open(os.path.join(DATA, "study_stats.json")))
     ladder = pd.read_csv(os.path.join(DATA, "rule_ladder.csv"))
@@ -415,6 +423,31 @@ with T[2]:
         worst {tstats.get('worst',{}).get('company','—')} {tstats.get('worst',{}).get('pnl',0):.0f}%.</div>""",
         unsafe_allow_html=True)
 
+        CAP = 100_000  # constant allocation per trade for the ₹ view
+        eqr = closed.sort_values("exit_date")["pnl_pct"].cumsum()
+        dd_pts = float((eqr - eqr.cummax()).min()) if len(eqr) else 0.0
+        peak_pts = float(eqr.max()) if len(eqr) else 0.0
+        now_pts = float(eqr.iloc[-1]) if len(eqr) else 0.0
+        open_tr = tlog[tlog["exit_reason"] == "OPEN"]
+        open_mtm = float(open_tr["pnl_pct"].sum()) / 100 * CAP
+        m = st.columns(5)
+        m[0].metric("Closed P&L (₹1L per trade)", f"₹{now_pts/100*CAP:,.0f}",
+                    f"{len(closed)} closed trades", help="Cumulative closed-trade P&L assuming a flat ₹1,00,000 allocated to every trade, net of costs. No compounding.")
+        m[1].metric("Open positions MTM", f"₹{open_mtm:,.0f}",
+                    f"{len(open_tr)} open · avg {open_tr['pnl_pct'].mean():+.1f}%",
+                    help="Unrealized mark-to-market on trades still running (₹1L each). The system's biggest winners are typically OPEN — the trail hasn't broken yet.")
+        m[2].metric("Peak of closed curve", f"₹{peak_pts/100*CAP:,.0f}",
+                    help="Highest point the cumulative closed-P&L curve has reached.")
+        m[3].metric("Max drawdown", f"₹{abs(dd_pts)/100*CAP:,.0f}",
+                    f"{dd_pts:.0f} pts off peak", delta_color="inverse",
+                    help="Worst peak-to-trough fall of the cumulative closed-P&L curve — the pain you must sit through to harvest the tails.")
+        m[4].metric("Where we stand", f"₹{(now_pts/100*CAP + open_mtm):,.0f}",
+                    "closed + open MTM",
+                    help="Closed P&L plus open mark-to-market, ₹1L per trade.")
+        st.caption(f"₹ figures assume a constant ₹1,00,000 per trade across all {len(tlog)} trades (no compounding, "
+                   f"no parallel-capital limit — treat as a per-unit yardstick, not a portfolio simulation). "
+                   f"Win rate {tstats.get('win_rate','—')}% · avg win {tstats.get('avg_win','—')}% vs avg loss {tstats.get('avg_loss','—')}% · "
+                   f"the system pays through a few large winners, so the drawdown figure above is the honest cost of admission.")
         c1, c2 = st.columns([2, 1])
         with c1:
             st.markdown("##### Equity curve (cumulative sum of per-trade P&L %, chronological)")
