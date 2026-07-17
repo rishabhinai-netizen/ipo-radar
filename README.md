@@ -9,8 +9,9 @@ Buy the first daily close above the **listing-day high** within 25 sessions of l
 names with QIB ≥ 15x, a base that held above −15%, and real liquidity — stop at the base low
 (max −8%), trail after +15%, out by 60 sessions or before the 90-day anchor lock-in.
 
-Backtest on this dataset: **+8.8% median / 62% win @60d** (composite), **+14.3% / 75%** (SME subset).
-One year, one regime, no slippage — treat as hypothesis.
+Cohort study (returns 60d after breakout, no stops): +8.8% median / 62% win. The **tradable replay
+with stops and costs** is different: PF ~1.5, ~23% win, −10% median trade — a tail system where a few
+big runners pay for many small stops. Realized edge concentrated in SME. Treat as hypothesis.
 
 ## Architecture
 - `pipeline/refresh.py` — daily job: Chittorgarh reports (new IPOs, subscription, anchor

@@ -18,6 +18,14 @@ try:
     _rq2 = _ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_status?component=eq.lmradar_data&select=data_date,deals_date,last_run_utc,ipo_count",
                        headers={"apikey": _SK, "Authorization": "Bearer " + _SK})
     _st = _js.load(_ur.urlopen(_rq2, timeout=8))
+    try:
+        _rq3 = _ur.Request("https://aiebaqvclyzxajigvkfd.supabase.co/rest/v1/lmr_deals?select=deal_date&order=deal_date.desc&limit=1",
+                           headers={"apikey": _SK, "Authorization": "Bearer " + _SK})
+        _lv = _js.load(_ur.urlopen(_rq3, timeout=8))
+        if _st and _lv and _lv[0].get("deal_date") and _lv[0]["deal_date"] > (_st[0].get("deals_date") or ""):
+            _st[0]["deals_date"] = _lv[0]["deal_date"]
+    except Exception:
+        pass
     if _st:
         _d = _st[0]
         _pf = bool(_d.get("data_date")) and _d["data_date"] >= (_dt.date.today() - _dt.timedelta(days=3)).isoformat()
@@ -72,7 +80,7 @@ H = {
     "bo_day": "Session when price first closed above the pivot. ≤25 valid; later reclaims historically failed.",
     "entry": "= the pivot. Buy the first daily close above it.",
     "stop": "Higher of base low (setup falsification level) or entry −8% (O'Neil cap) — whichever risks less.",
-    "target": "Entry +15% — NOT a booking level: reaching it ARMS the 25% trailing stop. The exit re-study showed booking partials capped the tails; the full position trails wide instead.",
+    "target": "Entry +15% — NOT a booking level: reaching it ARMS the 30% trailing stop. The exit re-study showed booking partials capped the tails; the full position trails wide instead.",
     "rr": "(Target − Entry) / (Entry − Stop).",
     "vs_issue": "CMP vs IPO issue price (%).",
     "peak": "Lifetime high vs issue (%).",
@@ -130,8 +138,9 @@ st.markdown(f"""
 <div class="hero"><h1>🎯 IPO Radar</h1>
 <p>Every NSE + BSE IPO (mainboard + SME) since <b>{stats.get('universe_start','2023-07-01')}</b> ·
 {len(sig)} tracked ({int((sig['board']=='Mainboard').sum())} mainboard, {int((sig['board']=='SME').sum())} SME) ·
-prices to <b>{last_date}</b> · self-updating daily · strategy: <b>Pivot Reclaim</b>
-(walk-forward validated: PF 1.95 out-of-sample)</p></div>
+prices to <b>{last_date}</b> · self-updating daily · strategy: <b>Pivot Reclaim</b> ·
+live trade-log: <b>PF {tstats.get('profit_factor','—')}</b>, win {tstats.get('win_rate','—')}%,
+avg {tstats.get('avg_pnl','—')}%/closed trade — tail-driven: most trades stop out small, a few runners pay</p></div>
 """, unsafe_allow_html=True)
 
 n = sig["reco"].value_counts()
@@ -164,7 +173,7 @@ def card(r):
           <div><span>Stop — {r['stop_basis']}</span><b>₹{r['stop']:,.2f}</b></div>
           <div><span>Trail arms at (+15%)</span><b>₹{r['target']:,.2f}</b></div>
           <div><span>Risk:Reward</span><b>{r['rr'] if pd.notna(r['rr']) else '—'}</b></div>
-          <div><span>Trail / time stop</span><b>25% off peak · 120 sessions</b></div></div>"""
+          <div><span>Trail / time stop</span><b>30% off peak · 120 sessions</b></div></div>"""
     analog_html = ""
     if isinstance(r.get("analogs"), str) and r["analogs"]:
         items = "".join(f"<li>{x.strip()}</li>" for x in r["analogs"].split("|"))
@@ -441,6 +450,11 @@ with T[2]:
                 "pnl_pct": st.column_config.NumberColumn("P&L %", format="%.2f%%", help="Net of costs (1% mainboard / 1.5% SME round trip). OPEN trades are mark-to-market."),
                 "peak_gain_pct": st.column_config.NumberColumn("Peak gain %", format="%.1f%%", help="Best unrealized gain during the trade"),
             })
+        bs = closed.groupby("board")["pnl_pct"].agg(n="count", avg="mean",
+              win=lambda x: (x > 0).mean() * 100).round(1)
+        st.caption("Closed-trade split by board: " + " · ".join(
+            f"**{b}** {int(r['n'])} trades, avg {r['avg']:+.1f}%, win {r['win']:.0f}%" for b, r in bs.iterrows())
+            + " — the realized edge so far is concentrated in SME; size mainboard signals accordingly.")
         st.download_button("⬇ Download full trade log CSV", tlog.to_csv(index=False), "ipo_radar_trade_log.csv")
         st.caption("Backtest caveats: bhavcopy opens (SME fills can differ 1–2%), no partial-fill modelling, max 3 trades/stock. This is the same engine that was walk-forward validated — optimized on 2023–24 listings only, then applied untouched.")
 
@@ -534,7 +548,7 @@ with T[3]:
             st.markdown("**Why you might not:**")
             st.markdown("\n".join(f"- ⛔ {b}" for b in bear) or "- (no red flags in our data)")
             if pd.notna(s["entry"]):
-                st.markdown(f"**If entering:** close above ₹{s['entry']:,.2f} → stop ₹{s['stop']:,.2f} ({s['stop_basis']}) → at ₹{s['target']:,.2f} (+15%) the 25%-off-peak trail arms; time stop 120 sessions. Risk 1–2% of capital.")
+                st.markdown(f"**If entering:** close above ₹{s['entry']:,.2f} → stop ₹{s['stop']:,.2f} ({s['stop_basis']}) → at ₹{s['target']:,.2f} (+15%) the 30%-off-peak trail arms; time stop 120 sessions. Risk 1–2% of capital.")
             if isinstance(s.get("analogs"), str) and s["analogs"]:
                 st.markdown("**🧬 Closest historical analogs:**")
                 for x in s["analogs"].split("|"):
@@ -635,10 +649,11 @@ with T[5]:
 # ============================================================ STUDY & METHOD
 with T[6]:
     st.markdown("""<div class="insight"><b>The one-paragraph strategy:</b> buy the first daily close above
-    the listing-day high within 25 sessions of listing, in names whose base held above −10%; stop at the
-    base low (max −8%); partial at +15%, trail the rest; out by 60 sessions or before the 90-day anchor
-    lock-in. Validated walk-forward: optimized on 2023–24 listings, tested untouched on 2025–26 →
-    <b>PF 1.95, +5.4% mean/trade net of costs, ~45% win rate</b> — small losses, big tails.
+    the listing-day high within 25 sessions of listing, in names whose base held above −10%; stop =
+    max(base low, −8%); +15% arms a 30%-off-peak trail; time stop 120 sessions (unproven trades only).
+    Walk-forward grid (60-session exit variant): PF 1.95 out-of-sample. <b>The full live-rule replay —
+    the number that matters — is on the Trade Log tab: PF ~1.5, ~23% win, −10% median trade, paid by tails.</b>
+    Closed-trade expectancy so far is concentrated in SME; closed mainboard trades are net negative.
     Volume-thrust and 20-day-high entries were tested head-to-head and lost.</div>""",
     unsafe_allow_html=True)
     st.subheader("Rule ladder & cohort stability")
@@ -677,7 +692,7 @@ or base broke −25%, or score <35) · WATCH (everything else).
 lock-in 5 + LM 5 + momentum 5. Weights follow what the backtest rewarded. Compare within a reco.
 
 **Trade plan math:** Entry = pivot · Stop = max(base low, −8%) — the shown basis tells you which bound ·
-Target-1 = +15% (historical median band), then trail · time-stop 60 sessions · position size =
+Target-1 = +15% (arms the 30% trail) · time-stop 120 sessions (unproven only) · position size =
 (capital × 1–2%) / (entry − stop), capped at 5% of daily volume for SME.
 
 **Data:** NSE/BSE official bhavcopies (both format generations, units continuity-checked) ·

@@ -42,7 +42,7 @@ if os.path.exists(PRICE_FILE):
     for k in series: series[k].sort()
 today=dt.date.today().isoformat()
 # 1) log new triggers
-cands=[r for r in csv.DictReader(open(SIGNALS)) if r.get("score") and num(r["score"])>75 and "BUY" in (r.get("reco") or "").upper()]
+cands=[r for r in csv.DictReader(open(SIGNALS)) if r.get("score") and num(r["score"])>=65 and (r.get("reco") or "").strip()=="FRESH BUY"]
 open_syms={r["symbol"].upper() for r in sget("lmr_signal_ledger?status=eq.open&select=symbol")}
 new=[]
 for r in cands:

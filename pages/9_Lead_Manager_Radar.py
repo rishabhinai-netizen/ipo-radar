@@ -68,6 +68,10 @@ def pdate(s):
 
 # ---------- STATUS BAR (two-part: auto vs upload) ----------
 stt=supa_get("lmr_status?component=eq.lmradar_data&select=data_date,deals_date,last_run_utc,ipo_count")
+_live=supa_get("lmr_deals?select=deal_date&order=deal_date.desc&limit=1")
+if isinstance(_live,list) and _live and isinstance(stt,list) and stt:
+    _ld=_live[0].get("deal_date")
+    if _ld and _ld>(stt[0].get("deals_date") or ""): stt[0]["deals_date"]=_ld
 def _stale(dstr, days):
     return not (dstr and dstr >= (dt.date.today()-dt.timedelta(days=days)).isoformat())
 if isinstance(stt,list) and stt:
@@ -148,17 +152,20 @@ with T[5]:
         return [x for x in out if x["deal_date"] and x["symbol"]]
     if (ub or uk):
         recs=parse(ub,"bulk")+parse(uk,"block")
-        st.write(f"Parsed **{len(recs):,}** rows. Saving to Supabase…")
-        # insert in chunks (on_conflict = lmr_deals_uniq columns -> true dedupe, no 409)
         saved, failed = 0, False
         CONFLICT="deal_type,deal_date,symbol,client_name,side,qty,price"
-        for i in range(0,len(recs),500):
-            res=supa_insert("lmr_deals",recs[i:i+500],ignore=True,conflict=CONFLICT)
-            if isinstance(res,list): saved+=len(res)
-            elif isinstance(res,dict) and res.get("_err"):
-                st.error("Save error: "+res["_err"]); failed=True; break
+        with st.spinner(f"Saving {len(recs):,} parsed rows to Supabase…"):
+            for i in range(0,len(recs),500):
+                res=supa_insert("lmr_deals",recs[i:i+500],ignore=True,conflict=CONFLICT)
+                if isinstance(res,list): saved+=len(res)
+                elif isinstance(res,dict) and res.get("_err"):
+                    st.error("Save error: "+res["_err"]); failed=True; break
         if not failed:
-            st.success(f"Stored **{saved}** new deals · **{len(recs)-saved}** duplicates skipped. Table: lmr_deals.")
+            st.success(f"✅ Done — **{saved}** new deals stored · **{len(recs)-saved}** duplicates skipped (table: lmr_deals).")
+            mx=max((x["deal_date"] for x in recs), default=None)
+            if mx:   # reflect freshness immediately in both pages' banners
+                supa_insert("lmr_status",[{"component":"lmradar_data","deals_date":mx}],ignore=False)
+                st.caption(f"Deals now current through **{mx}**.")
         load_deals_from_supa.clear()
     # cumulative signal from ALL stored deals
     alld=load_deals_from_supa()

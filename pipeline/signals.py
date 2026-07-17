@@ -123,7 +123,7 @@ def compute_signals() -> pd.DataFrame:
                 early_break = True
         above_pivot = cmp_ > pivot
         dist_pivot = (pivot / cmp_ - 1) * 100
-        in_setup_zone = (not broke) and days <= 40 and 0 <= dist_pivot <= 10
+        in_setup_zone = (not broke) and 5 <= days <= 40 and 0 <= dist_pivot <= 10
 
         expiry_soon = None
         for key, tag in (("anchor_lockin_30d", "30-day"), ("anchor_lockin_90d", "90-day")):
@@ -183,7 +183,7 @@ def compute_signals() -> pd.DataFrame:
         R = []
         R.append(f"Score {score}/100 — structure {s_struct}/35, base {s_base}/20, liquidity {s_liq}/15, institutions {s_inst}/15, lock-in {s_lock}/5, LM {s_lm}/5, momentum {s_mom}/5")
         if late_fresh:
-            R.append(f"🌙 LATE BLOOMER entry: fresh cross of the ₹{pivot:,.1f} pivot with a volume thrust — the Ather-class signal (missed-winners study: PF 3.05 with volume confirmation)")
+            R.append(f"🌙 LATE BLOOMER entry: fresh cross of the ₹{pivot:,.1f} pivot with a volume thrust — the Ather-class signal (study PF 3.05; EXPERIMENTAL — live replay has not yet confirmed this edge)")
         elif fresh:
             R.append(f"Fresh close above the ₹{pivot:,.1f} pivot on session {int(bo_day)} — the walk-forward-validated entry")
         elif in_setup_zone:
