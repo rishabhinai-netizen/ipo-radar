@@ -288,16 +288,16 @@
   "bse_code": ""
  },
  {
-  "company": "Liotech Industries Ltd.",
+  "company": "Diksha Polymers Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-06-24",
-  "issue_price": 321.0,
-  "issue_amount_cr": 36.03,
-  "lead_manager": "Wealth Mine Networks",
-  "isin": "INE0TKX01011",
+  "issue_price": 112.0,
+  "issue_amount_cr": 17.9,
+  "lead_manager": "Aryaman Financial",
+  "isin": "INE1OSI01014",
   "nse_symbol": "",
-  "bse_code": "544796"
+  "bse_code": "544798"
  },
  {
   "company": "Leapfrog Engineering Services Ltd.",
@@ -312,16 +312,16 @@
   "bse_code": "544797"
  },
  {
-  "company": "Diksha Polymers Ltd.",
+  "company": "Liotech Industries Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-06-24",
-  "issue_price": 112.0,
-  "issue_amount_cr": 17.9,
-  "lead_manager": "Aryaman Financial",
-  "isin": "INE1OSI01014",
+  "issue_price": 321.0,
+  "issue_amount_cr": 36.03,
+  "lead_manager": "Wealth Mine Networks",
+  "isin": "INE0TKX01011",
   "nse_symbol": "",
-  "bse_code": "544798"
+  "bse_code": "544796"
  },
  {
   "company": "Clay Craft India Ltd.",
