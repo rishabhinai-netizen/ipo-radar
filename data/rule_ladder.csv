@@ -1,7 +1,7 @@
 rule,n,r20_med,r20_win,r60_med,r60_win,r60_mean,r60_p90
-ALL pivot breakouts,740,3.0,55,5.0,55,15.2,71.4
-breakout ≤25 sessions,600,3.1,56,4.8,55,14.8,70.6
-+ base low > -10%,337,14.9,78,15.1,71,28.5,88.3
+ALL pivot breakouts,740,3.0,55,4.8,55,15.2,71.3
+breakout ≤25 sessions,600,3.2,56,4.7,55,14.7,70.6
++ base low > -10%,340,14.9,78,15.1,71,28.5,88.3
 + QIB ≥ 15x,163,15.6,80,14.6,71,24.8,78.4
 composite — SME only,98,31.3,88,22.7,74,34.2,92.5
 composite — mainboard only,65,5.3,67,9.1,66,10.8,36.9
