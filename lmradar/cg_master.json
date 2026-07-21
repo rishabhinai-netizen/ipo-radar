@@ -1,5 +1,41 @@
 [
  {
+  "company": "SBI Funds Management Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-21",
+  "issue_price": 574.0,
+  "issue_amount_cr": 9795.32,
+  "lead_manager": "Kotak Mahindra Capital",
+  "isin": "INE640G01020",
+  "nse_symbol": "SBIFUNDS",
+  "bse_code": "544829"
+ },
+ {
+  "company": "Alpine Texworld Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-21",
+  "issue_price": 105.0,
+  "issue_amount_cr": 126.25,
+  "lead_manager": "D&A Financial",
+  "isin": "INE1JCQ01037",
+  "nse_symbol": "ALPINETEX",
+  "bse_code": "544825"
+ },
+ {
+  "company": "Millworks Technologies Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-21",
+  "issue_price": 331.0,
+  "issue_amount_cr": 160.34,
+  "lead_manager": "GYR Capital",
+  "isin": "INE1SRC01010",
+  "nse_symbol": "",
+  "bse_code": "544826"
+ },
+ {
   "company": "Laser Power & Infra Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
