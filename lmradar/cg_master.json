@@ -1,6 +1,6 @@
 [
  {
-  "company": "SBI Funds Management Ltd. LT",
+  "company": "SBI Funds Management Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-07-21",
@@ -12,7 +12,7 @@
   "bse_code": "544829"
  },
  {
-  "company": "Alpine Texworld Ltd. LT",
+  "company": "Alpine Texworld Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-07-21",
@@ -24,7 +24,7 @@
   "bse_code": "544825"
  },
  {
-  "company": "Millworks Technologies Ltd. LT",
+  "company": "Millworks Technologies Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-21",
@@ -108,52 +108,16 @@
   "bse_code": "544814"
  },
  {
-  "company": "Sampark India Logistics Ltd.",
+  "company": "Kratikal Tech Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-07",
-  "issue_price": 84.0,
-  "issue_amount_cr": 27.22,
-  "lead_manager": "Finshore Management",
-  "isin": "INE147701010",
+  "issue_price": 135.0,
+  "issue_amount_cr": 39.69,
+  "lead_manager": "Beeline Capital",
+  "isin": "INE1L0M01019",
   "nse_symbol": "",
-  "bse_code": "544810"
- },
- {
-  "company": "Teja Engineering Industries Ltd.",
-  "segment": "SME",
-  "listing_at": "NSE SME",
-  "listing_date": "2026-07-07",
-  "issue_price": 220.0,
-  "issue_amount_cr": 37.36,
-  "lead_manager": "Interactive Financial",
-  "isin": "INE0R1301019",
-  "nse_symbol": "TEJA",
-  "bse_code": ""
- },
- {
-  "company": "Atharva Polyplast Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-07-07",
-  "issue_price": 60.0,
-  "issue_amount_cr": 27.0,
-  "lead_manager": "Horizon Management",
-  "isin": "INE226801012",
-  "nse_symbol": "",
-  "bse_code": "544812"
- },
- {
-  "company": "Seemax Resources Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-07-07",
-  "issue_price": 141.0,
-  "issue_amount_cr": 19.74,
-  "lead_manager": "Wealth Mine Networks",
-  "isin": "INE1EVO01017",
-  "nse_symbol": "",
-  "bse_code": "544813"
+  "bse_code": "544811"
  },
  {
   "company": "Vinit Mobile Ltd.",
@@ -168,16 +132,52 @@
   "bse_code": ""
  },
  {
-  "company": "Kratikal Tech Ltd.",
+  "company": "Sampark India Logistics Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-07",
-  "issue_price": 135.0,
-  "issue_amount_cr": 39.69,
-  "lead_manager": "Beeline Capital",
-  "isin": "INE1L0M01019",
+  "issue_price": 84.0,
+  "issue_amount_cr": 27.22,
+  "lead_manager": "Finshore Management",
+  "isin": "INE147701010",
   "nse_symbol": "",
-  "bse_code": "544811"
+  "bse_code": "544810"
+ },
+ {
+  "company": "Seemax Resources Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-07",
+  "issue_price": 141.0,
+  "issue_amount_cr": 19.74,
+  "lead_manager": "Wealth Mine Networks",
+  "isin": "INE1EVO01017",
+  "nse_symbol": "",
+  "bse_code": "544813"
+ },
+ {
+  "company": "Atharva Polyplast Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-07",
+  "issue_price": 60.0,
+  "issue_amount_cr": 27.0,
+  "lead_manager": "Horizon Management",
+  "isin": "INE226801012",
+  "nse_symbol": "",
+  "bse_code": "544812"
+ },
+ {
+  "company": "Teja Engineering Industries Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-07-07",
+  "issue_price": 220.0,
+  "issue_amount_cr": 37.36,
+  "lead_manager": "Interactive Financial",
+  "isin": "INE0R1301019",
+  "nse_symbol": "TEJA",
+  "bse_code": ""
  },
  {
   "company": "Aastha Spintex Ltd.",
@@ -324,6 +324,18 @@
   "bse_code": ""
  },
  {
+  "company": "Clay Craft India Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-06-24",
+  "issue_price": 203.0,
+  "issue_amount_cr": 110.11,
+  "lead_manager": "Hem Securities",
+  "isin": "INE1QGM01024",
+  "nse_symbol": "CLAYCRAFT",
+  "bse_code": ""
+ },
+ {
   "company": "Diksha Polymers Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -334,18 +346,6 @@
   "isin": "INE1OSI01014",
   "nse_symbol": "",
   "bse_code": "544798"
- },
- {
-  "company": "Leapfrog Engineering Services Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-06-24",
-  "issue_price": 23.0,
-  "issue_amount_cr": 88.51,
-  "lead_manager": "Finshore Management",
-  "isin": "INE0X6O01027",
-  "nse_symbol": "",
-  "bse_code": "544797"
  },
  {
   "company": "Liotech Industries Ltd.",
@@ -360,16 +360,16 @@
   "bse_code": "544796"
  },
  {
-  "company": "Clay Craft India Ltd.",
+  "company": "Leapfrog Engineering Services Ltd.",
   "segment": "SME",
-  "listing_at": "NSE SME",
+  "listing_at": "BSE SME",
   "listing_date": "2026-06-24",
-  "issue_price": 203.0,
-  "issue_amount_cr": 110.11,
-  "lead_manager": "Hem Securities",
-  "isin": "INE1QGM01024",
-  "nse_symbol": "CLAYCRAFT",
-  "bse_code": ""
+  "issue_price": 23.0,
+  "issue_amount_cr": 88.51,
+  "lead_manager": "Finshore Management",
+  "isin": "INE0X6O01027",
+  "nse_symbol": "",
+  "bse_code": "544797"
  },
  {
   "company": "Horizon Reclaim (India) Ltd.",
@@ -624,18 +624,6 @@
   "bse_code": ""
  },
  {
-  "company": "RFBL Flexi Pack Ltd.",
-  "segment": "SME",
-  "listing_at": "NSE SME",
-  "listing_date": "2026-05-19",
-  "issue_price": 50.0,
-  "issue_amount_cr": 35.33,
-  "lead_manager": "Grow House Wealth",
-  "isin": "INE0V2V01015",
-  "nse_symbol": "RFBL",
-  "bse_code": ""
- },
- {
   "company": "Goldline Pharmaceutical Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -646,6 +634,18 @@
   "isin": "INE1CLW01015",
   "nse_symbol": "",
   "bse_code": "544759"
+ },
+ {
+  "company": "RFBL Flexi Pack Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-05-19",
+  "issue_price": 50.0,
+  "issue_amount_cr": 35.33,
+  "lead_manager": "Grow House Wealth",
+  "isin": "INE0V2V01015",
+  "nse_symbol": "RFBL",
+  "bse_code": ""
  },
  {
   "company": "Simca Advertising Ltd.",
