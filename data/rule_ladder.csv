@@ -1,5 +1,5 @@
 rule,n,r20_med,r20_win,r60_med,r60_win,r60_mean,r60_p90
-ALL pivot breakouts,742,3.0,55,5.0,55,15.2,71.3
+ALL pivot breakouts,743,3.0,55,5.0,55,15.2,71.3
 breakout ≤25 sessions,601,3.1,56,4.8,55,14.8,70.6
 + base low > -10%,341,14.9,78,15.2,71,28.5,87.8
 + QIB ≥ 15x,164,15.6,80,14.6,71,24.8,78.4
