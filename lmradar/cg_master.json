@@ -1,5 +1,17 @@
 [
  {
+  "company": "Sotefin Bharat Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-23",
+  "issue_price": 187.0,
+  "issue_amount_cr": 89.76,
+  "lead_manager": "Choice Capital",
+  "isin": "INE12Z301012",
+  "nse_symbol": "",
+  "bse_code": "544832"
+ },
+ {
   "company": "SBI Funds Management Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -48,18 +60,6 @@
   "bse_code": "544822"
  },
  {
-  "company": "Devson Catalyst Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-07-16",
-  "issue_price": 118.0,
-  "issue_amount_cr": 42.34,
-  "lead_manager": "JJ IPO Advisors",
-  "isin": "INE2KRP01017",
-  "nse_symbol": "",
-  "bse_code": "544823"
- },
- {
   "company": "Happy Steels Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
@@ -70,6 +70,18 @@
   "isin": "INE1GFG01011",
   "nse_symbol": "HAPPY",
   "bse_code": ""
+ },
+ {
+  "company": "Devson Catalyst Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-16",
+  "issue_price": 118.0,
+  "issue_amount_cr": 42.34,
+  "lead_manager": "JJ IPO Advisors",
+  "isin": "INE2KRP01017",
+  "nse_symbol": "",
+  "bse_code": "544823"
  },
  {
   "company": "Kusumgar Ltd.",
@@ -624,18 +636,6 @@
   "bse_code": ""
  },
  {
-  "company": "Goldline Pharmaceutical Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-05-19",
-  "issue_price": 43.0,
-  "issue_amount_cr": 11.61,
-  "lead_manager": "Cumulative Capital",
-  "isin": "INE1CLW01015",
-  "nse_symbol": "",
-  "bse_code": "544759"
- },
- {
   "company": "RFBL Flexi Pack Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
@@ -646,6 +646,18 @@
   "isin": "INE0V2V01015",
   "nse_symbol": "RFBL",
   "bse_code": ""
+ },
+ {
+  "company": "Goldline Pharmaceutical Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-05-19",
+  "issue_price": 43.0,
+  "issue_amount_cr": 11.61,
+  "lead_manager": "Cumulative Capital",
+  "isin": "INE1CLW01015",
+  "nse_symbol": "",
+  "bse_code": "544759"
  },
  {
   "company": "Simca Advertising Ltd.",
