@@ -1,48 +1,48 @@
 {
- "n_trades": 1015,
- "n_closed": 929,
- "n_open": 86,
- "win_rate": 23.1,
- "avg_pnl": 4.27,
- "median_pnl": -10.01,
- "profit_factor": 1.52,
- "avg_win": 54.0,
+ "n_trades": 879,
+ "n_closed": 794,
+ "n_open": 85,
+ "win_rate": 21.2,
+ "avg_pnl": 1.51,
+ "median_pnl": -9.98,
+ "profit_factor": 1.18,
+ "avg_win": 46.8,
  "avg_loss": -10.7,
  "best": {
-  "company": "Oriana Power Ltd.",
-  "pnl": 517.91
+  "company": "GSM Foils Ltd.",
+  "pnl": 350.26
  },
  "worst": {
   "company": "Sahaj Solar Ltd.",
   "pnl": -38.55
  },
- "avg_hold": 40.0,
- "sum_pnl_pct": 3970.0,
- "avg_pnl_incl_open": 8.37,
- "open_mtm_pnl_sum": 4521.0,
+ "avg_hold": 39.0,
+ "sum_pnl_pct": 1202.0,
+ "avg_pnl_incl_open": 6.14,
+ "open_mtm_pnl_sum": 4196.0,
  "by_year": {
   "2023": {
-   "n": 132,
-   "win": 38,
-   "avg": 26.6,
-   "open": 1
+   "n": 76,
+   "win": 42,
+   "avg": 23.2,
+   "open": 0
   },
   "2024": {
-   "n": 382,
-   "win": 25,
-   "avg": 6.2,
+   "n": 306,
+   "win": 22,
+   "avg": 3.1,
    "open": 3
   },
   "2025": {
-   "n": 347,
+   "n": 343,
    "win": 22,
-   "avg": 2.0,
+   "avg": 2.1,
    "open": 11
   },
   "2026": {
    "n": 154,
-   "win": 43,
-   "avg": 12.4,
+   "win": 45,
+   "avg": 12.6,
    "open": 71
   }
  }
