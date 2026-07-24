@@ -1,6 +1,18 @@
 [
  {
-  "company": "Sotefin Bharat Ltd. LT",
+  "company": "Caliber Mining & Logistics Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-24",
+  "issue_price": 424.0,
+  "issue_amount_cr": 450.0,
+  "lead_manager": "Dam Capital",
+  "isin": "INE11XY01018",
+  "nse_symbol": "CMLL",
+  "bse_code": "544833"
+ },
+ {
+  "company": "Sotefin Bharat Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-23",
@@ -120,52 +132,16 @@
   "bse_code": "544814"
  },
  {
-  "company": "Kratikal Tech Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-07-07",
-  "issue_price": 135.0,
-  "issue_amount_cr": 39.69,
-  "lead_manager": "Beeline Capital",
-  "isin": "INE1L0M01019",
-  "nse_symbol": "",
-  "bse_code": "544811"
- },
- {
-  "company": "Vinit Mobile Ltd.",
+  "company": "Teja Engineering Industries Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-07-07",
-  "issue_price": 158.0,
-  "issue_amount_cr": 34.13,
-  "lead_manager": "Comfort Securities",
-  "isin": "INE27V201011",
-  "nse_symbol": "VMOBILE",
+  "issue_price": 220.0,
+  "issue_amount_cr": 37.36,
+  "lead_manager": "Interactive Financial",
+  "isin": "INE0R1301019",
+  "nse_symbol": "TEJA",
   "bse_code": ""
- },
- {
-  "company": "Sampark India Logistics Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-07-07",
-  "issue_price": 84.0,
-  "issue_amount_cr": 27.22,
-  "lead_manager": "Finshore Management",
-  "isin": "INE147701010",
-  "nse_symbol": "",
-  "bse_code": "544810"
- },
- {
-  "company": "Seemax Resources Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-07-07",
-  "issue_price": 141.0,
-  "issue_amount_cr": 19.74,
-  "lead_manager": "Wealth Mine Networks",
-  "isin": "INE1EVO01017",
-  "nse_symbol": "",
-  "bse_code": "544813"
  },
  {
   "company": "Atharva Polyplast Ltd.",
@@ -180,16 +156,52 @@
   "bse_code": "544812"
  },
  {
-  "company": "Teja Engineering Industries Ltd.",
+  "company": "Seemax Resources Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-07",
+  "issue_price": 141.0,
+  "issue_amount_cr": 19.74,
+  "lead_manager": "Wealth Mine Networks",
+  "isin": "INE1EVO01017",
+  "nse_symbol": "",
+  "bse_code": "544813"
+ },
+ {
+  "company": "Sampark India Logistics Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-07",
+  "issue_price": 84.0,
+  "issue_amount_cr": 27.22,
+  "lead_manager": "Finshore Management",
+  "isin": "INE147701010",
+  "nse_symbol": "",
+  "bse_code": "544810"
+ },
+ {
+  "company": "Vinit Mobile Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-07-07",
-  "issue_price": 220.0,
-  "issue_amount_cr": 37.36,
-  "lead_manager": "Interactive Financial",
-  "isin": "INE0R1301019",
-  "nse_symbol": "TEJA",
+  "issue_price": 158.0,
+  "issue_amount_cr": 34.13,
+  "lead_manager": "Comfort Securities",
+  "isin": "INE27V201011",
+  "nse_symbol": "VMOBILE",
   "bse_code": ""
+ },
+ {
+  "company": "Kratikal Tech Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-07",
+  "issue_price": 135.0,
+  "issue_amount_cr": 39.69,
+  "lead_manager": "Beeline Capital",
+  "isin": "INE1L0M01019",
+  "nse_symbol": "",
+  "bse_code": "544811"
  },
  {
   "company": "Aastha Spintex Ltd.",
@@ -264,18 +276,6 @@
   "bse_code": "544802"
  },
  {
-  "company": "Shreedhar Spinners Ltd.",
-  "segment": "SME",
-  "listing_at": "NSE SME",
-  "listing_date": "2026-07-01",
-  "issue_price": 53.0,
-  "issue_amount_cr": 30.68,
-  "lead_manager": "Marwadi Chandarana Intermediaries",
-  "isin": "INE0K3301012",
-  "nse_symbol": "SHREEDHAR",
-  "bse_code": ""
- },
- {
   "company": "Jivial Industries Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -286,6 +286,18 @@
   "isin": "INE0V3T01017",
   "nse_symbol": "",
   "bse_code": "544805"
+ },
+ {
+  "company": "Shreedhar Spinners Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-07-01",
+  "issue_price": 53.0,
+  "issue_amount_cr": 30.68,
+  "lead_manager": "Marwadi Chandarana Intermediaries",
+  "isin": "INE0K3301012",
+  "nse_symbol": "SHREEDHAR",
+  "bse_code": ""
  },
  {
   "company": "Riyaasat Lifestyle Ltd.",
@@ -336,28 +348,16 @@
   "bse_code": ""
  },
  {
-  "company": "Clay Craft India Ltd.",
-  "segment": "SME",
-  "listing_at": "NSE SME",
-  "listing_date": "2026-06-24",
-  "issue_price": 203.0,
-  "issue_amount_cr": 110.11,
-  "lead_manager": "Hem Securities",
-  "isin": "INE1QGM01024",
-  "nse_symbol": "CLAYCRAFT",
-  "bse_code": ""
- },
- {
-  "company": "Diksha Polymers Ltd.",
+  "company": "Leapfrog Engineering Services Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-06-24",
-  "issue_price": 112.0,
-  "issue_amount_cr": 17.9,
-  "lead_manager": "Aryaman Financial",
-  "isin": "INE1OSI01014",
+  "issue_price": 23.0,
+  "issue_amount_cr": 88.51,
+  "lead_manager": "Finshore Management",
+  "isin": "INE0X6O01027",
   "nse_symbol": "",
-  "bse_code": "544798"
+  "bse_code": "544797"
  },
  {
   "company": "Liotech Industries Ltd.",
@@ -372,16 +372,28 @@
   "bse_code": "544796"
  },
  {
-  "company": "Leapfrog Engineering Services Ltd.",
+  "company": "Diksha Polymers Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-06-24",
-  "issue_price": 23.0,
-  "issue_amount_cr": 88.51,
-  "lead_manager": "Finshore Management",
-  "isin": "INE0X6O01027",
+  "issue_price": 112.0,
+  "issue_amount_cr": 17.9,
+  "lead_manager": "Aryaman Financial",
+  "isin": "INE1OSI01014",
   "nse_symbol": "",
-  "bse_code": "544797"
+  "bse_code": "544798"
+ },
+ {
+  "company": "Clay Craft India Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-06-24",
+  "issue_price": 203.0,
+  "issue_amount_cr": 110.11,
+  "lead_manager": "Hem Securities",
+  "isin": "INE1QGM01024",
+  "nse_symbol": "CLAYCRAFT",
+  "bse_code": ""
  },
  {
   "company": "Horizon Reclaim (India) Ltd.",
@@ -444,18 +456,6 @@
   "bse_code": ""
  },
  {
-  "company": "UHM Vacation Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-06-11",
-  "issue_price": 166.0,
-  "issue_amount_cr": 36.0,
-  "lead_manager": "Sobhagya Capital",
-  "isin": "INE0YZ901011",
-  "nse_symbol": "",
-  "bse_code": "544779"
- },
- {
   "company": "Vahh Chemicals Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -466,6 +466,18 @@
   "isin": "INE0H3U01013",
   "nse_symbol": "",
   "bse_code": "544778"
+ },
+ {
+  "company": "UHM Vacation Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-06-11",
+  "issue_price": 166.0,
+  "issue_amount_cr": 36.0,
+  "lead_manager": "Sobhagya Capital",
+  "isin": "INE0YZ901011",
+  "nse_symbol": "",
+  "bse_code": "544779"
  },
  {
   "company": "CMR Green Technologies Ltd.",
@@ -564,15 +576,15 @@
   "bse_code": "544768"
  },
  {
-  "company": "Q-Line Biotech Ltd.",
+  "company": "Bio Medica Laboratories Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-05-29",
-  "issue_price": 343.0,
-  "issue_amount_cr": 214.48,
-  "lead_manager": "Hem Securities",
-  "isin": "INE1G2W01011",
-  "nse_symbol": "QLINE",
+  "issue_price": 139.0,
+  "issue_amount_cr": 52.43,
+  "lead_manager": "Narnolia Financial",
+  "isin": "INE1BKA01015",
+  "nse_symbol": "BMLL",
   "bse_code": ""
  },
  {
@@ -588,15 +600,15 @@
   "bse_code": "544767"
  },
  {
-  "company": "Bio Medica Laboratories Ltd.",
+  "company": "Q-Line Biotech Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-05-29",
-  "issue_price": 139.0,
-  "issue_amount_cr": 52.43,
-  "lead_manager": "Narnolia Financial",
-  "isin": "INE1BKA01015",
-  "nse_symbol": "BMLL",
+  "issue_price": 343.0,
+  "issue_amount_cr": 214.48,
+  "lead_manager": "Hem Securities",
+  "isin": "INE1G2W01011",
+  "nse_symbol": "QLINE",
   "bse_code": ""
  },
  {
@@ -636,18 +648,6 @@
   "bse_code": ""
  },
  {
-  "company": "RFBL Flexi Pack Ltd.",
-  "segment": "SME",
-  "listing_at": "NSE SME",
-  "listing_date": "2026-05-19",
-  "issue_price": 50.0,
-  "issue_amount_cr": 35.33,
-  "lead_manager": "Grow House Wealth",
-  "isin": "INE0V2V01015",
-  "nse_symbol": "RFBL",
-  "bse_code": ""
- },
- {
   "company": "Goldline Pharmaceutical Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -658,6 +658,18 @@
   "isin": "INE1CLW01015",
   "nse_symbol": "",
   "bse_code": "544759"
+ },
+ {
+  "company": "RFBL Flexi Pack Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-05-19",
+  "issue_price": 50.0,
+  "issue_amount_cr": 35.33,
+  "lead_manager": "Grow House Wealth",
+  "isin": "INE0V2V01015",
+  "nse_symbol": "RFBL",
+  "bse_code": ""
  },
  {
   "company": "Simca Advertising Ltd.",
@@ -792,18 +804,6 @@
   "bse_code": ""
  },
  {
-  "company": "Sai Parenteral's Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-04-02",
-  "issue_price": 392.0,
-  "issue_amount_cr": 408.79,
-  "lead_manager": "Arihant Capital",
-  "isin": "INE0H9F01037",
-  "nse_symbol": "SAIPARENT",
-  "bse_code": "544742"
- },
- {
   "company": "Powerica Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -826,6 +826,18 @@
   "isin": "INE05TO01019",
   "nse_symbol": "AMIRCHAND",
   "bse_code": "544743"
+ },
+ {
+  "company": "Sai Parenteral's Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-04-02",
+  "issue_price": 392.0,
+  "issue_amount_cr": 408.79,
+  "lead_manager": "Arihant Capital",
+  "isin": "INE0H9F01037",
+  "nse_symbol": "SAIPARENT",
+  "bse_code": "544742"
  },
  {
   "company": "Highness Microelectronics Ltd.",
@@ -1056,16 +1068,16 @@
   "bse_code": "544716"
  },
  {
-  "company": "Accord Transformer & Switchgear Ltd.",
+  "company": "Kiaasa Retail Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-03-02",
-  "issue_price": 46.0,
-  "issue_amount_cr": 25.59,
-  "lead_manager": "GYR Capital",
-  "isin": "INE132201018",
+  "issue_price": 127.0,
+  "issue_amount_cr": 69.74,
+  "lead_manager": "Expert Global",
+  "isin": "INE1C3F01018",
   "nse_symbol": "",
-  "bse_code": "544710"
+  "bse_code": "544711"
  },
  {
   "company": "Mobilise App Lab Ltd.",
@@ -1080,16 +1092,16 @@
   "bse_code": ""
  },
  {
-  "company": "Kiaasa Retail Ltd.",
+  "company": "Accord Transformer & Switchgear Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-03-02",
-  "issue_price": 127.0,
-  "issue_amount_cr": 69.74,
-  "lead_manager": "Expert Global",
-  "isin": "INE1C3F01018",
+  "issue_price": 46.0,
+  "issue_amount_cr": 25.59,
+  "lead_manager": "GYR Capital",
+  "isin": "INE132201018",
   "nse_symbol": "",
-  "bse_code": "544711"
+  "bse_code": "544710"
  },
  {
   "company": "Gaudium IVF & Women Health Ltd.",
@@ -1176,6 +1188,18 @@
   "bse_code": "544699"
  },
  {
+  "company": "Biopol Chemicals Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-02-13",
+  "issue_price": 108.0,
+  "issue_amount_cr": 31.26,
+  "lead_manager": "Smart Horizon Capital",
+  "isin": "INE0XW001014",
+  "nse_symbol": "BIOPOL",
+  "bse_code": ""
+ },
+ {
   "company": "PAN HR Solutions Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -1188,15 +1212,15 @@
   "bse_code": "544698"
  },
  {
-  "company": "Biopol Chemicals Ltd.",
+  "company": "Brandman Retail Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
-  "listing_date": "2026-02-13",
-  "issue_price": 108.0,
-  "issue_amount_cr": 31.26,
-  "lead_manager": "Smart Horizon Capital",
-  "isin": "INE0XW001014",
-  "nse_symbol": "BIOPOL",
+  "listing_date": "2026-02-11",
+  "issue_price": 176.0,
+  "issue_amount_cr": 86.09,
+  "lead_manager": "Gretex Corporate",
+  "isin": "INE0XUD01014",
+  "nse_symbol": "BRANDMAN",
   "bse_code": ""
  },
  {
@@ -1212,18 +1236,6 @@
   "bse_code": ""
  },
  {
-  "company": "Brandman Retail Ltd.",
-  "segment": "SME",
-  "listing_at": "NSE SME",
-  "listing_date": "2026-02-11",
-  "issue_price": 176.0,
-  "issue_amount_cr": 86.09,
-  "lead_manager": "Gretex Corporate",
-  "isin": "INE0XUD01014",
-  "nse_symbol": "BRANDMAN",
-  "bse_code": ""
- },
- {
   "company": "CKK Retail Mart Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
@@ -1236,16 +1248,16 @@
   "bse_code": ""
  },
  {
-  "company": "Accretion Nutraveda Ltd.",
+  "company": "Kanishk Aluminium India Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-02-04",
-  "issue_price": 129.0,
-  "issue_amount_cr": 24.77,
-  "lead_manager": "Sobhagya Capital",
-  "isin": "INE1KVQ01019",
+  "issue_price": 73.0,
+  "issue_amount_cr": 29.2,
+  "lead_manager": "Sun Capital",
+  "isin": "INE163401016",
   "nse_symbol": "",
-  "bse_code": "544694"
+  "bse_code": "544693"
  },
  {
   "company": "Msafe Equipments Ltd.",
@@ -1260,16 +1272,16 @@
   "bse_code": "544695"
  },
  {
-  "company": "Kanishk Aluminium India Ltd.",
+  "company": "Accretion Nutraveda Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-02-04",
-  "issue_price": 73.0,
-  "issue_amount_cr": 29.2,
-  "lead_manager": "Sun Capital",
-  "isin": "INE163401016",
+  "issue_price": 129.0,
+  "issue_amount_cr": 24.77,
+  "lead_manager": "Sobhagya Capital",
+  "isin": "INE1KVQ01019",
   "nse_symbol": "",
-  "bse_code": "544693"
+  "bse_code": "544694"
  },
  {
   "company": "Kasturi Metal Composite Ltd.",
@@ -1380,18 +1392,6 @@
   "bse_code": "544679"
  },
  {
-  "company": "INDO SMC Ltd.",
-  "segment": "SME",
-  "listing_at": "BSE SME",
-  "listing_date": "2026-01-21",
-  "issue_price": 149.0,
-  "issue_amount_cr": 91.95,
-  "lead_manager": "GYR Capital",
-  "isin": "INE0WKY01013",
-  "nse_symbol": "",
-  "bse_code": "544681"
- },
- {
   "company": "GRE Renew Enertech Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -1402,6 +1402,18 @@
   "isin": "INE0U8P01015",
   "nse_symbol": "",
   "bse_code": "544682"
+ },
+ {
+  "company": "INDO SMC Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-01-21",
+  "issue_price": 149.0,
+  "issue_amount_cr": 91.95,
+  "lead_manager": "GYR Capital",
+  "isin": "INE0WKY01013",
+  "nse_symbol": "",
+  "bse_code": "544681"
  },
  {
   "company": "Narmadesh Brass Industries Ltd.",
@@ -1452,18 +1464,6 @@
   "bse_code": "544677"
  },
  {
-  "company": "Victory Electric Vehicles International Ltd.",
-  "segment": "SME",
-  "listing_at": "NSE SME",
-  "listing_date": "2026-01-14",
-  "issue_price": 41.0,
-  "issue_amount_cr": 34.56,
-  "lead_manager": "Corpwis",
-  "isin": "INE0F8901022",
-  "nse_symbol": "VICTORYEV",
-  "bse_code": ""
- },
- {
   "company": "Yajur Fibres Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
@@ -1474,6 +1474,18 @@
   "isin": "INE0CNJ01010",
   "nse_symbol": "",
   "bse_code": "544676"
+ },
+ {
+  "company": "Victory Electric Vehicles International Ltd.",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-01-14",
+  "issue_price": 41.0,
+  "issue_amount_cr": 34.56,
+  "lead_manager": "Corpwis",
+  "isin": "INE0F8901022",
+  "nse_symbol": "VICTORYEV",
+  "bse_code": ""
  },
  {
   "company": "Gabion Technologies India Ltd.",
