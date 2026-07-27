@@ -1,6 +1,18 @@
 [
  {
-  "company": "Caliber Mining & Logistics Ltd. LT",
+  "company": "Gulf Lloyds (India) Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-27",
+  "issue_price": 100.0,
+  "issue_amount_cr": 18.19,
+  "lead_manager": "Interactive Financial",
+  "isin": "INE1WDC01012",
+  "nse_symbol": "",
+  "bse_code": "544834"
+ },
+ {
+  "company": "Caliber Mining & Logistics Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-07-24",
@@ -804,6 +816,18 @@
   "bse_code": ""
  },
  {
+  "company": "Sai Parenteral's Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-04-02",
+  "issue_price": 392.0,
+  "issue_amount_cr": 408.79,
+  "lead_manager": "Arihant Capital",
+  "isin": "INE0H9F01037",
+  "nse_symbol": "SAIPARENT",
+  "bse_code": "544742"
+ },
+ {
   "company": "Powerica Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -826,18 +850,6 @@
   "isin": "INE05TO01019",
   "nse_symbol": "AMIRCHAND",
   "bse_code": "544743"
- },
- {
-  "company": "Sai Parenteral's Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-04-02",
-  "issue_price": 392.0,
-  "issue_amount_cr": 408.79,
-  "lead_manager": "Arihant Capital",
-  "isin": "INE0H9F01037",
-  "nse_symbol": "SAIPARENT",
-  "bse_code": "544742"
  },
  {
   "company": "Highness Microelectronics Ltd.",
