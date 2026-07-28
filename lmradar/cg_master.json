@@ -1,6 +1,18 @@
 [
  {
-  "company": "Gulf Lloyds (India) Ltd. LT",
+  "company": "Metalic Technoforge Ltd. LT",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-07-28",
+  "issue_price": 77.0,
+  "issue_amount_cr": 49.96,
+  "lead_manager": "Smart Horizon Capital",
+  "isin": "INE1II801013",
+  "nse_symbol": "METALIC",
+  "bse_code": ""
+ },
+ {
+  "company": "Gulf Lloyds (India) Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-07-27",
