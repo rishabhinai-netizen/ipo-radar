@@ -1,6 +1,18 @@
 [
  {
-  "company": "Metalic Technoforge Ltd. LT",
+  "company": "Shree Balaji (Mala) Textiles Ltd. (Shree Balaji Mala IPO) LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-07-29",
+  "issue_price": 70.0,
+  "issue_amount_cr": 18.9,
+  "lead_manager": "GYR Capital",
+  "isin": "INE1N3Y01016",
+  "nse_symbol": "",
+  "bse_code": "544835"
+ },
+ {
+  "company": "Metalic Technoforge Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-07-28",
@@ -48,18 +60,6 @@
   "bse_code": "544832"
  },
  {
-  "company": "SBI Funds Management Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-07-21",
-  "issue_price": 574.0,
-  "issue_amount_cr": 9795.32,
-  "lead_manager": "Kotak Mahindra Capital",
-  "isin": "INE640G01020",
-  "nse_symbol": "SBIFUNDS",
-  "bse_code": "544829"
- },
- {
   "company": "Alpine Texworld Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -70,6 +70,18 @@
   "isin": "INE1JCQ01037",
   "nse_symbol": "ALPINETEX",
   "bse_code": "544825"
+ },
+ {
+  "company": "SBI Funds Management Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-21",
+  "issue_price": 574.0,
+  "issue_amount_cr": 9795.32,
+  "lead_manager": "Kotak Mahindra Capital",
+  "isin": "INE640G01020",
+  "nse_symbol": "SBIFUNDS",
+  "bse_code": "544829"
  },
  {
   "company": "Millworks Technologies Ltd.",
