@@ -1,6 +1,30 @@
 [
  {
-  "company": "Poojaa Precision Engg.Ltd. LT",
+  "company": "Manipal Health Enterprises Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-05",
+  "issue_price": 590.0,
+  "issue_amount_cr": 9275.22,
+  "lead_manager": "Kotak Mahindra Capital",
+  "isin": "INE459N01021",
+  "nse_symbol": "MANIPALHOS",
+  "bse_code": "544847"
+ },
+ {
+  "company": "H.R.Hygiene Products Ltd. (H.R. Hygiene Products IPO) LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-08-05",
+  "issue_price": 88.0,
+  "issue_amount_cr": 53.95,
+  "lead_manager": "Marwadi Chandarana Intermediaries",
+  "isin": "INE17DP01015",
+  "nse_symbol": "",
+  "bse_code": "544848"
+ },
+ {
+  "company": "Poojaa Precision Engg.Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-08-04",
@@ -48,18 +72,6 @@
   "bse_code": "544840"
  },
  {
-  "company": "Lohia Corp Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-07-30",
-  "issue_price": 425.0,
-  "issue_amount_cr": 1101.28,
-  "lead_manager": "Equirus Capital",
-  "isin": "INE0QJW01029",
-  "nse_symbol": "LCL",
-  "bse_code": "544839"
- },
- {
   "company": "Indo-MIM Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -70,6 +82,18 @@
   "isin": "INE084101034",
   "nse_symbol": "INDOMIM",
   "bse_code": "544837"
+ },
+ {
+  "company": "Lohia Corp Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-30",
+  "issue_price": 425.0,
+  "issue_amount_cr": 1101.28,
+  "lead_manager": "Equirus Capital",
+  "isin": "INE0QJW01029",
+  "nse_symbol": "LCL",
+  "bse_code": "544839"
  },
  {
   "company": "Xtranet Technologies Ltd.",
