@@ -1,38 +1,38 @@
 {
  "universe_start": "2023-07-01",
- "n_ipos": 999,
- "n_mainboard": 281,
- "n_sme": 718,
- "as_of": "2026-08-04",
+ "n_ipos": 1002,
+ "n_mainboard": 282,
+ "n_sme": 720,
+ "as_of": "2026-08-05",
  "never_broke": {
-  "n": 215,
-  "cmp_vs_d1close_median": -54.4
+  "n": 216,
+  "cmp_vs_d1close_median": -53.7
  },
  "qib_quartiles": {
   "d1_close_vs_issue_pct": {
    "Q1_low": -0.5,
    "Q2": 5.0,
-   "Q3": 25.8,
+   "Q3": 25.5,
    "Q4_high": 65.2
   },
   "cmp_vs_d1close_pct": {
-   "Q1_low": -3.8,
-   "Q2": -12.1,
-   "Q3": -13.2,
-   "Q4_high": -20.5
+   "Q1_low": -2.6,
+   "Q2": -11.6,
+   "Q3": -11.9,
+   "Q4_high": -19.4
   },
   "life_high_vs_issue_pct": {
-   "Q1_low": 37.9,
-   "Q2": 47.9,
-   "Q3": 98.0,
-   "Q4_high": 119.9
+   "Q1_low": 38.5,
+   "Q2": 47.7,
+   "Q3": 94.4,
+   "Q4_high": 129.8
   }
  },
  "lockin30": {
-  "n": 579,
+  "n": 580,
   "pre5_median": -2.73,
   "post10_median": -1.4,
-  "post10_win": 44.7
+  "post10_win": 44.8
  },
  "lockin90": {
   "n": 562,
@@ -42,33 +42,33 @@
  },
  "open_pop": {
   "cmp_vs_d1close_pct": {
-   "disc<-5": -25.4,
-   "flat": -10.7,
-   "pop5-25": -14.0,
-   "pop25-50": -3.0,
-   "pop>50": -35.0
+   "disc<-5": -24.3,
+   "flat": -9.3,
+   "pop5-25": -13.0,
+   "pop25-50": -4.2,
+   "pop>50": -33.8
   },
   "max_dd_pct": {
-   "disc<-5": -57.0,
-   "flat": -47.1,
+   "disc<-5": -56.9,
+   "flat": -47.5,
    "pop5-25": -51.7,
    "pop25-50": -53.0,
    "pop>50": -64.9
   },
   "life_high_vs_issue_pct": {
-   "disc<-5": -2.5,
+   "disc<-5": -2.6,
    "flat": 30.9,
-   "pop5-25": 61.2,
+   "pop5-25": 61.5,
    "pop25-50": 115.8,
    "pop>50": 193.9
   }
  },
  "liquidity": {
-  "n_liquid": 217,
-  "liquid_cmp_vs_d1close": 8.4,
-  "illiquid_cmp_vs_d1close": -12.5
+  "n_liquid": 218,
+  "liquid_cmp_vs_d1close": 8.2,
+  "illiquid_cmp_vs_d1close": -12.1
  },
- "winner_threshold_pct": 163.6,
+ "winner_threshold_pct": 162.7,
  "traits_winners": {
   "n": 189,
   "qib_median": 109.3,
@@ -78,17 +78,17 @@
   "base30_low_median": -9.2
  },
  "traits_rest": {
-  "n": 564,
-  "qib_median": 26.7,
-  "sub_total_median": 18.5,
-  "d1close_vs_issue_median": 5.5,
-  "days_to_high_median": 13.5,
-  "base30_low_median": -18.9
+  "n": 567,
+  "qib_median": 26.6,
+  "sub_total_median": 18.1,
+  "d1close_vs_issue_median": 5.4,
+  "days_to_high_median": 14.0,
+  "base30_low_median": -18.7
  },
  "monthly_d1": {
   "2023-07": 42.3,
   "2023-08": 26.1,
-  "2023-09": 32.6,
+  "2023-09": 32.3,
   "2023-10": 17.5,
   "2023-11": 23.4,
   "2023-12": 20.9,
@@ -123,7 +123,7 @@
   "2026-05": 10.2,
   "2026-06": -1.7,
   "2026-07": 8.7,
-  "2026-08": -6.0
+  "2026-08": -0.0
  },
  "winner_lessons": {
   "n_winners": 42,
