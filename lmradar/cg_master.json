@@ -1,6 +1,18 @@
 [
  {
-  "company": "Fusion Klassroom Edutech Ltd. LT",
+  "company": "Anawil Wire & Engineering Ltd. LT",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-08-10",
+  "issue_price": 270.0,
+  "issue_amount_cr": 177.81,
+  "lead_manager": "Hem Securities",
+  "isin": "INE1J5V01013",
+  "nse_symbol": "ANAWIL",
+  "bse_code": ""
+ },
+ {
+  "company": "Fusion Klassroom Edutech Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-08-07",
@@ -10,18 +22,6 @@
   "isin": "INE1LMA01010",
   "nse_symbol": "",
   "bse_code": "544856"
- },
- {
-  "company": "MV Electrosystems Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-08-06",
-  "issue_price": 425.0,
-  "issue_amount_cr": 290.0,
-  "lead_manager": "Sundae Capital",
-  "isin": "INE0OWZ01020",
-  "nse_symbol": "MVELECTRO",
-  "bse_code": "544851"
  },
  {
   "company": "Juniper Green Energy Ltd.",
@@ -34,6 +34,18 @@
   "isin": "INE05C901015",
   "nse_symbol": "JNPR",
   "bse_code": "544853"
+ },
+ {
+  "company": "MV Electrosystems Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-06",
+  "issue_price": 425.0,
+  "issue_amount_cr": 290.0,
+  "lead_manager": "Sundae Capital",
+  "isin": "INE0OWZ01020",
+  "nse_symbol": "MVELECTRO",
+  "bse_code": "544851"
  },
  {
   "company": "Oneindig Technologies Ltd.",
@@ -144,18 +156,6 @@
   "bse_code": "544838"
  },
  {
-  "company": "Lohia Corp Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-07-30",
-  "issue_price": 425.0,
-  "issue_amount_cr": 1101.28,
-  "lead_manager": "Equirus Capital",
-  "isin": "INE0QJW01029",
-  "nse_symbol": "LCL",
-  "bse_code": "544839"
- },
- {
   "company": "Indo-MIM Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -166,6 +166,18 @@
   "isin": "INE084101034",
   "nse_symbol": "INDOMIM",
   "bse_code": "544837"
+ },
+ {
+  "company": "Lohia Corp Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-30",
+  "issue_price": 425.0,
+  "issue_amount_cr": 1101.28,
+  "lead_manager": "Equirus Capital",
+  "isin": "INE0QJW01029",
+  "nse_symbol": "LCL",
+  "bse_code": "544839"
  },
  {
   "company": "Shree Balaji (Mala) Textiles Ltd. (Shree Balaji Mala IPO)",
@@ -456,18 +468,6 @@
   "bse_code": "544806"
  },
  {
-  "company": "Waterways Leisure Tourism Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-07-01",
-  "issue_price": 808.0,
-  "issue_amount_cr": 585.0,
-  "lead_manager": "Centrum Broking",
-  "isin": "INE0LZF01013",
-  "nse_symbol": "CORDELIA",
-  "bse_code": "544802"
- },
- {
   "company": "Advit Jewels Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -478,6 +478,18 @@
   "isin": "INE1SJO01012",
   "nse_symbol": "RAMBHAJO",
   "bse_code": "544803"
+ },
+ {
+  "company": "Waterways Leisure Tourism Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-01",
+  "issue_price": 808.0,
+  "issue_amount_cr": 585.0,
+  "lead_manager": "Centrum Broking",
+  "isin": "INE0LZF01013",
+  "nse_symbol": "CORDELIA",
+  "bse_code": "544802"
  },
  {
   "company": "Jivial Industries Ltd.",
