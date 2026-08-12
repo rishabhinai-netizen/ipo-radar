@@ -1,6 +1,30 @@
 [
  {
-  "company": "Aegeus Technologies Ltd. LT",
+  "company": "Ardee Industries Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-12",
+  "issue_price": 53.0,
+  "issue_amount_cr": 425.87,
+  "lead_manager": "Pantomath Capital",
+  "isin": "INE0XNF01022",
+  "nse_symbol": "ARDEE",
+  "bse_code": "544860"
+ },
+ {
+  "company": "G.V.Electricals Ltd. (G.V. Electricals IPO) LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-08-12",
+  "issue_price": 130.0,
+  "issue_amount_cr": 42.25,
+  "lead_manager": "Seren Capital",
+  "isin": "INE1ZGR01024",
+  "nse_symbol": "",
+  "bse_code": "544859"
+ },
+ {
+  "company": "Aegeus Technologies Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-08-11",
