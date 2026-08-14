@@ -1,6 +1,54 @@
 [
  {
-  "company": "Ardee Industries Ltd. LT",
+  "company": "Technocraft Ventures Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-14",
+  "issue_price": 212.0,
+  "issue_amount_cr": 251.88,
+  "lead_manager": "Khambatta Securities",
+  "isin": "INE1D0W01018",
+  "nse_symbol": "TECHNOCRAF",
+  "bse_code": "544864"
+ },
+ {
+  "company": "LEAP India Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-14",
+  "issue_price": 159.0,
+  "issue_amount_cr": 2480.0,
+  "lead_manager": "JM Financial",
+  "isin": "INE00GO01025",
+  "nse_symbol": "LEAPIND",
+  "bse_code": "544865"
+ },
+ {
+  "company": "Optimystix Entertainment India Ltd. LT",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-08-14",
+  "issue_price": 175.0,
+  "issue_amount_cr": 108.5,
+  "lead_manager": "LSI Financial",
+  "isin": "INE1JZB01022",
+  "nse_symbol": "OPTIMYSTIX",
+  "bse_code": ""
+ },
+ {
+  "company": "LAPL Automotive Ltd.",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-08-13",
+  "issue_price": 94.0,
+  "issue_amount_cr": 32.4,
+  "lead_manager": "GYR Capital",
+  "isin": "INE0X9I01023",
+  "nse_symbol": "",
+  "bse_code": "544863"
+ },
+ {
+  "company": "Ardee Industries Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-08-12",
@@ -12,7 +60,7 @@
   "bse_code": "544860"
  },
  {
-  "company": "G.V.Electricals Ltd. (G.V. Electricals IPO) LT",
+  "company": "G.V.Electricals Ltd. (G.V. Electricals IPO)",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-08-12",
