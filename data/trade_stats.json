@@ -1,13 +1,13 @@
 {
- "n_trades": 873,
- "n_closed": 766,
- "n_open": 107,
+ "n_trades": 844,
+ "n_closed": 744,
+ "n_open": 100,
  "win_rate": 20.2,
- "avg_pnl": 0.42,
- "median_pnl": -10.0,
+ "avg_pnl": 0.39,
+ "median_pnl": -10.01,
  "profit_factor": 1.05,
- "avg_win": 44.0,
- "avg_loss": -10.6,
+ "avg_win": 44.2,
+ "avg_loss": -10.7,
  "best": {
   "company": "GSM Foils Ltd.",
   "pnl": 350.26
@@ -16,34 +16,34 @@
   "company": "Sahaj Solar Ltd.",
   "pnl": -38.55
  },
- "avg_hold": 38.0,
- "sum_pnl_pct": 318.0,
- "avg_pnl_incl_open": 5.9,
- "open_mtm_pnl_sum": 4828.0,
+ "avg_hold": 37.0,
+ "sum_pnl_pct": 293.0,
+ "avg_pnl_incl_open": 6.07,
+ "open_mtm_pnl_sum": 4832.0,
  "by_year": {
   "2023": {
-   "n": 59,
-   "win": 41,
-   "avg": 17.5,
+   "n": 55,
+   "win": 38,
+   "avg": 16.4,
    "open": 0
   },
   "2024": {
-   "n": 281,
+   "n": 264,
    "win": 22,
-   "avg": 3.2,
-   "open": 3
+   "avg": 3.4,
+   "open": 2
   },
   "2025": {
-   "n": 342,
+   "n": 340,
    "win": 23,
    "avg": 2.8,
    "open": 11
   },
   "2026": {
-   "n": 191,
+   "n": 185,
    "win": 45,
-   "avg": 11.9,
-   "open": 93
+   "avg": 12.9,
+   "open": 87
   }
  }
 }
