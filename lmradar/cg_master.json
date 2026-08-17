@@ -1,18 +1,30 @@
 [
  {
-  "company": "Technocraft Ventures Ltd. LT",
+  "company": "Dhoot Transmission Ltd. LT",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
-  "listing_date": "2026-08-14",
-  "issue_price": 212.0,
-  "issue_amount_cr": 251.88,
-  "lead_manager": "Khambatta Securities",
-  "isin": "INE1D0W01018",
-  "nse_symbol": "TECHNOCRAF",
-  "bse_code": "544864"
+  "listing_date": "2026-08-17",
+  "issue_price": 871.0,
+  "issue_amount_cr": 3066.89,
+  "lead_manager": "Axis Capital",
+  "isin": "INE01NH01023",
+  "nse_symbol": "DHOOTTRANS",
+  "bse_code": "544867"
  },
  {
-  "company": "LEAP India Ltd. LT",
+  "company": "Molbio Diagnostics Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-17",
+  "issue_price": 807.0,
+  "issue_amount_cr": 939.7,
+  "lead_manager": "Kotak Mahindra Capital",
+  "isin": "INE869T01028",
+  "nse_symbol": "MOLBIO",
+  "bse_code": "544866"
+ },
+ {
+  "company": "LEAP India Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-08-14",
@@ -24,7 +36,19 @@
   "bse_code": "544865"
  },
  {
-  "company": "Optimystix Entertainment India Ltd. LT",
+  "company": "Technocraft Ventures Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-14",
+  "issue_price": 212.0,
+  "issue_amount_cr": 251.88,
+  "lead_manager": "Khambatta Securities",
+  "isin": "INE1D0W01018",
+  "nse_symbol": "TECHNOCRAF",
+  "bse_code": "544864"
+ },
+ {
+  "company": "Optimystix Entertainment India Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-08-14",
