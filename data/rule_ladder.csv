@@ -1,11 +1,11 @@
 rule,n,r20_med,r20_win,r60_med,r60_win,r60_mean,r60_p90
-ALL pivot breakouts,710,2.7,55,2.1,53,8.9,56.6
-breakout ≤25 sessions,593,3.0,55,1.9,53,8.0,54.3
-+ base low > -10%,339,12.4,78,13.0,68,20.3,72.5
-+ QIB ≥ 15x,175,13.6,82,12.7,66,20.5,76.2
-composite — SME only,111,26.0,89,18.2,71,30.1,91.1
-composite — mainboard only,64,6.0,72,5.7,60,7.7,32.8
-composite — 2023 listings,26,16.0,88,23.7,76,40.4,122.4
-composite — 2024 listings,66,22.8,90,8.5,59,21.1,73.0
-composite — 2025 listings,63,11.9,73,10.3,68,14.3,50.0
-composite — 2026 listings,20,11.7,88,25.1,80,27.1,67.8
+ALL pivot breakouts,573,2.7,54,1.8,52,8.4,57.0
+breakout ≤25 sessions,490,3.0,54,0.9,51,6.9,54.2
++ base low > -10%,277,12.3,77,12.3,67,19.8,70.5
++ QIB ≥ 15x,156,12.1,81,12.4,66,19.5,70.8
+composite — SME only,86,35.0,93,18.2,70,33.4,94.8
+composite — mainboard only,70,5.3,70,6.8,63,8.2,30.7
+composite — 2023 listings,31,8.5,79,20.4,82,34.5,108.8
+composite — 2024 listings,68,22.8,90,8.5,59,21.1,73.0
+composite — 2025 listings,36,9.1,67,6.9,64,7.0,27.0
+composite — 2026 listings,21,11.7,88,25.1,80,27.1,67.8
