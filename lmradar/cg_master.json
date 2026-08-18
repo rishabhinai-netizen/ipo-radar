@@ -1,6 +1,30 @@
 [
  {
-  "company": "Dhoot Transmission Ltd. LT",
+  "company": "Milky Mist Dairy Food Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-18",
+  "issue_price": 140.0,
+  "issue_amount_cr": 1553.0,
+  "lead_manager": "JM Financial",
+  "isin": "INE00IT01020",
+  "nse_symbol": "MILKYMIST",
+  "bse_code": "544868"
+ },
+ {
+  "company": "Sham Foam Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-08-18",
+  "issue_price": 130.0,
+  "issue_amount_cr": 40.48,
+  "lead_manager": "Corporate Makers",
+  "isin": "INE0Z9N01013",
+  "nse_symbol": "",
+  "bse_code": "544869"
+ },
+ {
+  "company": "Dhoot Transmission Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-08-17",
@@ -12,7 +36,7 @@
   "bse_code": "544867"
  },
  {
-  "company": "Molbio Diagnostics Ltd. LT",
+  "company": "Molbio Diagnostics Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-08-17",
