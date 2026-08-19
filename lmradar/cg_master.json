@@ -1,6 +1,54 @@
 [
  {
-  "company": "Milky Mist Dairy Food Ltd. LT",
+  "company": "Behari Lal Engineering Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-19",
+  "issue_price": 285.0,
+  "issue_amount_cr": 301.62,
+  "lead_manager": "Emkay Global",
+  "isin": "INE1EEM01017",
+  "nse_symbol": "BLEL",
+  "bse_code": "544870"
+ },
+ {
+  "company": "Shiprocket Ltd. LT",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-19",
+  "issue_price": 97.0,
+  "issue_amount_cr": 1617.48,
+  "lead_manager": "Axis Capital",
+  "isin": "INE0FOO01011",
+  "nse_symbol": "SHIPROCKET",
+  "bse_code": "544871"
+ },
+ {
+  "company": "Pramodini Medicare Ltd. LT",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-08-19",
+  "issue_price": 118.0,
+  "issue_amount_cr": 69.04,
+  "lead_manager": "Smart Horizon Capital",
+  "isin": "INE2JG601017",
+  "nse_symbol": "PRAMODINI",
+  "bse_code": ""
+ },
+ {
+  "company": "Q&T Foods Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-08-19",
+  "issue_price": 115.0,
+  "issue_amount_cr": 26.23,
+  "lead_manager": "Corporate Makers",
+  "isin": "INE13G401012",
+  "nse_symbol": "",
+  "bse_code": "544872"
+ },
+ {
+  "company": "Milky Mist Dairy Food Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-08-18",
@@ -12,7 +60,7 @@
   "bse_code": "544868"
  },
  {
-  "company": "Sham Foam Ltd. LT",
+  "company": "Sham Foam Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-08-18",
