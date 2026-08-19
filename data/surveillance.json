@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-18",
+ "as_of": "2026-08-19",
  "flags": {
   "INE0Q0M01015": {
    "official": null,
@@ -13,7 +13,7 @@
    "official": null,
    "band_locked": null,
    "risks": [
-    "1-month high-low variation 142% (ST-ASM secondary criterion \u226575%)"
+    "1-month high-low variation 137% (ST-ASM secondary criterion \u226575%)"
    ],
    "source": null
   },
@@ -21,7 +21,7 @@
    "official": null,
    "band_locked": null,
    "risks": [
-    "1-month high-low variation 146% (ST-ASM secondary criterion \u226575%)"
+    "1-month high-low variation 142% (ST-ASM secondary criterion \u226575%)"
    ],
    "source": null
   },
@@ -37,7 +37,8 @@
    "official": null,
    "band_locked": null,
    "risks": [
-    "ST-ASM trigger risk: +43% in 5 sessions (criterion: \u226525%)"
+    "ST-ASM trigger risk: +40% in 5 sessions (criterion: \u226525%)",
+    "1-month high-low variation 82% (ST-ASM secondary criterion \u226575%)"
    ],
    "source": null
   },
@@ -47,13 +48,13 @@
    "risks": [
     "1-month high-low variation 170% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9191cr still < \u20b9500cr pool boundary; 5-session move -4%"
+   "exit_check": "mcap \u20b9191cr still < \u20b9500cr pool boundary; 5-session move -3%"
   },
   "INE0LWY01029": {
    "official": "ESM Stage I",
@@ -61,7 +62,7 @@
    "risks": [
     "1-month high-low variation 455% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -73,15 +74,23 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [
-    "1-month high-low variation 237% (ST-ASM secondary criterion \u226575%)"
+    "1-month high-low variation 255% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b957cr still < \u20b9500cr pool boundary; 5-session move -10%"
+   "exit_check": "mcap \u20b957cr still < \u20b9500cr pool boundary; 5-session move -15%"
+  },
+  "INE0P3N01018": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "1-month high-low variation 78% (ST-ASM secondary criterion \u226575%)"
+   ],
+   "source": null
   },
   "INE0P7201019": {
    "official": null,
@@ -95,7 +104,7 @@
    "official": null,
    "band_locked": null,
    "risks": [
-    "1-month high-low variation 149% (ST-ASM secondary criterion \u226575%)"
+    "1-month high-low variation 153% (ST-ASM secondary criterion \u226575%)"
    ],
    "source": null
   },
@@ -103,7 +112,7 @@
    "official": null,
    "band_locked": null,
    "risks": [
-    "ST-ASM trigger risk: +512% in 5 sessions (criterion: \u226525%)"
+    "ST-ASM trigger risk: +475% in 5 sessions (criterion: \u226525%)"
    ],
    "source": null
   },
@@ -111,13 +120,13 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9854cr \u2265 \u20b9500cr pool boundary; 5-session move -0%"
+   "exit_check": "mcap \u20b9854cr \u2265 \u20b9500cr pool boundary; 5-session move +1%"
   },
   "INE09FA01019": {
    "official": null,
@@ -129,25 +138,25 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9198cr still < \u20b9500cr pool boundary; 5-session move -8%"
+   "exit_check": "mcap \u20b9198cr still < \u20b9500cr pool boundary; 5-session move -5%"
   },
   "INE00NH01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-08-12",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-11-10",
-   "exit_check": "mcap \u20b9132cr still < \u20b9500cr pool boundary; 5-session move +2%"
+   "exit_check": "mcap \u20b9132cr still < \u20b9500cr pool boundary; 5-session move +7%"
   },
   "INE0AE001013": {
    "official": "ASM Long-Term Stage I",
@@ -155,13 +164,13 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9435cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-08-12",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-11-10",
-   "exit_check": "3-month move now -12% (cooled); 5-session move -15%"
+   "exit_check": "3-month move now -14% (cooled); 5-session move -10%"
   },
   "INE04T901017": {
    "official": null,
@@ -173,64 +182,63 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9362cr still < \u20b9500cr pool boundary; 5-session move -1%"
+   "exit_check": "mcap \u20b9362cr still < \u20b9500cr pool boundary; 5-session move -4%"
   },
   "INE0PSK01027": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9526cr \u2265 \u20b9500cr pool boundary; 5-session move +8%"
+   "exit_check": "mcap \u20b9526cr \u2265 \u20b9500cr pool boundary; 5-session move +9%"
   },
   "INE0PW501021": {
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 19-Aug-2026)",
    "since": "2026-08-04 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
    "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
    "earliest_exit": "2026-09-03",
-   "exit_check": "mcap \u20b963cr still < \u20b9500cr pool boundary; 5-session move +4%"
+   "exit_check": "mcap \u20b963cr still < \u20b9500cr pool boundary; 5-session move +0%"
   },
   "INE0JWS01017": {
    "official": "ASM Short-Term Stage I",
    "band_locked": "5%",
    "risks": [
-    "ST-ASM trigger risk: +28% in 5 sessions (criterion: \u226525%)",
-    "In ESM-eligible pool (mcap \u20b9403cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+    "In ESM-eligible pool (mcap \u20b9497cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-03 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-10",
-   "exit_check": "3-month move now +21% (cooled); 5-session move +28%"
+   "exit_check": "3-month move now +20% (cooled); 5-session move +23%"
   },
   "INE0OLS01010": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "5-session move +6%"
+   "exit_check": "5-session move +13%"
   },
   "INE0Q1S01010": {
    "official": null,
@@ -252,11 +260,23 @@
    "risks": [],
    "source": null
   },
+  "INE0NVI01020": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
+   "since": "2026-08-19",
+   "implication": "50\u2013100% additional margin for a SHORT window.",
+   "review": "Auto review after 5/15 trading days (per trigger)",
+   "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
+   "earliest_exit": "2026-08-26",
+   "exit_check": "3-month move now -36% (cooled); 5-session move -18%"
+  },
   "INE0QW501012": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -268,31 +288,31 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-18",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-25",
-   "exit_check": "3-month move now +63% (cooled); 5-session move +16%"
+   "exit_check": "3-month move now +57% (cooled); 5-session move +4%"
   },
   "INE717W01049": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-28",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-26",
-   "exit_check": "3-month move now +60% (cooled); 5-session move +5%"
+   "exit_check": "3-month move now +57% (cooled); 5-session move +6%"
   },
   "INE518X01015": {
    "official": "GSM II",
    "band_locked": null,
    "risks": [],
-   "source": "Graded Surveillance Measure - Stage II (NSE GSM list 18-Aug-2026 08:06:02)",
+   "source": "Graded Surveillance Measure - Stage II (NSE GSM list 19-Aug-2026 08:07:02)",
    "since": "2026-07-22",
    "implication": "Fundamentals-vs-price mismatch framework: T2T, 100% margin; higher stages add buyer-pays Additional Surveillance Deposit, trading once-a-week, up to near-freeze.",
    "review": "Quarterly review",
@@ -306,17 +326,11 @@
    "risks": [],
    "source": null
   },
-  "INE0R1601012": {
-   "official": "ASM Short-Term Stage I",
-   "band_locked": null,
+  "INE0POU01017": {
+   "official": null,
+   "band_locked": "2%",
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
-   "since": "2026-08-11",
-   "implication": "50\u2013100% additional margin for a SHORT window.",
-   "review": "Auto review after 5/15 trading days (per trigger)",
-   "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
-   "earliest_exit": "2026-08-18",
-   "exit_check": "3-month move now -24% (cooled); 5-session move -9%"
+   "source": null
   },
   "INE0Q2Z01013": {
    "official": null,
@@ -332,11 +346,19 @@
    ],
    "source": null
   },
+  "INE0QHG01026": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "ST-ASM trigger risk: +26% in 5 sessions (criterion: \u226525%)"
+   ],
+   "source": null
+  },
   "INE0PS301014": {
    "official": "GSM 0",
    "band_locked": null,
    "risks": [],
-   "source": "Shortlisted under Graded Surveillance Measure (NSE GSM list 18-Aug-2026 08:06:02)",
+   "source": "Shortlisted under Graded Surveillance Measure (NSE GSM list 19-Aug-2026 08:07:02)",
    "since": "2026-07-14",
    "implication": "Fundamentals-vs-price mismatch framework: T2T, 100% margin; higher stages add buyer-pays Additional Surveillance Deposit, trading once-a-week, up to near-freeze.",
    "review": "Quarterly review",
@@ -350,23 +372,29 @@
    "risks": [],
    "source": null
   },
+  "INE0R3501012": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [],
+   "source": null
+  },
   "INE0PCY01014": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-18",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-25",
-   "exit_check": "3-month move now +34% (cooled); 5-session move +5%"
+   "exit_check": "3-month move now +37% (cooled); 5-session move +5%"
   },
   "INE0RDH01021": {
    "official": "ASM Long-Term Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-08-06 (est. from band-lock)",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -378,37 +406,37 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b989cr still < \u20b9500cr pool boundary; 5-session move +1%"
+   "exit_check": "mcap \u20b989cr still < \u20b9500cr pool boundary; 5-session move -6%"
   },
   "INE02H701025": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9229cr still < \u20b9500cr pool boundary"
+   "exit_check": "mcap \u20b9237cr still < \u20b9500cr pool boundary"
   },
   "INE0JFJ01011": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b943cr still < \u20b9500cr pool boundary; 5-session move -7%"
+   "exit_check": "mcap \u20b943cr still < \u20b9500cr pool boundary; 5-session move -8%"
   },
   "INE0QZF01012": {
    "official": null,
@@ -420,7 +448,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -432,7 +460,7 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-08-06 (est. from band-lock)",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -444,43 +472,43 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-13",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-20",
-   "exit_check": "5-session move -2%"
+   "exit_check": "5-session move -3%"
   },
   "INE586O01011": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b936cr still < \u20b9500cr pool boundary; 5-session move -9%"
+   "exit_check": "mcap \u20b934cr still < \u20b9500cr pool boundary; 5-session move -9%"
   },
   "INE0R8M01017": {
    "official": "ESM Stage I",
-   "band_locked": null,
+   "band_locked": "5%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
-   "since": "2026-07-11",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-08-07 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
-   "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9159cr still < \u20b9500cr pool boundary; 5-session move -19%"
+   "earliest_exit": "2026-11-05",
+   "exit_check": "mcap \u20b9123cr still < \u20b9500cr pool boundary; 5-session move -22%"
   },
   "INE777F01014": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -492,19 +520,19 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-07 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-14",
-   "exit_check": "5-session move -3%"
+   "exit_check": "5-session move -4%"
   },
   "INE0SGC01015": {
    "official": "ASM Short-Term Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-06 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -516,7 +544,7 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-11 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
@@ -528,25 +556,25 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b975cr still < \u20b9500cr pool boundary; 5-session move -5%"
+   "exit_check": "mcap \u20b975cr still < \u20b9500cr pool boundary; 5-session move -3%"
   },
   "INE0S2E01016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b938cr still < \u20b9500cr pool boundary"
+   "exit_check": "mcap \u20b940cr still < \u20b9500cr pool boundary; 5-session move -9%"
   },
   "INE0S7801010": {
    "official": null,
@@ -558,7 +586,7 @@
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 19-Aug-2026)",
    "since": "2026-08-05 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
@@ -569,28 +597,26 @@
   "INE0MSS01019": {
    "official": null,
    "band_locked": "5%",
-   "risks": [
-    "ST-ASM trigger risk: +27% in 5 sessions (criterion: \u226525%)"
-   ],
+   "risks": [],
    "source": null
   },
   "INE0DEZ01013": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b967cr still < \u20b9500cr pool boundary; 5-session move -2%"
+   "exit_check": "mcap \u20b964cr still < \u20b9500cr pool boundary; 5-session move -4%"
   },
   "INE0OAF01028": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
@@ -602,13 +628,19 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b973cr still < \u20b9500cr pool boundary; 3-month move now -15% (cooled); 5-session move +1%"
+   "exit_check": "mcap \u20b978cr still < \u20b9500cr pool boundary; 3-month move now -20% (cooled); 5-session move +6%"
+  },
+  "INE0QOQ01013": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [],
+   "source": null
   },
   "INE0SRI01019": {
    "official": null,
@@ -620,69 +652,69 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9547cr \u2265 \u20b9500cr pool boundary; 3-month move now +1% (cooled); 5-session move +8%"
+   "exit_check": "mcap \u20b9588cr \u2265 \u20b9500cr pool boundary; 3-month move now +2% (cooled); 5-session move +8%"
   },
   "INE0S6S01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9352cr still < \u20b9500cr pool boundary; 3-month move now +65% (cooled); 5-session move +1%"
+   "exit_check": "mcap \u20b9352cr still < \u20b9500cr pool boundary; 3-month move now +57% (cooled); 5-session move +0%"
   },
   "INE0SQY01018": {
    "official": "ASM Short-Term Stage II",
    "band_locked": "5%",
    "risks": [
-    "1-month high-low variation 233% (ST-ASM secondary criterion \u226575%)"
+    "1-month high-low variation 250% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-07-31 (est. from band-lock)",
    "implication": "100% margin, short window.",
    "review": "Auto review after 5/15 trading days",
    "exit_rule": "Auto-exit after window unless re-triggered",
    "earliest_exit": "2026-08-07",
-   "exit_check": "3-month move now -55% (cooled); 5-session move -22%"
+   "exit_check": "3-month move now -57% (cooled); 5-session move -23%"
   },
   "INE0RUV01018": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-08-12",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-11-10",
-   "exit_check": "3-month move now +63% (cooled); 5-session move +5%"
+   "exit_check": "3-month move now +58% (cooled); 5-session move +3%"
   },
   "INE0S7E01015": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9469cr still < \u20b9500cr pool boundary; 3-month move now +4% (cooled); 5-session move -8%"
+   "exit_check": "mcap \u20b9469cr still < \u20b9500cr pool boundary; 3-month move now +3% (cooled); 5-session move -9%"
   },
   "INE916Y01027": {
    "official": null,
    "band_locked": null,
    "risks": [
-    "In ESM-eligible pool (mcap \u20b9427cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+    "In ESM-eligible pool (mcap \u20b9408cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
    "source": null
   },
@@ -690,7 +722,7 @@
    "official": "GSM 0",
    "band_locked": "5%",
    "risks": [],
-   "source": "Shortlisted under Graded Surveillance Measure (NSE GSM list 18-Aug-2026 08:06:02)",
+   "source": "Shortlisted under Graded Surveillance Measure (NSE GSM list 19-Aug-2026 08:07:02)",
    "since": "2026-03-13 (est. from band-lock)",
    "implication": "Fundamentals-vs-price mismatch framework: T2T, 100% margin; higher stages add buyer-pays Additional Surveillance Deposit, trading once-a-week, up to near-freeze.",
    "review": "Quarterly review",
@@ -702,13 +734,13 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-17 (est. from band-lock)",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-15",
-   "exit_check": "3-month move now -17% (cooled); 5-session move -0%"
+   "exit_check": "3-month move now -16% (cooled); 5-session move +5%"
   },
   "INE0BHK01012": {
    "official": null,
@@ -728,103 +760,99 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-30 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-28",
-   "exit_check": "mcap \u20b9144cr still < \u20b9500cr pool boundary; 3-month move now +1% (cooled); 5-session move -6%"
+   "exit_check": "mcap \u20b9137cr still < \u20b9500cr pool boundary; 3-month move now +5% (cooled); 5-session move -6%"
   },
   "INE0U9101019": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9800cr \u2265 \u20b9500cr pool boundary; 3-month move now +45% (cooled); 5-session move -6%"
+   "exit_check": "mcap \u20b9800cr \u2265 \u20b9500cr pool boundary; 3-month move now +45% (cooled); 5-session move -3%"
   },
   "INE0RPM01017": {
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-08-04 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-11-02",
-   "exit_check": "mcap \u20b922cr still < \u20b9500cr pool boundary; 3-month move now +25% (cooled); 5-session move -11%"
+   "exit_check": "mcap \u20b922cr still < \u20b9500cr pool boundary; 3-month move now +30% (cooled); 5-session move -2%"
   },
   "INE0V9N01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-08-03",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-11-01",
-   "exit_check": "mcap \u20b9906cr \u2265 \u20b9500cr pool boundary; 3-month move now +28% (cooled); 5-session move -6%"
+   "exit_check": "mcap \u20b9906cr \u2265 \u20b9500cr pool boundary; 3-month move now +32% (cooled); 5-session move +2%"
   },
   "INE06IJ01010": {
    "official": "ESM Stage I",
    "band_locked": null,
-   "risks": [
-    "SME LT-ASM risk: +106% in 3 months (criterion: \u2265\u00b190%, indicative)"
-   ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b91219cr \u2265 \u20b9500cr pool boundary; 3-month move now +106% (still hot); 5-session move -3%"
+   "exit_check": "mcap \u20b91219cr \u2265 \u20b9500cr pool boundary; 3-month move now +84% (still hot); 5-session move -7%"
   },
   "INE0YRN01025": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [
-    "1-month high-low variation 96% (ST-ASM secondary criterion \u226575%)"
+    "1-month high-low variation 97% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-07",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-14",
-   "exit_check": "3-month move now -50% (cooled); 5-session move -27%"
+   "exit_check": "3-month move now -48% (cooled); 5-session move -20%"
   },
   "INE0LXG01040": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +6% (cooled); 5-session move -3%"
+   "exit_check": "3-month move now +1% (cooled); 5-session move -6%"
   },
   "INE0YAL01017": {
    "official": "ASM Short-Term Stage I",
    "band_locked": "5%",
-   "risks": [
-    "1-month high-low variation 95% (ST-ASM secondary criterion \u226575%)"
-   ],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "risks": [],
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-05 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-12",
-   "exit_check": "3-month move now -54% (cooled); 5-session move -6%"
+   "exit_check": "3-month move now -55% (cooled); 5-session move -12%"
   },
   "INE0PQ101010": {
    "official": "ASM Short-Term Stage I",
@@ -832,13 +860,13 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9259cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-17",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-24",
-   "exit_check": "3-month move now +0% (cooled); 5-session move +11%"
+   "exit_check": "3-month move now -3% (cooled); 5-session move -8%"
   },
   "INE0SFZ01018": {
    "official": null,
@@ -858,15 +886,15 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [
-    "SME LT-ASM risk: +100% in 3 months (criterion: \u2265\u00b190%, indicative)"
+    "SME LT-ASM risk: +99% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-24",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-22",
-   "exit_check": "mcap \u20b9357cr still < \u20b9500cr pool boundary; 3-month move now +100% (still hot); 5-session move +14%"
+   "exit_check": "mcap \u20b9357cr still < \u20b9500cr pool boundary; 3-month move now +99% (still hot); 5-session move +12%"
   },
   "INE0SK201011": {
    "official": null,
@@ -878,25 +906,25 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9675cr \u2265 \u20b9500cr pool boundary; 3-month move now -13% (cooled); 5-session move -15%"
+   "exit_check": "mcap \u20b9675cr \u2265 \u20b9500cr pool boundary; 3-month move now -13% (cooled); 5-session move -11%"
   },
   "INE01FR01028": {
    "official": "ASM Short-Term Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-07-29 (est. from band-lock)",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-05",
-   "exit_check": "3-month move now +15% (cooled); 5-session move +14%"
+   "exit_check": "3-month move now +19% (cooled); 5-session move +20%"
   },
   "INE0QNI01012": {
    "official": null,
@@ -908,25 +936,25 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9109cr still < \u20b9500cr pool boundary; 3-month move now -27% (cooled); 5-session move -3%"
+   "exit_check": "mcap \u20b9109cr still < \u20b9500cr pool boundary; 3-month move now -28% (cooled); 5-session move -4%"
   },
   "INE08NZ01012": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-08-10",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-11-08",
-   "exit_check": "mcap \u20b9640cr \u2265 \u20b9500cr pool boundary; 3-month move now +28% (cooled); 5-session move +8%"
+   "exit_check": "mcap \u20b9640cr \u2265 \u20b9500cr pool boundary; 3-month move now +23% (cooled); 5-session move +3%"
   },
   "INE0S2G01011": {
    "official": null,
@@ -940,101 +968,116 @@
    "official": null,
    "band_locked": null,
    "risks": [
-    "In ESM-eligible pool (mcap \u20b9398cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+    "In ESM-eligible pool (mcap \u20b9379cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
    "source": null
   },
-  "INE0LY301010": {
+  "INE01YQ01013": {
    "official": null,
-   "band_locked": null,
-   "risks": [
-    "ST-ASM trigger risk: +26% in 5 sessions (criterion: \u226525%)"
-   ],
+   "band_locked": "5%",
+   "risks": [],
    "source": null
   },
   "INE0S1D01010": {
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [
-    "SME LT-ASM risk: +126% in 3 months (criterion: \u2265\u00b190%, indicative)"
+    "SME LT-ASM risk: +132% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 19-Aug-2026)",
    "since": "2026-06-11 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
    "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
    "earliest_exit": "2026-07-11",
-   "exit_check": "mcap \u20b9272cr still < \u20b9500cr pool boundary; 3-month move now +126% (still hot); 5-session move +10%"
+   "exit_check": "mcap \u20b9272cr still < \u20b9500cr pool boundary; 3-month move now +132% (still hot); 5-session move +10%"
   },
   "INE0Y4801011": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-13",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-11",
-   "exit_check": "mcap \u20b996cr still < \u20b9500cr pool boundary; 3-month move now +54% (cooled); 5-session move -5%"
+   "exit_check": "mcap \u20b996cr still < \u20b9500cr pool boundary; 3-month move now +57% (cooled); 5-session move -5%"
+  },
+  "INE0T0L01014": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [],
+   "source": null
   },
   "INE0SQH01013": {
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [
-    "ST-ASM trigger risk: +28% in 5 sessions (criterion: \u226525%)",
-    "SME LT-ASM risk: +350% in 3 months (criterion: \u2265\u00b190%, indicative)",
-    "1-month high-low variation 97% (ST-ASM secondary criterion \u226575%)"
+    "SME LT-ASM risk: +311% in 3 months (criterion: \u2265\u00b190%, indicative)",
+    "1-month high-low variation 96% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-29 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-27",
-   "exit_check": "mcap \u20b9130cr still < \u20b9500cr pool boundary; 3-month move now +350% (still hot); 5-session move +28%"
+   "exit_check": "mcap \u20b9130cr still < \u20b9500cr pool boundary; 3-month move now +311% (still hot); 5-session move +15%"
   },
   "INE0OO201011": {
    "official": "ESM Stage I",
-   "band_locked": null,
+   "band_locked": "5%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
-   "since": "2026-07-11",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-08-05 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
-   "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b993cr still < \u20b9500cr pool boundary; 3-month move now -5% (cooled); 5-session move +10%"
+   "earliest_exit": "2026-11-03",
+   "exit_check": "mcap \u20b993cr still < \u20b9500cr pool boundary; 3-month move now -10% (cooled); 5-session move +2%"
+  },
+  "INE0Q3J01015": {
+   "official": "ASM Short-Term Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
+   "since": "2026-08-19",
+   "implication": "50\u2013100% additional margin for a SHORT window.",
+   "review": "Auto review after 5/15 trading days (per trigger)",
+   "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
+   "earliest_exit": "2026-08-26",
+   "exit_check": "3-month move now +44% (cooled); 5-session move +13%"
   },
   "INE0JQS01019": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now -4% (cooled); 5-session move +0%"
+   "exit_check": "3-month move now +3% (cooled); 5-session move +8%"
   },
   "INE0SHE01019": {
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-06-25 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-09-23",
-   "exit_check": "mcap \u20b923cr still < \u20b9500cr pool boundary; 3-month move now +34% (cooled); 5-session move -5%"
+   "exit_check": "mcap \u20b923cr still < \u20b9500cr pool boundary; 3-month move now +26% (cooled); 5-session move -10%"
   },
   "INE0QYI01019": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-21 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1046,19 +1089,19 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-27",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-25",
-   "exit_check": "mcap \u20b9800cr \u2265 \u20b9500cr pool boundary; 5-session move -6%"
+   "exit_check": "mcap \u20b9800cr \u2265 \u20b9500cr pool boundary; 5-session move -4%"
   },
   "INE00MT01022": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-21",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1066,17 +1109,23 @@
    "earliest_exit": "2026-10-19",
    "exit_check": "mcap \u20b968cr still < \u20b9500cr pool boundary; 3-month move now +6% (cooled); 5-session move +4%"
   },
+  "INE0TG801013": {
+   "official": null,
+   "band_locked": "5%",
+   "risks": [],
+   "source": null
+  },
   "INE0SFW01015": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-29",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-27",
-   "exit_check": "mcap \u20b9803cr \u2265 \u20b9500cr pool boundary; 3-month move now +76% (still hot); 5-session move -6%"
+   "exit_check": "mcap \u20b9803cr \u2265 \u20b9500cr pool boundary; 3-month move now +83% (still hot); 5-session move +3%"
   },
   "INE0OPA01019": {
    "official": null,
@@ -1090,109 +1139,241 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [
-    "SME LT-ASM risk: +104% in 3 months (criterion: \u2265\u00b190%, indicative)"
+    "SME LT-ASM risk: +120% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-08-03",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-11-01",
-   "exit_check": "mcap \u20b9204cr still < \u20b9500cr pool boundary; 3-month move now +104% (still hot); 5-session move +14%"
+   "exit_check": "mcap \u20b9204cr still < \u20b9500cr pool boundary; 3-month move now +120% (still hot); 5-session move +19%"
   },
   "INE0YHV01011": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [
-    "SME LT-ASM risk: +131% in 3 months (criterion: \u2265\u00b190%, indicative)"
+    "SME LT-ASM risk: +124% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +131% (still hot); 5-session move +12%"
+   "exit_check": "3-month move now +124% (still hot); 5-session move +6%"
   },
   "INE0WVU01018": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-08-07",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-11-05",
-   "exit_check": "mcap \u20b974cr still < \u20b9500cr pool boundary; 3-month move now +21% (cooled); 5-session move -6%"
+   "exit_check": "mcap \u20b974cr still < \u20b9500cr pool boundary; 3-month move now +35% (cooled); 5-session move -4%"
   },
   "INE0R0201012": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [
-    "SME LT-ASM risk: +104% in 3 months (criterion: \u2265\u00b190%, indicative)"
+    "SME LT-ASM risk: +105% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b958cr still < \u20b9500cr pool boundary; 3-month move now +104% (still hot); 5-session move +4%"
+   "exit_check": "mcap \u20b958cr still < \u20b9500cr pool boundary; 3-month move now +105% (still hot); 5-session move +1%"
   },
   "INE0T4V01015": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9376cr still < \u20b9500cr pool boundary; 3-month move now +51% (cooled); 5-session move +3%"
+   "exit_check": "mcap \u20b9376cr still < \u20b9500cr pool boundary; 3-month move now +41% (cooled); 5-session move +0%"
   },
   "INE0TVT01024": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9487cr still < \u20b9500cr pool boundary; 3-month move now +44% (cooled); 5-session move +0%"
+   "exit_check": "mcap \u20b9490cr still < \u20b9500cr pool boundary; 3-month move now +43% (cooled); 5-session move +1%"
   },
   "INE0P5R01014": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9339cr still < \u20b9500cr pool boundary; 3-month move now +10% (cooled); 5-session move +23%"
+   "exit_check": "mcap \u20b9339cr still < \u20b9500cr pool boundary; 3-month move now +4% (cooled); 5-session move +17%"
   },
   "INE0M4D01010": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +125% (still hot); 5-session move +4%"
+   "exit_check": "3-month move now +128% (still hot); 5-session move +3%"
   },
   "INE0RYC01010": {
    "official": null,
    "band_locked": "5%",
    "risks": [],
    "source": null
+  },
+  "INE17WC01013": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
+   "since": "2026-07-11",
+   "implication": "100% margin on all positions. Trading otherwise normal.",
+   "review": "Quarterly (stage-wise) review; min ~90 days stay",
+   "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
+   "earliest_exit": "2026-10-09",
+   "exit_check": ""
+  },
+  "INE0NA501011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9431cr still < \u20b9500cr pool boundary"
+  },
+  "INE12E301017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9254cr still < \u20b9500cr pool boundary"
+  },
+  "INE0DM401012": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9937cr \u2265 \u20b9500cr pool boundary"
+  },
+  "INE0V0Q01019": {
+   "official": "ESM Stage II",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 19-Aug-2026)",
+   "since": "2026-08-07",
+   "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
+   "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
+   "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
+   "earliest_exit": "2026-09-06",
+   "exit_check": "mcap \u20b948cr still < \u20b9500cr pool boundary"
+  },
+  "INE0Z7N01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-27",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-25",
+   "exit_check": "mcap \u20b9649cr \u2265 \u20b9500cr pool boundary"
+  },
+  "INE1AII01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9508cr \u2265 \u20b9500cr pool boundary"
+  },
+  "INE0T8T01010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9212cr still < \u20b9500cr pool boundary"
+  },
+  "INE0X3M01010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9428cr still < \u20b9500cr pool boundary"
+  },
+  "INE104101014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9161cr still < \u20b9500cr pool boundary"
+  },
+  "INE1DV401010": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
+   "since": "2026-07-11",
+   "implication": "100% margin on all positions. Trading otherwise normal.",
+   "review": "Quarterly (stage-wise) review; min ~90 days stay",
+   "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
+   "earliest_exit": "2026-10-09",
+   "exit_check": ""
   },
   "INE0V3U01015": {
    "official": null,
@@ -1202,6 +1383,18 @@
    ],
    "source": null
   },
+  "INE0SGZ01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b964cr still < \u20b9500cr pool boundary"
+  },
   "INE05J901018": {
    "official": null,
    "band_locked": null,
@@ -1210,17 +1403,77 @@
    ],
    "source": null
   },
+  "INE11J101017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b920cr still < \u20b9500cr pool boundary"
+  },
+  "INE14GK01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b991cr still < \u20b9500cr pool boundary"
+  },
+  "INE16VK01010": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-08-07",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-11-05",
+   "exit_check": "mcap \u20b974cr still < \u20b9500cr pool boundary"
+  },
   "INE819V01029": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +41% (cooled); 5-session move -12%"
+   "exit_check": "3-month move now +38% (cooled); 5-session move -15%"
+  },
+  "INE0WL201014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9184cr still < \u20b9500cr pool boundary"
+  },
+  "INE0ZRC01017": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9196cr still < \u20b9500cr pool boundary"
   },
   "INE00RL01028": {
    "official": null,
@@ -1234,39 +1487,119 @@
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-08-14",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-11-12",
-   "exit_check": "3-month move now +77% (still hot); 5-session move -2%"
+   "exit_check": "3-month move now +76% (still hot); 5-session move -9%"
+  },
+  "INE632Q01018": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9140cr still < \u20b9500cr pool boundary"
   },
   "INE084K01015": {
    "official": "ESM Stage I",
    "band_locked": "2%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-17 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-15",
-   "exit_check": "mcap \u20b9669cr \u2265 \u20b9500cr pool boundary; 3-month move now +30% (cooled); 5-session move +8%"
+   "exit_check": "mcap \u20b9669cr \u2265 \u20b9500cr pool boundary; 3-month move now +41% (cooled); 5-session move +14%"
+  },
+  "INE15B101011": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-30",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-28",
+   "exit_check": "mcap \u20b9375cr still < \u20b9500cr pool boundary"
+  },
+  "INE1DM601016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b995cr still < \u20b9500cr pool boundary"
   },
   "INE0VOV01021": {
    "official": null,
    "band_locked": null,
    "risks": [
-    "In ESM-eligible pool (mcap \u20b9332cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+    "In ESM-eligible pool (mcap \u20b9324cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
    "source": null
+  },
+  "INE0Y5H01014": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9433cr still < \u20b9500cr pool boundary"
   },
   "INE0SJA01013": {
    "official": null,
    "band_locked": null,
    "risks": [
-    "In ESM-eligible pool (mcap \u20b9248cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+    "In ESM-eligible pool (mcap \u20b9241cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+   ],
+   "source": null
+  },
+  "INE0CQA01020": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9351cr still < \u20b9500cr pool boundary"
+  },
+  "INE0VBS01016": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9373cr still < \u20b9500cr pool boundary"
+  },
+  "INE965W01036": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "In ESM-eligible pool (mcap \u20b9498cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
    "source": null
   },
@@ -1274,21 +1607,33 @@
    "official": null,
    "band_locked": null,
    "risks": [
-    "In ESM-eligible pool (mcap \u20b9382cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+    "In ESM-eligible pool (mcap \u20b9365cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
    "source": null
   },
-  "INE0TQE01026": {
+  "INE0U4H01011": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9601cr \u2265 \u20b9500cr pool boundary; 3-month move now +8% (cooled); 5-session move -3%"
+   "exit_check": "mcap \u20b929cr still < \u20b9500cr pool boundary"
+  },
+  "INE0TQE01026": {
+   "official": "ESM Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
+   "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
+   "review": "Weekly stage review; exit reviewed after min 90 calendar days",
+   "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9600cr \u2265 \u20b9500cr pool boundary; 3-month move now -7% (cooled); 5-session move +0%"
   },
   "INE1BZC01019": {
    "official": "ESM Stage I",
@@ -1296,68 +1641,88 @@
    "risks": [
     "In ESM-eligible pool (mcap \u20b9315cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9315cr still < \u20b9500cr pool boundary; 3-month move now +8% (cooled); 5-session move -0%"
+   "exit_check": "mcap \u20b9315cr still < \u20b9500cr pool boundary; 3-month move now +4% (cooled); 5-session move -2%"
   },
   "INE0PLX01017": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b970cr still < \u20b9500cr pool boundary; 3-month move now +60% (cooled); 5-session move +8%"
+   "exit_check": "mcap \u20b969cr still < \u20b9500cr pool boundary; 3-month move now +61% (cooled); 5-session move -1%"
+  },
+  "INE506V01022": {
+   "official": "ASM Long-Term Stage I",
+   "band_locked": null,
+   "risks": [],
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
+   "since": "2026-08-19",
+   "implication": "100% margin on all positions. Trading otherwise normal.",
+   "review": "Quarterly (stage-wise) review; min ~90 days stay",
+   "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
+   "earliest_exit": "2026-11-17",
+   "exit_check": "3-month move now +82% (still hot); 5-session move +9%"
   },
   "INE1FL101016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9378cr still < \u20b9500cr pool boundary; 3-month move now +7% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b9378cr still < \u20b9500cr pool boundary; 3-month move now -6% (cooled); 5-session move -4%"
   },
   "INE12UR01024": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-21",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-19",
-   "exit_check": "3-month move now +73% (cooled); 5-session move +19%"
+   "exit_check": "3-month move now +82% (still hot); 5-session move +24%"
   },
   "INE0QPI01025": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-13",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-20",
-   "exit_check": "3-month move now +70% (cooled); 5-session move -0%"
+   "exit_check": "3-month move now +78% (still hot); 5-session move +5%"
   },
   "INE0VDK01019": {
    "official": null,
    "band_locked": "5%",
    "risks": [
-    "SME LT-ASM risk: +153% in 3 months (criterion: \u2265\u00b190%, indicative)",
+    "SME LT-ASM risk: +142% in 3 months (criterion: \u2265\u00b190%, indicative)",
     "1-month high-low variation 169% (ST-ASM secondary criterion \u226575%)"
+   ],
+   "source": null
+  },
+  "INE1E4401010": {
+   "official": null,
+   "band_locked": null,
+   "risks": [
+    "SME LT-ASM risk: +93% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
    "source": null
   },
@@ -1365,93 +1730,85 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9198cr still < \u20b9500cr pool boundary; 3-month move now +57% (cooled); 5-session move +6%"
+   "exit_check": "mcap \u20b9197cr still < \u20b9500cr pool boundary; 3-month move now +57% (cooled); 5-session move +6%"
   },
   "INE21UM01018": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9164cr still < \u20b9500cr pool boundary; 3-month move now -4% (cooled); 5-session move +6%"
+   "exit_check": "mcap \u20b9164cr still < \u20b9500cr pool boundary; 3-month move now -4% (cooled); 5-session move +7%"
   },
   "INE947N01017": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +31% (cooled); 5-session move +8%"
-  },
-  "INE0O9L01010": {
-   "official": null,
-   "band_locked": null,
-   "risks": [
-    "ST-ASM trigger risk: +37% in 5 sessions (criterion: \u226525%)"
-   ],
-   "source": null
+   "exit_check": "3-month move now +27% (cooled); 5-session move +11%"
   },
   "INE1A6Q01010": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +21% (cooled); 5-session move -3%"
+   "exit_check": "3-month move now +27% (cooled); 5-session move -3%"
   },
   "INE987S01020": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +60% (cooled); 5-session move +1%"
+   "exit_check": "3-month move now +54% (cooled); 5-session move +1%"
   },
   "INE1CRP01016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9124cr still < \u20b9500cr pool boundary; 3-month move now -23% (cooled); 5-session move -13%"
+   "exit_check": "mcap \u20b9113cr still < \u20b9500cr pool boundary; 3-month move now -23% (cooled); 5-session move -9%"
   },
   "INE1KEC01023": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9259cr still < \u20b9500cr pool boundary; 3-month move now +55% (cooled); 5-session move -4%"
+   "exit_check": "mcap \u20b9259cr still < \u20b9500cr pool boundary; 3-month move now +61% (cooled); 5-session move +3%"
   },
   "INE0YJA01011": {
    "official": null,
@@ -1465,43 +1822,43 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9210cr still < \u20b9500cr pool boundary; 3-month move now +10% (cooled); 5-session move -2%"
+   "exit_check": "mcap \u20b9210cr still < \u20b9500cr pool boundary; 3-month move now +18% (cooled); 5-session move +2%"
   },
   "INE0F8901022": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b941cr still < \u20b9500cr pool boundary; 3-month move now +7% (cooled); 5-session move +4%"
+   "exit_check": "mcap \u20b939cr still < \u20b9500cr pool boundary; 3-month move now +5% (cooled); 5-session move -2%"
   },
   "INE1KU201016": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b9331cr still < \u20b9500cr pool boundary; 3-month move now -10% (cooled); 5-session move -7%"
+   "exit_check": "mcap \u20b9318cr still < \u20b9500cr pool boundary; 3-month move now -5% (cooled); 5-session move -4%"
   },
   "INE0WKY01013": {
    "official": null,
    "band_locked": null,
    "risks": [
-    "SME LT-ASM risk: +129% in 3 months (criterion: \u2265\u00b190%, indicative)"
+    "SME LT-ASM risk: +117% in 3 months (criterion: \u2265\u00b190%, indicative)"
    ],
    "source": null
   },
@@ -1509,43 +1866,45 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b932cr still < \u20b9500cr pool boundary; 3-month move now -13% (cooled); 5-session move -1%"
+   "exit_check": "mcap \u20b932cr still < \u20b9500cr pool boundary; 3-month move now -10% (cooled); 5-session move -1%"
   },
   "INE12UN01015": {
    "official": "ASM Long-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
    "since": "2026-07-11",
    "implication": "100% margin on all positions. Trading otherwise normal.",
    "review": "Quarterly (stage-wise) review; min ~90 days stay",
    "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
    "earliest_exit": "2026-10-09",
-   "exit_check": "3-month move now +36% (cooled); 5-session move +3%"
+   "exit_check": "3-month move now +36% (cooled); 5-session move +7%"
   },
   "INE1OOT01028": {
    "official": null,
    "band_locked": "5%",
-   "risks": [],
+   "risks": [
+    "SME LT-ASM risk: +92% in 3 months (criterion: \u2265\u00b190%, indicative)"
+   ],
    "source": null
   },
   "INE1TY801010": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
-   "since": "2026-07-31 (est. from band-lock)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
+   "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
-   "earliest_exit": "2026-10-29",
-   "exit_check": "mcap \u20b9327cr still < \u20b9500cr pool boundary; 3-month move now +45% (cooled); 5-session move +9%"
+   "earliest_exit": "2026-10-09",
+   "exit_check": "mcap \u20b9327cr still < \u20b9500cr pool boundary; 3-month move now +53% (cooled); 5-session move +4%"
   },
   "INE1O6P01016": {
    "official": null,
@@ -1557,19 +1916,19 @@
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 19-Aug-2026)",
    "since": "2026-07-03 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
    "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
    "earliest_exit": "2026-08-02",
-   "exit_check": "mcap \u20b9861cr \u2265 \u20b9500cr pool boundary; 3-month move now +10% (cooled); 5-session move -6%"
+   "exit_check": "mcap \u20b9861cr \u2265 \u20b9500cr pool boundary; 3-month move now +3% (cooled); 5-session move -6%"
   },
   "INE19GK01015": {
    "official": null,
    "band_locked": null,
    "risks": [
-    "In ESM-eligible pool (mcap \u20b9159cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
+    "In ESM-eligible pool (mcap \u20b9155cr < \u20b9500cr) \u2014 sharp rallies can trigger 100% margin + 2%/5% band"
    ],
    "source": null
   },
@@ -1577,55 +1936,55 @@
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-14",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-21",
-   "exit_check": "3-month move now +51% (cooled); 5-session move +2%"
+   "exit_check": "3-month move now +38% (cooled); 5-session move -9%"
   },
   "INE1OOJ01011": {
    "official": "ESM Stage II",
    "band_locked": "2%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage II (NSE list 19-Aug-2026)",
    "since": "2026-04-24 (est. from band-lock)",
    "implication": "Trade-to-trade, 100% margin, 2% daily band \u2014 the tightest cage (Amanta situation). Liquidity typically dries hard.",
    "review": "Weekly review; Stage II\u2192I possible after ~1 month of cooling",
    "exit_rule": "First step down to Stage I after ~1 month without triggers; full exit needs 90+ days and criteria normalisation",
    "earliest_exit": "2026-05-24",
-   "exit_check": "mcap \u20b9602cr \u2265 \u20b9500cr pool boundary; 3-month move now +89% (still hot); 5-session move +5%"
+   "exit_check": "mcap \u20b9602cr \u2265 \u20b9500cr pool boundary; 3-month move now +84% (still hot); 5-session move +5%"
   },
   "INE713R01022": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-07-31",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-07",
-   "exit_check": "3-month move now +36% (cooled); 5-session move -0%"
+   "exit_check": "3-month move now +35% (cooled); 5-session move +1%"
   },
   "INE24H301028": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-11",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-09",
-   "exit_check": "mcap \u20b91453cr \u2265 \u20b9500cr pool boundary; 3-month move now +72% (cooled); 5-session move +12%"
+   "exit_check": "mcap \u20b91453cr \u2265 \u20b9500cr pool boundary; 3-month move now +55% (cooled); 5-session move +5%"
   },
   "INE2B6701015": {
    "official": null,
    "band_locked": null,
    "risks": [
-    "ST-ASM trigger risk: +38% in 5 sessions (criterion: \u226525%)"
+    "ST-ASM trigger risk: +31% in 5 sessions (criterion: \u226525%)"
    ],
    "source": null
   },
@@ -1633,7 +1992,7 @@
    "official": "ESM Stage I",
    "band_locked": "5%",
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-22 (est. from band-lock)",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
@@ -1645,61 +2004,61 @@
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-22",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-20",
-   "exit_check": "mcap \u20b9356cr still < \u20b9500cr pool boundary; 5-session move -1%"
+   "exit_check": "mcap \u20b9356cr still < \u20b9500cr pool boundary; 5-session move +2%"
   },
   "INE0JUI01012": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-07-15",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-10-13",
-   "exit_check": "mcap \u20b9781cr \u2265 \u20b9500cr pool boundary; 5-session move +4%"
+   "exit_check": "mcap \u20b9781cr \u2265 \u20b9500cr pool boundary; 5-session move +5%"
   },
   "INE1V1R01014": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-03",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-10",
-   "exit_check": "5-session move +15%"
+   "exit_check": "5-session move +11%"
   },
   "INE0OC301013": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-17",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-24",
-   "exit_check": "5-session move +16%"
+   "exit_check": "5-session move +5%"
   },
   "INE0K3301012": {
    "official": "ESM Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 18-Aug-2026)",
+   "source": "Enhanced Surveillance Measure (ESM) - Stage I (NSE list 19-Aug-2026)",
    "since": "2026-08-05",
    "implication": "Trade-to-trade settlement, 100% margin, 5% daily band (2% if already there). No intraday.",
    "review": "Weekly stage review; exit reviewed after min 90 calendar days",
    "exit_rule": "Exit when price/volatility criteria normalise on review, or mcap sustainably exceeds the \u20b9500cr micro-cap pool",
    "earliest_exit": "2026-11-03",
-   "exit_check": "mcap \u20b9252cr still < \u20b9500cr pool boundary; 5-session move +5%"
+   "exit_check": "mcap \u20b9252cr still < \u20b9500cr pool boundary; 5-session move +4%"
   },
   "INE2FMX01012": {
    "official": "ASM Short-Term Stage I",
@@ -1707,57 +2066,51 @@
    "risks": [
     "1-month high-low variation 100% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-07-30",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-06",
-   "exit_check": "5-session move -0%"
+   "exit_check": "5-session move -1%"
   },
   "INE0R1301019": {
-   "official": "ASM Long-Term Stage I",
+   "official": "ASM Long-Term Stage II",
    "band_locked": null,
    "risks": [
-    "1-month high-low variation 99% (ST-ASM secondary criterion \u226575%)"
+    "1-month high-low variation 109% (ST-ASM secondary criterion \u226575%)"
    ],
-   "source": "NSE ASM Long-Term list, 18-Aug-2026",
-   "since": "2026-07-24",
-   "implication": "100% margin on all positions. Trading otherwise normal.",
-   "review": "Quarterly (stage-wise) review; min ~90 days stay",
-   "exit_rule": "Exit when 3-month high-low / concentration criteria no longer met on quarterly review",
-   "earliest_exit": "2026-10-22",
-   "exit_check": "5-session move -38%"
-  },
-  "INE1EVO01017": {
-   "official": null,
-   "band_locked": "5%",
-   "risks": [],
-   "source": null
+   "source": "NSE ASM Long-Term list, 19-Aug-2026",
+   "since": "2026-08-19",
+   "implication": "Trade-to-trade + 100% margin. No intraday netting.",
+   "review": "Quarterly review; stages step DOWN one at a time",
+   "exit_rule": "Stage-down when criteria cool; sequential exit via Stage I",
+   "earliest_exit": "2026-11-17",
+   "exit_check": "5-session move -40%"
   },
   "INE27V201011": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-07-23",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-07-30",
-   "exit_check": "5-session move -3%"
+   "exit_check": "5-session move -9%"
   },
   "INE0NG701011": {
    "official": "ASM Short-Term Stage I",
    "band_locked": null,
    "risks": [],
-   "source": "NSE ASM Short-Term list, 18-Aug-2026",
+   "source": "NSE ASM Short-Term list, 19-Aug-2026",
    "since": "2026-08-18",
    "implication": "50\u2013100% additional margin for a SHORT window.",
    "review": "Auto review after 5/15 trading days (per trigger)",
    "exit_rule": "Auto-exit after the 5- or 15-day window unless re-triggered (e.g. another +25%/5-session burst)",
    "earliest_exit": "2026-08-25",
-   "exit_check": "5-session move +13%"
+   "exit_check": "5-session move +8%"
   },
   "INE13ZJ01010": {
    "official": null,
@@ -1768,9 +2121,7 @@
   "INE288301026": {
    "official": null,
    "band_locked": "5%",
-   "risks": [
-    "ST-ASM trigger risk: +27% in 5 sessions (criterion: \u226525%)"
-   ],
+   "risks": [],
    "source": null
   },
   "INE17DP01015": {
@@ -1778,23 +2129,15 @@
    "band_locked": "5%",
    "risks": [],
    "source": null
-  },
-  "INE0WR901013": {
-   "official": null,
-   "band_locked": null,
-   "risks": [
-    "ST-ASM trigger risk: +27% in 5 sessions (criterion: \u226525%)"
-   ],
-   "source": null
   }
  },
  "bandlock_study": {
-  "n_episodes": 1334,
-  "n_stocks": 269,
+  "n_episodes": 1342,
+  "n_stocks": 270,
   "fwd20_median": -2.3,
   "fwd20_win": 44,
   "fwd60_median": -5.8,
   "fwd60_win": 42,
-  "vol_change_median_pct": -18.0
+  "vol_change_median_pct": -17.6
  }
 }
