@@ -1,13 +1,13 @@
 {
  "n_trades": 686,
- "n_closed": 587,
- "n_open": 99,
+ "n_closed": 589,
+ "n_open": 97,
  "win_rate": 18.2,
- "avg_pnl": -0.35,
+ "avg_pnl": -0.42,
  "median_pnl": -10.02,
- "profit_factor": 0.96,
+ "profit_factor": 0.95,
  "avg_win": 47.0,
- "avg_loss": -10.9,
+ "avg_loss": -11.0,
  "best": {
   "company": "GSM Foils Ltd.",
   "pnl": 350.26
@@ -17,9 +17,9 @@
   "pnl": -66.92
  },
  "avg_hold": 35.0,
- "sum_pnl_pct": -203.0,
- "avg_pnl_incl_open": 6.76,
- "open_mtm_pnl_sum": 4842.0,
+ "sum_pnl_pct": -248.0,
+ "avg_pnl_incl_open": 6.87,
+ "open_mtm_pnl_sum": 4959.0,
  "by_year": {
   "2023": {
    "n": 69,
@@ -41,9 +41,9 @@
   },
   "2026": {
    "n": 171,
-   "win": 46,
-   "avg": 14.2,
-   "open": 84
+   "win": 47,
+   "avg": 14.6,
+   "open": 82
   }
  }
 }
