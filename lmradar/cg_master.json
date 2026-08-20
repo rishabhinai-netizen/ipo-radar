@@ -1,6 +1,18 @@
 [
  {
-  "company": "Behari Lal Engineering Ltd. LT",
+  "company": "Credent Connect N Care Ltd. LT",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-08-20",
+  "issue_price": 189.0,
+  "issue_amount_cr": 93.9,
+  "lead_manager": "Hem Securities",
+  "isin": "INE1KPX01025",
+  "nse_symbol": "CREDENT",
+  "bse_code": ""
+ },
+ {
+  "company": "Behari Lal Engineering Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-08-19",
@@ -12,7 +24,7 @@
   "bse_code": "544870"
  },
  {
-  "company": "Shiprocket Ltd. LT",
+  "company": "Shiprocket Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-08-19",
@@ -24,7 +36,7 @@
   "bse_code": "544871"
  },
  {
-  "company": "Pramodini Medicare Ltd. LT",
+  "company": "Pramodini Medicare Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-08-19",
@@ -36,7 +48,7 @@
   "bse_code": ""
  },
  {
-  "company": "Q&T Foods Ltd. LT",
+  "company": "Q&T Foods Ltd.",
   "segment": "SME",
   "listing_at": "BSE SME",
   "listing_date": "2026-08-19",
@@ -1200,16 +1212,16 @@
   "bse_code": ""
  },
  {
-  "company": "Sai Parenteral's Ltd.",
+  "company": "Amir Chand Jagdish Kumar (Exports) Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-04-02",
-  "issue_price": 392.0,
-  "issue_amount_cr": 408.79,
-  "lead_manager": "Arihant Capital",
-  "isin": "INE0H9F01037",
-  "nse_symbol": "SAIPARENT",
-  "bse_code": "544742"
+  "issue_price": 212.0,
+  "issue_amount_cr": 440.0,
+  "lead_manager": "Emkay Global",
+  "isin": "INE05TO01019",
+  "nse_symbol": "AMIRCHAND",
+  "bse_code": "544743"
  },
  {
   "company": "Powerica Ltd.",
@@ -1224,16 +1236,16 @@
   "bse_code": "544744"
  },
  {
-  "company": "Amir Chand Jagdish Kumar (Exports) Ltd.",
+  "company": "Sai Parenteral's Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
   "listing_date": "2026-04-02",
-  "issue_price": 212.0,
-  "issue_amount_cr": 440.0,
-  "lead_manager": "Emkay Global",
-  "isin": "INE05TO01019",
-  "nse_symbol": "AMIRCHAND",
-  "bse_code": "544743"
+  "issue_price": 392.0,
+  "issue_amount_cr": 408.79,
+  "lead_manager": "Arihant Capital",
+  "isin": "INE0H9F01037",
+  "nse_symbol": "SAIPARENT",
+  "bse_code": "544742"
  },
  {
   "company": "Highness Microelectronics Ltd.",
