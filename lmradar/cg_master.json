@@ -1,6 +1,42 @@
 [
  {
-  "company": "Credent Connect N Care Ltd. LT",
+  "company": "Skytech Infinite Platform Ltd. LT",
+  "segment": "SME",
+  "listing_at": "NSE SME",
+  "listing_date": "2026-08-21",
+  "issue_price": 77.0,
+  "issue_amount_cr": 22.68,
+  "lead_manager": "Finshore Management",
+  "isin": "INE0VFE01017",
+  "nse_symbol": "SKYTECH",
+  "bse_code": ""
+ },
+ {
+  "company": "ENS Enterprises Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-08-21",
+  "issue_price": 92.0,
+  "issue_amount_cr": 33.14,
+  "lead_manager": "Corporate Makers",
+  "isin": "INE23ER01017",
+  "nse_symbol": "",
+  "bse_code": "544876"
+ },
+ {
+  "company": "Technocrats Plasma Systems Ltd. LT",
+  "segment": "SME",
+  "listing_at": "BSE SME",
+  "listing_date": "2026-08-21",
+  "issue_price": 132.0,
+  "issue_amount_cr": 60.98,
+  "lead_manager": "Rarever Financial",
+  "isin": "INE19QK01022",
+  "nse_symbol": "",
+  "bse_code": "544877"
+ },
+ {
+  "company": "Credent Connect N Care Ltd.",
   "segment": "SME",
   "listing_at": "NSE SME",
   "listing_date": "2026-08-20",
@@ -10,18 +46,6 @@
   "isin": "INE1KPX01025",
   "nse_symbol": "CREDENT",
   "bse_code": ""
- },
- {
-  "company": "Behari Lal Engineering Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-08-19",
-  "issue_price": 285.0,
-  "issue_amount_cr": 301.62,
-  "lead_manager": "Emkay Global",
-  "isin": "INE1EEM01017",
-  "nse_symbol": "BLEL",
-  "bse_code": "544870"
  },
  {
   "company": "Shiprocket Ltd.",
@@ -34,6 +58,18 @@
   "isin": "INE0FOO01011",
   "nse_symbol": "SHIPROCKET",
   "bse_code": "544871"
+ },
+ {
+  "company": "Behari Lal Engineering Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-08-19",
+  "issue_price": 285.0,
+  "issue_amount_cr": 301.62,
+  "lead_manager": "Emkay Global",
+  "isin": "INE1EEM01017",
+  "nse_symbol": "BLEL",
+  "bse_code": "544870"
  },
  {
   "company": "Pramodini Medicare Ltd.",
@@ -432,18 +468,6 @@
   "bse_code": "544832"
  },
  {
-  "company": "SBI Funds Management Ltd.",
-  "segment": "Mainboard",
-  "listing_at": "BSE, NSE",
-  "listing_date": "2026-07-21",
-  "issue_price": 574.0,
-  "issue_amount_cr": 9795.32,
-  "lead_manager": "Kotak Mahindra Capital",
-  "isin": "INE640G01020",
-  "nse_symbol": "SBIFUNDS",
-  "bse_code": "544829"
- },
- {
   "company": "Alpine Texworld Ltd.",
   "segment": "Mainboard",
   "listing_at": "BSE, NSE",
@@ -454,6 +478,18 @@
   "isin": "INE1JCQ01037",
   "nse_symbol": "ALPINETEX",
   "bse_code": "544825"
+ },
+ {
+  "company": "SBI Funds Management Ltd.",
+  "segment": "Mainboard",
+  "listing_at": "BSE, NSE",
+  "listing_date": "2026-07-21",
+  "issue_price": 574.0,
+  "issue_amount_cr": 9795.32,
+  "lead_manager": "Kotak Mahindra Capital",
+  "isin": "INE640G01020",
+  "nse_symbol": "SBIFUNDS",
+  "bse_code": "544829"
  },
  {
   "company": "Millworks Technologies Ltd.",
